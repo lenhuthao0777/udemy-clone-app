@@ -1,0 +1,19 @@
+.headline {
+    &__content {
+        margin: 60px 0 40px 0;
+        padding: 0 24px;
+        .headline__main-text {
+            h3 {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 48px;
+            }
+        }
+        .headline__sub-text {
+            span {
+                font-size: 16px;
+                color: $color-black-2;
+            }
+        }
+    }
+}

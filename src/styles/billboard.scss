@@ -1,0 +1,118 @@
+.billboard {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &-pc {
+        img {
+            width: 100%;
+        }
+    }
+    &-mobile {
+        display: none;
+        img {
+            width: 100%;
+        }
+    }
+    &-content {
+        position: absolute;
+        left: 3%;
+        width: 440px;
+        height: auto;
+        background-color: $color-white-0;
+        padding: 24px;
+        z-index: 999;
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            padding-bottom: 15px;
+        }
+        p {
+            font-size: 19px;
+            color: $color-black-1;
+            padding-bottom: 15px;
+            line-height: 20px;
+        }
+        &__input {
+            border: 2px solid $color-black-2;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            height: 50px;
+            input {
+                flex: 1;
+                border: none;
+                outline: none;
+                padding: 0 16px;
+                height: 95%;
+            }
+            button {
+                border: none;
+                outline: none;
+                background-color: $color-white-0;
+                padding: 0 12px;
+                .billboard-icon {
+                    font-size: 24px;
+                    color: $color-black-2;
+                }
+            }
+        }
+    }
+}
+@include responesive("large") {
+    .billboard {
+        &-content {
+            top: 10%;
+            height: auto;
+            width: 320px;
+            h1 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 16px;
+            }
+            input {
+                font-size: 16px;
+            }
+        }
+    }
+}
+@include responesive("medium") {
+    .billboard {
+        &-content {
+            width: 340px;
+            height: 226px;
+            top: 10%;
+            h1 {
+                font-size: 32px;
+                padding-bottom: 10px;
+            }
+            p {
+                font-size: 16px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 668px) {
+    .billboard {
+        &-content {
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+@include responesive("small") {
+    .billboard {
+        &-pc {
+            display: none;
+        }
+        &-mobile {
+            display: block;
+        }
+        &-content {
+            // display: none;
+        }
+    }
+}

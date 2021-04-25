@@ -1,0 +1,151 @@
+.form {
+    width: 380px;
+    margin: 30px auto;
+    &__heading {
+        padding: 24px 64px 24px 24px;
+        border-bottom: 1px solid $color-gray-2;
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: $color-black-0;
+        }
+    }
+    &__option-login {
+        padding: 24px 24px 16px 24px;
+        li {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            padding: 12px 10px;
+            border-radius: 2px;
+            overflow: hidden;
+            transition: 0.3s ease;
+            box-shadow: 0 2px 2px 0 rgb(41 48 59 / 24%), 0 0 2px 0 rgb(41 48 59 / 12%);
+
+            &.facebook {
+                background-color: #1a538a;
+                a {
+                    display: flex;
+                    align-items: center;
+                    color: $color-white-0;
+                    .facebook-icon {
+                        font-size: 24px;
+                        margin-right: 10px;
+                    }
+                }
+                &:hover {
+                    background-color: #164675;
+                }
+            }
+            &.google {
+                a {
+                    display: flex;
+                    align-items: center;
+                    .google-icon {
+                        font-size: 24px;
+                        margin-right: 10px;
+                    }
+                }
+                &:hover {
+                    background-color: $color-gray-3;
+                }
+            }
+            &.apple {
+                a {
+                    display: flex;
+                    align-items: center;
+                    .apple-icon {
+                        font-size: 24px;
+                        margin-right: 10px;
+                    }
+                }
+                &:hover {
+                    background-color: $color-gray-3;
+                }
+            }
+        }
+    }
+    &__login {
+        padding: 0 24px 16px 24px;
+        .form-groups {
+            padding-bottom: 10px;
+            & .input {
+                display: flex;
+                align-items: center;
+                padding: 0 5px;
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    margin-left: 8px;
+                    flex: 1;
+                    color: $color-black-2;
+                }
+            }
+            .username {
+                border: 1px solid $color-black-2;
+                border-radius: 4px;
+                height: 48px;
+                .email-icon {
+                    color: $color-black-2;
+                    font-size: 24px;
+                }
+            }
+            .password {
+                border: 1px solid $color-black-2;
+                border-radius: 4px;
+                height: 48px;
+                .lock-icon {
+                    color: $color-black-2;
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .button-form__login {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button {
+            font-size: 15px;
+        }
+        span {
+            padding-right: 2.5px;
+            font-size: 15px;
+        }
+        .password-link {
+            font-size: 15px;
+            color: $color-green;
+            transition: 0.3s ease;
+            &:hover {
+                color: $color-green-dark;
+            }
+        }
+    }
+    .form-footer {
+        text-align: center;
+        margin-top: 30px;
+        p {
+            font-size: 15px;
+            padding-bottom: 10px;
+            a {
+                color: $color-green;
+                font-weight: 700;
+                transition: 0.3s ease;
+                &:hover {
+                    color: $color-green-dark;
+                }
+            }
+            &:nth-child(2) {
+                color: $color-green;
+                font-weight: 700;
+                transition: 0.3s ease;
+                cursor: pointer;
+                &:hover {
+                    color: $color-green-dark;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+src:
+-components: chua cac dum component, nhan props , it su ly logic
+-pages: chua compoent cau thanh 1 page, su ly logic
+-hooks: chua cac custom hook
+-services: chua cac ham goi, setup api
+-sass: npm i -D sass
+-util: chua cac common func de tai su dung trong project
+-co redux: actinons, constants, reducer
+-layout: chua cac component layout
+-auth: chua cac component va cac ham su ly lien quan den authentication

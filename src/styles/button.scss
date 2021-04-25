@@ -1,0 +1,82 @@
+// .ude-btn--outline {
+//     @include styleBtn($color-white-0, $pd-1 + 1, $pd-1 + 2, $border-radius);
+//     @include styleText($color-gray-4, $fs-0, $fw-bold-1);
+// }
+// .ude-btn--primary {
+//     @include styleBtn($color-green, $pd-1 + 1, $pd-1 + 2, $border-radius);
+//     @include styleText(#ffffff, $fs-0, $fw-bold-1);
+
+//     &:hover {
+//         @include styleBtnHover($color-green-dark, $color-white-0);
+//     }
+// }
+// .ude-btn--outline__white {
+//     @include styleBtn($color-trans, $pd-1 + 1, $pd-1 + 2, $border-radius);
+//     @include styleText($color-gray-4, $fs-0, $fw-bold-1);
+// }
+.btn {
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+    font-size: 14px;
+}
+// .btn:hover {
+//     background-color: $color-green-dark;
+//     color: $color-white-0;
+// }
+
+.btn--btn-primary {
+    background-color: $color-green;
+    color: $color-white-0;
+    border: 1px solid $color-trans;
+    &:hover {
+        background-color: $color-green-dark;
+        color: $color-white-0;
+    }
+}
+.btn--btn-outline {
+    background-color: $color-trans;
+    color: $color-green;
+    border: 1px solid $color-green;
+    &:hover {
+        color: $color-black-0;
+        border-color: $color-black-0;
+    }
+}
+.btn--btn-light {
+    background-color: $color-trans;
+    color: $color-white-0;
+    border: 1px solid $color-white-0;
+    &:hover {
+        color: $color-white-0;
+    }
+}
+.btn--outline-no-hover {
+    font-weight: 550;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    outline: none;
+    background-color: $color-trans;
+    border: 1px solid $color-black-1;
+    color: $color-black-2;
+}
+.lg {
+    padding: 15px 30px;
+    font-size: 18px;
+}
+.md {
+    padding: 8px 25px;
+    font-size: 14px;
+}
+.sm {
+    padding: 8px 10px;
+    font-size: 14px;
+}
+.full {
+    padding: 8px 10px;
+    font-size: 14px;
+    width: 100%;
+}

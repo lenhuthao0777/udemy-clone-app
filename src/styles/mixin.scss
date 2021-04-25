@@ -1,0 +1,21 @@
+// them style cac loai chu
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin responesive($screen) {
+    // lay gia tri dua vao ten man hinh
+    // kiem tra ten man hinh co hop le ko => kiem tra ten co ton tai trong bien breakpoints
+    @if (map-has-key($map: $breakpoints, $key: $screen)) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    } @else {
+        @warn "man hinh ko ton tai";
+    }
+}
