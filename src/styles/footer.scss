@@ -1,7 +1,7 @@
 .footer {
-    margin-top: 40px;
-    padding: 24px 48px 0;
     border-top: 1px solid $color-gray-3;
+    // margin-top: 40px;
+    padding: 24px 48px 0 48px;
     &-content {
         display: flex;
         justify-content: space-between;
@@ -25,6 +25,20 @@
             }
             .footer-info--list__mobile {
                 display: none;
+                margin-top: 20px;
+                width: 100%;
+                li {
+                    padding: 4px 0;
+                    width: 100%;
+                    a {
+                        @include styleText($color-blue, 14px, $fw-normal);
+                        text-decoration: none;
+                        transition: 0.3s ease;
+                        &:hover {
+                            color: $color-black-0;
+                        }
+                    }
+                }
             }
         }
         &__dropdown {
@@ -98,10 +112,10 @@
 @include responesive("extra-large") {
     .footer {
         padding: 24px 32px 0;
-        &-content {
-            &__info {
-            }
-        }
+        // &-content {
+        //     &__info {
+        //     }
+        // }
     }
 }
 @include responesive("large") {
@@ -111,15 +125,30 @@
 }
 @include responesive("medium") {
     .footer {
-        &-content {
-        }
+        // &-content {
+        // }
     }
 }
 @media screen and (max-width: 668px) {
     .footer {
+        &-content {
+            flex-direction: column;
+            &__info {
+                order: 2;
+                .footer-info--list {
+                    display: none;
+                }
+                .footer-info--list__mobile {
+                    display: block;
+                }
+            }
+            &__dropdown {
+                order: 1;
+                justify-content: flex-start;
+            }
+        }
         .footer-bottom {
             .footer-bottom--list {
-                // margin-right: 100px;
                 &__item {
                     align-items: flex-start;
                     flex-direction: column;
@@ -142,20 +171,6 @@
                 }
                 .footer-info--list__mobile {
                     display: block;
-                    margin-top: 20px;
-                    width: 100%;
-                    li {
-                        padding: 4px 0;
-                        width: 100%;
-                        a {
-                            @include styleText($color-blue, 14px, $fw-normal);
-                            text-decoration: none;
-                            transition: 0.3s ease;
-                            &:hover {
-                                color: $color-black-0;
-                            }
-                        }
-                    }
                 }
             }
             &__dropdown {
@@ -165,9 +180,6 @@
         }
         .footer-bottom {
             .footer-bottom--list {
-                .ft-right {
-                    display: none;
-                }
                 .footer-left--mobile {
                     display: block;
                     padding-top: 20px;

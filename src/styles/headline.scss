@@ -17,3 +17,8 @@
         }
     }
 }
+@include responesive("small") {
+    .headline {
+        display: none;
+    }
+}

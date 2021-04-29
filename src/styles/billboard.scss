@@ -1,7 +1,5 @@
 .billboard {
     position: relative;
-    display: flex;
-    align-items: center;
     &-pc {
         img {
             width: 100%;
@@ -15,6 +13,7 @@
     }
     &-content {
         position: absolute;
+        top: 20%;
         left: 3%;
         width: 440px;
         height: auto;
@@ -96,7 +95,7 @@
 @media screen and (max-width: 668px) {
     .billboard {
         &-content {
-            top: 100%;
+            position: relative;
             left: 0;
             width: 100%;
             height: auto;

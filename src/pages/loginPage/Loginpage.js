@@ -14,6 +14,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/button/Button";
+import { FcGoogle } from "react-icons/fc";
 function Loginpage() {
 	const dispatch = useDispatch();
 	const { userInfo, isLoading, error } = useSelector(
@@ -134,7 +135,7 @@ function Loginpage() {
 						</li>
 						<li className='google'>
 							<Link to='/'>
-								<FacebookIcon className='google-icon' />
+								<FcGoogle className='google-icon' />
 								Continue with Google
 							</Link>
 						</li>

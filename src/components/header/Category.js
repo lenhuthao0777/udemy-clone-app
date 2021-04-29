@@ -1,7 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
-
+import React from "react";
+import { Link } from "react-router-dom";
+import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 function Category() {
 	return (
 		<>
@@ -9,7 +8,7 @@ function Category() {
 				<span>Categories</span>
 				<div
 					className='header--navbar__category-submenu'
-					style={{ transition: '.3s ease in' }}>
+					style={{ transition: ".3s ease in" }}>
 					<ul className='header--navbar__category-submenu__list'>
 						<li className='header--navbar__category-submenu__list-item'>
 							<Link to='/'>
@@ -22,7 +21,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Development
 										</Link>
@@ -31,7 +30,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Wed Development
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -66,7 +65,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Data Science
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -110,7 +109,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Mobile Development
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -154,7 +153,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Programming Languages
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -195,7 +194,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Game Development
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -215,7 +214,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Database Design & Development
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -235,7 +234,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Software Testing
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -255,7 +254,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Software Engineering
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -275,7 +274,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -295,7 +294,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											Development Tools
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -315,7 +314,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											No-Code Development
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -345,7 +344,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -354,7 +353,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -384,7 +383,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Finance & Accounting Courses
 										</Link>
@@ -393,7 +392,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -423,7 +422,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -432,7 +431,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -462,7 +461,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -471,7 +470,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -501,7 +500,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -510,7 +509,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -540,7 +539,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -549,7 +548,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -579,7 +578,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -588,7 +587,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -618,7 +617,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -627,7 +626,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -657,7 +656,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -666,7 +665,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -696,7 +695,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -705,7 +704,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -735,7 +734,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -744,7 +743,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />
@@ -774,7 +773,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All Business
 										</Link>
@@ -783,7 +782,7 @@ function Category() {
 										<Link
 											to='/'
 											style={{
-												textDecoration: 'none',
+												textDecoration: "none",
 											}}>
 											All
 											<KeyboardArrowRightIcon className='angleRightIcon' />

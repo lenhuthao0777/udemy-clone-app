@@ -6,7 +6,11 @@
     img {
         width: 100%;
     }
-
+    &.AvatarLg {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+    }
     &.AvatarMd {
         width: 64px;
         height: 64px;
