@@ -1,0 +1,81 @@
+.unit {
+    margin: 48px 0;
+    &-content {
+        &__heading {
+            font-size: 24px;
+            font-weight: 700;
+            color: $color-black-0;
+            padding-left: 10px;
+        }
+        .carousels {
+            margin-top: 20px;
+            .slick-arrow {
+                z-index: 10000;
+                &.slick-next {
+                    top: 30%;
+                    right: -14px;
+                    align-items: center;
+                    background-color: $color-white-0;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+                    &::before {
+                        color: $color-green;
+                    }
+                }
+            }
+            .slick-arrow {
+                z-index: 10000;
+                &.slick-prev {
+                    top: 30%;
+                    left: -14px;
+                    align-items: center;
+                    background-color: $color-white-0;
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+                    &::before {
+                        color: $color-green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responesive("extra-large") {
+    .unit {
+        &-content {
+            padding: 0 24px;
+        }
+    }
+}
+@include responesive("medium") {
+    .unit {
+        &-content {
+        }
+    }
+}
+@include responesive("small") {
+    .unit {
+        &-content {
+            padding: 0 42px;
+            &__heading {
+                padding-left: 10px;
+            }
+        }
+    }
+}
+// <div>
+// 								<CourseItem
+// 									clsName={"course-item"}
+// 									sale='sale-active'
+// 									image='./img/kh3.jpg'
+// 									courseName='PROMISING YOUNG WOMAN | Bông hồng nước Anh Carey Mulligan và màn trả thù đàn ông để đời'
+// 									author='PROMISING YOUNG WOMAN | Bông hồng nước Anh Carey Mulligan và màn trả thù đàn ông để đời'
+// 									view='1200'
+// 									price={"129.99"}
+// 								/>
+// 							</div>

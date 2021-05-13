@@ -1,9 +1,8 @@
-import React from "react";
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
-import CloseIcon from "@material-ui/icons/Close";
-import UdeAvatar from "../avatar/index";
-import { Link } from "react-router-dom";
+import React from "react";
 import { GrFormClose } from "react-icons/gr";
+import { Link } from "react-router-dom";
+import UdeAvatar from "../avatar/index";
 function NavBarMobile({ SideBar, setSideBar }) {
 	return (
 		<>

@@ -2,7 +2,8 @@ const { axiosClient } = require("./axiosClient");
 
 const coursesApi = {
 	getCourses: () => {
-		return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc");
+		const params = { MaNhom: "GP08" };
+		return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", { params });
 	},
 	getCoursesByCategory: (category) => {
 		const params = { maDanhMuc: category, MaNhom: "GP08" };

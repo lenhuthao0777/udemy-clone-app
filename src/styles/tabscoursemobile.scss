@@ -1,0 +1,38 @@
+.tabs-mobile {
+    padding: 24px;
+    background-color: $color-white-0;
+    &__list {
+        &-item {
+            transition: all 0.5s;
+            border-top: 2px solid #dcdacb;
+            &-text {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-black-0;
+                padding: 20px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .courses {
+                display: none;
+                animation: open ease-in 0.2s;
+                margin: 20px 0;
+                &.active {
+                    display: block;
+                }
+            }
+            &:last-child {
+                border-bottom: 2px solid #dcdacb;
+            }
+        }
+    }
+}
+@keyframes open {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

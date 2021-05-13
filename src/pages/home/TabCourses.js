@@ -1,30 +1,63 @@
-import React from "react";
-import { useState } from "react";
-import CourseItem from "src/components/courseItem/CourseItem";
+import React, { useState } from "react";
+import Slider from "react-slick";
 import UdeAvatar from "src/components/avatar/index";
 import { Button } from "src/components/button/Button";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-function TabCourses() {
+import CourseItem from "src/components/courseItem/CourseItem";
+function TabCourses({ courses }) {
 	const [toggleState, setToggleState] = useState(1);
 	const handelTabs = (state) => {
 		setToggleState(state);
 	};
-	const settings = {
+	var settings = {
 		dots: false,
-		infinite: true,
+		infinite: false,
 		speed: 500,
 		slidesToShow: 5,
-		slidesToScroll: 1,
+		slidesToScroll: 4,
+		initialSlide: 5,
 		responsive: [
 			{
-				breakpoint: 1024,
+				breakpoint: 1200,
 				settings: {
-					slidesToScroll: 1,
-					slidesToShow: 3,
+					slidesToShow: 4,
+					slidesToScroll: 3,
 					infinite: true,
 					dots: false,
+				},
+			},
+			{
+				breakpoint: 1023,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 2,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 668,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					initialSlide: 2,
+					arrows: false,
+				},
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					arrows: false,
 				},
 			},
 		],
@@ -79,99 +112,32 @@ function TabCourses() {
 							</div>
 							<div className='headshot-banner__avatar'>
 								<UdeAvatar
-									AvatarSrc={
-										"https://i1.wp.com/katzenworld.co.uk/wp-content/uploads/2019/06/funny-cat.jpeg?fit=1920%2C1920&ssl=1"
-									}
+									AvatarSrc={"./img/avatar3.jpg"}
 									size='AvatarLg'
 								/>
 							</div>
 						</div>
-						<div className='carousel'>
+						<div className='carousels'>
 							<Slider {...settings}>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
-								<CourseItem
-									clsName={"course-item"}
-									sale={"sale-active"}
-									image={
-										"https://img-a.udemycdn.com/course/240x135/2281794_46a6_15.jpg?LgIBm_HWbkXMpRN-LxErTODlCFHjLdw7Jc2_er00VzAKN1kf5HCvVjfANEoiLupxCPCVp9WetaPcFFQuewuuGULDchP5rHS_Jr0Q5522gFGVjCyNj3jvEXDcrTfPbhLB-A"
-									}
-									courseName={
-										"Python Developer - Complete Training 2021 "
-									}
-									author={
-										"Thibault Houdon | Python trainer and developer, Docstring | Online Python training"
-									}
-									price={"129.99"}
-								/>
+								{courses.map((item, index) => {
+									return (
+										<CourseItem
+											key={index}
+											clsName={"course-item"}
+											id={`item${index + 1}`}
+											sale={`${
+												(index + 1) % 2 === 0
+													? "sale-active"
+													: ""
+											}`}
+											image={item.hinhAnh}
+											courseName={item.tenKhoaHoc}
+											author={item.moTa}
+											view={item.luotXem}
+											price={"129.99"}
+										/>
+									);
+								})}
 							</Slider>
 						</div>
 					</div>
@@ -179,33 +145,107 @@ function TabCourses() {
 						className={`content ${
 							toggleState === 2 ? "active" : ""
 						}`}>
-						<h1>content 2</h1>
-						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing
-							elit. Expedita nulla tenetur perferendis nesciunt
-							accusamus possimus. Omnis enim vel amet cupiditate
-							id, optio veniam inventore iste blanditiis tempora
-							sapiente iusto ut non dolore ex. Quam, perferendis a
-							earum minima repellat enim eum aspernatur molestias
-							iste, accusantium nulla quis? Officia,
-							exercitationem quos.
-						</p>
+						<div className='headshot-banner'>
+							<div className='headshot-banner__content'>
+								<h1>
+									Develop your career opportunities with
+									Python
+								</h1>
+								<p>
+									Whether you work in machine learning or
+									finance, web development or data science,
+									the Python language is one of the most
+									important skills to learn. Python's simple
+									syntax is particularly suitable for office,
+									web, and commercial applications.
+								</p>
+								<Button size='md' color='btn--btn-outline'>
+									Discover Python
+								</Button>
+							</div>
+							<div className='headshot-banner__avatar'>
+								<UdeAvatar
+									AvatarSrc={"./img/avatar1.jpg"}
+									size='AvatarLg'
+								/>
+							</div>
+						</div>
+						<div className='carousels'>
+							<Slider {...settings}>
+								{courses.map((item, index) => {
+									return (
+										<CourseItem
+											key={index}
+											clsName={"course-item"}
+											id={`item${index + 1}`}
+											sale={`${
+												(index + 1) % 2 === 0
+													? "sale-active"
+													: ""
+											}`}
+											image={item.hinhAnh}
+											courseName={item.tenKhoaHoc}
+											author={item.moTa}
+											view={item.luotXem}
+											price={"129.99"}
+										/>
+									);
+								})}
+							</Slider>
+						</div>
 					</div>
 					<div
 						className={`content ${
 							toggleState === 3 ? "active" : ""
 						}`}>
-						<h1>content 3</h1>
-						<p>
-							Lorem ipsum, dolor sit amet consectetur adipisicing
-							elit. Expedita nulla tenetur perferendis nesciunt
-							accusamus possimus. Omnis enim vel amet cupiditate
-							id, optio veniam inventore iste blanditiis tempora
-							sapiente iusto ut non dolore ex. Quam, perferendis a
-							earum minima repellat enim eum aspernatur molestias
-							iste, accusantium nulla quis? Officia,
-							exercitationem quos.
-						</p>
+						<div className='headshot-banner'>
+							<div className='headshot-banner__content'>
+								<h1>
+									Develop your career opportunities with
+									Python
+								</h1>
+								<p>
+									Whether you work in machine learning or
+									finance, web development or data science,
+									the Python language is one of the most
+									important skills to learn. Python's simple
+									syntax is particularly suitable for office,
+									web, and commercial applications.
+								</p>
+								<Button size='md' color='btn--btn-outline'>
+									Discover Python
+								</Button>
+							</div>
+							<div className='headshot-banner__avatar'>
+								<UdeAvatar
+									AvatarSrc={"./img/avatar2.jpg"}
+									size='AvatarLg'
+								/>
+							</div>
+						</div>
+						<div className='carousels'>
+							<Slider {...settings}>
+								{courses.map((item, index) => {
+									return (
+										<CourseItem
+											key={index}
+											clsName={"course-item"}
+											id={`item${index + 1}`}
+											sale={`${
+												(index + 1) % 2 === 0
+													? "sale-active"
+													: ""
+											}`}
+											image={item.hinhAnh}
+											courseName={item.tenKhoaHoc}
+											author={item.moTa}
+											view={item.luotXem}
+											price={"129.99"}
+										/>
+									);
+								})}
+							</Slider>
+						</div>
 					</div>
 				</div>
 			</div>

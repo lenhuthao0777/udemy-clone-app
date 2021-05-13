@@ -1,0 +1,96 @@
+.topic-cate {
+    margin-bottom: 48px;
+    &__heading {
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-black-0;
+        margin-bottom: 48px;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        &-item {
+            width: calc(100% / 4 - 16px);
+            padding: 0 8px 0 0;
+            margin-bottom: 20px;
+            h1 {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-black-0;
+                margin-bottom: 24px;
+            }
+            ul {
+                li {
+                    margin-bottom: 24px;
+                    a {
+                        p {
+                            font-size: 16px;
+                            color: $color-green;
+                            font-weight: 600;
+                            padding-bottom: 10px;
+                        }
+                        span {
+                            font-size: 14px;
+                            color: $color-black-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .topic-cate {
+        padding: 0 24px;
+    }
+}
+@include responesive("medium") {
+    .topic-cate {
+        &__list {
+        }
+    }
+}
+@media screen and (max-width: 668px) {
+    .topic-cate {
+        &__list {
+            &-item {
+                ul {
+                    li {
+                        a {
+                            p {
+                                font-size: 14px;
+                            }
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .topic-cate {
+        &__list {
+            &-item {
+                width: calc(100% / 2);
+
+                ul {
+                    li {
+                        a {
+                            p {
+                                font-size: 14px;
+                            }
+                            span {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

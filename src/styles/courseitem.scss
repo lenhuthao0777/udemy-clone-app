@@ -1,13 +1,16 @@
 .course-item {
-    min-width: 24%;
+    min-width: 100%;
     // overflow: hidden;
     height: auto;
     padding: 0 10px;
     // margin: 0 -10px;
     cursor: pointer;
+    position: relative;
     &__img {
+        height: 140px;
         img {
             width: 100%;
+            height: 100%;
             border-radius: 3px;
         }
     }
@@ -84,16 +87,253 @@
         display: block;
     }
     // .hover {
-    //     height: 100px;
-    //     width: 100px;
-    //     background-color: red;
+    //     width: 340px;
+    //     padding: 24px;
+    //     background-color: #fff;
     //     position: absolute;
-    //     top: 0;
-    //     right: -100%;
+    //     top: 2%;
+    //     right: -140%;
+    //     border-radius: 3px;
     //     display: none;
     //     z-index: 10000;
+    //     animation: slide ease 0.3s;
+    //     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 4px 12px 0 rgba(0, 0, 0, 0.5);
+    //     h1 {
+    //         font-size: 19px;
+    //         font-weight: 700;
+    //         color: $color-black-0;
+    //     }
+    //     p {
+    //         font-size: 12px;
+    //     }
+    //     .update-day {
+    //         color: #2d8643;
+    //         padding-top: 10px;
+    //     }
+    //     .time {
+    //         color: $color-black-2;
+    //         padding-top: 10px;
+    //     }
+    //     .info {
+    //         font-size: 14px;
+    //         color: $color-black-0;
+    //         padding-top: 10px;
+    //     }
+    //     .btns {
+    //         padding-top: 10px;
+    //         display: flex;
+    //         align-items: center;
+    //         & .btn-add {
+    //             flex: 1;
+    //             margin-right: 10px;
+    //             a {
+    //                 width: 100%;
+    //                 button {
+    //                     width: 100%;
+    //                     padding: 15px 25px;
+    //                     border: none;
+    //                     border-radius: 3px;
+    //                     outline: none;
+    //                     background-color: $color-red-0;
+    //                     font-size: 16px;
+    //                     font-weight: 700;
+    //                     color: $color-white-0;
+    //                     transition: 0.3s ease;
+    //                 }
+    //             }
+    //             &:hover {
+    //                 a {
+    //                     button {
+    //                         background-color: $color-red-2;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         & .btn-like {
+    //             width: 50px;
+    //             height: 50px;
+    //             border: 1px solid $color-green;
+    //             border-radius: 50%;
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: center;
+    //             transition: 0.3s ease;
+    //             & .icon-heart {
+    //                 font-size: 24px;
+    //                 color: $color-green;
+    //                 transition: 0.3s ease;
+    //             }
+    //             &:hover {
+    //                 border-color: $color-green-dark;
+    //                 & .icon-heart {
+    //                     color: $color-green-dark;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     &::before {
+    //         content: "";
+    //         position: absolute;
+    //         padding: 0 10px;
+    //         top: 30%;
+    //         left: -17%;
+    //         border-style: solid;
+    //         border-width: 10px 20px;
+    //         border-color: transparent #fff transparent transparent;
+    //     }
+    //     &::after {
+    //         content: "";
+    //         position: absolute;
+    //         top: 0;
+    //         left: -10%;
+    //         height: 100%;
+    //         width: 10%;
+    //         background-color: transparent;
+    //     }
+    // }
+    // .hover-last {
+    //     width: 340px;
+    //     padding: 24px;
+    //     background-color: #fff;
+    //     position: absolute;
+    //     top: 2%;
+    //     left: -140%;
+    //     display: none;
+    //     border-radius: 3px;
+    //     z-index: 10000;
+    //     animation: slide ease 0.3s;
+    //     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5), 0 4px 12px 0 rgba(0, 0, 0, 0.5);
+    //     h1 {
+    //         font-size: 19px;
+    //         font-weight: 700;
+    //         color: $color-black-0;
+    //     }
+    //     p {
+    //         font-size: 12px;
+    //     }
+    //     .update-day {
+    //         color: #2d8643;
+    //         padding-top: 10px;
+    //     }
+    //     .time {
+    //         color: $color-black-2;
+    //         padding-top: 10px;
+    //     }
+    //     .info {
+    //         font-size: 14px;
+    //         color: $color-black-0;
+    //         padding-top: 10px;
+    //     }
+    //     .btns {
+    //         padding-top: 10px;
+    //         display: flex;
+    //         align-items: center;
+    //         & .btn-add {
+    //             flex: 1;
+    //             margin-right: 10px;
+    //             a {
+    //                 width: 100%;
+    //                 button {
+    //                     width: 100%;
+    //                     padding: 15px 25px;
+    //                     border: none;
+    //                     border-radius: 3px;
+    //                     outline: none;
+    //                     background-color: $color-red-0;
+    //                     font-size: 16px;
+    //                     font-weight: 700;
+    //                     color: $color-white-0;
+    //                     transition: 0.3s ease;
+    //                 }
+    //             }
+    //             &:hover {
+    //                 a {
+    //                     button {
+    //                         background-color: $color-red-2;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //         & .btn-like {
+    //             width: 50px;
+    //             height: 50px;
+    //             border: 1px solid $color-green;
+    //             border-radius: 50%;
+    //             display: flex;
+    //             align-items: center;
+    //             justify-content: center;
+    //             transition: 0.3s ease;
+    //             & .icon-heart {
+    //                 font-size: 24px;
+    //                 color: $color-green;
+    //                 transition: 0.3s ease;
+    //             }
+    //             &:hover {
+    //                 border-color: $color-green-dark;
+    //                 & .icon-heart {
+    //                     color: $color-green-dark;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     &::before {
+    //         content: "";
+    //         position: absolute;
+    //         top: 30%;
+    //         right: -10%;
+    //         border-style: solid;
+    //         border-width: 10px 20px;
+    //         border-color: transparent transparent transparent #fff;
+    //     }
+    //     &::after {
+    //         content: "";
+    //         position: absolute;
+    //         top: 0;
+    //         right: -10%;
+    //         height: 100%;
+    //         width: 10%;
+    //         background-color: transparent;
+    //     }
     // }
     // &:hover .hover {
     //     display: block;
+    // }
+    // &:hover#item4 .hover-last {
+    //     display: block;
+    // }
+    // &:hover#item4 .hover {
+    //     display: none;
+    // }
+    // &:hover#item5 .hover-last {
+    //     display: block;
+    // }
+    // &:hover#item5 .hover {
+    //     display: none;
+    // }
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@include responesive("extra-large") {
+    // .course-item {
+    //     min-width: 25%;
+    //     pointer-events: none;
+    // }
+}
+@include responesive("medium") {
+    // .course-item {
+    //     min-width: 33.33334%;
+    // }
+}
+@include responesive("small") {
+    // .course-item {
+    //     min-width: 100%;
     // }
 }

@@ -1,0 +1,16 @@
+.home {
+    & .tabs-mobile {
+        display: none;
+    }
+}
+
+@include responesive("small") {
+    .home {
+        & .tabs-pc {
+            display: none;
+        }
+        & .tabs-mobile {
+            display: block;
+        }
+    }
+}
