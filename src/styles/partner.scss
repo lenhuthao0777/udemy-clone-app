@@ -1,0 +1,40 @@
+.partner {
+    border-top: 1px solid #dcdacb;
+    border-bottom: 1px solid #dcdacb;
+    margin-top: 40px;
+    text-align: center;
+    &-content {
+        padding: 32px;
+        h1 {
+            font-size: 19px;
+            margin-bottom: 16px;
+            font-weight: 700;
+            color: $color-black-0;
+        }
+        &__img {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 0;
+            a {
+                img {
+                    margin-right: 30px;
+                    padding: 16px 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 668px) {
+    .partner {
+        margin-top: 0;
+        border: none;
+    }
+}
+@include responesive("small") {
+    .partner {
+        border: none;
+        margin: 0;
+    }
+}

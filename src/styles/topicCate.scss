@@ -47,10 +47,10 @@
     }
 }
 @include responesive("medium") {
-    .topic-cate {
-        &__list {
-        }
-    }
+    // .topic-cate {
+    //     &__list {
+    //     }
+    // }
 }
 @media screen and (max-width: 668px) {
     .topic-cate {

@@ -1,5 +1,4 @@
 import React from "react";
-import CourseItem from "src/components/courseItem/CourseItem";
 
 function HeadLine() {
 	return (

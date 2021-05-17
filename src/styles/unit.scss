@@ -61,21 +61,10 @@
 @include responesive("small") {
     .unit {
         &-content {
-            padding: 0 42px;
+            // padding: 0 42px;
             &__heading {
                 padding-left: 10px;
             }
         }
     }
 }
-// <div>
-// 								<CourseItem
-// 									clsName={"course-item"}
-// 									sale='sale-active'
-// 									image='./img/kh3.jpg'
-// 									courseName='PROMISING YOUNG WOMAN | Bông hồng nước Anh Carey Mulligan và màn trả thù đàn ông để đời'
-// 									author='PROMISING YOUNG WOMAN | Bông hồng nước Anh Carey Mulligan và màn trả thù đàn ông để đời'
-// 									view='1200'
-// 									price={"129.99"}
-// 								/>
-// 							</div>

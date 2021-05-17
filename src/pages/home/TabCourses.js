@@ -14,7 +14,7 @@ function TabCourses({ courses }) {
 		speed: 500,
 		slidesToShow: 5,
 		slidesToScroll: 4,
-		initialSlide: 5,
+		initialSlide: 0,
 		responsive: [
 			{
 				breakpoint: 1200,
@@ -121,21 +121,22 @@ function TabCourses({ courses }) {
 							<Slider {...settings}>
 								{courses.map((item, index) => {
 									return (
-										<CourseItem
-											key={index}
-											clsName={"course-item"}
-											id={`item${index + 1}`}
-											sale={`${
-												(index + 1) % 2 === 0
-													? "sale-active"
-													: ""
-											}`}
-											image={item.hinhAnh}
-											courseName={item.tenKhoaHoc}
-											author={item.moTa}
-											view={item.luotXem}
-											price={"129.99"}
-										/>
+										<div key={index}>
+											<CourseItem
+												clsName={"course-item"}
+												id={`item${index + 1}`}
+												sale={`${
+													(index + 1) % 2 === 0
+														? "sale-active"
+														: ""
+												}`}
+												image={item.hinhAnh}
+												courseName={item.tenKhoaHoc}
+												author={item.moTa}
+												view={item.luotXem}
+												price={"129.99"}
+											/>
+										</div>
 									);
 								})}
 							</Slider>

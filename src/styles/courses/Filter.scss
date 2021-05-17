@@ -1,0 +1,26 @@
+.filter {
+    &-heading {
+        display: flex;
+        align-items: center;
+        &__buttons {
+            .filter-btn {
+                display: flex;
+                align-items: center;
+                border: 1px solid $color-green;
+                padding: 10px 16px;
+                border-radius: 3px;
+                background-color: transparent;
+                .filter-icon {
+                    font-size: 24px;
+                    color: $color-green;
+                    margin-right: 5px;
+                }
+                p {
+                    font-size: 16px;
+                    color: $color-green;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

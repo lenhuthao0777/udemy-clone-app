@@ -1,0 +1,142 @@
+.video {
+    margin: 64px 0;
+    border-top: 1px solid #dcdacb;
+    padding-top: 64px;
+    &-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        iframe {
+            margin-right: 64px;
+            width: 560px;
+            height: 315px;
+        }
+        &__info {
+            width: 400px;
+            h1 {
+                font-size: 32px;
+                color: $color-black-0;
+                font-weight: 700;
+            }
+            p {
+                font-size: 19px;
+                color: $color-black-0;
+                line-height: 22px;
+                margin-top: 8px;
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .video {
+        &-content {
+            padding: 64px 24px 0 24px;
+            iframe {
+                width: 512px;
+                height: 288px;
+                margin-right: 24px;
+            }
+        }
+    }
+}
+
+@include responesive("medium") {
+    .video {
+        margin: 42px 0;
+        padding-top: 0;
+        &-content {
+            iframe {
+                width: 296px;
+                height: 165px;
+                margin-right: 24px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 668px) {
+    .video {
+        border: none;
+        padding-top: 0;
+        &-content {
+            padding: 0 24px 0 24px;
+            flex-direction: column;
+            iframe {
+                width: 619px;
+                height: 348px;
+                margin-right: 0;
+            }
+            &__info {
+                width: auto;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .video {
+        margin: 0;
+        &-content {
+            flex-direction: column;
+            padding: 42px 24px 42px 24px;
+            iframe {
+                width: 366px;
+                height: 205px;
+                margin-right: 0;
+            }
+            &__info {
+                width: auto;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 569px) {
+    .video {
+        &-content {
+            margin-top: 0;
+            iframe {
+                width: 520px;
+                height: 292px;
+            }
+            &__info {
+                width: auto;
+                margin-top: 0;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 376px) {
+    .video {
+        &-content {
+            iframe {
+                width: 327px;
+                height: 183px;
+            }
+            &__info {
+                width: auto;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 321px) {
+    .video {
+        &-content {
+            margin-top: 0;
+            iframe {
+                width: 272px;
+                height: 153px;
+            }
+            &__info {
+                width: auto;
+                margin-top: 20px;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
