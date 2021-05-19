@@ -5,17 +5,17 @@ import { getCoursesByCategory } from "../../actions/courses";
 import SubCategory from "./SubCategory";
 import UdeCourses from "./UdeCourses";
 function Courses() {
-	const dispatch = useDispatch();
-	const { category } = useParams();
-	const { courses, isLoading, error } = useSelector(
-		(state) => state.coursesReducer
-	);
-	console.log(courses);
-	console.log(isLoading);
-	console.log(error);
-	useEffect(() => {
-		dispatch(getCoursesByCategory(category));
-	}, [category]);
+	// const dispatch = useDispatch();
+	// const { category } = useParams();
+	// const { courses, isLoading, error } = useSelector(
+	// 	(state) => state.coursesReducer
+	// );
+	// console.log(courses);
+	// console.log(isLoading);
+	// console.log(error);
+	// useEffect(() => {
+	// 	dispatch(getCoursesByCategory(category));
+	// }, [category]);
 	return (
 		<div>
 			<SubCategory />

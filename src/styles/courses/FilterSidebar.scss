@@ -1,0 +1,172 @@
+.filter-sidebar {
+    width: 25%;
+    margin-right: 8px;
+    padding-right: 40px;
+    &__list {
+        &-item {
+            border-top: 1px solid #dcdacb;
+            &-heading {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 16px 0;
+                span {
+                    font-size: 19px;
+                    font-weight: 700;
+                    color: $color-black-0;
+                }
+                .filter-angle-icon {
+                    font-size: 20px;
+                    color: $color-black-0;
+                    transition: all 0.3s;
+                    &.active {
+                        transform: rotate(-180deg);
+                    }
+                }
+            }
+            .filter-sidebar__list-dropdown {
+                display: none;
+                animation: fadeIn ease-in 0.3s;
+                &.active {
+                    display: block;
+                }
+                &-item {
+                    padding: 8px 0;
+                    &#menu1 {
+                        .filter-rated {
+                            display: flex;
+                            align-items: center;
+                            .radio {
+                                margin-right: 5px;
+                                input {
+                                    display: none;
+                                }
+                                &.active {
+                                    input[type="radio"] {
+                                        &:checked {
+                                            & ~ span::after {
+                                                transform: translate(-50%, -50%) scale(1);
+                                            }
+                                            & ~ span {
+                                                border-color: $color-green;
+                                            }
+                                        }
+                                    }
+                                }
+                                span {
+                                    width: 16px;
+                                    height: 16px;
+                                    border: 2px solid #dcdacb;
+                                    border-radius: 50%;
+                                    display: block;
+                                    position: relative;
+                                    transition: all 0.3s;
+                                    &::after {
+                                        content: "";
+                                        width: 8px;
+                                        height: 8px;
+                                        border-radius: 50%;
+                                        background-color: $color-green;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%) scale(0);
+                                        transition: 0.3s ease;
+                                    }
+                                }
+                            }
+                            .filter-star-icon-bold {
+                                font-size: 14px;
+                                color: #eb8a2f;
+                                margin-right: 1px;
+                            }
+                            .filter-star-icon-half {
+                                font-size: 14px;
+                                color: #eb8a2f;
+                            }
+                            .filter-star-icon-ountline {
+                                font-size: 14px;
+                                color: #eb8a2f;
+                            }
+                            .filter-label {
+                                font-size: 14px;
+                                color: $color-black-0;
+                                padding: 0 8px;
+                            }
+                            .filter-count {
+                                font-size: 14px;
+                                color: $color-black-2;
+                            }
+                        }
+                        &:hover .filter-rated .radio span {
+                            border: 2px solid #797667;
+                        }
+                        &:hover .filter-rated .radio input[type="radio"]:checked ~ span {
+                            border-color: #797667;
+                        }
+                    }
+                    .filter-choose {
+                        display: flex;
+                        align-items: center;
+                        .radio {
+                            position: relative;
+                            margin-right: 5px;
+                            input[type="radio"] {
+                                display: none;
+                                &:checked {
+                                    & ~ .filter-check-icon {
+                                        transform: translate(-50%, -50%) scale(1);
+                                    }
+                                    & ~ .radio-btn {
+                                        background-color: $color-green;
+                                        border: 2px solid $color-green;
+                                    }
+                                }
+                            }
+                            .radio-btn {
+                                width: 16px;
+                                height: 16px;
+                                border: 2px solid #dcdacb;
+                                display: block;
+                                position: relative;
+                                transition: all 0.3s;
+                                border-radius: 3px;
+                                &.active {
+                                    background-color: $color-green;
+                                    border: 2px solid $color-green;
+                                }
+                            }
+                            .filter-check-icon {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) scale(0);
+                                font-size: 12px;
+                                color: $color-white-0;
+                                // display: none;
+                                transition: 0.3s ease;
+                            }
+                        }
+                        .filter-label {
+                            font-size: 14px;
+                            color: $color-black-0;
+                            padding: 0 8px;
+                        }
+                        .filter-count {
+                            font-size: 14px;
+                            color: $color-black-2;
+                        }
+                    }
+                    &:hover .filter-choose .radio .radio-btn {
+                        border: 2px solid #797667;
+                    }
+                    &:hover .filter-choose .radio input[type="radio"]:checked ~ .radio-btn {
+                        background-color: $color-green-dark;
+                        border: 2px solid $color-green-dark;
+                    }
+                }
+            }
+        }
+    }
+}

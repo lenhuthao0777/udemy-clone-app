@@ -1,8 +1,12 @@
 .filter {
+    margin-bottom: 24px;
     &-heading {
         display: flex;
         align-items: center;
         &__buttons {
+            display: flex;
+            align-items: center;
+            width: 25%;
             .filter-btn {
                 display: flex;
                 align-items: center;
@@ -10,16 +14,38 @@
                 padding: 10px 16px;
                 border-radius: 3px;
                 background-color: transparent;
+                transition: 0.3s ease;
+                margin-right: 10px;
                 .filter-icon {
                     font-size: 24px;
                     color: $color-green;
                     margin-right: 5px;
+                    transition: 0.3s ease;
                 }
                 p {
                     font-size: 16px;
                     color: $color-green;
                     font-weight: 700;
+                    transition: 0.3s ease;
                 }
+                &:hover {
+                    border: 1px solid $color-green-dark;
+                    & .filter-icon {
+                        color: $color-green-dark;
+                    }
+                    & p {
+                        color: $color-green-dark;
+                    }
+                }
+            }
+        }
+        &__result {
+            width: 75%;
+            text-align: right;
+            span {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-black-2;
             }
         }
     }
