@@ -2,6 +2,7 @@
     width: 25%;
     margin-right: 8px;
     padding-right: 40px;
+    // transform: translateX(-100%);
     &__list {
         &-item {
             border-top: 1px solid #dcdacb;
@@ -18,7 +19,7 @@
                 }
                 .filter-angle-icon {
                     font-size: 20px;
-                    color: $color-black-0;
+                    color: $color-black-2;
                     transition: all 0.3s;
                     &.active {
                         transform: rotate(-180deg);
@@ -28,6 +29,7 @@
             .filter-sidebar__list-dropdown {
                 display: none;
                 animation: fadeIn ease-in 0.3s;
+                padding: 8px 0 16px 0;
                 &.active {
                     display: block;
                 }
@@ -37,6 +39,7 @@
                         .filter-rated {
                             display: flex;
                             align-items: center;
+                            cursor: pointer;
                             .radio {
                                 margin-right: 5px;
                                 input {
@@ -62,6 +65,7 @@
                                     display: block;
                                     position: relative;
                                     transition: all 0.3s;
+                                    cursor: pointer;
                                     &::after {
                                         content: "";
                                         width: 8px;

@@ -84,18 +84,207 @@ function ListCourses() {
 		},
 		{
 			id: 15,
-			name: "Javascript",
-			count: 596,
+			name: "ASP.NET Core",
+			count: 125,
 		},
 		{
-			id: 1,
-			name: "Javascript",
-			count: 596,
+			id: 16,
+			name: "Python",
+			count: 123,
 		},
 		{
+			id: 17,
+			name: "Java",
+			count: 98,
+		},
+	];
+	const subCate = [
+		{
 			id: 1,
-			name: "Javascript",
-			count: 596,
+			name: "Web development",
+			count: "7,676",
+		},
+		{
+			id: 2,
+			name: "IT certification",
+			count: "2",
+		},
+		{
+			id: 3,
+			name: "Programming languages",
+			count: "2",
+		},
+		{
+			id: 4,
+			name: "Development tool",
+			count: "1",
+		},
+	];
+	const level = [
+		{
+			id: 1,
+			name: "All level",
+			count: "3,617",
+		},
+		{
+			id: 2,
+			name: "Beginner",
+			count: "2,704",
+		},
+		{
+			id: 3,
+			name: "Intermediate",
+			count: "1,229",
+		},
+		{
+			id: 4,
+			name: "Confirmed",
+			count: "130",
+		},
+	];
+	const languages = [
+		{ code: "ab", name: "Abkhazian" },
+		{ code: "aa", name: "Afar" },
+		{ code: "af", name: "Afrikaans" },
+		{ code: "ak", name: "Akan" },
+		{ code: "sq", name: "Albanian" },
+		{ code: "am", name: "Amharic" },
+		{ code: "ar", name: "Arabic" },
+		{ code: "an", name: "Aragonese" },
+		{ code: "hy", name: "Armenian" },
+		{ code: "as", name: "Assamese" },
+		{ code: "av", name: "Avaric" },
+		{ code: "ae", name: "Avestan" },
+		{ code: "ay", name: "Aymara" },
+		{ code: "az", name: "Azerbaijani" },
+		{ code: "bm", name: "Bambara" },
+		{ code: "ba", name: "Bashkir" },
+		{ code: "eu", name: "Basque" },
+		{ code: "be", name: "Belarusian" },
+		{ code: "bn", name: "Bengali" },
+		{ code: "bh", name: "Bihari languages" },
+		{ code: "bi", name: "Bislama" },
+		{ code: "bs", name: "Bosnian" },
+		{ code: "br", name: "Breton" },
+		{ code: "bg", name: "Bulgarian" },
+		{ code: "my", name: "Burmese" },
+		{ code: "ca", name: "Catalan, Valencian" },
+		{ code: "km", name: "Central Khmer" },
+		{ code: "ch", name: "Chamorro" },
+		{ code: "ce", name: "Chechen" },
+		{ code: "ny", name: "Chichewa, Chewa, Nyanja" },
+		{ code: "zh", name: "Chinese" },
+		{ code: "cv", name: "Chuvash" },
+		{ code: "kw", name: "Cornish" },
+		{ code: "co", name: "Corsican" },
+		{ code: "cr", name: "Cree" },
+		{ code: "hr", name: "Croatian" },
+		{ code: "cs", name: "Czech" },
+		{ code: "da", name: "Danish" },
+		{ code: "dv", name: "Divehi, Dhivehi, Maldivian" },
+		{ code: "nl", name: "Dutch, Flemish" },
+		{ code: "dz", name: "Dzongkha" },
+		{ code: "en", name: "English" },
+		{ code: "eo", name: "Esperanto" },
+		{ code: "et", name: "Estonian" },
+		{ code: "ie", name: "Interlingue" },
+		{ code: "iu", name: "Inuktitut" },
+		{ code: "ik", name: "Inupiaq" },
+		{ code: "ga", name: "Irish" },
+		{ code: "it", name: "Italian" },
+		{ code: "ja", name: "Japanese" },
+		{ code: "jv", name: "Javanese" },
+		{ code: "kn", name: "Kannada" },
+		{ code: "kr", name: "Kanuri" },
+	];
+	const features = [
+		{
+			id: 1,
+			name: "Subtitles",
+			count: "5,262",
+		},
+		{
+			id: 2,
+			name: "Questionnaires",
+			count: "1,326",
+		},
+		{
+			id: 3,
+			name: "Coding exercises",
+			count: "143",
+		},
+		{
+			id: 4,
+			name: "Practical exercises",
+			count: "152",
+		},
+	];
+	const subtitles = [
+		{
+			name: "Mandarin Chinese",
+		},
+		{
+			name: "Spanish",
+		},
+		{
+			name: "English",
+		},
+		{
+			name: "Hindi/Urdu",
+		},
+		{
+			name: "Arabic",
+		},
+		{
+			name: "Bengali",
+		},
+		{
+			name: "Portuguese",
+		},
+		{
+			name: "Russian",
+		},
+		{
+			name: "Japanese",
+		},
+		{
+			name: "German",
+		},
+		{
+			name: "Javanese",
+		},
+		{
+			name: "Punjabi",
+		},
+		{
+			name: "Wu",
+		},
+		{
+			name: "French",
+		},
+		{
+			name: "Telugu",
+		},
+		{
+			name: "Vietnamese",
+		},
+		{
+			name: "Marathi",
+		},
+		{
+			name: "Korean",
+		},
+		{
+			name: "Tamil",
+		},
+		{
+			name: "Italian",
+		},
+		{
+			name: "Turkish",
+		},
+		{
+			name: "Cantonese/Yue",
 		},
 	];
 	const [radio, setRadio] = useState(1);
@@ -268,58 +457,180 @@ function ListCourses() {
 							<FaAngleDown className='filter-angle-icon active' />
 						</div>
 						<ul className='filter-sidebar__list-dropdown active'>
-							<li className='filter-sidebar__list-dropdown-item'>
-								<div className='filter-choose'>
-									<label className='radio'>
-										<input type='radio' />
-										<span className='radio-btn'></span>
-										<FiCheck className='filter-check-icon' />
-									</label>
-									<span className='filter-label'>
-										0-3 hours
-									</span>
-									<span className='filter-count'>(571)</span>
-								</div>
-							</li>
-							<li className='filter-sidebar__list-dropdown-item'>
-								<div className='filter-choose'>
-									<label className='radio'>
-										<input type='radio' />
-										<span className='radio-btn'></span>
-										<FiCheck className='filter-check-icon' />
-									</label>
-									<span className='filter-label'>
-										3-6 hours
-									</span>
-									<span className='filter-count'>(571)</span>
-								</div>
-							</li>
-							<li className='filter-sidebar__list-dropdown-item'>
-								<div className='filter-choose'>
-									<label className='radio'>
-										<input type='radio' />
-										<span className='radio-btn'></span>
-										<FiCheck className='filter-check-icon' />
-									</label>
-									<span className='filter-label'>
-										6-17 hours
-									</span>
-									<span className='filter-count'>(571)</span>
-								</div>
-							</li>
-							<li className='filter-sidebar__list-dropdown-item'>
-								<div className='filter-choose'>
-									<label className='radio'>
-										<input type='radio' />
-										<span className='radio-btn'></span>
-										<FiCheck className='filter-check-icon' />
-									</label>
-									<span className='filter-label'>
-										More than 17 hours
-									</span>
-									<span className='filter-count'>(571)</span>
-								</div>
-							</li>
+							{theme.map((item, index) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={index}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												({item.count})
+											</span>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+					<li className='filter-sidebar__list-item'>
+						<div className='filter-sidebar__list-item-heading'>
+							<span>Sub-category</span>
+							<FaAngleDown className='filter-angle-icon active' />
+						</div>
+						<ul className='filter-sidebar__list-dropdown active'>
+							{subCate.map((item) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={item.id}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												({item.count})
+											</span>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+					<li className='filter-sidebar__list-item'>
+						<div className='filter-sidebar__list-item-heading'>
+							<span>Level</span>
+							<FaAngleDown className='filter-angle-icon active' />
+						</div>
+						<ul className='filter-sidebar__list-dropdown active'>
+							{level.map((item) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={item.id}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												({item.count})
+											</span>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+					<li className='filter-sidebar__list-item'>
+						<div className='filter-sidebar__list-item-heading'>
+							<span>Languages</span>
+							<FaAngleDown className='filter-angle-icon active' />
+						</div>
+						<ul className='filter-sidebar__list-dropdown active'>
+							{languages.map((item, index) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={index}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												(
+												{Math.floor(
+													Math.random() * 10000
+												)}
+												)
+											</span>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+					<li className='filter-sidebar__list-item'>
+						<div className='filter-sidebar__list-item-heading'>
+							<span>Features</span>
+							<FaAngleDown className='filter-angle-icon active' />
+						</div>
+						<ul className='filter-sidebar__list-dropdown active'>
+							{features.map((item) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={item.id}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												({item.count})
+											</span>
+										</div>
+									</li>
+								);
+							})}
+						</ul>
+					</li>
+					<li className='filter-sidebar__list-item'>
+						<div className='filter-sidebar__list-item-heading'>
+							<span>Subtitles</span>
+							<FaAngleDown className='filter-angle-icon active' />
+						</div>
+						<ul className='filter-sidebar__list-dropdown active'>
+							{subtitles.map((item, index) => {
+								return (
+									<li
+										className='filter-sidebar__list-dropdown-item'
+										key={index}>
+										<div className='filter-choose'>
+											<label className='radio'>
+												<input type='radio' />
+												<span className='radio-btn'></span>
+												<FiCheck className='filter-check-icon' />
+											</label>
+											<span className='filter-label'>
+												{item.name}
+											</span>
+											<span className='filter-count'>
+												(
+												{Math.floor(
+													Math.random() * 10000
+												)}
+												)
+											</span>
+										</div>
+									</li>
+								);
+							})}
 						</ul>
 					</li>
 				</ul>
