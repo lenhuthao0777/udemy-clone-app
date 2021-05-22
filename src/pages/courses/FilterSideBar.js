@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { FaAngleDown } from "react-icons/fa";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
-import { FiCheck } from "react-icons/fi";
-function FilterSideBar() {
-	const [showDropdown, setShowDropdown] = useState(false);
-	const showSubNav = () => setShowDropdown(!showDropdown);
+import SubMenu from "./SubMenu";
+function FilterSideBar({ sidebar }) {
 	const sideBarData = [
 		{
 			id: 1,
 			title: "Notes",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: true,
 			subNav: [
 				{
@@ -27,9 +28,7 @@ function FilterSideBar() {
 					icon2: <IoMdStar className='filter-star-icon-bold' />,
 					icon3: <IoMdStar className='filter-star-icon-bold' />,
 					icon4: <IoMdStar className='filter-star-icon-bold' />,
-					icon5: (
-						<IoMdStarOutline className='filter-star-icon-ountline' />
-					),
+					icon5: <IoMdStarOutline className='filter-star-icon-ountline' />,
 					subNavTitle: "From 4",
 					count: Math.floor(Math.random() * 1000),
 				},
@@ -40,9 +39,7 @@ function FilterSideBar() {
 					icon2: <IoMdStar className='filter-star-icon-bold' />,
 					icon3: <IoMdStar className='filter-star-icon-bold' />,
 					icon4: <IoMdStarHalf className='filter-star-icon-half' />,
-					icon5: (
-						<IoMdStarOutline className='filter-star-icon-ountline' />
-					),
+					icon5: <IoMdStarOutline className='filter-star-icon-ountline' />,
 					subNavTitle: "From 3.5",
 					count: Math.floor(Math.random() * 1000),
 				},
@@ -52,12 +49,8 @@ function FilterSideBar() {
 					icon1: <IoMdStar className='filter-star-icon-bold' />,
 					icon2: <IoMdStar className='filter-star-icon-bold' />,
 					icon3: <IoMdStar className='filter-star-icon-bold' />,
-					icon4: (
-						<IoMdStarOutline className='filter-star-icon-ountline' />
-					),
-					icon5: (
-						<IoMdStarOutline className='filter-star-icon-ountline' />
-					),
+					icon4: <IoMdStarOutline className='filter-star-icon-ountline' />,
+					icon5: <IoMdStarOutline className='filter-star-icon-ountline' />,
 
 					subNavTitle: "From 3",
 					count: Math.floor(Math.random() * 1000),
@@ -67,6 +60,9 @@ function FilterSideBar() {
 		{
 			id: 2,
 			title: "Video duration",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: true,
 			subNav: [
 				{
@@ -94,6 +90,9 @@ function FilterSideBar() {
 		{
 			id: 3,
 			title: "Theme",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -186,6 +185,9 @@ function FilterSideBar() {
 		{
 			id: 4,
 			title: "Sub-category",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -213,6 +215,9 @@ function FilterSideBar() {
 		{
 			id: 5,
 			title: "Level",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -240,6 +245,9 @@ function FilterSideBar() {
 		{
 			id: 6,
 			title: "Languages",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -362,6 +370,9 @@ function FilterSideBar() {
 		{
 			id: 7,
 			title: "Features",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -389,6 +400,9 @@ function FilterSideBar() {
 		{
 			id: 8,
 			title: "Subtitles",
+			icon: <FaAngleDown className='filter-angle-icon' />,
+			iconOpen: <FaAngleUp className='filter-angle-icon' />,
+			iconClose: <FaAngleDown className='filter-angle-icon' />,
 			isOpen: false,
 			subNav: [
 				{
@@ -504,73 +518,13 @@ function FilterSideBar() {
 			],
 		},
 	];
-
 	return (
-		<div className='filter-sidebar'>
+		<div className={`filter-sidebar ${sidebar ? "close" : ""}`}>
 			<div className='filter-sidebar__list'>
 				{sideBarData.map((item) => {
 					return (
-						<div
-							className='filter-sidebar__list-item'
-							id={`menu${item.id}`}
-							key={item.id}>
-							<div
-								className='filter-sidebar__list-item-heading'
-								onClick={item.subNav && showSubNav}>
-								<span>{item.title}</span>
-								<FaAngleDown className='filter-angle-icon' />
-								{/* them active vao icon */}
-							</div>
-							<div className={`filter-sidebar__list-dropdown`}>
-								<div className='hidden-show-more'>
-									{showDropdown &&
-										item.subNav.map((itemSubNav) => {
-											return (
-												<div
-													className='filter-sidebar__list-dropdown-item'
-													key={itemSubNav.id}>
-													<div className='filter-rated'>
-														<label
-															className={`radio active`}>
-															<input type='radio' />
-															<span></span>
-															<FiCheck className='filter-check-icon' />
-														</label>
-														{itemSubNav.icon1
-															? itemSubNav.icon1
-															: null}
-														{itemSubNav.icon2
-															? itemSubNav.icon2
-															: null}
-														{itemSubNav.icon3
-															? itemSubNav.icon3
-															: null}
-														{itemSubNav.icon4
-															? itemSubNav.icon4
-															: null}
-														{itemSubNav.icon5
-															? itemSubNav.icon5
-															: null}
-														<span className='filter-label'>
-															{
-																itemSubNav.subNavTitle
-															}
-														</span>
-														<span className='filter-count'>
-															({itemSubNav.count})
-														</span>
-													</div>
-												</div>
-											);
-										})}
-								</div>
-								{/* {item.subNav.length > 4 ? (
-									<div className='show-more'>
-										<p>Show more</p>
-										<FaAngleDown className='show-more-icon ' />
-									</div>
-								) : null} */}
-							</div>
+						<div className='filter-sidebar__list-item' id={`menu${item.id}`} key={item.id}>
+							<SubMenu item={item} />
 						</div>
 					);
 				})}

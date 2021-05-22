@@ -108,6 +108,24 @@
         }
     }
 }
+@media screen and (max-width: 414px) {
+    .video {
+        &-content {
+            margin-top: 0;
+            iframe {
+                width: 366px;
+                height: 205px;
+            }
+            &__info {
+                width: auto;
+                margin-top: 0;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
 @media screen and (max-width: 376px) {
     .video {
         &-content {

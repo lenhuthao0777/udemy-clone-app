@@ -1,2 +1,9 @@
 .ude-courses {
+    .list-cuorses {
+        display: flex;
+        margin-bottom: 40px;
+        .filter-courses-list {
+            width: 75%;
+        }
+    }
 }

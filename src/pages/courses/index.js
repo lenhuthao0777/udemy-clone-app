@@ -23,9 +23,7 @@ function Courses() {
 				<h1 className='courses-heading'>Web development courses</h1>
 			</div>
 			<div className='container'>
-				<div className='ude-courses__heading'>
-					All courses in the category Web Development
-				</div>
+				<div className='ude-courses__heading'>All courses in the category Web Development</div>
 				<UdeCourses />
 			</div>
 		</div>
