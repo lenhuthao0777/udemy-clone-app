@@ -3,67 +3,62 @@ import { FaAngleDown } from "react-icons/fa";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import { FiCheck } from "react-icons/fi";
 function FilterSideBar() {
-	const [menu1, setMenu1] = useState(true);
-	// const [menu2, setMenu2] = useState(2);
-	// const [menu3, setMenu3] = useState(3);
-	// const [menu4, setMenu4] = useState(4);
-	// const [menu5, setMenu5] = useState(5);
-	// const [menu6, setMenu6] = useState(6);
-	// const [menu7, setMenu7] = useState(7);
-	// const [menu8, setMenu8] = useState(8);
-	const [radio, setRadio] = useState(1);
-	const [subNavs, setSubNavs] = useState(false);
+	const [showDropdown, setShowDropdown] = useState(false);
+	const showSubNav = () => setShowDropdown(!showDropdown);
 	const sideBarData = [
 		{
 			id: 1,
 			title: "Notes",
-			show: false,
+			isOpen: true,
 			subNav: [
 				{
-					id: 1,
-					icon: [
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStarHalf className='filter-star-icon-half' />,
-					],
+					id: 11,
+					icon1: <IoMdStar className='filter-star-icon-bold' />,
+					icon2: <IoMdStar className='filter-star-icon-bold' />,
+					icon3: <IoMdStar className='filter-star-icon-bold' />,
+					icon4: <IoMdStar className='filter-star-icon-bold' />,
+					icon5: <IoMdStarHalf className='filter-star-icon-half' />,
 					subNavTitle: "From 4.5",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 2,
-					icon: [
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStarOutline className='filter-star-icon-ountline' />,
-					],
+					id: 22,
+					icon1: <IoMdStar className='filter-star-icon-bold' />,
+					icon2: <IoMdStar className='filter-star-icon-bold' />,
+					icon3: <IoMdStar className='filter-star-icon-bold' />,
+					icon4: <IoMdStar className='filter-star-icon-bold' />,
+					icon5: (
+						<IoMdStarOutline className='filter-star-icon-ountline' />
+					),
 					subNavTitle: "From 4",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 3,
-					icon: [
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStarHalf className='filter-star-icon-half' />,
-						<IoMdStarOutline className='filter-star-icon-ountline' />,
-					],
+					id: 33,
+
+					icon1: <IoMdStar className='filter-star-icon-bold' />,
+					icon2: <IoMdStar className='filter-star-icon-bold' />,
+					icon3: <IoMdStar className='filter-star-icon-bold' />,
+					icon4: <IoMdStarHalf className='filter-star-icon-half' />,
+					icon5: (
+						<IoMdStarOutline className='filter-star-icon-ountline' />
+					),
 					subNavTitle: "From 3.5",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 4,
-					icon: [
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStar className='filter-star-icon-bold' />,
-						<IoMdStarOutline className='filter-star-icon-ountline' />,
-						<IoMdStarOutline className='filter-star-icon-ountline' />,
-					],
+					id: 44,
+
+					icon1: <IoMdStar className='filter-star-icon-bold' />,
+					icon2: <IoMdStar className='filter-star-icon-bold' />,
+					icon3: <IoMdStar className='filter-star-icon-bold' />,
+					icon4: (
+						<IoMdStarOutline className='filter-star-icon-ountline' />
+					),
+					icon5: (
+						<IoMdStarOutline className='filter-star-icon-ountline' />
+					),
+
 					subNavTitle: "From 3",
 					count: Math.floor(Math.random() * 1000),
 				},
@@ -72,25 +67,25 @@ function FilterSideBar() {
 		{
 			id: 2,
 			title: "Video duration",
-			show: false,
+			isOpen: true,
 			subNav: [
 				{
-					id: 1,
+					id: 11,
 					subNavTitle: "0-3 hours",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 2,
+					id: 22,
 					subNavTitle: "3-6 hours",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 3,
+					id: 33,
 					subNavTitle: "6-17 hours",
 					count: Math.floor(Math.random() * 1000),
 				},
 				{
-					id: 1,
+					id: 44,
 					subNavTitle: "More than 17 hours",
 					count: Math.floor(Math.random() * 1000),
 				},
@@ -99,90 +94,90 @@ function FilterSideBar() {
 		{
 			id: 3,
 			title: "Theme",
-			show: true,
+			isOpen: false,
 			subNav: [
 				{
-					id: 1,
+					id: 11,
 					subNavTitle: "Javascript",
 					count: 596,
 				},
 				{
-					id: 2,
+					id: 22,
 					subNavTitle: "Web development",
 					count: 564,
 				},
 				{
-					id: 3,
+					id: 33,
 					subNavTitle: "PHP language",
 					count: 473,
 				},
 				{
-					id: 4,
+					id: 44,
 					subNavTitle: "WordPress",
 					count: 470,
 				},
 				{
-					id: 5,
+					id: 55,
 					subNavTitle: "React",
 					count: 372,
 				},
 				{
-					id: 6,
+					id: 66,
 					subNavTitle: "CSS",
 					count: 315,
 				},
 				{
-					id: 7,
+					id: 77,
 					subNavTitle: "HTML language",
 					count: 281,
 				},
 				{
-					id: 8,
+					id: 88,
 					subNavTitle: "Angular application framework",
 					count: 241,
 				},
 				{
-					id: 9,
+					id: 99,
 					subNavTitle: "Laravel",
 					count: 236,
 				},
 				{
-					id: 10,
+					id: 100,
 					subNavTitle: "NodeJs",
 					count: 226,
 				},
 				{
-					id: 11,
+					id: 111,
 					subNavTitle: "Bootstrap",
 					count: 201,
 				},
 				{
-					id: 12,
+					id: 122,
 					subNavTitle: "Django",
 					count: 177,
 				},
 				{
-					id: 13,
+					id: 133,
 					subNavTitle: "VueJs application framework",
 					count: 145,
 				},
 				{
-					id: 14,
+					id: 144,
 					subNavTitle: "Front-end web development",
 					count: 140,
 				},
 				{
-					id: 15,
+					id: 155,
 					subNavTitle: "ASP.NET Core",
 					count: 125,
 				},
 				{
-					id: 16,
+					id: 166,
 					subNavTitle: "Python",
 					count: 123,
 				},
 				{
-					id: 17,
+					id: 177,
 					subNavTitle: "Java",
 					count: 98,
 				},
@@ -191,25 +186,25 @@ function FilterSideBar() {
 		{
 			id: 4,
 			title: "Sub-category",
-			show: false,
+			isOpen: false,
 			subNav: [
 				{
-					id: 1,
+					id: 11,
 					subNavTitle: "Web development",
 					count: "7,676",
 				},
 				{
-					id: 2,
+					id: 22,
 					subNavTitle: "IT certification",
 					count: "2",
 				},
 				{
-					id: 3,
+					id: 33,
 					subNavTitle: "Programming languages",
 					count: "2",
 				},
 				{
-					id: 4,
+					id: 44,
 					subNavTitle: "Development tool",
 					count: "1",
 				},
@@ -218,25 +213,25 @@ function FilterSideBar() {
 		{
 			id: 5,
 			title: "Level",
-			show: false,
+			isOpen: false,
 			subNav: [
 				{
-					id: 1,
+					id: 11,
 					subNavTitle: "All level",
 					count: "3,617",
 				},
 				{
-					id: 2,
+					id: 22,
 					subNavTitle: "Beginner",
 					count: "2,704",
 				},
 				{
-					id: 3,
+					id: 33,
 					subNavTitle: "Intermediate",
 					count: "1,229",
 				},
 				{
-					id: 4,
+					id: 44,
 					subNavTitle: "Confirmed",
 					count: "130",
 				},
@@ -245,271 +240,121 @@ function FilterSideBar() {
 		{
 			id: 6,
 			title: "Languages",
-			show: true,
+			isOpen: false,
 			subNav: [
 				{
-					code: "ab",
+					id: 11,
 					subNavTitle: "Abkhazian",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "aa",
+					id: 22,
 					subNavTitle: "Afar",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "af",
+					id: 33,
 					subNavTitle: "Afrikaans",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "ak",
+					id: 44,
 					subNavTitle: "Akan",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "sq",
+					id: 55,
 					subNavTitle: "Albanian",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "am",
+					id: 66,
 					subNavTitle: "Amharic",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "ar",
+					id: 77,
 					subNavTitle: "Arabic",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "an",
+					id: 88,
 					subNavTitle: "Aragonese",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "hy",
+					id: 99,
 					subNavTitle: "Armenian",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "as",
+					id: 100,
 					subNavTitle: "Assamese",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "av",
+					id: 111,
 					subNavTitle: "Avaric",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "ae",
+					id: 122,
 					subNavTitle: "Avestan",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "ay",
+					id: 133,
 					subNavTitle: "Aymara",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "az",
+					id: 144,
 					subNavTitle: "Azerbaijani",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "bm",
+					id: 155,
 					subNavTitle: "Bambara",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "ba",
+					id: 166,
 					subNavTitle: "Bashkir",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "eu",
+					id: 177,
 					subNavTitle: "Basque",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "be",
+					id: 188,
 					subNavTitle: "Belarusian",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "bn",
+					id: 199,
 					subNavTitle: "Bengali",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "bh",
+					id: 200,
 					subNavTitle: "Bihari languages",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "bi",
+					id: 211,
 					subNavTitle: "Bislama",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "bs",
+					id: 222,
 					subNavTitle: "Bosnian",
 					count: Math.floor(Math.random() * 10000),
 				},
 				{
-					code: "br",
+					id: 233,
 					subNavTitle: "Breton",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "bg",
-					subNavTitle: "Bulgarian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "my",
-					subNavTitle: "Burmese",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ca",
-					subNavTitle: "Catalan, Valencian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "km",
-					subNavTitle: "Central Khmer",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ch",
-					subNavTitle: "Chamorro",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ce",
-					subNavTitle: "Chechen",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ny",
-					subNavTitle: "Chichewa, Chewa, Nyanja",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "zh",
-					subNavTitle: "Chinese",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "cv",
-					subNavTitle: "Chuvash",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "kw",
-					subNavTitle: "Cornish",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "co",
-					subNavTitle: "Corsican",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "cr",
-					subNavTitle: "Cree",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "hr",
-					subNavTitle: "Croatian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "cs",
-					subNavTitle: "Czech",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "da",
-					subNavTitle: "Danish",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "dv",
-					subNavTitle: "Divehi, Dhivehi, Maldivian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "nl",
-					subNavTitle: "Dutch, Flemish",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "dz",
-					subNavTitle: "Dzongkha",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "en",
-					subNavTitle: "English",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "eo",
-					subNavTitle: "Esperanto",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "et",
-					subNavTitle: "Estonian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ie",
-					subNavTitle: "Interlingue",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "iu",
-					subNavTitle: "Inuktitut",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ik",
-					subNavTitle: "Inupiaq",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ga",
-					subNavTitle: "Irish",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "it",
-					subNavTitle: "Italian",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "ja",
-					subNavTitle: "Japanese",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "jv",
-					subNavTitle: "Javanese",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "kn",
-					subNavTitle: "Kannada",
-					count: Math.floor(Math.random() * 10000),
-				},
-				{
-					code: "kr",
-					subNavTitle: "Kanuri",
 					count: Math.floor(Math.random() * 10000),
 				},
 			],
@@ -517,25 +362,25 @@ function FilterSideBar() {
 		{
 			id: 7,
 			title: "Features",
-			show: false,
+			isOpen: false,
 			subNav: [
 				{
-					id: 1,
+					id: 11,
 					subNavTitle: "Subtitles",
 					count: "5,262",
 				},
 				{
-					id: 2,
+					id: 22,
 					subNavTitle: "Questionnaires",
 					count: "1,326",
 				},
 				{
-					id: 3,
+					id: 33,
 					subNavTitle: "Coding exercises",
 					count: "143",
 				},
 				{
-					id: 4,
+					id: 44,
 					subNavTitle: "Practical exercises",
 					count: "152",
 				},
@@ -544,93 +389,115 @@ function FilterSideBar() {
 		{
 			id: 8,
 			title: "Subtitles",
-			show: true,
+			isOpen: false,
 			subNav: [
 				{
+					id: 11,
 					subNavTitle: "Mandarin Chinese",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 22,
 					subNavTitle: "Spanish",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 33,
 					subNavTitle: "English",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 44,
 					subNavTitle: "Hindi/Urdu",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 55,
 					subNavTitle: "Arabic",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 66,
 					subNavTitle: "Bengali",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 77,
 					subNavTitle: "Portuguese",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 88,
 					subNavTitle: "Russian",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 99,
 					subNavTitle: "Japanese",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 100,
 					subNavTitle: "German",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 111,
 					subNavTitle: "Javanese",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 122,
 					subNavTitle: "Punjabi",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 133,
 					subNavTitle: "Wu",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 144,
 					subNavTitle: "French",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 155,
 					subNavTitle: "Telugu",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 166,
 					subNavTitle: "Vietnamese",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 177,
 					subNavTitle: "Marathi",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 188,
 					subNavTitle: "Korean",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 199,
 					subNavTitle: "Tamil",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 200,
 					subNavTitle: "Italian",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 211,
 					subNavTitle: "Turkish",
 					count: Math.floor(Math.random() * 100),
 				},
 				{
+					id: 222,
 					subNavTitle: "Cantonese/Yue",
 					count: Math.floor(Math.random() * 100),
 				},
@@ -640,64 +507,74 @@ function FilterSideBar() {
 
 	return (
 		<div className='filter-sidebar'>
-			<ul className='filter-sidebar__list'>
-				{sideBarData.map((item, index) => {
+			<div className='filter-sidebar__list'>
+				{sideBarData.map((item) => {
 					return (
-						<li
+						<div
 							className='filter-sidebar__list-item'
-							key={item.id}
-							id={`menu${item.id}`}>
+							id={`menu${item.id}`}
+							key={item.id}>
 							<div
 								className='filter-sidebar__list-item-heading'
-								onClick={() => setMenu1(!menu1)}>
+								onClick={item.subNav && showSubNav}>
 								<span>{item.title}</span>
 								<FaAngleDown className='filter-angle-icon' />
 								{/* them active vao icon */}
 							</div>
-							<ul
-								className={`filter-sidebar__list-dropdown ${
-									menu1 ? "active open" : null
-								}`}>
-								{item.subNav.map((items, index) => {
-									return (
-										<li
-											className='filter-sidebar__list-dropdown-item'
-											key={index}
-											id='menu1'
-											onClick={() => setRadio(1)}>
-											<div className='filter-rated'>
-												<label
-													className={`radio ${
-														radio === 1
-															? "active"
-															: ""
-													}`}>
-													<input type='radio' />
-													<span></span>
-													<FiCheck className='filter-check-icon' />
-												</label>
-												{items.icon}
-												<span className='filter-label'>
-													{items.subNavTitle}
-												</span>
-												<span className='filter-count'>
-													({items.count})
-												</span>
-											</div>
-										</li>
-									);
-								})}
-								{/* {item.show ? (
+							<div className={`filter-sidebar__list-dropdown`}>
+								<div className='hidden-show-more'>
+									{showDropdown &&
+										item.subNav.map((itemSubNav) => {
+											return (
+												<div
+													className='filter-sidebar__list-dropdown-item'
+													key={itemSubNav.id}>
+													<div className='filter-rated'>
+														<label
+															className={`radio active`}>
+															<input type='radio' />
+															<span></span>
+															<FiCheck className='filter-check-icon' />
+														</label>
+														{itemSubNav.icon1
+															? itemSubNav.icon1
+															: null}
+														{itemSubNav.icon2
+															? itemSubNav.icon2
+															: null}
+														{itemSubNav.icon3
+															? itemSubNav.icon3
+															: null}
+														{itemSubNav.icon4
+															? itemSubNav.icon4
+															: null}
+														{itemSubNav.icon5
+															? itemSubNav.icon5
+															: null}
+														<span className='filter-label'>
+															{
+																itemSubNav.subNavTitle
+															}
+														</span>
+														<span className='filter-count'>
+															({itemSubNav.count})
+														</span>
+													</div>
+												</div>
+											);
+										})}
+								</div>
+								{/* {item.subNav.length > 4 ? (
 									<div className='show-more'>
 										<p>Show more</p>
 										<FaAngleDown className='show-more-icon ' />
 									</div>
 								) : null} */}
-							</ul>
-						</li>
+							</div>
+						</div>
 					);
 				})}
-			</ul>
+			</div>
 		</div>
 	);
 }

@@ -29,94 +29,96 @@
             }
             &#menu1 {
                 .filter-sidebar__list-dropdown {
-                    display: none;
+                    // display: none;
                     animation: fadeIn ease-in 0.3s;
-                    height: 152px;
                     margin: 8px 0 16px 0;
-                    overflow-y: hidden;
                     &.active {
                         display: block;
                         &.open {
                             height: 100%;
                         }
                     }
-                    &-item {
-                        padding: 10px 0;
-                        .filter-rated {
-                            display: flex;
-                            align-items: center;
-                            cursor: pointer;
-                            .radio {
-                                margin-right: 5px;
-                                input {
-                                    display: none;
-                                }
-                                &.active {
-                                    input[type="radio"] {
-                                        &:checked {
-                                            & ~ span::after {
-                                                transform: translate(-50%, -50%) scale(1);
-                                            }
-                                            & ~ span {
-                                                border-color: $color-green;
+                    .hidden-show-more {
+                        // height: 152px;
+                        // overflow-y: hidden;
+                        .filter-sidebar__list-dropdown-item {
+                            padding: 10px 0;
+                            .filter-rated {
+                                display: flex;
+                                align-items: center;
+                                cursor: pointer;
+                                .radio {
+                                    margin-right: 5px;
+                                    input {
+                                        display: none;
+                                    }
+                                    &.active {
+                                        input[type="radio"] {
+                                            &:checked {
+                                                & ~ span::after {
+                                                    transform: translate(-50%, -50%) scale(1);
+                                                }
+                                                & ~ span {
+                                                    border-color: $color-green;
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                span {
-                                    width: 16px;
-                                    height: 16px;
-                                    border: 2px solid #dcdacb;
-                                    border-radius: 50%;
-                                    display: block;
-                                    position: relative;
-                                    transition: all 0.3s;
-                                    cursor: pointer;
-                                    &::after {
-                                        content: "";
-                                        width: 8px;
-                                        height: 8px;
+                                    span {
+                                        width: 16px;
+                                        height: 16px;
+                                        border: 2px solid #dcdacb;
                                         border-radius: 50%;
-                                        background-color: $color-green;
-                                        position: absolute;
-                                        top: 50%;
-                                        left: 50%;
-                                        transform: translate(-50%, -50%) scale(0);
-                                        transition: 0.3s ease;
+                                        display: block;
+                                        position: relative;
+                                        transition: all 0.3s;
+                                        cursor: pointer;
+                                        &::after {
+                                            content: "";
+                                            width: 8px;
+                                            height: 8px;
+                                            border-radius: 50%;
+                                            background-color: $color-green;
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%) scale(0);
+                                            transition: 0.3s ease;
+                                        }
+                                    }
+                                    .filter-check-icon {
+                                        display: none;
                                     }
                                 }
-                                .filter-check-icon {
-                                    display: none;
+                                .filter-star-icon-bold {
+                                    font-size: 14px;
+                                    color: #eb8a2f;
+                                    margin-right: 1px;
+                                }
+                                .filter-star-icon-half {
+                                    font-size: 14px;
+                                    color: #eb8a2f;
+                                }
+                                .filter-star-icon-ountline {
+                                    font-size: 14px;
+                                    color: #eb8a2f;
+                                }
+                                .filter-label {
+                                    font-size: 14px;
+                                    color: $color-black-0;
+                                    padding: 0 8px;
+                                }
+                                .filter-count {
+                                    font-size: 14px;
+                                    color: $color-black-2;
                                 }
                             }
-                            .filter-star-icon-bold {
-                                font-size: 14px;
-                                color: #eb8a2f;
-                                margin-right: 1px;
+                            &:hover .filter-rated .radio span {
+                                border: 2px solid #797667;
                             }
-                            .filter-star-icon-half {
-                                font-size: 14px;
-                                color: #eb8a2f;
+                            &:hover .filter-rated .radio input[type="radio"]:checked ~ span {
+                                border-color: #797667;
                             }
-                            .filter-star-icon-ountline {
-                                font-size: 14px;
-                                color: #eb8a2f;
-                            }
-                            .filter-label {
-                                font-size: 14px;
-                                color: $color-black-0;
-                                padding: 0 8px;
-                            }
-                            .filter-count {
-                                font-size: 14px;
-                                color: $color-black-2;
-                            }
-                        }
-                        &:hover .filter-rated .radio span {
-                            border: 2px solid #797667;
-                        }
-                        &:hover .filter-rated .radio input[type="radio"]:checked ~ span {
-                            border-color: #797667;
                         }
                     }
                 }
@@ -129,108 +131,111 @@
             &#menu7,
             &#menu8 {
                 .filter-sidebar__list-dropdown {
-                    display: none;
+                    // display: none;
                     animation: fadeIn ease-in 0.3s;
-                    height: 180px;
                     margin: 8px 0 16px 0;
-                    overflow-y: hidden;
                     &.active {
                         display: block;
-                        &.open {
-                            height: 100%;
-                        }
                     }
-                    &-item {
-                        padding: 10px 0;
-                        .filter-rated {
-                            display: flex;
-                            align-items: center;
-                            .radio {
-                                position: relative;
-                                margin-right: 5px;
-                                input[type="radio"] {
-                                    display: none;
-                                    &:checked {
-                                        & ~ .filter-check-icon {
-                                            transform: translate(-50%, -50%) scale(1);
+                    .hidden-show-more {
+                        // height: 152px;
+                        // overflow-y: hidden;
+                        &.open {
+                            height: auto;
+                        }
+                        .filter-sidebar__list-dropdown-item {
+                            padding: 10px 0;
+                            .filter-rated {
+                                display: flex;
+                                align-items: center;
+                                .radio {
+                                    position: relative;
+                                    margin-right: 5px;
+                                    input[type="radio"] {
+                                        display: none;
+                                        &:checked {
+                                            & ~ .filter-check-icon {
+                                                transform: translate(-50%, -50%) scale(1);
+                                            }
+                                            & ~ span {
+                                                background-color: $color-green;
+                                                border: 2px solid $color-green;
+                                            }
                                         }
-                                        & ~ span {
+                                    }
+                                    span {
+                                        width: 16px;
+                                        height: 16px;
+                                        border: 2px solid #dcdacb;
+                                        display: block;
+                                        position: relative;
+                                        transition: all 0.3s;
+                                        border-radius: 3px;
+                                        &.active {
                                             background-color: $color-green;
                                             border: 2px solid $color-green;
                                         }
                                     }
-                                }
-                                span {
-                                    width: 16px;
-                                    height: 16px;
-                                    border: 2px solid #dcdacb;
-                                    display: block;
-                                    position: relative;
-                                    transition: all 0.3s;
-                                    border-radius: 3px;
-                                    &.active {
-                                        background-color: $color-green;
-                                        border: 2px solid $color-green;
+                                    .filter-check-icon {
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        transform: translate(-50%, -50%) scale(0);
+                                        font-size: 12px;
+                                        color: $color-white-0;
+                                        transition: 0.3s ease;
                                     }
                                 }
-                                .filter-check-icon {
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%) scale(0);
-                                    font-size: 12px;
-                                    color: $color-white-0;
-                                    transition: 0.3s ease;
+                                .filter-label {
+                                    font-size: 14px;
+                                    color: $color-black-0;
+                                    padding: 0 8px;
+                                }
+                                .filter-count {
+                                    font-size: 14px;
+                                    color: $color-black-2;
                                 }
                             }
-                            .filter-label {
-                                font-size: 14px;
-                                color: $color-black-0;
-                                padding: 0 8px;
+                            &:hover .filter-rated .radio span {
+                                border: 2px solid #797667;
                             }
-                            .filter-count {
-                                font-size: 14px;
-                                color: $color-black-2;
+                            &:hover .filter-rated .radio input[type="radio"]:checked ~ span {
+                                background-color: $color-green-dark;
+                                border: 2px solid $color-green-dark;
                             }
                         }
-                        &:hover .filter-rated .radio span {
-                            border: 2px solid #797667;
+                    }
+                    .show-more {
+                        margin: 20px 0;
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        p {
+                            font-size: 14px;
+                            font-weight: 700;
+                            padding-right: 15px;
+                            color: $color-green;
                         }
-                        &:hover .filter-rated .radio input[type="radio"]:checked ~ span {
-                            background-color: $color-green-dark;
-                            border: 2px solid $color-green-dark;
+                        .show-more-icon {
+                            font-size: 14px;
+                            color: $color-green;
+                            &.open {
+                                transform: rotate(-180deg);
+                            }
+                        }
+                        &:before {
+                            content: "";
+                            width: 100%;
+                            height: 30px;
+                            background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
+                            position: absolute;
+                            top: 178px;
+                            left: 0;
                         }
                     }
                 }
             }
-            .show-more {
-                margin-bottom: 20px;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                p {
-                    font-size: 14px;
-                    font-weight: 700;
-                    padding-right: 15px;
-                    color: $color-green;
-                }
-                .show-more-icon {
-                    font-size: 14px;
-                    color: $color-green;
-                    &.open {
-                        transform: rotate(-180deg);
-                    }
-                }
-                // &:before {
-                //     content: "";
-                //     width: 100%;
-                //     height: 30px;
-                //     background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8));
-                //     position: absolute;
-                //     top: 178px;
-                //     left: 0;
-                // }
-            }
+
             &:last-child {
                 border-bottom: 1px solid #dcdacb;
             }
