@@ -1,5 +1,6 @@
 .filter-sidebar {
     width: 25%;
+    height: auto;
     // background-color: #d3d3d3;
     transition: 0.3s ease-out;
     opacity: 1;
@@ -8,7 +9,19 @@
     // animation: fadeIn ease-out 0.3s;
     &.close {
         width: 0%;
+        height: 0%;
+        // transform: translateX(-100%);
         display: none;
         opacity: 0;
+    }
+    &__list {
+        &-item {
+            padding: 16px 0;
+            border-top: 1px solid #dcdacb;
+            cursor: pointer;
+            &:last-child {
+                border-bottom: 1px solid #dcdacb;
+            }
+        }
     }
 }
