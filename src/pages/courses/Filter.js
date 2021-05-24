@@ -5,8 +5,8 @@ function Filter({ ShowSidebar }) {
 	return (
 		<div className='filter'>
 			<div className='filter-heading'>
-				<div className='filter-heading__buttons' onClick={ShowSidebar}>
-					<button className='filter-btn'>
+				<div className='filter-heading__buttons'>
+					<button className='filter-btn' onClick={ShowSidebar}>
 						<BiMenuAltLeft className='filter-icon' />
 						<p>Filter</p>
 					</button>

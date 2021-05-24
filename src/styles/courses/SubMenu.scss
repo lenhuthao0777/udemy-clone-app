@@ -103,10 +103,11 @@
                 align-items: center;
                 .radio {
                     margin-right: 8px;
+                    position: relative;
                     input[type="radio"] {
                         display: none;
                         &:checked {
-                            & ~ span::before {
+                            & ~ .filter-check-icon {
                                 transform: translate(-50%, -50%) scale(1);
                             }
                             & ~ span {
@@ -120,12 +121,35 @@
                         border: 2px solid #dcdacb;
                         border-radius: 3px;
                         display: block;
-                        position: relative;
                         transition: all 0.3s ease;
                         cursor: pointer;
+                        position: relative;
                     }
                     .filter-check-icon {
                         display: block;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transition: all 0.3s ease;
+                        transform: translate(-50%, -50%) scale(0);
+                        font-size: 12px;
+                        color: $color-green;
+                    }
+                }
+                .filter-label {
+                    font-size: 14px;
+                    color: $color-black-0;
+                    padding-right: 8px;
+                }
+                .filter-count {
+                    font-size: 14px;
+                    color: $color-black-2;
+                }
+                &:hover {
+                    .radio {
+                        input[type="radio"]:checked ~ span {
+                            border-color: #dcdacb;
+                        }
                     }
                 }
             }

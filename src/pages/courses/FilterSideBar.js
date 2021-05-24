@@ -6,7 +6,7 @@ function FilterSideBar({ sidebar }) {
 	const sideBarData = [
 		{
 			id: 1,
-			title: "Notes",
+			title: "Ratings",
 			icon: <FaAngleDown className='filter-angle-icon' />,
 			iconOpen: <FaAngleUp className='filter-angle-icon' />,
 			iconClose: <FaAngleDown className='filter-angle-icon' />,
@@ -519,7 +519,7 @@ function FilterSideBar({ sidebar }) {
 		},
 	];
 	return (
-		<div className={`filter-sidebar ${sidebar ? "close" : ""}`}>
+		<div className={`filter-sidebar ${sidebar ? "ISclose" : ""}`}>
 			<div className='filter-sidebar__list'>
 				{sideBarData.map((item) => {
 					return (

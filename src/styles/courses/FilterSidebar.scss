@@ -1,17 +1,10 @@
 .filter-sidebar {
     width: 25%;
     height: auto;
-    // background-color: #d3d3d3;
     transition: 0.3s ease-out;
-    opacity: 1;
-    // pointer-events: none;
     padding-right: 40px;
-    // animation: fadeIn ease-out 0.3s;
-    &.close {
-        width: 0%;
-        height: 0%;
-        // transform: translateX(-100%);
-        display: none;
+    &.ISclose {
+        padding-right: 0;
         opacity: 0;
     }
     &__list {

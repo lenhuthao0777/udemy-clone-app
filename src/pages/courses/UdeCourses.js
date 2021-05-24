@@ -8,10 +8,12 @@ function UdeCourses() {
 	return (
 		<div className='ude-courses'>
 			<Filter ShowSidebar={ShowSidebar} />
-			<div className='list-cuorses'>
-				<FilterSideBar sidebar={sidebar} />
-				<div className='filter-courses-list'>
-					<h1>courses list</h1>
+			<div className={`ude-courses__list ${sidebar ? "isClose" : ""}`}>
+				<div className='list-cuorses'>
+					<FilterSideBar sidebar={sidebar} />
+					<div className='filter-courses-list'>
+						<h1>courses list</h1>
+					</div>
 				</div>
 			</div>
 		</div>

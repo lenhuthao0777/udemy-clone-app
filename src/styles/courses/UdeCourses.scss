@@ -1,9 +1,19 @@
 .ude-courses {
-    .list-cuorses {
-        display: flex;
-        margin-bottom: 40px;
-        .filter-courses-list {
-            width: 75%;
+    overflow: hidden;
+    &__list {
+        width: 100%;
+        transition: 0.3s ease;
+        &.isClose {
+            width: calc(100% + 27rem);
+            transform: translateX(-27rem);
+        }
+        .list-cuorses {
+            display: flex;
+            margin-bottom: 40px;
+            overflow: hidden;
+            .filter-courses-list {
+                width: 75%;
+            }
         }
     }
 }
