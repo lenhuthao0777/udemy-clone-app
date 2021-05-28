@@ -50,3 +50,8 @@
         }
     }
 }
+@include responesive("extra-large") {
+    .filter {
+        // padding: 0 24px;
+    }
+}

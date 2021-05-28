@@ -10,3 +10,12 @@
     color: $color-black-0;
     margin-bottom: 20px;
 }
+
+@include responesive("extra-large") {
+    .courses-heading {
+        padding: 0 24px;
+    }
+    .ude-courses__heading {
+        padding: 0 24px;
+    }
+}

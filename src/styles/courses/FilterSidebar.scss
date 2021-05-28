@@ -1,10 +1,9 @@
 .filter-sidebar {
-    width: 25%;
+    width: 335px;
     height: auto;
-    transition: 0.3s ease-out;
-    padding-right: 40px;
+    // transition: 0.3s ease-out;
+    margin-right: 40px;
     &.ISclose {
-        padding-right: 0;
         opacity: 0;
     }
     &__list {
@@ -15,6 +14,20 @@
             &:last-child {
                 border-bottom: 1px solid #dcdacb;
             }
+        }
+    }
+}
+@include responesive("medium") {
+    .filter-sidebar {
+        position: fixed;
+        top: 0;
+        right: -310px;
+        width: 35%;
+        height: 100vh;
+        background-color: #d3d3d3;
+        z-index: 100001;
+        &.ISclose {
+            transform: translateX(310px);
         }
     }
 }
