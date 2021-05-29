@@ -17,7 +17,7 @@ function UdeCourses() {
 					</div>
 				</div>
 			</div>
-			<FilterSidebarMobile/>
+			<FilterSidebarMobile sidebar={sidebar}/>
 		</div>
 	);
 }

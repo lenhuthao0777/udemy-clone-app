@@ -22,28 +22,27 @@
         padding: 0 24px;
         &__list {
             transition: 0.3s ease;
-            // &.isClose {
-            //     width: calc(100% + 22rem);
-            //     transform: translateX(-22rem);
+            &.isClose {
+                width: calc(100% + 22rem);
+                transform: translateX(-20rem);
                 
-            // }
+            }
         }
     }
 }
-// @include responesive("medium") {
-//     .ude-courses {
-//         padding: 0 24px;
-//         &__list {
-//             transition: 0.3s ease;
-//             &.isClose {
-//                 width: calc(100%);
-//                 transform: translateX(0);
-//                 .list-cuorses {
-//                    .filter-courses-list{
-//                        width:100%;
-//                    }
-//                 }
-//             }
-//         }
-//     }
-// }
+@include responesive("medium") {
+    .ude-courses {
+        padding: 0 24px;
+        &__list {
+            &.isClose {
+                width: calc(100%);
+                transform: translateX(0);
+                .list-cuorses {
+                   .filter-courses-list{
+                       width:100%;
+                   }
+                }
+            }
+        }
+    }
+}

@@ -18,19 +18,9 @@
   }
 }
 @include responesive("medium") {
-//   .filter-sidebar {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     height: 100vh;
-//     width: 400px;
-//     background-color: $color-white-0;
-//     z-index: 100002;
-//     padding: 24px;
-//     transform: translateX(-100%);
-//     &.ISclose {
-//       transform: translateX(0%);
-//     }
+  .filter-sidebar {
+    display: none;
+    }
 
 //   }
 //   .overlay{

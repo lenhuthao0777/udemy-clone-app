@@ -1,158 +1,192 @@
 .submenu {
-    &-heading {
+  &-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: $color-black-0;
+    }
+    &__icon {
+      .filter-angle-icon {
+        font-size: 20px;
+        color: $color-black-2;
+      }
+    }
+  }
+  &-dropdown {
+    &#dropdown-1 {
+      .submenu-dropdown__item {
+        padding: 16px 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        h3 {
-            font-size: 19px;
-            font-weight: 700;
-            color: $color-black-0;
-        }
-        &__icon {
-            .filter-angle-icon {
-                font-size: 20px;
-                color: $color-black-2;
+        .radio {
+          margin-right: 8px;
+          input[type="radio"] {
+            display: none;
+            &:checked {
+              & ~ span::before {
+                transform: translate(-50%, -50%) scale(1);
+              }
+              & ~ span {
+                border-color: $color-green;
+              }
             }
+          }
+          span {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #dcdacb;
+            border-radius: 50%;
+            display: block;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            &:before {
+              content: "";
+              height: 8px;
+              width: 8px;
+              border-radius: 50%;
+              background-color: $color-green;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%) scale(0);
+              transition: all 0.3s ease;
+            }
+          }
+          .filter-check-icon {
+            display: none;
+          }
         }
+        &:hover {
+          .radio {
+            input[type="radio"]:checked ~ span {
+              border-color: #dcdacb;
+            }
+          }
+        }
+        .filter-star-icon-bold {
+          font-size: 14px;
+          color: #eb8a2f;
+        }
+        .filter-star-icon-half {
+          font-size: 14px;
+          color: #eb8a2f;
+        }
+        .filter-star-icon-outline {
+          font-size: 14px;
+          color: #eb8a2f;
+        }
+        .filter-label {
+          font-size: 14px;
+          color: $color-black-0;
+          padding: 0 8px;
+        }
+        .filter-count {
+          font-size: 14px;
+          color: $color-black-2;
+        }
+      }
     }
+    &#dropdown-2,
+    &#dropdown-3,
+    &#dropdown-4,
+    &#dropdown-5,
+    &#dropdown-6,
+    &#dropdown-7,
+    &#dropdown-8 {
+      .submenu-dropdown__item {
+        padding: 16px 0;
+        display: flex;
+        align-items: center;
+        .radio {
+          margin-right: 8px;
+          position: relative;
+          input[type="radio"] {
+            display: none;
+            &:checked {
+              & ~ .filter-check-icon {
+                transform: translate(-50%, -50%) scale(1);
+              }
+              & ~ span {
+                border-color: $color-green;
+              }
+            }
+          }
+          span {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #dcdacb;
+            border-radius: 3px;
+            display: block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+          }
+          .filter-check-icon {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transition: all 0.3s ease;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 12px;
+            color: $color-green;
+          }
+        }
+        .filter-label {
+          font-size: 14px;
+          color: $color-black-0;
+          padding-right: 8px;
+        }
+        .filter-count {
+          font-size: 14px;
+          color: $color-black-2;
+        }
+        &:hover {
+          .radio {
+            input[type="radio"]:checked ~ span {
+              border-color: #dcdacb;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include responesive("extra-large") {
+  .submenu {
     &-dropdown {
-        &#dropdown-1 {
-            .submenu-dropdown__item {
-                padding: 16px 0;
-                display: flex;
-                align-items: center;
-                .radio {
-                    margin-right: 8px;
-                    input[type="radio"] {
-                        display: none;
-                        &:checked {
-                            & ~ span::before {
-                                transform: translate(-50%, -50%) scale(1);
-                            }
-                            & ~ span {
-                                border-color: $color-green;
-                            }
-                        }
-                    }
-                    span {
-                        width: 18px;
-                        height: 18px;
-                        border: 2px solid #dcdacb;
-                        border-radius: 50%;
-                        display: block;
-                        position: relative;
-                        transition: all 0.3s ease;
-                        cursor: pointer;
-                        &:before {
-                            content: "";
-                            height: 8px;
-                            width: 8px;
-                            border-radius: 50%;
-                            background-color: $color-green;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%) scale(0);
-                            transition: all 0.3s ease;
-                        }
-                    }
-                    .filter-check-icon {
-                        display: none;
-                    }
-                }
-                &:hover {
-                    .radio {
-                        input[type="radio"]:checked ~ span {
-                            border-color: #dcdacb;
-                        }
-                    }
-                }
-                .filter-star-icon-bold {
-                    font-size: 14px;
-                    color: #eb8a2f;
-                }
-                .filter-star-icon-half {
-                    font-size: 14px;
-                    color: #eb8a2f;
-                }
-                .filter-star-icon-outline {
-                    font-size: 14px;
-                    color: #eb8a2f;
-                }
-                .filter-label {
-                    font-size: 14px;
-                    color: $color-black-0;
-                    padding: 0 8px;
-                }
-                .filter-count {
-                    font-size: 14px;
-                    color: $color-black-2;
-                }
+      &#dropdown-1 {
+        .submenu-dropdown__item {
+          &:hover {
+            .radio {
+              input[type="radio"]:checked ~ span {
+                border-color: $color-green;
+              }
             }
+          }
         }
-        &#dropdown-2,
-        &#dropdown-3,
-        &#dropdown-4,
-        &#dropdown-5,
-        &#dropdown-6,
-        &#dropdown-7,
-        &#dropdown-8 {
-            .submenu-dropdown__item {
-                padding: 16px 0;
-                display: flex;
-                align-items: center;
-                .radio {
-                    margin-right: 8px;
-                    position: relative;
-                    input[type="radio"] {
-                        display: none;
-                        &:checked {
-                            & ~ .filter-check-icon {
-                                transform: translate(-50%, -50%) scale(1);
-                            }
-                            & ~ span {
-                                border-color: $color-green;
-                            }
-                        }
-                    }
-                    span {
-                        width: 18px;
-                        height: 18px;
-                        border: 2px solid #dcdacb;
-                        border-radius: 3px;
-                        display: block;
-                        transition: all 0.3s ease;
-                        cursor: pointer;
-                        position: relative;
-                    }
-                    .filter-check-icon {
-                        display: block;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transition: all 0.3s ease;
-                        transform: translate(-50%, -50%) scale(0);
-                        font-size: 12px;
-                        color: $color-green;
-                    }
-                }
-                .filter-label {
-                    font-size: 14px;
-                    color: $color-black-0;
-                    padding-right: 8px;
-                }
-                .filter-count {
-                    font-size: 14px;
-                    color: $color-black-2;
-                }
-                &:hover {
-                    .radio {
-                        input[type="radio"]:checked ~ span {
-                            border-color: #dcdacb;
-                        }
-                    }
-                }
+      }
+      &#dropdown-2,
+      &#dropdown-3,
+      &#dropdown-4,
+      &#dropdown-5,
+      &#dropdown-6,
+      &#dropdown-7,
+      &#dropdown-8 {
+        .submenu-dropdown__item {
+          &:hover {
+            .radio {
+              input[type="radio"]:checked ~ span {
+                border-color: $color-green;
+              }
             }
+          }
         }
+      }
     }
+  }
 }

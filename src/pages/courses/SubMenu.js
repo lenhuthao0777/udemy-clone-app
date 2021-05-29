@@ -10,16 +10,12 @@ function SubMenu({ item }) {
       <div className="submenu-heading" onClick={item.subNav && showSubNav}>
         <h3>{item.title}</h3>
         <div className="submenu-heading__icon">
-          {item.subNav && subnav
-            ? item.iconOpen
-            : item.subNav
-            ? item.iconClose
-            : null}
+          {item.subNav && subnav ? item.iconOpen : item.subNav ? item.iconClose : null}
         </div>
       </div>
       <div className="submenu-dropdown" id={`dropdown-${item.id}`}>
         {subnav &&
-          item.subNav.map((item, index) => {
+          item.subNav.map((item) => {
             return (
               <div className="submenu-dropdown__item" key={item.id}>
                 <label className={`radio`}>

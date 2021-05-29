@@ -1,12 +1,33 @@
 .filter-sidebar-mobile {
   display: none;
-  background: red;
+  background: white;
+  border: 1px solid #d3d3d3;
   position: fixed;
   top: 0;
   right: 0;
-  width: 30%;
+  width: 40%;
   height: 100vh;
+  overflow-y: scroll;
   z-index: 12000;
+  transition: 0.3s ease;
+  transform: translateX(100%);
+  opacity: 0;
+  &.isOpen {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  &__result {
+    h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: $color-black-2;
+      padding: 16px;
+      box-shadow: 0 0 2px 3px rgba(0, 0, 0, 0.1)
+    }
+  }
+  &__list{
+    padding: 16px;
+  }
 }
 @include responesive("medium") {
   .filter-sidebar-mobile {
