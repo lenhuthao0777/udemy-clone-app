@@ -55,3 +55,18 @@
         // padding: 0 24px;
     }
 }
+@include responesive("medium") {
+    .filter {
+       &-heading{
+           &__buttons{
+               width: 100%;
+               .filter-select{
+                   width: 35%;
+               }
+           }
+           &__result{
+               display: none;
+           }
+       }
+    }
+}

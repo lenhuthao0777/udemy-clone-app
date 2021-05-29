@@ -3,7 +3,7 @@ import Select from "react-select";
 
 const divStyle = {
 	width: "100%",
-	maxWidth: "100%",
+	
 };
 
 const options = [

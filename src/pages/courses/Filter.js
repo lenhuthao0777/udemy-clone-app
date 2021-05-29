@@ -10,7 +10,7 @@ function Filter({ ShowSidebar }) {
 						<BiMenuAltLeft className='filter-icon' />
 						<p>Filter</p>
 					</button>
-					<ButtonFilterSelect />
+					<ButtonFilterSelect className='filter-select'/>
 				</div>
 				<div className='filter-heading__result'>
 					<span>432 result</span>

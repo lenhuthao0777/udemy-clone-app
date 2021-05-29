@@ -1,0 +1,15 @@
+.filter-sidebar-mobile {
+  display: none;
+  background: red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100vh;
+  z-index: 12000;
+}
+@include responesive("medium") {
+  .filter-sidebar-mobile {
+    display: block;
+  }
+}
