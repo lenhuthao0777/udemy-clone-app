@@ -11,10 +11,20 @@
             display: flex;
             margin-bottom: 40px;
             overflow: hidden;
-            .filter-courses-list {
-                width: 75%;
-            }
         }
+    }
+    .filter-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        display: none;
+        animation: fadeIn ease 0.3s;
     }
 }
 @include responesive("extra-large") {
@@ -42,6 +52,11 @@
                        width:100%;
                    }
                 }
+            }
+        }
+        .filter-overlay{
+            &.isOpen{
+                display: block;
             }
         }
     }

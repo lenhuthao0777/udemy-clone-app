@@ -1,9 +1,10 @@
+import { Button } from "src/components/button/Button";
 import React from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import SubmenuMobile from "./SubmenuMobile";
 // import SubMenu from './SubMenu';
-function FilterSidebarMobile({ sidebar }) {
+function FilterSidebarMobile({ sidebar, setSidebar }) {
     const sideBarData = [
         {
             id: 1,
@@ -521,13 +522,20 @@ function FilterSidebarMobile({ sidebar }) {
     ];
     return (
         <div className={`filter-sidebar-mobile ${sidebar ? "isOpen" : ""}`}>
-            <div className="filter-sidebar-mobile__result">
-                <h1>432 result</h1>
-            </div>
-            <div className="filter-sidebar-mobile__list">
-                {sideBarData.map((item) => {
-                    return <SubmenuMobile key={item.id} item={item} />;
-                })}
+            <div className="filter-sidebar-mobile__content">
+                <div className="filter-sidebar-mobile__content-result">
+                    <h1>432 result</h1>
+                </div>
+                <div className="filter-sidebar-mobile__content-list">
+                    {sideBarData.map((item) => {
+                        return <SubmenuMobile key={item.id} item={item} />;
+                    })}
+                </div>
+                <div className="button-done" onClick={() => setSidebar(!sidebar)}>
+                    <Button size="full" color="btn btn--primary">
+                        Done
+                    </Button>
+                </div>
             </div>
         </div>
     );

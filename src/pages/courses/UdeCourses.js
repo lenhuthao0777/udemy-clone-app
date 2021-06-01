@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Filter from "./Filter";
+import FilterCoursesList from "./FilterCoursesList";
 import FilterSideBar from "./FilterSideBar";
 import FilterSidebarMobile from "./FilterSidebarMobile";
 
@@ -12,12 +13,11 @@ function UdeCourses() {
 			<div className={`ude-courses__list ${sidebar ? "isClose" : ""}`}>
 				<div className='list-cuorses'>
 					<FilterSideBar sidebar={sidebar}/>
-					<div className='filter-courses-list'>
-						<h1>courses list</h1>
-					</div>
+					<FilterCoursesList/>
 				</div>
 			</div>
-			<FilterSidebarMobile sidebar={sidebar}/>
+			<FilterSidebarMobile sidebar={sidebar} setSidebar={setSidebar}/>
+			<div className={`filter-overlay ${sidebar ? "isOpen" : ""}`} onClick={() =>setSidebar(!sidebar)}></div>
 		</div>
 	);
 }
