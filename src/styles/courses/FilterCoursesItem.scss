@@ -1,0 +1,43 @@
+.filter-courses-list__item {
+    position: relative;
+    a {
+        display: flex;
+        .filter-courses-list__item-content {
+            display: flex;
+            padding-right: 96px;
+            .filter-courses-list__img {
+                width: 260px;
+                margin-right: 16px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    border-radius: 3px;
+                }
+            }
+            .filter-courses-list__info {
+                &-heading {
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 4px;
+                    color: $color-black-0;
+                }
+                &-name {
+                    font-size: 14px;
+                    margin-bottom: 4px;
+                    color: $color-black-1;
+                    font-weight: 400;
+                    line-height: 16px;
+                }
+                &-authen {
+                    font-size: 12px;
+                    margin-bottom: 4px;
+                    color: $color-black-2;
+                }
+                &-rating {
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
