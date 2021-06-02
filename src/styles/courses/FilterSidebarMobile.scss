@@ -7,7 +7,7 @@
     right: 0;
     width: 40%;
     height: 100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: 12000;
     transition: 0.3s ease;
     transform: translateX(100%);
@@ -39,11 +39,42 @@
             width: 100%;
             padding: 20px 16px;
             background-color: $color-white-0;
+            border-top: 2px solid #dcdacb;
         }
     }
 }
 @include responesive("medium") {
     .filter-sidebar-mobile {
         display: block;
+    }
+}
+@include responesive("small") {
+    .filter-sidebar-mobile {
+        width: 70%;
+        // &__content {
+        //     display: flex;
+        //     flex-direction: column;
+        //     height: 100%;
+        //     &-result {
+        //         h1 {
+        //             font-size: 16px;
+        //             font-weight: 700;
+        //             color: $color-black-2;
+        //             padding: 16px;
+        //             box-shadow: 0 0 2px 3px rgba(0, 0, 0, 0.1);
+        //         }
+        //     }
+        //     &-list {
+        //         flex-grow: 1;
+        //         padding: 16px;
+        //     }
+        //     .button-done {
+        //         position: sticky;
+        //         bottom: 0;
+        //         width: 100%;
+        //         padding: 20px 16px;
+        //         background-color: $color-white-0;
+        //     }
+        // }
     }
 }

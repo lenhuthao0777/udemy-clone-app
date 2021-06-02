@@ -32,4 +32,8 @@
         }
     }
 }
-// @include responesive("");
+@include responesive("medium"){
+    .sub-category{
+        display:none;
+    }
+}

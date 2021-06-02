@@ -17,14 +17,14 @@
         position: fixed;
         top: 0;
         left: 0;
-        right: 0;
-        bottom: 0;
         background-color: rgba(0, 0, 0, 0.6);
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: 100%;
         z-index: 1000;
-        display: none;
+        // display: none;
         animation: fadeIn ease 0.3s;
+        // overflow: hidden;
+        visibility: hidden;
     }
 }
 @include responesive("extra-large") {
@@ -56,7 +56,8 @@
         }
         .filter-overlay{
             &.isOpen{
-                display: block;
+                // display: block;
+                visibility: visible;
             }
         }
     }
