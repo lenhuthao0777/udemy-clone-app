@@ -1,11 +1,9 @@
 .filter-sidebar {
-    width: 335px;
+    width: 280px;
     height: auto;
     transition: 0.3s ease-out;
     padding-right: 40px;
-    // &.isLoading {
-    //     opacity: 0;
-    // }
+    margin-right: 8px;
     &__list {
         &-item {
             padding: 16px 0;
@@ -26,20 +24,4 @@
     .filter-sidebar {
         display: none;
     }
-
-    //   }
-    //   .overlay{
-    //     position: fixed;
-    //     top: 0;
-    //     right: 0;
-    //     left: 0;
-    //     width: 100vw;
-    //     height: 100vh;
-    //     background-color: rgba(0,0,0, 0.3);
-    //     z-index: 12000;
-    //     animation: fadeIn ease 0.3s;
-    //     &.isClose{
-    //         display:none;
-    //     }
-    // }
 }

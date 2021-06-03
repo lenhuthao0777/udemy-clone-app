@@ -519,7 +519,7 @@ function FilterSideBar({ sidebar }) {
     },
   ];
   return (
-    <div className={`filter-sidebar ${sidebar ? "ISclose" : ""}`}>
+    <div className={`filter-sidebar`}>
       <div className="filter-sidebar__list">
         {sideBarData.map((item) => {
           return (

@@ -23,11 +23,12 @@ function FilterCoursesItem() {
                         <p className="filter-courses-list__info-authen">Colt Steele</p>
                         <div className="filter-courses-list__info-rating">
                             <p>4.6</p>
-                            <IoMdStar className="icon-rating"/>
-                            <IoMdStar className="icon-rating"/>
-                            <IoMdStar className="icon-rating"/>
-                            <IoMdStarHalf className="icon-rating"/>
-                            <IoMdStarOutline className="icon-rating"/>
+                            <IoMdStar className="icon-rating" />
+                            <IoMdStar className="icon-rating" />
+                            <IoMdStar className="icon-rating" />
+                            <IoMdStar className="icon-rating" />
+                            <IoMdStarHalf className="icon-rating" />
+                            <span>(205,656)</span>
                         </div>
                         <div className="filter-courses-list__info-text">
                             <span>63 total hours</span>
@@ -37,11 +38,11 @@ function FilterCoursesItem() {
                         <div className="filter-courses-list__info-bestseller">
                             <p>Bestseller</p>
                         </div>
+                        <div className="filter-courses-list__info-price">
+                            <p className="new-price">$12.99</p>
+                            <p className="old-price">$94.99</p>
+                        </div>
                     </div>
-                </div>
-                <div className="filter-courses-list__item-price">
-                    <p className="new-price">$12.99</p>
-                    <p className="old-price">$94.99</p>
                 </div>
             </Link>
         </div>

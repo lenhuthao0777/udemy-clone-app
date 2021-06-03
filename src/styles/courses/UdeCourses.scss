@@ -1,11 +1,10 @@
 .ude-courses {
     overflow: hidden;
     &__list {
-        width: 100%;
         transition: 0.3s ease;
         &.isClose {
-            width: calc(100% + 20rem);
-            transform: translateX(-20rem);
+            transform: translateX(-260px);
+            width: calc(100% + 260px);
         }
         .list-cuorses {
             display: flex;
@@ -13,7 +12,7 @@
             overflow: hidden;
         }
     }
-    .filter-overlay{
+    .filter-overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -21,23 +20,21 @@
         width: 100%;
         height: 100%;
         z-index: 1000;
-        // display: none;
+        display: none;
         animation: fadeIn ease 0.3s;
-        // overflow: hidden;
-        visibility: hidden;
+        overflow: hidden;
     }
 }
 @include responesive("extra-large") {
     .ude-courses {
         padding: 0 24px;
-        &__list {
-            transition: 0.3s ease;
-            &.isClose {
-                width: calc(100% + 22rem);
-                transform: translateX(-20rem);
-                
-            }
-        }
+        // &__list {
+        //     transition: 0.3s ease;
+        //     &.isClose {
+        //         width: calc(100% + 22rem);
+        //         transform: translateX(-20rem);
+        //     }
+        // }
     }
 }
 @include responesive("medium") {
@@ -45,19 +42,18 @@
         padding: 0 24px;
         &__list {
             &.isClose {
-                width: calc(100%);
                 transform: translateX(0);
+                width: auto;
                 .list-cuorses {
-                   .filter-courses-list{
-                       width:100%;
-                   }
+                    .filter-courses-list {
+                        width: 100%;
+                    }
                 }
             }
         }
-        .filter-overlay{
-            &.isOpen{
-                // display: block;
-                visibility: visible;
+        .filter-overlay {
+            &.isOpen {
+                display: block;
             }
         }
     }

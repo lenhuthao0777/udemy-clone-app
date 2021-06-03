@@ -1,10 +1,22 @@
 .filter-courses-list__item {
+    width: 100%;
     position: relative;
+    padding: 16px 0;
+    border-bottom: 1px solid #dcdacb;
+    &:nth-child(1) {
+        padding: 0 0 16px 0;
+    }
+    &:last-child {
+        border-bottom: none;
+    }
     a {
         display: flex;
+        width: 100%;
         .filter-courses-list__item-content {
             display: flex;
             padding-right: 96px;
+            width: 100%;
+            position: relative;
             .filter-courses-list__img {
                 width: 260px;
                 margin-right: 16px;
@@ -22,6 +34,7 @@
                     color: $color-black-0;
                 }
                 &-name {
+                    // width: 600px;
                     font-size: 14px;
                     margin-bottom: 4px;
                     color: $color-black-1;
@@ -36,6 +49,74 @@
                 &-rating {
                     display: flex;
                     align-items: center;
+                    margin-bottom: 4px;
+                    p {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: #be5a0e;
+                        padding-right: 4px;
+                    }
+                    .icon-rating {
+                        font-size: 14px;
+                        color: $color-yellow-1;
+                    }
+                    span {
+                        font-size: 12px;
+                        color: $color-black-2;
+                        padding-left: 4px;
+                    }
+                }
+                &-text {
+                    span {
+                        font-size: 12px;
+                        color: $color-black-2;
+                        padding-right: 4px;
+                        &:nth-child(2) {
+                            &:before {
+                                content: "\25CF";
+                                font-size: 6px;
+                                margin: 0 4px;
+                            }
+                        }
+                        &:nth-child(3) {
+                            &:before {
+                                content: "\25CF";
+                                font-size: 6px;
+                                margin: 0 4px;
+                            }
+                        }
+                    }
+                }
+                &-bestseller {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 70px;
+                    padding: 6px;
+                    margin-top: 4px;
+                    background-color: $color-yellow-1;
+                    border-radius: 4px;
+                    p {
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #593d00;
+                    }
+                }
+                &-price {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    .new-price {
+                        font-size: 16px;
+                        color: $color-black-0;
+                        font-weight: bold;
+                        padding-bottom: 8px;
+                    }
+                    .old-price {
+                        font-size: 14px;
+                        color: $color-black-2;
+                        text-decoration: line-through;
+                    }
                 }
             }
         }
