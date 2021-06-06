@@ -7,10 +7,7 @@ function FilterCoursesItem() {
             <Link to="/">
                 <div className="filter-courses-list__item-content">
                     <div className="filter-courses-list__img">
-                        <img
-                            src="https://img-b.udemycdn.com/course/240x135/625204_436a_3.jpg?secure=boTjIK-qj0mbouOGz1oQ_w%3D%3D%2C1622703902"
-                            alt=""
-                        />
+                        <img src="./img/kh10.jpg" alt="" />
                     </div>
                     <div className="filter-courses-list__info">
                         <h1 className="filter-courses-list__info-heading">
