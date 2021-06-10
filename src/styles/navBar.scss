@@ -1214,3 +1214,10 @@
 }
 @include responesive("small") {
 }
+@media screen and (max-width: 320px) {
+    .header-navbar--mobile {
+        .side-bar {
+           width: 250px;
+        }
+    }
+}

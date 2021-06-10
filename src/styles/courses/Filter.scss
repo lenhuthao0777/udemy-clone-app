@@ -115,3 +115,14 @@
         }
     }
 }
+@include responesive("small") {
+    .filter {
+        &-heading {
+            &__buttons {
+                .filter-select {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
