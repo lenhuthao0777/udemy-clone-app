@@ -6,7 +6,7 @@
         &__buttons {
             display: flex;
             align-items: center;
-            width: 25%;
+            width: 280px;
             .filter-btn {
                 display: flex;
                 align-items: center;
@@ -38,6 +38,40 @@
                     }
                 }
             }
+            .filter-select {
+                width: 100%;
+                position: relative;
+                &__btn {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border: 1px solid #dcdacb;
+                    border-radius: 4px;
+                    padding: 14px 8px;
+                    font-size: 16px;
+                    color: $color-black-2;
+                }
+                &__dropdown {
+                    // display: none;
+                    position: absolute;
+                    top: 50px;
+                    left: 0;
+                    padding: 8px;
+                    width: 100%;
+                    border: 1px solid #dcdacb;
+                    border-radius: 4px;
+                    background-color: $color-white-0;
+                    h3 {
+                        font-size: 16px;
+                        color: $color-black-2;
+                        font-weight: 400;
+                    }
+                    p {
+                        font-size: 16px;
+                        color: $color-black-0;
+                    }
+                }
+            }
         }
         &__result {
             width: 75%;
@@ -57,16 +91,16 @@
 }
 @include responesive("medium") {
     .filter {
-       &-heading{
-           &__buttons{
-               width: 100%;
-               .filter-select{
-                   width: 35%;
-               }
-           }
-           &__result{
-               display: none;
-           }
-       }
+        &-heading {
+            &__buttons {
+                width: 100%;
+                .filter-select {
+                    width: 35%;
+                }
+            }
+            &__result {
+                display: none;
+            }
+        }
     }
 }

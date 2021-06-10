@@ -45,7 +45,7 @@ function FilterCoursesItem() {
                         <div className="filter-courses-list__info-price">
                             <p className="new-price">$12.99</p>
                             <p className="old-price">$94.99</p>
-                        </div>                   
+                        </div>
                     </div>
                 </div>
             </Link>
