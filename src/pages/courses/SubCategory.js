@@ -9,10 +9,6 @@ function SubCategory() {
 					<Link className='sub-category__list-item-heading' to='/'>
 						Development
 					</Link>
-					<img
-						src='https://s.udemycdn.com/browse_components/link-bar/large-next.svg'
-						alt=''
-					/>
 				</li>
 				<li className='sub-category__list-item'>
 					<Link to='/'>FrontEnd</Link>

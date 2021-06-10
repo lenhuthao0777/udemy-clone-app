@@ -1,6 +1,6 @@
 import React from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
-import ButtonFilterSelect from "./ButtonFilterSelect";
+// import ButtonFilterSelect from "./ButtonFilterSelect";
 function Filter({ ShowSidebar }) {
 	return (
 		<div className='filter'>
@@ -10,7 +10,7 @@ function Filter({ ShowSidebar }) {
 						<BiMenuAltLeft className='filter-icon' />
 						<p>Filter</p>
 					</button>
-					<ButtonFilterSelect className='filter-select'/>
+					{/* <ButtonFilterSelect className='filter-select'/> */}
 				</div>
 				<div className='filter-heading__result'>
 					<span>432 result</span>

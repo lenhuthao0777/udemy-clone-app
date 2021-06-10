@@ -19,3 +19,11 @@
         padding: 0 24px;
     }
 }
+@include responesive("medium") {
+    .courses-heading {
+        font-size: 24px;
+    }
+    .ude-courses__heading {
+        font-size: 19px;
+    }
+}

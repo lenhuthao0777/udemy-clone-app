@@ -14,34 +14,35 @@ import TopicCate from "./TopicCate";
 import Unit from "./Unit";
 import Video from "./Video";
 function Home() {
-	const dispatch = useDispatch();
-	const { courses, isLoading, error } = useSelector(
-		(state) => state.coursesReducer
-	);
+    const dispatch = useDispatch();
+    const { courses, isLoading, error } = useSelector(
+        (state) => state.coursesReducer
+    );
+    // console.log(courses);
 
-	useEffect(() => {
-		dispatch(getCourses());
-	}, []);
-	return (
-		<div className='home'>
-			<Billboard />
-			<HeadLine />
-			<div className='tabs-pc'>
-				<TabCourses courses={courses} />
-			</div>
-			<div className='tabs-mobile'>
-				<TabCourseMobile courses={courses} />
-			</div>
-			<Unit courses={courses} />
-			<OnBoarding />
-			<BestCate />
-			<TopicCate />
-			<NonStudent />
-			<Partner />
-			<ForBusiness />
-			<Video />
-		</div>
-	);
+    useEffect(() => {
+        dispatch(getCourses());
+    }, []);
+    return (
+        <div className="home">
+            <Billboard />
+            <HeadLine />
+            <div className="tabs-pc">
+                <TabCourses courses={courses} />
+            </div>
+            <div className="tabs-mobile">
+                <TabCourseMobile courses={courses} />
+            </div>
+            <Unit courses={courses} />
+            <OnBoarding />
+            <BestCate />
+            <TopicCate />
+            <NonStudent />
+            <Partner />
+            <ForBusiness />
+            <Video />
+        </div>
+    );
 }
 
 export default Home;

@@ -9,7 +9,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/design'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-design.jpg'
+								src='./img/ct1.jpg'
 								alt=''
 							/>
 							<h3>Design</h3>
@@ -18,7 +18,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-development.jpg'
+								src='./img/ct2.jpg'
 								alt=''
 							/>
 							<h3>Development</h3>
@@ -27,7 +27,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-marketing.jpg'
+								src='./img/ct3.jpg'
 								alt=''
 							/>
 							<h3>Marketing</h3>
@@ -36,7 +36,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-it-and-software.jpg'
+								src='./img/ct4.jpg'
 								alt=''
 							/>
 							<h3>IT and software</h3>
@@ -45,7 +45,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-personal-development.jpg'
+								src='./img/ct5.jpg'
 								alt=''
 							/>
 							<h3>Peronal development</h3>
@@ -54,7 +54,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-business.jpg'
+								src='./img/ct6.jpg'
 								alt=''
 							/>
 							<h3>Business</h3>
@@ -63,7 +63,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-photography.jpg'
+								src='./img/ct7.jpg'
 								alt=''
 							/>
 							<h3>Photography</h3>
@@ -72,7 +72,7 @@ function BestCate() {
 					<div className='best-cate__list-item'>
 						<Link to='/'>
 							<img
-								src='https://s.udemycdn.com/home/top-categories/lohp-category-music.jpg'
+								src='./img/ct8.jpg'
 								alt=''
 							/>
 							<h3>Music</h3>

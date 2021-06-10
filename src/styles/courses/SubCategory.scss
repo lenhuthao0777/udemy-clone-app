@@ -11,6 +11,9 @@
             display: flex;
             align-items: center;
             height: 48px;
+            &:nth-child(1){
+                border-right: 3px solid #dadcda;
+            }
             &-heading {
                 font-size: 14px;
                 font-weight: 700;

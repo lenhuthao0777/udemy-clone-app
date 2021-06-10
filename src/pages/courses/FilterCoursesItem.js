@@ -14,10 +14,13 @@ function FilterCoursesItem() {
                             The website bootcamp 2021
                         </h1>
                         <p className="filter-courses-list__info-name">
-                            COMPLETELY REDONE - The only course you need to learn web development -
-                            HTML, CSS, JS, Node, and More!
+                            COMPLETELY REDONE - The only course you need to
+                            learn web development - HTML, CSS, JS, Node, and
+                            More!
                         </p>
-                        <p className="filter-courses-list__info-authen">Colt Steele</p>
+                        <p className="filter-courses-list__info-authen">
+                            Colt Steele
+                        </p>
                         <div className="filter-courses-list__info-rating">
                             <p>4.6</p>
                             <IoMdStar className="icon-rating" />
@@ -32,13 +35,17 @@ function FilterCoursesItem() {
                             <span>614 lectures</span>
                             <span>All Levels</span>
                         </div>
+                        <div className="filter-courses-list__info-price-mobile">
+                            <p className="new-price">$12.99</p>
+                            <p className="old-price">$94.99</p>
+                        </div>
                         <div className="filter-courses-list__info-bestseller">
                             <p>Bestseller</p>
                         </div>
                         <div className="filter-courses-list__info-price">
                             <p className="new-price">$12.99</p>
                             <p className="old-price">$94.99</p>
-                        </div>
+                        </div>                   
                     </div>
                 </div>
             </Link>

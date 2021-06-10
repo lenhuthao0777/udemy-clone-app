@@ -43,10 +43,12 @@
         }
     }
 }
-@include responesive("medium") {
+@media screen and (max-width: 824px) {
     .filter-sidebar-mobile {
         display: block;
     }
+}
+@include responesive("medium") {
 }
 @include responesive("small") {
     .filter-sidebar-mobile {

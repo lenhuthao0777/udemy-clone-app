@@ -27,7 +27,7 @@ function NavBarMobile({ SideBar, setSideBar }) {
 										<div className='profile-img'>
 											<UdeAvatar
 												AvatarSrc={
-													"https://i1.wp.com/katzenworld.co.uk/wp-content/uploads/2019/06/funny-cat.jpeg?fit=1920%2C1920&ssl=1"
+													"./img/avatar1.jpg"
 												}
 												size='AvatarMd'
 											/>

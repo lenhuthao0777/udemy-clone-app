@@ -3,7 +3,7 @@
     &__list {
         transition: 0.3s ease;
         &.isClose {
-            transform: translateX(-260px);
+            transform: translateX(-270px);
             width: calc(100% + 260px);
         }
         .list-cuorses {
@@ -28,16 +28,9 @@
 @include responesive("extra-large") {
     .ude-courses {
         padding: 0 24px;
-        // &__list {
-        //     transition: 0.3s ease;
-        //     &.isClose {
-        //         width: calc(100% + 22rem);
-        //         transform: translateX(-20rem);
-        //     }
-        // }
     }
 }
-@include responesive("medium") {
+@media screen and (max-width: 824px) {
     .ude-courses {
         padding: 0 24px;
         &__list {
@@ -57,4 +50,25 @@
             }
         }
     }
+}
+@include responesive("medium") {
+    // .ude-courses {
+    //     padding: 0 24px;
+    //     &__list {
+    //         &.isClose {
+    //             transform: translateX(0);
+    //             width: auto;
+    //             .list-cuorses {
+    //                 .filter-courses-list {
+    //                     width: 100%;
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     .filter-overlay {
+    //         &.isOpen {
+    //             display: block;
+    //         }
+    //     }
+    // }
 }

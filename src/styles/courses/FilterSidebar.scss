@@ -15,11 +15,11 @@
         }
     }
 }
-// @media screen and (min-width: 813px) {
-//     .filter-sidebar {
-//         display: none;
-//     }
-// }
+@media screen and (max-width: 824px) {
+    .filter-sidebar {
+        display: none;
+    }
+}
 @include responesive("medium") {
     .filter-sidebar {
         display: none;
