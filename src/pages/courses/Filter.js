@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { FaAngleDown } from "react-icons/fa";
 function Filter({ ShowSidebar }) {
+    const [isActive, setIsActive] = useState(false);
+    const [selected, setSelected] = useState("Most Popular");
     const selectDropdown = [
         {
             id: 1,
@@ -24,18 +26,28 @@ function Filter({ ShowSidebar }) {
                         <BiMenuAltLeft className="filter-icon" />
                         <p>Filter</p>
                     </button>
-                    {/* <ButtonFilterSelect className='filter-select'/> */}
-                    <div className="filter-select">
+                    <div
+                        className="filter-select"
+                        onClick={() => {
+                            setIsActive(!isActive);
+                        }}
+                    >
                         <div className="filter-select__btn">
-                            <p>Selected</p>
+                            <p>{selected}</p>
                             <FaAngleDown />
                         </div>
-                        <div className="filter-select__dropdown">
-                            <h3>Sort</h3>
-                            {selectDropdown.map((item) => {
-                                return <p key={item.id}>{item.name}</p>;
-                            })}
-                        </div>
+                        {isActive && (
+                            <div className="filter-select__dropdown">
+                                <h3>Sort</h3>
+                                {selectDropdown.map((item) => {
+                                    return (
+                                        <p key={item.id} onClick={() => setSelected(item.name)}>
+                                            {item.name}
+                                        </p>
+                                    );
+                                })}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="filter-heading__result">

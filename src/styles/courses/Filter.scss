@@ -12,7 +12,7 @@
                 align-items: center;
                 border: 1px solid $color-green;
                 padding: 10px 16px;
-                border-radius: 3px;
+                border-radius: 4px;
                 background-color: transparent;
                 transition: 0.3s ease;
                 margin-right: 10px;
@@ -41,6 +41,9 @@
             .filter-select {
                 width: 100%;
                 position: relative;
+                cursor: pointer;
+                transition: 0.3s ease;
+                user-select: none;
                 &__btn {
                     display: flex;
                     justify-content: space-between;
@@ -56,19 +59,27 @@
                     position: absolute;
                     top: 50px;
                     left: 0;
-                    padding: 8px;
                     width: 100%;
+                    padding: 10px 0;
                     border: 1px solid #dcdacb;
                     border-radius: 4px;
                     background-color: $color-white-0;
+                    z-index: 10000;
                     h3 {
                         font-size: 16px;
                         color: $color-black-2;
                         font-weight: 400;
+                        padding: 0 8px 5px 8px;
                     }
                     p {
+                        padding: 5px 8px;
                         font-size: 16px;
                         color: $color-black-0;
+                        transition: 0.2s ease;
+                        &:hover {
+                            background-color: $color-green;
+                            color: $color-white-0;
+                        }
                     }
                 }
             }
@@ -95,7 +106,7 @@
             &__buttons {
                 width: 100%;
                 .filter-select {
-                    width: 35%;
+                    width: 25%;
                 }
             }
             &__result {
