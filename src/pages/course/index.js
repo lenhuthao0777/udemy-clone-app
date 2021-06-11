@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 function Course() {
-	return (
-		<div>
-			<h1>Course Details</h1>
-		</div>
-	);
+	console.log(window.innerWidth)
+    return (
+        <div className="course">
+            <div className="container">
+                <h1>Course Details</h1>
+            </div>
+        </div>
+    );
 }
 
 export default Course;
