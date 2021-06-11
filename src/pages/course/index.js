@@ -1,12 +1,11 @@
 import React from "react";
+import TopInfo from "./TopInfo";
 
 function Course() {
-	console.log(window.innerWidth)
+    console.log(window.innerWidth);
     return (
         <div className="course">
-            <div className="container">
-                <h1>Course Details</h1>
-            </div>
+            <TopInfo />
         </div>
     );
 }
