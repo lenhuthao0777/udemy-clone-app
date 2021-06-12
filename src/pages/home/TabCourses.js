@@ -9,7 +9,8 @@ function TabCourses({ courses }) {
 		setToggleState(state);
 	};
 	var settings = {
-		dots: false,
+		dots: true,
+		arrows: false,
 		infinite: false,
 		speed: 500,
 		slidesToShow: 5,
