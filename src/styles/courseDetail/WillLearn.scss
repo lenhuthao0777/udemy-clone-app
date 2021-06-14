@@ -1,0 +1,25 @@
+.will-learn {
+    .bottom-container {
+        max-width: 1184px;
+        margin: 0 auto;
+        .will-learn__content {
+            max-width: 700px;
+            margin: 32px 0;
+            .will-learn__heading {
+                font-size: 24px;
+                color: $color-black-0;
+                padding: 24px 0 16px 24px;
+            }
+            ul {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                padding: 0 24px;
+                li {
+                    width: calc(50% - 12px);
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+}

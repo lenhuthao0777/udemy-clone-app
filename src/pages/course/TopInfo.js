@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function TopInfo() {
     return (
         <div className="top-info">
-            <div className="container">
+            <div className="top-container">
                 <div className="top-info__content">
                     <div className="topic-menu">
                         <h3>
