@@ -76,32 +76,32 @@ function TopInfo() {
                         <p>30-Day Money-Back Guarantee</p>
                     </div>
                     <div className="info-buttons">
-                        <span className="info-btn">
+                        <div className="info-btn">
                             <Link to="/">
                                 <button>
                                     Wishlist
                                     <FaRegHeart className="heart-icon" />
                                 </button>
                             </Link>
-                        </span>
-                        <span className="info-btn">
+                        </div>
+                        <div className="info-btn">
                             <Link to="/">
                                 <button>
                                     Share
                                     <IoMdShareAlt className="share-icon" />
                                 </button>
                             </Link>
-                        </span>
-                        <span className="info-btn">
+                        </div>
+                        <div className="info-btn">
                             <Link to="/">
                                 <button>Gift this course</button>
                             </Link>
-                        </span>
-                        <span className="info-btn">
+                        </div>
+                        <div className="info-btn">
                             <Link to="/">
                                 <button>Apply coupon</button>
                             </Link>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>

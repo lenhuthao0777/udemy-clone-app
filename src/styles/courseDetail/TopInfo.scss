@@ -73,6 +73,7 @@
         .rating {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             font-size: 14px;
             color: $color-white-0;
             margin-bottom: 8px;
@@ -274,14 +275,14 @@
         &__content {
             max-width: 100%;
             margin: 0 auto;
-            .topic-menu{
+            .topic-menu {
                 padding: 16px 24px;
-                margin:0;
+                margin: 0;
             }
             .course-img {
                 width: 100%;
                 display: block;
-                img{
+                img {
                     width: 100%;
                     border: none;
                     border-radius: 0;
@@ -292,11 +293,21 @@
                 padding: 0 24px;
                 letter-spacing: -2px;
             }
-            .title-text{
+            .title-text {
                 font-size: 16px;
                 padding: 0 24px;
             }
+            .rating{
+                padding: 0 24px;
+                span{
+                    padding: 4px 0;
+                }
+            }
+            .authen{
+                padding: 0 24px;
+            }
             .time {
+                padding: 0 24px;
                 align-items: flex-start;
                 flex-direction: column;
                 &-item {
@@ -305,22 +316,29 @@
             }
             .price {
                 display: block;
+                padding: 0 24px;
             }
             .sale-day {
                 display: block;
+                padding: 0 24px;
             }
             .button-add {
                 display: block;
+                padding: 0 24px;
             }
             .day-purchase {
+                padding: 0 24px;
                 display: block;
             }
             .info-buttons {
+                width: 100%;
+                padding: 0 24px;
                 .info-btn {
-                    margin: 5px;
+                    margin: 5px 0;
+                    width: 100%;
                     a {
                         button {
-                            width: 290px;
+                            width: 100%;
                         }
                     }
                     &:last-child {
