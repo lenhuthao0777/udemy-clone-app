@@ -1,8 +1,9 @@
 import React from "react";
-import { FaAngleRight, FaClosedCaptioning, FaRegHeart, FaPlayCircle,FaRegPlayCircle } from "react-icons/fa";
+import { FaAngleRight, FaClosedCaptioning, FaRegHeart, FaPlayCircle, FaRegPlayCircle } from "react-icons/fa";
 import { IoMdStarHalf, IoMdStar, IoMdStarOutline, IoMdShareAlt } from "react-icons/io";
 import { BsFillExclamationOctagonFill } from "react-icons/bs";
 import { MdLanguage } from "react-icons/md";
+import { GiAlarmClock } from "react-icons/gi";
 import { Link } from "react-router-dom";
 function TopInfo() {
     return (
@@ -21,7 +22,8 @@ function TopInfo() {
                     <div className="course-img">
                         <img src="./img/course1.jpg" alt="" />
                         <span>
-                            <FaPlayCircle className="play-icon"/>
+                            <FaPlayCircle className="play-icon" />
+                            <p>Preview this course</p>
                         </span>
                     </div>
                     <h1 className="title-heading">The Web Developer Bootcamp 2021</h1>
@@ -41,35 +43,63 @@ function TopInfo() {
                         <span>Colt Steele</span>
                     </div>
                     <div className="time">
-                        <BsFillExclamationOctagonFill className="icon-time" />
-                        <span>Last updated 5/2021</span>
-                        <MdLanguage className="icon-language" />
-                        <span>English</span>
-                        <FaClosedCaptioning className="icon-caption" />
-                        <span>English [Auto], French [Auto],</span>
-                        <span className="more">5 more</span>
+                        <div className="time-item">
+                            <BsFillExclamationOctagonFill className="icon-time" />
+                            <p>Last updated 5/2021</p>
+                        </div>
+                        <div className="time-item">
+                            <MdLanguage className="icon-language" />
+                            <p>English</p>
+                        </div>
+                        <div className="time-item">
+                            <FaClosedCaptioning className="icon-caption" />
+                            <p>English [Auto], French [Auto],</p>
+                            <button className="more">5 more</button>
+                        </div>
+                    </div>
+                    <div className="price">
+                        <span className="new-price">$89.99</span>
+                        <span className="old-price">$129.99</span>
+                        <span className="sale-off">86% off</span>
+                    </div>
+                    <div className="sale-day">
+                        <div className="sale-day__content">
+                            <GiAlarmClock />
+                            <p>1 day</p>
+                            <span>left at this price!</span>
+                        </div>
+                    </div>
+                    <div className="button-add">
+                        <button>Add to cart</button>
+                    </div>
+                    <div className="day-purchase">
+                        <p>30-Day Money-Back Guarantee</p>
                     </div>
                     <div className="info-buttons">
-                        <span>
+                        <span className="info-btn">
                             <Link to="/">
-                                <p>Wishlist</p>
-                                <FaRegHeart />
+                                <button>
+                                    Wishlist
+                                    <FaRegHeart className="heart-icon" />
+                                </button>
                             </Link>
                         </span>
-                        <span>
+                        <span className="info-btn">
                             <Link to="/">
-                                <p>Share</p>
-                                <IoMdShareAlt />
+                                <button>
+                                    Share
+                                    <IoMdShareAlt className="share-icon" />
+                                </button>
                             </Link>
                         </span>
-                        <span>
+                        <span className="info-btn">
                             <Link to="/">
-                                <p>Gift this course</p>
+                                <button>Gift this course</button>
                             </Link>
                         </span>
-                        <span>
+                        <span className="info-btn">
                             <Link to="/">
-                                <p>Apply coupon</p>
+                                <button>Apply coupon</button>
                             </Link>
                         </span>
                     </div>
