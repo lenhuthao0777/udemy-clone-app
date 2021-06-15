@@ -16,7 +16,7 @@ function SubMenu({ item }) {
                     item.subNav.map((item) => {
                         return (
                             <div className="submenu-dropdown__item" key={item.id}>
-                                <label className={`radio`}>
+                                <label className="radio">
                                     <input type="radio" />
                                     <span></span>
                                     <FiCheck className="filter-check-icon" />

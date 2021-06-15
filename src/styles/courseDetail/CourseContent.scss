@@ -1,0 +1,25 @@
+.course-content{
+    &__container{
+        max-width:1184px;
+        margin: 0 auto;
+        .course-content__body{
+            max-width:700px;
+            margin: 0 48px;
+            .course-content__heading{
+                font-size:24px;
+                font-weight:bold;
+                margin-bottom: 32px;
+            }
+            .course-content__subheader{
+                display:flex;
+                align-items:center;
+                margin-bottom: 24px;
+                span{
+                    font-size: 14px;
+                    color: $color-black-0;
+                    padding-right: 8px;
+                }
+            }
+        }
+    }
+}
