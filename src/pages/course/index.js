@@ -1,4 +1,5 @@
 import React from "react";
+import CourseContent from "./CourseContent";
 import TopInfo from "./TopInfo";
 import WillLearn from "./WillLearn";
 
@@ -8,6 +9,7 @@ function Course() {
         <div className="course">
             <TopInfo />
             <WillLearn />
+            <CourseContent />
         </div>
     );
 }

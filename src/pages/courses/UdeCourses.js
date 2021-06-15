@@ -8,15 +8,15 @@ import FilterSidebarMobile from "./FilterSidebarMobile";
 function UdeCourses() {
     const [sidebar, setSidebar] = useState(false);
     const ShowSidebar = () => setSidebar(!sidebar);
-    useEffect(() => {
-        console.log(window.innerHeight);
-    }, []);
+    // useEffect(() => {
+    //     console.log(window.innerHeight);
+    // }, []);
     return (
         <div className="ude-courses">
             <Filter ShowSidebar={ShowSidebar} />
             <div className={`ude-courses__list ${sidebar ? "isClose" : ""}`}>
                 <div className="list-cuorses">
-                    <FilterSideBar sidebar={sidebar} />
+                    <FilterSideBar />
                     <FilterCoursesList sidebar={sidebar} />
                 </div>
             </div>
