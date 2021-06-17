@@ -34,9 +34,77 @@ function Feedback() {
                                         <BsStarFill className="rates-star-icon" />
                                         <BsStarFill className="rates-star-icon" />
                                         <BsStarHalf className="rates-star-icon" />
+                                        <div className="percent">
+                                            <p>66%</p>
+                                        </div>
                                     </div>
-                                    <div className="percent">
-                                        <p>66%</p>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span className="feedback-gauge">
+                                            <span className="feedback-gauge__percent"></span>
+                                        </span>
+                                    </button>
+                                    <div className="rates-star">
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarHalf className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <div className="percent">
+                                            <p>43%</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span className="feedback-gauge">
+                                            <span className="feedback-gauge__percent"></span>
+                                        </span>
+                                    </button>
+                                    <div className="rates-star">
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <div className="percent">
+                                            <p>33%</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span className="feedback-gauge">
+                                            <span className="feedback-gauge__percent"></span>
+                                        </span>
+                                    </button>
+                                    <div className="rates-star">
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <div className="percent">
+                                            <p>15%</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <button>
+                                        <span className="feedback-gauge">
+                                            <span className="feedback-gauge__percent"></span>
+                                        </span>
+                                    </button>
+                                    <div className="rates-star">
+                                        <BsStarFill className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <BsStar className="rates-star-icon" />
+                                        <div className="percent">
+                                            <p>3%</p>
+                                        </div>
                                     </div>
                                 </li>
                             </ul>

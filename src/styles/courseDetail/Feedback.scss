@@ -44,10 +44,12 @@
                         li {
                             display: flex;
                             align-items: center;
+                            margin-bottom: 10px;
                             button {
-                                flex: 1;
                                 display: flex;
                                 border: none;
+                                margin: 0 20px;
+                                width: 65%;
                                 .feedback-gauge {
                                     width: 100%;
                                     height: 10px;
@@ -61,6 +63,133 @@
                                         width: 66%;
                                         height: 100%;
                                         background-color: $color-black-2;
+                                    }
+                                }
+                            }
+                            .rates-star {
+                                width: 35%;
+                                font-size: 16px;
+                                color: #eb8a2f;
+                                display: flex;
+                                align-items: center;
+                                .rates-star-icon {
+                                    margin-right: 4px;
+                                }
+                                .percent {
+                                    margin-left: 10px;
+                                    p {
+                                        font-size: 16px;
+                                        color: $color-green;
+                                    }
+                                }
+                            }
+                            &:nth-child(2) {
+                                button {
+                                    .feedback-gauge {
+                                        .feedback-gauge__percent {
+                                            width: 43%;
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-child(3) {
+                                button {
+                                    .feedback-gauge {
+                                        .feedback-gauge__percent {
+                                            width: 33%;
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-child(4) {
+                                button {
+                                    .feedback-gauge {
+                                        .feedback-gauge__percent {
+                                            width: 15%;
+                                        }
+                                    }
+                                }
+                            }
+                            &:nth-child(5) {
+                                margin-bottom: 0;
+                                button {
+                                    .feedback-gauge {
+                                        .feedback-gauge__percent {
+                                            width: 3%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .feedback {
+        &-container {
+            max-width: 1184px;
+            margin: 0 auto;
+            .feedback-content {
+                max-width: 600px;
+                margin: 24px auto;
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .feedback {
+        &-container {
+            max-width: 1184px;
+            margin: 0 auto;
+            .feedback-content {
+                max-width: 600px;
+                margin: 24px 24px;
+                .feedback-rating {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    &__average {
+                        margin-bottom: 20px;
+                    }
+                    &__rates {
+                        width: 100%;
+                        ul {
+                            li {
+                                button {
+                                    margin: 0;
+                                    width: 90%;
+                                    .feedback-gauge {
+                                        width: 100%;
+                                        height: 10px;
+                                        padding: 4px 0;
+                                        background-color: #dcdacb;
+                                        position: relative;
+                                        .feedback-gauge__percent {
+                                            position: absolute;
+                                            top: 0;
+                                            left: 0;
+                                            width: 66%;
+                                            height: 100%;
+                                            background-color: $color-black-2;
+                                        }
+                                    }
+                                }
+                                .rates-star {
+                                    width: 10%;
+                                    color: #eb8a2f;
+                                    display: flex;
+                                    align-items: center;
+                                    .rates-star-icon {
+                                        display: none;
+                                    }
+                                    .percent {
+                                        margin-left: 10px;
+                                        p {
+                                            font-size: 16px;
+                                            color: $color-green;
+                                        }
                                     }
                                 }
                             }
