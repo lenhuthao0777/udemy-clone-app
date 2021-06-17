@@ -22,7 +22,7 @@ function CourseContent() {
                 {
                     subId: 2,
                     icon: <AiOutlineFile />,
-                    subTitle: "Welcome to the course!",
+                    subTitle: "Curriculum Walkthrough",
                     textPreview: "Preview",
                     time: Math.floor(Math.random() * 60),
                 },
@@ -65,7 +65,7 @@ function CourseContent() {
         },
         {
             id: 2,
-            title: "Course Orientation",
+            title: "An Introduction to Web Development",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -124,7 +124,7 @@ function CourseContent() {
         },
         {
             id: 3,
-            title: "Course Orientation",
+            title: "HTML: The Essentials",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -183,7 +183,7 @@ function CourseContent() {
         },
         {
             id: 4,
-            title: "Course Orientation",
+            title: "HTML: Next Steps & Semantics",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -242,7 +242,7 @@ function CourseContent() {
         },
         {
             id: 5,
-            title: "Course Orientation",
+            title: "HTML: Forms & Tables",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -301,7 +301,7 @@ function CourseContent() {
         },
         {
             id: 6,
-            title: "Course Orientation",
+            title: "CSS: The Very Basics",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -360,7 +360,7 @@ function CourseContent() {
         },
         {
             id: 7,
-            title: "Course Orientation",
+            title: "The World of CSS Selectors",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -419,7 +419,7 @@ function CourseContent() {
         },
         {
             id: 8,
-            title: "Course Orientation",
+            title: "The CSS Box Model",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -478,7 +478,7 @@ function CourseContent() {
         },
         {
             id: 9,
-            title: "Course Orientation",
+            title: "Other Assorted Useful CSS Properties",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -537,7 +537,7 @@ function CourseContent() {
         },
         {
             id: 10,
-            title: "Course Orientation",
+            title: "Responsive CSS & Flexbox",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -596,7 +596,302 @@ function CourseContent() {
         },
         {
             id: 11,
-            title: "Course Orientation",
+            title: "Pricing Panel Project",
+            iconOpen: <FaAngleDown />,
+            iconClose: <FaAngleUp />,
+            hours: Math.floor(Math.random() * 24),
+            minute: Math.floor(Math.random() * 60),
+            subCourse: [
+                {
+                    subId: 1,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 2,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 3,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 4,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 5,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 6,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 7,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+            ],
+        },
+        {
+            id: 12,
+            title: "CSS Frameworks: Bootstrap",
+            iconOpen: <FaAngleDown />,
+            iconClose: <FaAngleUp />,
+            hours: Math.floor(Math.random() * 24),
+            minute: Math.floor(Math.random() * 60),
+            subCourse: [
+                {
+                    subId: 1,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 2,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 3,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 4,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 5,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 6,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 7,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+            ],
+        },
+        {
+            id: 13,
+            title: "OPTIONAL Museum Of Candy Project",
+            iconOpen: <FaAngleDown />,
+            iconClose: <FaAngleUp />,
+            hours: Math.floor(Math.random() * 24),
+            minute: Math.floor(Math.random() * 60),
+            subCourse: [
+                {
+                    subId: 1,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 2,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 3,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 4,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 5,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 6,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 7,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+            ],
+        },
+        {
+            id: 14,
+            title: "JavaScript Basics!",
+            iconOpen: <FaAngleDown />,
+            iconClose: <FaAngleUp />,
+            hours: Math.floor(Math.random() * 24),
+            minute: Math.floor(Math.random() * 60),
+            subCourse: [
+                {
+                    subId: 1,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 2,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 3,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 4,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 5,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 6,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 7,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+            ],
+        },
+        {
+            id: 15,
+            title: "JavaScript Strings and More",
+            iconOpen: <FaAngleDown />,
+            iconClose: <FaAngleUp />,
+            hours: Math.floor(Math.random() * 24),
+            minute: Math.floor(Math.random() * 60),
+            subCourse: [
+                {
+                    subId: 1,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 2,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 3,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 4,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 5,
+                    icon: <AiOutlineFile />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 6,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+                {
+                    subId: 7,
+                    icon: <AiFillPlayCircle />,
+                    subTitle: "Welcome to the course!",
+                    textPreview: "Preview",
+                    time: Math.floor(Math.random() * 60),
+                },
+            ],
+        },
+        {
+            id: 16,
+            title: "JavaScript Decision Making",
             iconOpen: <FaAngleDown />,
             iconClose: <FaAngleUp />,
             hours: Math.floor(Math.random() * 24),
@@ -654,6 +949,7 @@ function CourseContent() {
             ],
         },
     ];
+    const [showSection , setShowSection] = useState(false);
     return (
         <div className="course-content">
             <div className="course-content__container">
@@ -666,8 +962,11 @@ function CourseContent() {
                     </div>
                     <div className="course-content-list">
                         {courseList.map((item) => {
-                            return <CourseContentList item={item} key={item.id} />;
+                            return <CourseContentList showSection={showSection} item={item} key={item.id} />;
                         })}
+                    </div>
+                    <div className="show-section">
+                        <button onClick={()=>setShowSection(!showSection)}>{showSection === false ? "Show more section" : "Show less section"}</button>
                     </div>
                 </div>
             </div>

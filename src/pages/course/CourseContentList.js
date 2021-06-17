@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { AiOutlineFile, AiFillPlayCircle } from "react-icons/ai";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
-function CourseContentList({ item }) {
+function CourseContentList({ item, showSection }) {
     const [subCourse, setSubCourse] = useState(false);
     const ShowDrop = () => {
         setSubCourse(!subCourse);
     };
 
     return (
-        <div className="course-content-list__item">
+        <div className={`course-content-list__item ${showSection === false ? "hidden" : ""}`}>
             <div className="course-content-list__item-content" onClick={item.subCourse && ShowDrop}>
-                {subCourse == false ? <span>{item.iconOpen}</span> : <span>{item.iconClose}</span>}
+                {subCourse == false ? <span className="icon-angle">{item.iconOpen}</span> : <span className="icon-angle">{item.iconClose}</span>}
                 <h3>{item.title}</h3>
-                <span>
+                <span className="time">
                     {item.hours} lectures • {item.minute} min
                 </span>
             </div>
@@ -23,10 +23,10 @@ function CourseContentList({ item }) {
                         item.subCourse.map((item) => {
                             return (
                                 <li key={item.subId}>
-                                    <span>{item.icon}</span>
+                                    <span className="icon">{item.icon}</span>
                                     <h3>{item.subTitle}</h3>
-                                    <span>{item.textPreview}</span>
-                                    <span>{item.time}m</span>
+                                    <span className="preview">{item.textPreview}</span>
+                                    <span className="minute">{item.time}m</span>
                                 </li>
                             );
                         })}

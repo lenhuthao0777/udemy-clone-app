@@ -4,7 +4,7 @@ import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 function FilterCoursesItem() {
     return (
         <div className="filter-courses-list__item">
-            <Link to="/">
+            <Link to="/course">
                 <div className="filter-courses-list__item-content">
                     <div className="filter-courses-list__img">
                         <img src="./img/kh10.jpg" alt="" />

@@ -1,0 +1,133 @@
+.instructor {
+    &-container {
+        max-width: 1184px;
+        margin: 0 auto;
+    }
+    .instructor-content {
+        max-width: 700px;
+        margin: 24px 48px;
+        .instructor-heading {
+            font-size: 24px;
+            color: $color-black-0;
+            margin-bottom: 16px;
+        }
+        .instructor-info {
+            &__heading {
+                h1 {
+                    font-size: 19px;
+                    font-weight: 700;
+                    color: $color-green;
+                    padding-bottom: 8px;
+                }
+                h3 {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: $color-black-2;
+                }
+            }
+            &__profile {
+                display: flex;
+                align-items: center;
+                margin-top: 8px;
+                &-blocklist {
+                    flex: 1;
+                    padding-left: 24px;
+                    ul {
+                        li {
+                            padding: 10px 0;
+                            font-size: 14px;
+                            display: flex;
+                            align-items: center;
+                            color: $color-black-2;
+                            .blocklist-icon {
+                                margin-right: 8px;
+                                color: #eb8a2f;
+                            }
+                        }
+                    }
+                }
+            }
+            .introduce {
+                margin-top: 16px;
+                &-content {
+                    height: 146px;
+                    overflow: hidden;
+                    position: relative;
+                    &.open {
+                        height: auto;
+                    }
+                    p {
+                        font-size: 14px;
+                        line-height: 20px;
+                        padding-bottom: 16px;
+                        span {
+                            font-weight: 700;
+                        }
+                    }
+                }
+                .introduce-overlay {
+                    width: 100%;
+                    height: 50px;
+                    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.5));
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+                .button-shows {
+                    button {
+                        // width: 100px;
+                        padding: 10px 0;
+                        border: none;
+                        background-color: $color-white-0;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $color-green;
+                        span {
+                            padding-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .instructor {
+        .instructor-content {
+            max-width: 600px;
+            margin: 24px auto;
+        }
+    }
+}
+@include responesive("small") {
+    .instructor {
+        .instructor-content {
+            max-width: 600px;
+            margin: 24px 24px;
+            .instructor-info {
+                &__profile {
+                    &-blocklist {
+                        padding-left: 10px;
+                        ul {
+                            li {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 360px) {
+    .instructor {
+        .instructor-content {
+            .instructor-info {
+                &__profile {
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
