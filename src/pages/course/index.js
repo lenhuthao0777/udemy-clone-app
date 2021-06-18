@@ -4,6 +4,8 @@ import Instructor from "./Instructor";
 import TopInfo from "./TopInfo";
 import WillLearn from "./WillLearn";
 import Feedback from "./Feedback";
+import Preview from "./Preview";
+import Comments from "./Comments";
 
 function Course() {
     console.log(window.innerWidth);
@@ -14,6 +16,8 @@ function Course() {
             <CourseContent />
             <Instructor />
             <Feedback />
+            <Preview />
+            <Comments />
         </div>
     );
 }
