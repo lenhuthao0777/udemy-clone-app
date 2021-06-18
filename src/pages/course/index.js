@@ -6,6 +6,7 @@ import WillLearn from "./WillLearn";
 import Feedback from "./Feedback";
 import Preview from "./Preview";
 import Comments from "./Comments";
+import CourseSidebar from "./CourseSidebar";
 
 function Course() {
     console.log(window.innerWidth);
@@ -17,7 +18,12 @@ function Course() {
             <Instructor />
             <Feedback />
             <Preview />
-            <Comments />
+            <div className="comments-items">
+                <Comments />
+                <Comments />
+                <Comments />
+            </div>
+            <CourseSidebar />
         </div>
     );
 }

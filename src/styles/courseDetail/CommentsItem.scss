@@ -1,0 +1,73 @@
+.comments-item {
+    padding-left: 16px;
+    margin-bottom: 20px;
+    .people-name {
+        font-size: 16px;
+        color: $color-black-0;
+        padding-bottom: 10px;
+    }
+    .rates {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+        .comments-rate-icon {
+            font-size: 16px;
+            color: #eb8a2f;
+            margin-right: 4px;
+        }
+        .time {
+            font-size: 14px;
+            color: $color-black-2;
+            padding-left: 8px;
+        }
+    }
+    .comments-text {
+        padding-bottom: 8px;
+        p {
+            font-size: 14px;
+            color: $color-black-0;
+            line-height: 18px;
+            padding-bottom: 10px;
+        }
+        span {
+            font-size: 12px;
+            color: $color-black-0;
+        }
+    }
+    .comments-buttons {
+        display: flex;
+        align-items: center;
+        button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid $color-green;
+            border-radius: 50%;
+            font-size: 20px;
+            color: $color-green;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.2s ease;
+            background-color: $color-white-0;
+            &:hover {
+                color: $color-green-dark;
+                border-color: $color-green-dark;
+            }
+        }
+        span {
+            font-size: 14px;
+            color: $color-green;
+            cursor: pointer;
+            transition: 0.2s ease;
+            &:hover {
+                color: $color-green-dark;
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .comments-item {
+        padding-left: 0;
+    }
+}

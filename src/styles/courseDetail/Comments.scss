@@ -1,14 +1,51 @@
 .comments {
+    margin-bottom: 20px;
     &-container {
         max-width: 1184px;
         margin: 0 auto;
         .comments-content {
             max-width: 700px;
             margin: 0 48px;
-            .comments-body{
+            border-bottom: 2px solid #dadcda;
+            &:last-child {
+                // border-bottom: none;
+            }
+            .comments-body {
                 display: flex;
-                .comments-img{
+                .comments-img {
                     width: 65px;
+                }
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .comments {
+        &-container {
+            max-width: 1184px;
+            margin: 0 auto;
+            .comments-content {
+                max-width: 600px;
+                margin: 0 auto;
+                border-bottom: 2px solid #dadcda;
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .comments {
+        &-container {
+            max-width: 1184px;
+            margin: 0 24px;
+            .comments-content {
+                max-width: 600px;
+                margin: 0 auto;
+                border-bottom: 2px solid #dadcda;
+                .comments-body {
+                    display: flex;
+                    .comments-img {
+                        display:none;
+                    }
                 }
             }
         }

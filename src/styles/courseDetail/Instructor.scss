@@ -75,15 +75,18 @@
                 }
                 .button-shows {
                     button {
-                        // width: 100px;
                         padding: 10px 0;
                         border: none;
                         background-color: $color-white-0;
                         font-size: 14px;
                         font-weight: 700;
                         color: $color-green;
+                        transition: 0.3s ease-in-out;
                         span {
                             padding-right: 8px;
+                        }
+                        &:hover {
+                            color: $color-green-dark;
                         }
                     }
                 }

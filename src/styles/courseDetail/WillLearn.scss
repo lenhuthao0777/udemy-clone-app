@@ -63,6 +63,9 @@
                 p {
                     padding-right: 5px;
                 }
+                &:hover {
+                    color: $color-green-dark;
+                }
             }
         }
     }
@@ -92,9 +95,13 @@
                 border-radius: 10px;
                 .will-learn__list {
                     flex-flow: column;
+                    padding: 0 16px;
                     .will-learn__item {
                         width: 100%;
                     }
+                }
+                .show-more {
+                    padding: 24px 16px;
                 }
             }
         }

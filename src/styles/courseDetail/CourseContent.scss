@@ -31,6 +31,11 @@
                     color: $color-green;
                     font-size: 14px;
                     font-weight: 700;
+                    transition: 0.3s ease;
+                    &:hover {
+                        color: $color-green-dark;
+                        border-color: $color-green-dark;
+                    }
                 }
             }
         }
@@ -52,6 +57,13 @@
             .course-content__body {
                 max-width: 600px;
                 margin: 0 24px;
+                .course-content__subheader {
+                    flex-wrap: wrap;
+                    span {
+                        font-size: 12px;
+                        padding: 4px 8px 4px 0;
+                    }
+                }
             }
         }
     }

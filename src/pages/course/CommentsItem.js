@@ -19,15 +19,15 @@ function CommentsItem() {
                     As an beginner this course greatly helped me.I certainly learnt all methods in Python and I have good confidence on solving problems in python now.I will recommend this course for
                     students who wants to learn python for kickstart into their programming career.
                 </p>
-                <p>Was this review helpful?</p>
+                <span>Was this review helpful?</span>
             </div>
             <div className="comments-buttons">
-                <p>
+                <button>
                     <AiOutlineLike />
-                </p>
-                <p>
+                </button>
+                <button>
                     <AiOutlineDislike />
-                </p>
+                </button>
                 <span>Report</span>
             </div>
         </div>
