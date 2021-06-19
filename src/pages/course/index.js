@@ -8,6 +8,7 @@ import Preview from "./Preview";
 import Comments from "./Comments";
 import CourseSidebar from "./CourseSidebar";
 import NavbarScroll from "./NavbarScroll";
+import SlideMenu from "./SlideMenu";
 
 function Course() {
     
@@ -26,6 +27,7 @@ function Course() {
             </div>
             <CourseSidebar />
             <NavbarScroll/>
+            <SlideMenu/>
         </div>
     );
 }

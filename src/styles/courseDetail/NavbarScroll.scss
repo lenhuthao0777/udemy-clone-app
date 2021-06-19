@@ -5,8 +5,8 @@
     left: 0;
     right: 0;
     z-index: 11000;
-    display: none;
-    animation: fadeIn ease-in-out 0.3s;
+    transform: translateY(-200%);
+    transition: all 0.3s;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 4px 12px rgba(0, 0, 0, 0.3);
     &__content {
         background-color: $color-black-0;
@@ -34,7 +34,7 @@
         }
     }
     &.open {
-        display: block;
+        transform: translateY(0);
     }
 }
 @include responesive("extra-large") {

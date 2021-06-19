@@ -3,11 +3,12 @@
     top: 1%;
     right: 19%;
     z-index: 12000;
-    transition: 0.3s ease;
     &.srcoll {
         position: fixed;
         top: 3%;
         right: 19%;
+        opacity: 0;
+        animation: fadeIn ease-in 0.3s forwards;
     }
     .course-sidebar-container {
         max-width: 1184px;

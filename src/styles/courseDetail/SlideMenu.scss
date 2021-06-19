@@ -1,0 +1,78 @@
+.slide-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $color-black-0;
+    z-index: 12000;
+    display: none;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3), 0 -4px 12px rgba(0, 0, 0, 0.3);
+    .slide-menu__content {
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .slide-menu__info {
+            h3 {
+                font-size: 16px;
+                color: $color-white-0;
+                font-weight: 700;
+                padding-bottom: 10px;
+            }
+            .slide-menu__rates {
+                span {
+                    font-size: 14px;
+                    color: $color-white-0;
+                    padding-right: 8px;
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        color: #eb8a2f;
+                    }
+                }
+            }
+        }
+        .slide-menu__price {
+            display: flex;
+            align-items: center;
+            p {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-white-0;
+                padding-right: 8px;
+            }
+            button {
+                padding: 10px 15px;
+                border: 1px solid $color-green;
+                border-radius: 5px;
+                font-size: 14px;
+                color: $color-white-0;
+                font-weight: 700;
+                background-color: $color-green;
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .slide-menu {
+        display: block;
+    }
+}
+@include responesive("small") {
+    .slide-menu {
+        background-color: $color-white-0;
+        .slide-menu__content {
+            .slide-menu__info {
+                display: none;
+            }
+            .slide-menu__price {
+                width: 100%;
+                p {
+                    color: $color-black-0;
+                }
+                button {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
