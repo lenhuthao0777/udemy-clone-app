@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiOutlinePlayCircle } from "react-icons/ai";
-import { BiTimer } from "react-icons/bi";
+import { BsCollectionPlay, BsDownload, BsFileEarmark, BsQuestionCircle, BsPhone } from "react-icons/bs";
+import { VscSymbolNamespace } from "react-icons/vsc";
+import { CgInfinity } from "react-icons/cg";
+import { GiRibbonMedal } from "react-icons/gi";
 function CourseSidebar() {
+    const [scrollSideBar, setScrollSideBar] = useState(false);
+    const scrollSide = () => {
+        if (window.scrollY >= 350) {
+            setScrollSideBar(true);
+        } else {
+            setScrollSideBar(false);
+        }
+    };
+    window.addEventListener("scroll", scrollSide);
     return (
-        <div className="course-sidebar">
+        <div className={`course-sidebar ${scrollSideBar ? "srcoll" : ""}`}>
             <div className="course-sidebar-container">
                 <div className="course-sidebar__content">
                     <div className="course-sidebar__img">
@@ -20,11 +32,54 @@ function CourseSidebar() {
                             <span className="course-sidebar__purchase-price-old">$129.99</span>
                             <span className="course-sidebar__purchase-price-sale">15% off</span>
                         </div>
-                        <div className="course-sidebar__purchase-time">
-                            <span className="course-sidebar__purchase-time-icon">
-                                <BiTimer />
-                            </span>
+                        <div className="course-sidebar__purchase-buttons">
+                            <button className="course-sidebar__purchase-buttons-add">Add to cart</button>
+                            <button className="course-sidebar__purchase-buttons-buy">Buy now</button>
+                            <span className="course-sidebar__purchase-buttons-text">30-Day Money-Back Guarantee</span>
                         </div>
+                        <div className="course-sidebar__purchase-info">
+                            <h3>This course includes</h3>
+                            <p>
+                                <BsCollectionPlay />
+                                <span>29.5 hours on-demand video</span>
+                            </p>
+                            <p>
+                                <BsFileEarmark />
+                                <span>85 articles</span>
+                            </p>
+                            <p>
+                                <BsDownload />
+                                <span>42 downloadable resources</span>
+                            </p>
+                            <p>
+                                <BsQuestionCircle />
+                                <span>1 practice test</span>
+                            </p>
+                            <p>
+                                <VscSymbolNamespace />
+                                <span>70 coding exercises</span>
+                            </p>
+                            <p>
+                                <CgInfinity />
+                                <span>Full lifetime access</span>
+                            </p>
+                            <p>
+                                <BsPhone />
+                                <span> Access on mobile and TV</span>
+                            </p>
+                            <p>
+                                <GiRibbonMedal />
+                                <span>Certificate of completion</span>
+                            </p>
+                        </div>
+                        <div className="course-sidebar__purchase-apply">
+                            <button>Apply Coupon</button>
+                        </div>
+                    </div>
+                    <div className="course-sidebar__traning">
+                        <h3>Training 5 or more people?</h3>
+                        <p>Get your team access to 5,500+ top Udemy courses anytime, anywhere.</p>
+                        <button>Try Udemy for Business</button>
                     </div>
                 </div>
             </div>

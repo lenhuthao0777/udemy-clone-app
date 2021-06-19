@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CourseContent from "./CourseContent";
 import Instructor from "./Instructor";
 import TopInfo from "./TopInfo";
@@ -7,9 +7,10 @@ import Feedback from "./Feedback";
 import Preview from "./Preview";
 import Comments from "./Comments";
 import CourseSidebar from "./CourseSidebar";
+import NavbarScroll from "./NavbarScroll";
 
 function Course() {
-    console.log(window.innerWidth);
+    
     return (
         <div className="course">
             <TopInfo />
@@ -24,6 +25,7 @@ function Course() {
                 <Comments />
             </div>
             <CourseSidebar />
+            <NavbarScroll/>
         </div>
     );
 }
