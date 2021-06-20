@@ -2,7 +2,7 @@
     position: absolute;
     top: 1%;
     right: 19%;
-    z-index: 12000;
+    z-index: 3;
     &.srcoll {
         position: fixed;
         top: 3%;
@@ -181,7 +181,7 @@
         position: absolute;
         top: 1%;
         right: 11%;
-        z-index: 12000;
+        z-index: 15;
         transition: 0.3s ease;
         &.srcoll {
             position: fixed;

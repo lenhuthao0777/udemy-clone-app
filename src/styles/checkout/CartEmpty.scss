@@ -1,0 +1,104 @@
+.cart-empty {
+    margin-top: 16px;
+    .cart-empty__content {
+        width: 100%;
+        height: auto;
+        border: 1px solid #d3d3d3;
+        border-radius: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cart-empty__body {
+            text-align: center;
+            margin: 40px 0;
+            .cart-empty__icon {
+                font-size: 150px;
+                color: #d3d3d3;
+            }
+            p {
+                font-size: 16px;
+                color: $color-black-0;
+                margin: 16px 0;
+            }
+            button {
+                padding: 15px;
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-white-0;
+                background-color: $color-red-0;
+                border: none;
+                border-radius: 5px;
+                transition: 0.3s ease;
+                &:hover {
+                    background-color: $color-red-2;
+                }
+            }
+        }
+    }
+    .cart-empty__text {
+        margin: 32px 0;
+        .cart-empty__text-save {
+            margin-bottom: 16px;
+            h3 {
+                font-size: 19px;
+                font-weight: 700;
+                color: $color-black-0;
+                padding-bottom: 8px;
+            }
+            p {
+                font-size: 14px;
+                color: $color-black-2;
+            }
+        }
+        .cart-empty__text-wishlist {
+            margin-bottom: 16px;
+            h3 {
+                font-size: 19px;
+                font-weight: 700;
+                color: $color-black-0;
+                padding-bottom: 8px;
+            }
+            p {
+                font-size: 14px;
+                color: $color-black-2;
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .cart-empty {
+        margin-top: 16px;
+        .cart-empty__content {
+            .cart-empty__body {
+                padding: 0 24px;
+                .cart-empty__icon {
+                    font-size: 90px;
+                }
+                p {
+                    font-size: 14px;
+                }
+                button {
+                    font-size: 14px;
+                }
+            }
+        }
+        .cart-empty__text {
+            .cart-empty__text-save {
+                h3 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+            .cart-empty__text-wishlist {
+                h3 {
+                    font-size: 16px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

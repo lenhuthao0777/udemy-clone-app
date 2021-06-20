@@ -10,7 +10,7 @@
         .carousels {
             margin-top: 20px;
             .slick-arrow {
-                z-index: 10000;
+                z-index: 10;
                 &.slick-next {
                     top: 30%;
                     right: -14px;
@@ -26,7 +26,7 @@
                 }
             }
             .slick-arrow {
-                z-index: 10000;
+                z-index: 10;
                 &.slick-prev {
                     top: 30%;
                     left: -14px;

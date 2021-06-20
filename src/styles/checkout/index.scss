@@ -1,0 +1,36 @@
+.shopping-cart {
+    .shopping-cart__heading {
+        padding: 34px 0;
+        background-color: $color-black-0;
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: $color-white-0;
+        }
+    }
+    &__content {
+        .shopping-cart_body{
+            margin: 32px 0;
+            .shopping-cart_body-quantity{
+                span{
+                    font-size: 18px;
+                    color: $color-black-0;
+                }
+            }
+        }
+    }
+}
+@include responesive("extra-large"){
+    .shopping-cart {
+        .shopping-cart__heading {
+            h1 {
+               margin: 0 27px;
+            }
+        }
+        &__content {
+            .shopping-cart_body{
+                margin: 32px 27px;
+            }
+        }
+    }
+}
