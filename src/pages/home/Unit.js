@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import CourseItem from "src/components/courseItem/CourseItem";
+import CourseItem from "components/courseItem/CourseItem";
 function Unit({ courses }) {
     var settings = {
         dots: true,
@@ -71,7 +71,7 @@ function Unit({ courses }) {
                                     <div key={index}>
                                         <CourseItem
                                             clsName={"course-item"}
-                                            id={`item${index + 1}`}
+                                            id={item.maKhoaHoc}
                                             sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                                             image={item.hinhAnh}
                                             courseName={item.tenKhoaHoc}

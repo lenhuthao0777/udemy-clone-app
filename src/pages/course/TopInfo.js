@@ -5,7 +5,7 @@ import { BsFillExclamationOctagonFill } from "react-icons/bs";
 import { MdLanguage } from "react-icons/md";
 import { GiAlarmClock } from "react-icons/gi";
 import { Link } from "react-router-dom";
-function TopInfo() {
+function TopInfo({course}) {
     return (
         <div className="top-info">
             <div className="top-container">
@@ -20,14 +20,14 @@ function TopInfo() {
                         </h3>
                     </div>
                     <div className="course-img">
-                        <img src="./img/course1.jpg" alt="" />
+                        <img src={course.hinhAnh} alt="" />
                         <span>
                             <FaPlayCircle className="play-icon" />
                             <p>Preview this course</p>
                         </span>
                     </div>
-                    <h1 className="title-heading">The Web Developer Bootcamp 2021</h1>
-                    <h3 className="title-text">COMPLETELY REDONE - The only course you need to learn web development - HTML, CSS, JS, Node, and More!</h3>
+                    <h1 className="title-heading">{course.tenKhoaHoc}</h1>
+                    <h3 className="title-text">{course.moTa}</h3>
                     <div className="rating">
                         <p>4.7</p>
                         <IoMdStar className="icon-star" />
@@ -35,7 +35,7 @@ function TopInfo() {
                         <IoMdStar className="icon-star" />
                         <IoMdStar className="icon-star" />
                         <IoMdStarHalf className="icon-starhaft" />
-                        <span>(206,826 ratings)</span>
+                        <span>({course.luotXem} ratings)</span>
                         <span>682,828 students</span>
                     </div>
                     <div className="authen">
@@ -45,7 +45,7 @@ function TopInfo() {
                     <div className="time">
                         <div className="time-item">
                             <BsFillExclamationOctagonFill className="icon-time" />
-                            <p>Last updated 5/2021</p>
+                            <p>Last updated {course.ngayTao}</p>
                         </div>
                         <div className="time-item">
                             <MdLanguage className="icon-language" />

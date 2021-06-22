@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
-import coursesReducer from "./Courses";
+import courses from "./Courses";
 import authReducer from "./Auth";
-import courseReducerDetail from "./Course";
+import Course from "./CourseDetail";
+import CoursesByCate from "./CoursesByCate";
 export const rootReducer = combineReducers({
-	coursesReducer,
-	authReducer,
-	courseReducerDetail,
+    courses,
+    authReducer,
+    Course,
+    CoursesByCate,
 });

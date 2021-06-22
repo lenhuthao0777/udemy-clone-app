@@ -11,13 +11,13 @@ function SubCategory() {
 					</Link>
 				</li>
 				<li className='sub-category__list-item'>
-					<Link to='/'>FrontEnd</Link>
+					<Link to='/courses/FrontEnd'>FrontEnd</Link>
 				</li>
 				<li className='sub-category__list-item'>
-					<Link to='/'>BackEnd</Link>
+					<Link to='/courses/BackEnd'>BackEnd</Link>
 				</li>
 				<li className='sub-category__list-item'>
-					<Link to='/'>Mobile Developer</Link>
+					<Link to='/courses/Mobile'>Mobile Developer</Link>
 				</li>
 			</ul>
 		</nav>

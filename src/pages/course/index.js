@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Comments from "./Comments";
 import CourseContent from "./CourseContent";
+import CourseSidebar from "./CourseSidebar";
+import Feedback from "./Feedback";
 import Instructor from "./Instructor";
+import NavbarScroll from "./NavbarScroll";
+import Preview from "./Preview";
+import SlideMenu from "./SlideMenu";
 import TopInfo from "./TopInfo";
 import WillLearn from "./WillLearn";
-import Feedback from "./Feedback";
-import Preview from "./Preview";
-import Comments from "./Comments";
-import CourseSidebar from "./CourseSidebar";
-import NavbarScroll from "./NavbarScroll";
-import SlideMenu from "./SlideMenu";
-
+import { getCoursesById } from "actions/CourseDetail";
+import { useParams } from "react-router-dom";
 function Course() {
-    
+    const dispatch = useDispatch();
+    const { id } = useParams();
+    const { course } = useSelector((state) => state.Course);
+    useEffect(() => {
+        dispatch(getCoursesById(id));
+    }, [id]);
     return (
         <div className="course">
-            <TopInfo />
+            <TopInfo course={course} />
             <WillLearn />
             <CourseContent />
             <Instructor />
@@ -25,9 +33,9 @@ function Course() {
                 <Comments />
                 <Comments />
             </div>
-            <CourseSidebar />
-            <NavbarScroll/>
-            <SlideMenu/>
+            <CourseSidebar course={course} />
+            <NavbarScroll course={course} />
+            <SlideMenu />
         </div>
     );
 }

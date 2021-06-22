@@ -1,6 +1,7 @@
+import { getCourses } from "actions/courses";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getCourses } from "../../actions/courses";
+// import { getCourses } from "../../actions/courses";
 import BestCate from "./BestCate";
 import Billboard from "./Billboard";
 import ForBusiness from "./ForBusiness";
@@ -13,13 +14,10 @@ import TabCourses from "./TabCourses";
 import TopicCate from "./TopicCate";
 import Unit from "./Unit";
 import Video from "./Video";
+// import { Link } from "react-router-dom";
 function Home() {
     const dispatch = useDispatch();
-    const { courses, isLoading, error } = useSelector(
-        (state) => state.coursesReducer
-    );
-    // console.log(courses);
-
+    const { courses } = useSelector((state) => state.courses);
     useEffect(() => {
         dispatch(getCourses());
     }, []);

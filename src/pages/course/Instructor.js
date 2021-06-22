@@ -1,4 +1,4 @@
-import UdeAvatar from "src/components/avatar";
+import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { FaStar, FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { MdRateReview, MdPeople, MdPlayCircleFilled } from "react-icons/md";
@@ -17,7 +17,7 @@ function Instructor() {
                             <h3>Developer and Bootcamp Instructor</h3>
                         </div>
                         <div className="instructor-info__profile">
-                            <UdeAvatar size="AvatarLg" AvatarSrc="./img/avatar3.jpg" className="instructor-img" />
+                            <UdeAvatar size="AvatarLg" AvatarSrc="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" className="instructor-img" />
                             <div className="instructor-info__profile-blocklist">
                                 <ul>
                                     <li>

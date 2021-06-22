@@ -4,7 +4,7 @@ import { BsCollectionPlay, BsDownload, BsFileEarmark, BsQuestionCircle, BsPhone 
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { CgInfinity } from "react-icons/cg";
 import { GiRibbonMedal } from "react-icons/gi";
-function CourseSidebar() {
+function CourseSidebar({course}) {
     const [scrollSideBar, setScrollSideBar] = useState(false);
     const scrollSide = () => {
         if (window.scrollY >= 350) {
@@ -19,7 +19,7 @@ function CourseSidebar() {
             <div className="course-sidebar-container">
                 <div className="course-sidebar__content">
                     <div className="course-sidebar__img">
-                        <img src="./img/course1.jpg" alt="" />
+                        <img src={course.hinhAnh} alt="" />
                         <div className="course-sidebar__img-overlay">
                             <span>
                                 <AiOutlinePlayCircle />

@@ -3,13 +3,7 @@ import { lazy, Suspense } from "react";
 import AdminRoute from "./auth/AdminRoute";
 import AdminLayout from "./layouts/adminLayout";
 import AppLayout from "./layouts/applayout/index";
-// su dung lazyload ko import truc tiep
-// import AdminCourses from './pages/adminCourses';
-// import AdminUser from './pages/adminUser';
-// import Course from './pages/course';
-// import Courses from './pages/courses';
-// import Home from './pages/home';
-// import Loginpage from './pages/loginPage/Loginpage';
+
 
 const Home = lazy(() => import("./pages/home"));
 const AdminUser = lazy(() => import("./pages/adminUser"));
@@ -52,7 +46,7 @@ function App() {
                                     {/* /:category */}
                                     <Courses />
                                 </Route>
-                                <Route path="/course">
+                                <Route path="/course/:id">
                                     {/* /:id */}
                                     <Course />
                                 </Route>

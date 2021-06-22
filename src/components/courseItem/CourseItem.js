@@ -10,7 +10,7 @@ function CourseItem({ courseName, image, author, price, clsName, sale, onClick, 
     const checkSale = SALE.includes(sale) ? sale : "";
     return (
         <div className={`${checkClsName} ${checkSale}`} id={id} onClick={onClick}>
-            <Link to="/course">
+            <Link to={`/course/${id}`}>
                 <div className="course-item__img">
                     <img src={image} alt="" />
                 </div>

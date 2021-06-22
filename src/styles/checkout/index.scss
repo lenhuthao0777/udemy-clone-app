@@ -34,3 +34,17 @@
         }
     }
 }
+@include responesive("extra-large"){
+    .shopping-cart {
+        .shopping-cart__heading {
+            h1 {
+               margin: 0 27px;
+            }
+        }
+        &__content {
+            .shopping-cart_body{
+                margin: 32px 15px;
+            }
+        }
+    }
+}

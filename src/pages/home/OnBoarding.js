@@ -1,4 +1,4 @@
-import { Button } from "src/components/button/Button";
+import { Button } from "components/button/Button";
 import React from "react";
 
 function OnBoarding() {

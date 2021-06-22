@@ -964,7 +964,7 @@
         height: 100vh;
         overflow: hidden;
         background-color: rgba(0, 0, 0, 0.6);
-        z-index: 9999;
+        z-index: 11;
         display: none;
         animation: fadeIn ease-out 0.3s;
         &.active {

@@ -2,14 +2,14 @@ import {
 	GET_COURSES_REQUEST,
 	GET_COURSES_SUCCESS,
 	GET_COURSES_FAILURE,
-} from "../constants/courses";
+} from '../constants/courses';
 
 const initialState = {
-	course: [],
+	courses: [],
 	isLoading: false,
 	error: null,
 };
-function courseReducerDetail(state = initialState, action) {
+function CoursesByCate(state = initialState, action) {
 	switch (action.type) {
 		case GET_COURSES_REQUEST: {
 			return { ...state, isLoading: true, error: null };
@@ -24,4 +24,4 @@ function courseReducerDetail(state = initialState, action) {
 			return state;
 	}
 }
-export default courseReducerDetail;
+export default CoursesByCate;

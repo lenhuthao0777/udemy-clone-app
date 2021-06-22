@@ -1,16 +1,20 @@
 const { axiosClient } = require("./axiosClient");
 
 const coursesApi = {
-	getCourses: () => {
-		const params = { MaNhom: "GP08" };
-		return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", { params });
-	},
-	getCoursesByCategory: (category) => {
-		const params = { maDanhMuc: category, MaNhom: "GP08" };
-		return axiosClient.get("/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc", {
-			params,
-		});
-	},
+    getCourses: () => {
+        const params = { MaNhom: "GP08" };
+        return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", { params });
+    },
+    getCoursesByCategory: (category) => {
+        const params = { maDanhMuc: category, MaNhom: "GP08" };
+        return axiosClient.get("/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc", {
+            params,
+        });
+    },
+    getCourseById: (id) => {
+        const params = { maKhoaHoc: id };
+        return axiosClient.get("/QuanLyKhoaHoc/LayThongTinKhoaHoc", { params });
+    },
 };
 export default coursesApi;
 /*
