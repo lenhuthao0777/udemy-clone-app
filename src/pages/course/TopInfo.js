@@ -1,9 +1,9 @@
 import React from "react";
-import { FaAngleRight, FaClosedCaptioning, FaRegHeart, FaPlayCircle, FaRegPlayCircle } from "react-icons/fa";
-import { IoMdStarHalf, IoMdStar, IoMdStarOutline, IoMdShareAlt } from "react-icons/io";
 import { BsFillExclamationOctagonFill } from "react-icons/bs";
-import { MdLanguage } from "react-icons/md";
+import { FaAngleRight, FaClosedCaptioning, FaPlayCircle, FaRegHeart } from "react-icons/fa";
 import { GiAlarmClock } from "react-icons/gi";
+import { IoMdShareAlt, IoMdStar, IoMdStarHalf } from "react-icons/io";
+import { MdLanguage } from "react-icons/md";
 import { Link } from "react-router-dom";
 function TopInfo({course}) {
     return (

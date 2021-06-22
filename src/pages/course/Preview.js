@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 function Preview() {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState("All Ratings");

@@ -5,19 +5,16 @@ import FilterCoursesList from "./FilterCoursesList";
 import FilterSideBar from "./FilterSideBar";
 import FilterSidebarMobile from "./FilterSidebarMobile";
 
-function UdeCourses() {
+function UdeCourses({coursesByCate}) {
     const [sidebar, setSidebar] = useState(false);
     const ShowSidebar = () => setSidebar(!sidebar);
-    // useEffect(() => {
-    //     console.log(window.innerHeight);
-    // }, []);
     return (
         <div className="ude-courses">
-            <Filter ShowSidebar={ShowSidebar} />
+            <Filter ShowSidebar={ShowSidebar} coursesByCate={coursesByCate} />
             <div className={`ude-courses__list ${sidebar ? "isClose" : ""}`}>
                 <div className="list-cuorses">
                     <FilterSideBar />
-                    <FilterCoursesList sidebar={sidebar} />
+                    <FilterCoursesList sidebar={sidebar} coursesByCate={coursesByCate} />
                 </div>
             </div>
             <FilterSidebarMobile sidebar={sidebar} setSidebar={setSidebar} />

@@ -42,7 +42,7 @@ function App() {
                                 <Route path="/" exact>
                                     <Home />
                                 </Route>
-                                <Route path="/courses">
+                                <Route path="/courses/:category">
                                     {/* /:category */}
                                     <Courses />
                                 </Route>

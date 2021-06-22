@@ -1,22 +1,20 @@
 import React from "react";
+import { IoMdStar, IoMdStarHalf } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
-function FilterCoursesItem() {
+function FilterCoursesItem({item}) {
     return (
         <div className="filter-courses-list__item">
             <Link to="/course">
                 <div className="filter-courses-list__item-content">
                     <div className="filter-courses-list__img">
-                        <img src="./img/kh10.jpg" alt="" />
+                        <img src={item.hinhAnh} alt="" />
                     </div>
                     <div className="filter-courses-list__info">
                         <h1 className="filter-courses-list__info-heading">
-                            The website bootcamp 2021
+                            {item.tenKhoaHoc}
                         </h1>
                         <p className="filter-courses-list__info-name">
-                            COMPLETELY REDONE - The only course you need to
-                            learn web development - HTML, CSS, JS, Node, and
-                            More!
+                            {item.moTa}
                         </p>
                         <p className="filter-courses-list__info-authen">
                             Colt Steele
@@ -28,7 +26,7 @@ function FilterCoursesItem() {
                             <IoMdStar className="icon-rating" />
                             <IoMdStar className="icon-rating" />
                             <IoMdStarHalf className="icon-rating" />
-                            <span>(205,656)</span>
+                            <span>({item.luotXem})</span>
                         </div>
                         <div className="filter-courses-list__info-text">
                             <span>63 total hours</span>

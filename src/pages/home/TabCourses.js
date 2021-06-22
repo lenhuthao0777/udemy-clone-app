@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Slider from "react-slick";
 import UdeAvatar from "components/avatar/index";
 import { Button } from "components/button/Button";
 import CourseItem from "components/courseItem/CourseItem";
-import { getCourses } from "actions/courses";
+import React, { useState } from "react";
+import Slider from "react-slick";
 function TabCourses({courses}) {
     const [toggleState, setToggleState] = useState(1);
     const handelTabs = (state) => {

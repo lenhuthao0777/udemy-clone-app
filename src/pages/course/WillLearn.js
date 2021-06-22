@@ -158,11 +158,11 @@ function WillLearn() {
                                 </li>
                             );
                         })}
-                        {isOpen == false ? <div className="will-learn__overlay"></div> : null}
+                        {isOpen === false ? <div className="will-learn__overlay"></div> : null}
                     </ul>
                     <div className="show-more" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen == false ? <p>Show more</p> : <p>Show less</p>}
-                        <span>{isOpen == false ? <FaAngleDown /> : <FaAngleUp />}</span>
+                        {isOpen === false ? <p>Show more</p> : <p>Show less</p>}
+                        <span>{isOpen === false ? <FaAngleDown /> : <FaAngleUp />}</span>
                     </div>
                 </div>
             </div>

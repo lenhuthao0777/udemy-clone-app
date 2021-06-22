@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { FaAngleDown } from "react-icons/fa";
-function Filter({ ShowSidebar }) {
+function Filter({ ShowSidebar,coursesByCate }) {
     const [isActive, setIsActive] = useState(false);
     const [selected, setSelected] = useState("Most Popular");
     const selectDropdown = [
@@ -18,6 +18,7 @@ function Filter({ ShowSidebar }) {
             name: "Newest",
         },
     ];
+    const count = coursesByCate.length;
     return (
         <div className="filter">
             <div className="filter-heading">
@@ -51,7 +52,7 @@ function Filter({ ShowSidebar }) {
                     </div>
                 </div>
                 <div className="filter-heading__result">
-                    <span>432 result</span>
+                    <span>({count}) result</span>
                 </div>
             </div>
         </div>

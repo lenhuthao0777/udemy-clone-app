@@ -1,21 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import FilterCoursesItem from "./FilterCoursesItem";
 
-function FilterCoursesList({ sidebar }) {
+function FilterCoursesList({ sidebar, coursesByCate }) {
     return (
         <div className={`filter-courses-list ${sidebar ? "full-width" : ""}`}>
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
-            <FilterCoursesItem />
+            {coursesByCate.map((item,index) => {
+                return <FilterCoursesItem key={index} item={item}/>;
+            })}
         </div>
     );
 }

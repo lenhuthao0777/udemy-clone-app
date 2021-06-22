@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { AiOutlineFile, AiFillPlayCircle } from "react-icons/ai";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
 function CourseContentList({ item, showSection }) {
     const [subCourse, setSubCourse] = useState(false);
@@ -11,7 +9,7 @@ function CourseContentList({ item, showSection }) {
     return (
         <div className={`course-content-list__item ${showSection === false ? "hidden" : ""}`}>
             <div className="course-content-list__item-content" onClick={item.subCourse && ShowDrop}>
-                {subCourse == false ? <span className="icon-angle">{item.iconOpen}</span> : <span className="icon-angle">{item.iconClose}</span>}
+                {subCourse === false ? <span className="icon-angle">{item.iconOpen}</span> : <span className="icon-angle">{item.iconClose}</span>}
                 <h3>{item.title}</h3>
                 <span className="time">
                     {item.hours} lectures • {item.minute} min

@@ -1,7 +1,6 @@
-import React from "react";
 import StarIcon from "@material-ui/icons/Star";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
-import { FaCheck, FaRegHeart } from "react-icons/fa";
+import React from "react";
 import { Link } from "react-router-dom";
 const STYLE = ["course-item", "sale-active"];
 const SALE = ["sale-active"];

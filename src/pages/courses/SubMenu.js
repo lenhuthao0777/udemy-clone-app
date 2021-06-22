@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { FiCheck } from "react-icons/fi";
-import styled from "styled-components";
-import { FaAngleDown } from "react-icons/fa";
 function SubMenu({ item }) {
     const [subnav, setSubNav] = useState(false);
     const showSubNav = () => setSubNav(!subnav);

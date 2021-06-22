@@ -1,23 +1,23 @@
 import {
-	GET_COURSES_REQUEST,
-	GET_COURSES_SUCCESS,
-	GET_COURSES_FAILURE,
-} from '../constants/courses';
+	GET_COURSEBYCATE_REQUEST,
+	GET_COURSEBYCATE_SUCCESS,
+	GET_COURSEBYCATE_FAILURE,
+} from '../constants/CourseByCate';
 
 const initialState = {
-	courses: [],
+	coursesByCate: [],
 	isLoading: false,
 	error: null,
 };
 function CoursesByCate(state = initialState, action) {
 	switch (action.type) {
-		case GET_COURSES_REQUEST: {
+		case GET_COURSEBYCATE_REQUEST: {
 			return { ...state, isLoading: true, error: null };
 		}
-		case GET_COURSES_SUCCESS: {
-			return { ...state, courses: action.payload.data, isLoading: false };
+		case GET_COURSEBYCATE_SUCCESS: {
+			return { ...state, coursesByCate: action.payload.data, isLoading: false };
 		}
-		case GET_COURSES_FAILURE: {
+		case GET_COURSEBYCATE_FAILURE: {
 			return { ...state, isLoading: false, error: action.payload.error };
 		}
 		default:

@@ -17,7 +17,7 @@ import { Button } from "../../components/button/Button";
 import { FcGoogle } from "react-icons/fc";
 function Loginpage() {
     const dispatch = useDispatch();
-    const { userInfo, isLoading, error } = useSelector((state) => state.authReducer);
+    const { userInfo } = useSelector((state) => state.authReducer);
     const location = useLocation();
     // controlled compoent: conttrol tat ca moi thu tren dao dien bang state, props
     // uncontrooled component: controll dao dien ko thong qua state , props
@@ -29,7 +29,7 @@ function Loginpage() {
     const handelLogin = (value) => {
         // console.log(inputTaiKhoan.current.value);
         // console.log(inputMatKhau.current.value);
-        console.log(value);
+        // console.log(value);
         dispatch(login(value));
     };
     const schema = yup.object().shape({
@@ -43,7 +43,7 @@ function Loginpage() {
         // su dung khi component ko ho tro register
         control,
     } = useForm({ resolver: yupResolver(schema) });
-    console.log(errors);
+    // console.log(errors);
 
     // tao schema validation
     // userInfo co data chuyen den trang home
@@ -60,7 +60,7 @@ function Loginpage() {
     }
     return (
         <form onSubmit={handleSubmit(handelLogin)}>
-            <h1>Login page</h1>
+            {/* <h1>Login page</h1>
 			<input
 				type='text'
 				{...register('taiKhoan', {
@@ -85,7 +85,7 @@ function Loginpage() {
 				{...register('matKhau', { required: true })}
 				placeholder='mat khau'
 			/>
-			{errors.matKhau && <div>mat khau ko dc de trong</div>}
+			{errors.matKhau && <div>mat khau ko dc de trong</div>} */}
             {/* <FormGroup>
 				<Label>Tai Khoan</Label>
 				<Input type='text' {...register("taiKhoan")} />
@@ -116,13 +116,7 @@ function Loginpage() {
             {/* {error && <div>{error}</div>}
 			<button>Login</button> */}
 
-
-
-
-
-
-
-            {/* <div className="form">
+            <div className="form">
                 <div className="form__heading">
                     <h3>Log into your Udemy account!</h3>
                 </div>
@@ -177,7 +171,7 @@ function Loginpage() {
                     </p>
                     <p>Connect with your organization</p>
                 </div>
-            </div> */}
+            </div>
         </form>
     );
 }

@@ -17,7 +17,7 @@ function SubCategory() {
 					<Link to='/courses/BackEnd'>BackEnd</Link>
 				</li>
 				<li className='sub-category__list-item'>
-					<Link to='/courses/Mobile'>Mobile Developer</Link>
+					<Link to='/courses/DiDong'>Mobile Developer</Link>
 				</li>
 			</ul>
 		</nav>
