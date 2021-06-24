@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { BsFillStarFill } from "react-icons/bs";
 function NavbarScroll({ course }) {
     const [navIsOpen, setNavIsOpen] = useState(false);
-    const showNavbar = () => {
-        if (window.scrollY >= 100) {
-            setNavIsOpen(true);
-        } else {
-            setNavIsOpen(false);
-        }
-    };
-    window.addEventListener("scroll", showNavbar);
+    useEffect(() => {
+        const showNavbar = () => {
+            if (window.scrollY >= 100) {
+                setNavIsOpen(true);
+            } else {
+                setNavIsOpen(false);
+            }
+        };
+        window.addEventListener("scroll", showNavbar);
+        return()=> window.removeEventListener("scroll", showNavbar)
+    }, [navIsOpen]);
     return (
         <div className={`navbar-scroll ${navIsOpen ? "open" : ""}`}>
             <div className="navbar-scroll__content">

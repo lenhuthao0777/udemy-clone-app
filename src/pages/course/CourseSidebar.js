@@ -4,16 +4,20 @@ import { BsCollectionPlay, BsDownload, BsFileEarmark, BsQuestionCircle, BsPhone 
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { CgInfinity } from "react-icons/cg";
 import { GiRibbonMedal } from "react-icons/gi";
-function CourseSidebar({course}) {
+function CourseSidebar({ course }) {
     const [scrollSideBar, setScrollSideBar] = useState(false);
-    const scrollSide = () => {
-        if (window.scrollY >= 350) {
-            setScrollSideBar(true);
-        } else {
-            setScrollSideBar(false);
-        }
-    };
-    window.addEventListener("scroll", scrollSide);
+    useEffect(() => {
+        const scrollSide = () => {
+            if (window.scrollY >= 350) {
+                setScrollSideBar(true);
+            } else {
+                setScrollSideBar(false);
+            }
+        };
+        window.addEventListener("scroll", scrollSide);
+        return () => window.removeEventListener("scroll", scrollSide);
+    }, [scrollSideBar]);
+
     return (
         <div className={`course-sidebar ${scrollSideBar ? "srcoll" : ""}`}>
             <div className="course-sidebar-container">

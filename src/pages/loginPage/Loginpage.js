@@ -1,20 +1,18 @@
-import React, { useRef } from "react";
-import { useForm, Controller } from "react-hook-form";
-import { Input, FormGroup, Label } from "reactstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "actions/auth";
-import { useEffect } from "react";
-import { Redirect, useLocation } from "react-router";
-import qs from "qs";
-import FacebookIcon from "@material-ui/icons/Facebook";
 import AppleIcon from "@material-ui/icons/Apple";
 import EmailIcon from "@material-ui/icons/Email";
+import FacebookIcon from "@material-ui/icons/Facebook";
 import LockIcon from "@material-ui/icons/Lock";
-import { Link } from "react-router-dom";
+import { login } from "actions/auth";
 import { Button } from "components/button/Button";
+import qs from "qs";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect, useLocation } from "react-router";
+import { Link } from "react-router-dom";
+import * as yup from "yup";
 function Loginpage() {
     const dispatch = useDispatch();
     const { userInfo } = useSelector((state) => state.authReducer);
@@ -29,12 +27,12 @@ function Loginpage() {
     const handelLogin = (value) => {
         // console.log(inputTaiKhoan.current.value);
         // console.log(inputMatKhau.current.value);
-        // console.log(value);
+        console.log(value);
         dispatch(login(value));
     };
     const schema = yup.object().shape({
-        taiKhoan: yup.string().required("tai khoan ko dc de trong").min(5, "tai khoan tu 5 den 20 ky tu").max(20, "tai khoan < 20 ky tu"),
-        matKhau: yup.string().required("mat khau ko dc de trong"),
+        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
+        password: yup.string().required("Password can't be blank"),
     });
     // su dung khi component ko ho tro register
     const {
@@ -59,62 +57,6 @@ function Loginpage() {
     }
     return (
         <form onSubmit={handleSubmit(handelLogin)}>
-            {/* <h1>Login page</h1>
-			<input
-				type='text'
-				{...register('taiKhoan', {
-					required: {
-						value: true,
-						message: 'tai khoan khong duoc de trong',
-					},
-					minLength: {
-						value: 5,
-						message: 'tai khoan tu 5 den 20 ky tu',
-					},
-					maxLength: {
-						value: 20,
-						message: 'tai khoan < 20 ky tu',
-					},
-				})}
-				placeholder='tai khoan'
-			/>
-			{errors.taiKhoan && <div>{errors.taiKhoan.message}</div>}
-			<input
-				type='text'
-				{...register('matKhau', { required: true })}
-				placeholder='mat khau'
-			/>
-			{errors.matKhau && <div>mat khau ko dc de trong</div>} */}
-            {/* <FormGroup>
-				<Label>Tai Khoan</Label>
-				<Input type='text' {...register("taiKhoan")} />
-				{errors.taiKhoan && <div>{errors.taiKhoan.message}</div>}
-			</FormGroup>
-			<FormGroup>
-				<Label>Mat Khau</Label>
-				<Input type='text' {...register("matKhau")} />
-				{errors.matKhau && <div>{errors.matKhau.message}</div>}
-			</FormGroup> */}
-            {/* <FormGroup>
-				<Controller
-					name='taiKhoan'
-					control={control}
-					defaultValue=''
-					rules={{
-						required: {
-							value: true,
-							message: 'mat khau ko dc de trong',
-						},
-					}}
-					render={({ field }) => {
-						return <Input {...field} />;
-					}}
-				/>
-				{errors.taiKhoan && <div>{errors.taiKhoan.message}</div>}
-			</FormGroup> */}
-            {/* {error && <div>{error}</div>}
-			<button>Login</button> */}
-
             <div className="form">
                 <div className="form__heading">
                     <h3>Log into your Udemy account!</h3>
@@ -145,15 +87,15 @@ function Loginpage() {
                     <div className="form-groups">
                         <div className="input username">
                             <EmailIcon className="email-icon" />
-                            <input type="text" placeholder="E-Mail" />
-                            <span></span>
+                            <input type="text" placeholder="E-Mail" {...register("email")} />
+                            <span>{errors.email?.message}</span>
                         </div>
                     </div>
                     <div className="form-groups">
                         <div className="input password">
                             <LockIcon className="lock-icon" />
-                            <input type="password" placeholder="Password" />
-                            <span></span>
+                            <input type="password" placeholder="Password" {...register("password", { required: true })} />
+                            <span>{errors.password?.message}</span>
                         </div>
                     </div>
                 </div>

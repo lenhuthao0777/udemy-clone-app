@@ -1,7 +1,25 @@
 import React from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
 function SignUp() {
+    const schema = yup.object().shape({
+        firstName: yup.string().required("Password can't be blank"),
+        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
+        password: yup.string().required("Password can't be blank"),
+    });
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        control,
+    } = useForm({ resolver: yupResolver(schema) });
+    const handelForm = (data) => {
+        console.log(data);
+    };
     return (
         <div className="signup">
             <div className="container">
@@ -9,26 +27,26 @@ function SignUp() {
                     <div className="signup-content__heading">
                         <h1>Sign up and start learning!</h1>
                     </div>
-                    <form action="" className="signup-form">
+                    <form className="signup-form" onSubmit={handleSubmit(handelForm)}>
                         <div className="signup-form__group">
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="text" placeholder="First and last name" />
-                                <span>asdasdasdasd</span>
+                                <input type="text" placeholder="First name" {...register("firstName")} />
+                                <span>{errors.firstName?.message}</span>
                             </div>
                         </div>
                         <div className="signup-form__group">
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="text" placeholder="E-mail" />
-                                <span>asdasdasdasd</span>
+                                <input type="text" placeholder="E-mail" {...register("email")} />
+                                <span>{errors.email?.message}</span>
                             </div>
                         </div>
                         <div className="signup-form__group">
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="text" placeholder="Password" />
-                                <span>asdasdasdasd</span>
+                                <input type="password" placeholder="Password" {...register("password")} />
+                                <span>{errors.password?.message}</span>
                             </div>
                         </div>
                         <div className="button-signup">
