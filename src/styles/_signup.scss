@@ -1,0 +1,93 @@
+.signup {
+    &-content {
+        width: 380px;
+        margin: 100px auto;
+        .signup-content__heading {
+            padding: 20px 24px;
+            border-bottom: 1px solid #dcdcdc;
+            h1 {
+                font-size: 16px;
+                font-weight: 700;
+                color: $color-black-0;
+            }
+        }
+        .signup-form {
+            margin-top: 20px;
+            .signup-form__group {
+                margin-bottom: 20px;
+                padding: 0 24px;
+                position: relative;
+                .signup-form__group-content {
+                    border: 1px solid $color-black-2;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    padding: 10px;
+                    height: 50px;
+                    display: flex;
+                    align-items: center;
+                    font-size: 14px;
+                    color: $color-black-2;
+                    input {
+                        margin-left: 10px;
+                        height: 50px;
+                        border: none;
+                        outline: none;
+                        flex: 1;
+                        font-size: 16px;
+                    }
+                    span {
+                        position: absolute;
+                        bottom: -15px;
+                        left: 24px;
+                        color: $color-red-0;
+                    }
+                }
+            }
+            .button-signup {
+                padding: 20px 24px;
+                text-align: center;
+                button {
+                    width: 100%;
+                    padding: 15px 0;
+                    border: none;
+                    border-radius: 4px;
+                    background-color: $color-red-0;
+                    color: $color-white-0;
+                    font-size: 16px;
+                    font-weight: 700;
+                    transition: 0.3s ease;
+                    &:hover {
+                        background-color: $color-red-2;
+                    }
+                }
+            }
+        }
+        .signup-content__bottom {
+            margin: 5px 24px;
+            text-align: center;
+            span {
+                display: block;
+                font-size: 11px;
+                color: $color-black-2;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #dcdcdc;
+            }
+            h3 {
+                font-size: 14px;
+                color: $color-black-0;
+                padding: 10px 0;
+                a {
+                    color: $color-blue;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .signup {
+        &-content {
+            width: 300px;
+        }
+    }
+}

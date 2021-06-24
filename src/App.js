@@ -4,14 +4,15 @@ import AdminRoute from "./auth/AdminRoute";
 import AdminLayout from "./layouts/adminLayout";
 import AppLayout from "./layouts/applayout/index";
 
-
 const Home = lazy(() => import("./pages/home"));
-const AdminUser = lazy(() => import("./pages/adminUser"));
+// const AdminUser = lazy(() => import("./pages/adminUser"));
 const Course = lazy(() => import("./pages/course"));
 const Courses = lazy(() => import("./pages/courses"));
 const Loginpage = lazy(() => import("./pages/loginPage/Loginpage"));
-const AdminCourses = lazy(() => import("./pages/adminCourses"));
+// const AdminCourses = lazy(() => import("./pages/adminCourses"));
 const ShoppingCart = lazy(() => import("./pages/checkout"));
+const Admin = lazy(() => import("./pages/admin"));
+const SignUp = lazy(() => import("./pages/signupPage"));
 function App() {
     return (
         <Suspense fallback={<div>Loading..................</div>}>
@@ -21,16 +22,15 @@ function App() {
                     <Route path="/admin">
                         <AdminLayout>
                             <Switch>
-                                <Redirect
-                                    exact
-                                    from="/admin"
-                                    to="/admin/courses"
-                                />
-                                <AdminRoute path="/admin/courses">
+                                {/* <Redirect exact from="/admin" to="/admin/courses" /> */}
+                                {/* <AdminRoute path="/admin/courses">
                                     <AdminCourses />
-                                </AdminRoute>
-                                <Route path="/admin/users">
+                                </AdminRoute> */}
+                                {/* <Route path="/admin/users">
                                     <AdminUser />
+                                </Route> */}
+                                <Route path="/admin">
+                                    <Admin/>
                                 </Route>
                             </Switch>
                         </AdminLayout>
@@ -52,6 +52,9 @@ function App() {
                                 </Route>
                                 <Route path="/login">
                                     <Loginpage />
+                                </Route>
+                                <Route path="/signup">
+                                    <SignUp/>
                                 </Route>
                                 <Route path="/cart">
                                     <ShoppingCart />

@@ -14,7 +14,7 @@ function Navbar() {
     const [SideBar, setSideBar] = useState(false);
     const [SearchBar, setSearchBar] = useState(false);
     return (
-        <>
+        <div>
             <div className="header--navbar">
                 <div className="header--navbar__icon-menu">
                     <button className="header--navbar__icon-menu__btn" onClick={() => setSideBar(true)}>
@@ -75,7 +75,7 @@ function Navbar() {
                         </Link>
                     </div>
                     <div className="header--navbar__register">
-                        <Link to="/register">
+                        <Link to="/signup">
                             <Button type="button" color="btn--btn-primary" size="md">
                                 Sign up
                             </Button>
@@ -114,7 +114,7 @@ function Navbar() {
                 <div className={`mobile-input__search-overlay ${SearchBar ? "active" : ""}`} onClick={() => setSearchBar(false)}></div>
             </div>
             <NavBarMobile SideBar={SideBar} setSideBar={setSideBar} />
-        </>
+        </div>
     );
 }
 

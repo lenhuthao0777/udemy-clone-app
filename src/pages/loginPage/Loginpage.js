@@ -4,7 +4,7 @@ import { Input, FormGroup, Label } from "reactstrap";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../actions/auth";
+import { login } from "actions/auth";
 import { useEffect } from "react";
 import { Redirect, useLocation } from "react-router";
 import qs from "qs";
@@ -13,7 +13,7 @@ import AppleIcon from "@material-ui/icons/Apple";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
 import { Link } from "react-router-dom";
-import { Button } from "../../components/button/Button";
+import { Button } from "components/button/Button";
 import { FcGoogle } from "react-icons/fc";
 function Loginpage() {
     const dispatch = useDispatch();
@@ -36,14 +36,13 @@ function Loginpage() {
         taiKhoan: yup.string().required("tai khoan ko dc de trong").min(5, "tai khoan tu 5 den 20 ky tu").max(20, "tai khoan < 20 ky tu"),
         matKhau: yup.string().required("mat khau ko dc de trong"),
     });
+    // su dung khi component ko ho tro register
     const {
         register,
         handleSubmit,
         formState: { errors },
-        // su dung khi component ko ho tro register
         control,
     } = useForm({ resolver: yupResolver(schema) });
-    // console.log(errors);
 
     // tao schema validation
     // userInfo co data chuyen den trang home
@@ -147,12 +146,14 @@ function Loginpage() {
                         <div className="input username">
                             <EmailIcon className="email-icon" />
                             <input type="text" placeholder="E-Mail" />
+                            <span></span>
                         </div>
                     </div>
                     <div className="form-groups">
                         <div className="input password">
                             <LockIcon className="lock-icon" />
                             <input type="password" placeholder="Password" />
+                            <span></span>
                         </div>
                     </div>
                 </div>
@@ -167,7 +168,7 @@ function Loginpage() {
                 </div>
                 <div className="form-footer">
                     <p>
-                        You do not have an account ?<Link to="/"> Register now</Link>
+                        You do not have an account ?<Link to="/signup"> Register now</Link>
                     </p>
                     <p>Connect with your organization</p>
                 </div>

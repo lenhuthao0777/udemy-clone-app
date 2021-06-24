@@ -21,7 +21,7 @@
             overflow: hidden;
             transition: 0.3s ease;
             box-shadow: 0 2px 2px 0 rgb(41 48 59 / 24%), 0 0 2px 0 rgb(41 48 59 / 12%);
-
+            width: 100%;
             &.facebook {
                 background-color: #1a538a;
                 a {
@@ -68,8 +68,10 @@
     &__login {
         padding: 0 24px 16px 24px;
         .form-groups {
+            margin-bottom: 20px;
             padding-bottom: 10px;
-            & .input {
+            position: relative;
+            .input {
                 display: flex;
                 align-items: center;
                 padding: 0 5px;
@@ -90,6 +92,14 @@
                     color: $color-black-2;
                     font-size: 24px;
                 }
+                span {
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    font-size: 14px;
+                    color: $color-red-0;
+                    padding-left: 10px;
+                }
             }
             .password {
                 border: 1px solid $color-black-2;
@@ -98,6 +108,14 @@
                 .lock-icon {
                     color: $color-black-2;
                     font-size: 24px;
+                }
+                span {
+                    position: absolute;
+                    bottom: -10px;
+                    left: 0;
+                    font-size: 14px;
+                    color: $color-red-0;
+                    padding-left: 10px;
                 }
             }
         }
@@ -147,5 +165,11 @@
                 }
             }
         }
+    }
+}
+@include responesive("small") {
+    .form {
+        width: 300px;
+        margin: 30px auto;
     }
 }
