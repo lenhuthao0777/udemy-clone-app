@@ -25,14 +25,12 @@ function Loginpage() {
     // const inputMatKhau = useRef();
 
     const handelLogin = (value) => {
-        // console.log(inputTaiKhoan.current.value);
-        // console.log(inputMatKhau.current.value);
         console.log(value);
         dispatch(login(value));
     };
     const schema = yup.object().shape({
-        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
-        password: yup.string().required("Password can't be blank"),
+        taiKhoan: yup.string().required("UserName can't be blank").min(5, "UserName from 5 to 20 characters").max(20, "UserName < 20 characters"),
+        matKhau: yup.string().required("Password can't be blank"),
     });
     // su dung khi component ko ho tro register
     const {
@@ -87,15 +85,15 @@ function Loginpage() {
                     <div className="form-groups">
                         <div className="input username">
                             <EmailIcon className="email-icon" />
-                            <input type="text" placeholder="E-Mail" {...register("email")} />
-                            <span>{errors.email?.message}</span>
+                            <input type="text" placeholder="E-Mail" {...register("taiKhoan")} />
+                            <span>{errors.taiKhoan?.message}</span>
                         </div>
                     </div>
                     <div className="form-groups">
                         <div className="input password">
                             <LockIcon className="lock-icon" />
-                            <input type="password" placeholder="Password" {...register("password", { required: true })} />
-                            <span>{errors.password?.message}</span>
+                            <input type="password" placeholder="Password" {...register("matKhau", { required: true })} />
+                            <span>{errors.matKhau?.message}</span>
                         </div>
                     </div>
                 </div>

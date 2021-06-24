@@ -4,12 +4,20 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import {SignUpForm} from "actions/SignUp";
 function SignUp() {
+    const dispath = useDispatch();
+    const { userInfo } = useSelector((state) => state.SignUpFrom);
+    console.log(userInfo);
     const schema = yup.object().shape({
-        firstName: yup.string().required("Password can't be blank"),
+        taiKhoan: yup.string().required("UserName can't be blank"),
         email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
-        password: yup.string().required("Password can't be blank"),
+        matKhau: yup.string().required("Password can't be blank"),
+        hoTen: yup.string().required("Password can't be blank"),
+        soDT: yup.string().required("Password can't be blank"),
+        maNhom: yup.string().required("Password can't be blank"),
     });
     const {
         register,
@@ -19,6 +27,7 @@ function SignUp() {
     } = useForm({ resolver: yupResolver(schema) });
     const handelForm = (data) => {
         console.log(data);
+        dispath(SignUpForm(data));
     };
     return (
         <div className="signup">
@@ -31,8 +40,15 @@ function SignUp() {
                         <div className="signup-form__group">
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="text" placeholder="First name" {...register("firstName")} />
-                                <span>{errors.firstName?.message}</span>
+                                <input type="text" placeholder="User name" {...register("taiKhoan")} />
+                                <span>{errors.taiKhoan?.message}</span>
+                            </div>
+                        </div>
+                        <div className="signup-form__group">
+                            <div className="signup-form__group-content">
+                                <FaUserAlt />
+                                <input type="password" placeholder="Password" {...register("matKhau")} />
+                                <span>{errors.matKhau?.message}</span>
                             </div>
                         </div>
                         <div className="signup-form__group">
@@ -45,8 +61,22 @@ function SignUp() {
                         <div className="signup-form__group">
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="password" placeholder="Password" {...register("password")} />
-                                <span>{errors.password?.message}</span>
+                                <input type="text" placeholder="Full Name" {...register("hoTen")} />
+                                <span>{errors.hoTen?.message}</span>
+                            </div>
+                        </div>
+                        <div className="signup-form__group">
+                            <div className="signup-form__group-content">
+                                <FaUserAlt />
+                                <input type="text" placeholder="Phone" {...register("soDT")} />
+                                <span>{errors.soDT?.message}</span>
+                            </div>
+                        </div>
+                        <div className="signup-form__group">
+                            <div className="signup-form__group-content">
+                                <FaUserAlt />
+                                <input type="text" placeholder="Group id" {...register("maNhom")} />
+                                <span>{errors.maNhom?.message}</span>
                             </div>
                         </div>
                         <div className="button-signup">

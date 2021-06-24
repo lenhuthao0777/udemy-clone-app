@@ -621,7 +621,7 @@
         &-hover {
             position: absolute;
             top: 300%;
-            left: -4%;
+            left: -100%;
             width: 280px;
             height: auto;
             border-radius: 4px;
@@ -645,8 +645,8 @@
                 content: "";
                 position: absolute;
                 top: -25%;
-                left: 0;
-                width: 50%;
+                right: 35px;
+                width: 38%;
                 height: 38px;
                 background: transparent;
             }
@@ -670,11 +670,11 @@
             content: "";
             position: absolute;
             top: 55%;
-            right: 0;
+            right: 10px;
             width: 60px;
             height: 50px;
             background-color: transparent;
-            z-index: 10001;
+            z-index: 15;
         }
         &-quantity {
             position: absolute;
@@ -820,8 +820,49 @@
         .header--navbar__register {
             margin: 0 12px 0 0;
         }
-        // .header--navbar__language {
-        // }
+       .user-navbar{
+           margin: 0 20px;
+           position: relative;
+           &__content{
+                .user-navbar__hover{
+                    position: absolute;
+                    bottom: -70px;
+                    left: -110px;
+                    width: 150px;
+                    padding: 10px;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+                    background-color: $color-white-0;
+                    display: none;
+                    animation: fadeIn .3s ease-in;
+                    z-index: 20;
+                    ul{
+                        li{
+                            padding: 4px 0;
+                            font-size: 14px;
+                            color: $color-black-0;
+                            cursor: pointer;
+                            border-bottom: 1px solid #dcdacb;
+                        }
+                    }
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: -20px;
+                        right: 0;
+                        width: 40%;
+                        height: 20px;
+                        background-color: transparent;
+                    }
+                }
+           }
+           &:hover{
+               .user-navbar__hover{
+                   display: block;
+               }
+           }
+       }
     }
     &__icon-mobile {
         display: none;
@@ -1074,7 +1115,7 @@
             width: 100%;
             height: 56px;
             background-color: $color-white-0;
-            z-index: 10002;
+            z-index: 20;
             transform: translateY(-100%);
             animation: fadeIn ease-in 0.3s;
             &.active {
@@ -1115,7 +1156,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             width: 100%;
             height: 100%;
-            z-index: 10001;
+            z-index: 21;
             display: none;
             // overflow: -moz-hidden-unscrollable;
             overflow: hidden;

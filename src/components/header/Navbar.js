@@ -9,10 +9,15 @@ import ShopingCart from "./ShopingCart";
 import Category from "./Category";
 import NavBarMobile from "./NavBarMobile";
 import { Close } from "@material-ui/icons";
+import UdeAvatar from "components/avatar";
+import { useSelector } from "react-redux";
 
 function Navbar() {
     const [SideBar, setSideBar] = useState(false);
     const [SearchBar, setSearchBar] = useState(false);
+    // const [showAvatar, setShowAvatar] = useState();
+    const { userInfo } = useSelector((state) => state.SignUpFrom);
+    console.log(userInfo);
     return (
         <div>
             <div className="header--navbar">
@@ -67,20 +72,38 @@ function Navbar() {
                 </div>
                 <ShopingCart />
                 <div className="buttons">
-                    <div className="header--navbar__login">
-                        <Link to="/login">
-                            <Button type="button" color="btn--btn-outline" size="md">
-                                Log in
-                            </Button>
-                        </Link>
-                    </div>
-                    <div className="header--navbar__register">
-                        <Link to="/signup">
-                            <Button type="button" color="btn--btn-primary" size="md">
-                                Sign up
-                            </Button>
-                        </Link>
-                    </div>
+                    {userInfo ? (
+                        <div className="user-navbar">
+                            <div className="user-navbar__content">
+                                <UdeAvatar size="AvatarSm" AvatarSrc="./img/avatar1.jpg" />
+                                <div className="user-navbar__hover">
+                                    <ul>
+                                        <li>
+                                            <Link to="/profile">Profile</Link>
+                                        </li>
+                                        <li>Log Out</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    ) : (
+                        <div style={{display: "flex", alignItems: "center"}}>
+                            <div className="header--navbar__login">
+                                <Link to="/login">
+                                    <Button type="button" color="btn--btn-outline" size="md">
+                                        Log in
+                                    </Button>
+                                </Link>
+                            </div>
+                            <div className="header--navbar__register">
+                                <Link to="/signup">
+                                    <Button type="button" color="btn--btn-primary" size="md">
+                                        Sign up
+                                    </Button>
+                                </Link>
+                            </div>
+                        </div>
+                    )}
                     <div className="header--navbar__language">
                         <Button type="button" color="btn--outline-no-hover" size="sm">
                             <LanguageOutlinedIcon />
