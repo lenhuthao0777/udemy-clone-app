@@ -1,7 +1,7 @@
 import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "../constants/SignUp";
-const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
+// const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
 const initialState = {
-    userInfo,
+    userInfo:{},
     isLoading: false,
     error: null,
 };

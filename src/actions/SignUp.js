@@ -5,7 +5,7 @@ export function SignUpForm(values) {
 		dispatch({ type: SIGNUP_REQUEST });
 		try {
 			const { data } = await authApi.register(values);
-			localStorage.setItem('userInfo', JSON.stringify(data));
+			// localStorage.setItem('userInfo', JSON.stringify(data));
 			dispatch({ type: SIGNUP_SUCCESS, payload: { data } });
 		} catch (error) {
 			dispatch({

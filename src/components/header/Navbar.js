@@ -1,23 +1,29 @@
+import { Close } from "@material-ui/icons";
 import LanguageOutlinedIcon from "@material-ui/icons/LanguageOutlined";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
-import ShopingCart from "./ShopingCart";
 import Category from "./Category";
 import NavBarMobile from "./NavBarMobile";
-import { Close } from "@material-ui/icons";
-import UdeAvatar from "components/avatar";
-import { useSelector } from "react-redux";
+import ShopingCart from "./ShopingCart";
 
 function Navbar() {
     const [SideBar, setSideBar] = useState(false);
     const [SearchBar, setSearchBar] = useState(false);
-    // const [showAvatar, setShowAvatar] = useState();
-    const { userInfo } = useSelector((state) => state.SignUpFrom);
-    console.log(userInfo);
+    const [searchTerm, setSearchTerm] = useState("");
+    const { userInfo } = useSelector((state) => state.authReducer);
+
+    const logout = () => {};
+
+    const handelSearch = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+    };
     return (
         <div>
             <div className="header--navbar">
@@ -33,11 +39,29 @@ function Navbar() {
                 </div>
                 <Category />
                 <div className="header--navbar__input">
-                    <form>
+                    <form action={`/search/${searchTerm}`}>
                         <button>
                             <SearchOutlinedIcon className="searchIcon" />
                         </button>
-                        <input type="text" placeholder="Search" />
+                        <input className="input-search__filter" type="text" placeholder="Search" value={searchTerm} onChange={handelSearch} />
+                        {/* <div className="search-courses">
+                            <div className="search-courses__content">
+                                <ul>
+                                    {filterCourses.map((val, key) => {
+                                        return (
+                                            <li key={key}>
+                                                <Link to={`course/${val.maKhoaHoc}`}>
+                                                    <span>
+                                                        <SearchOutlinedIcon />
+                                                    </span>
+                                                    <span>{val.tenKhoaHoc}</span>
+                                                </Link>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
+                        </div> */}
                     </form>
                 </div>
                 <div className="header--navbar__gap-button-business">
@@ -75,19 +99,22 @@ function Navbar() {
                     {userInfo ? (
                         <div className="user-navbar">
                             <div className="user-navbar__content">
-                                <UdeAvatar size="AvatarSm" AvatarSrc="./img/avatar1.jpg" />
+                                <UdeAvatar
+                                    size="AvatarSm"
+                                    AvatarSrc="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                />
                                 <div className="user-navbar__hover">
                                     <ul>
                                         <li>
                                             <Link to="/profile">Profile</Link>
                                         </li>
-                                        <li>Log Out</li>
+                                        <li onClick={logout}>Log Out</li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     ) : (
-                        <div style={{display: "flex", alignItems: "center"}}>
+                        <div style={{ display: "flex", alignItems: "center" }}>
                             <div className="header--navbar__login">
                                 <Link to="/login">
                                     <Button type="button" color="btn--btn-outline" size="md">

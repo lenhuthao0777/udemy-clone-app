@@ -11,6 +11,7 @@ function Courses() {
     useEffect(() => {
         dispatch(getCoursesByCategory(category));
     }, [category]);
+    console.log(category)
     return (
         <div>
             <SubCategory />

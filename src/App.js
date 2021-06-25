@@ -13,6 +13,7 @@ const AdminCourses = lazy(() => import("./pages/adminCourses"));
 const ShoppingCart = lazy(() => import("./pages/checkout"));
 const Admin = lazy(() => import("./pages/admin"));
 const SignUp = lazy(() => import("./pages/signupPage"));
+const SearchCourses = lazy(() => import("./pages/SearchCourses"));
 function App() {
     return (
         <Suspense fallback={<div>Loading..................</div>}>
@@ -45,6 +46,9 @@ function App() {
                                 <Route path="/courses/:category">
                                     {/* /:category */}
                                     <Courses />
+                                </Route>
+                                <Route path="/search/:name">
+                                    <SearchCourses />
                                 </Route>
                                 <Route path="/course/:id">
                                     {/* /:id */}

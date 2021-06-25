@@ -1,12 +1,11 @@
-import React from "react";
-import { FaUserAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { SignUpForm } from "actions/SignUp";
+import React from "react";
+import { useForm } from "react-hook-form";
+import { FaUserAlt } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import {SignUpForm} from "actions/SignUp";
+import { Link } from "react-router-dom";
+import * as yup from "yup";
 function SignUp() {
     const dispath = useDispatch();
     const { userInfo } = useSelector((state) => state.SignUpFrom);
@@ -23,7 +22,6 @@ function SignUp() {
         register,
         handleSubmit,
         formState: { errors },
-        control,
     } = useForm({ resolver: yupResolver(schema) });
     const handelForm = (data) => {
         console.log(data);
@@ -38,6 +36,7 @@ function SignUp() {
                     </div>
                     <form className="signup-form" onSubmit={handleSubmit(handelForm)}>
                         <div className="signup-form__group">
+                            <h3>User Name</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="text" placeholder="User name" {...register("taiKhoan")} />
@@ -45,6 +44,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="signup-form__group">
+                            <h3>Password</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="password" placeholder="Password" {...register("matKhau")} />
@@ -52,6 +52,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="signup-form__group">
+                            <h3>Email</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="text" placeholder="E-mail" {...register("email")} />
@@ -59,6 +60,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="signup-form__group">
+                            <h3>Full Name</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="text" placeholder="Full Name" {...register("hoTen")} />
@@ -66,6 +68,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="signup-form__group">
+                            <h3>Phone Number</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="text" placeholder="Phone" {...register("soDT")} />
@@ -73,6 +76,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="signup-form__group">
+                            <h3>Group Id</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
                                 <input type="text" placeholder="Group id" {...register("maNhom")} />
@@ -80,7 +84,7 @@ function SignUp() {
                             </div>
                         </div>
                         <div className="button-signup">
-                            <button>Sign Up</button>
+                            <input type="submit" placeholder="Sign Up"/>
                         </div>
                     </form>
                     <div className="signup-content__bottom">

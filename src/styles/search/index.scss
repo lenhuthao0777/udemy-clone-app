@@ -1,0 +1,161 @@
+.search-courses {
+    margin: 100px 0;
+    &__heading {
+        padding-bottom: 20px;
+        h1 {
+            font-size: 42px;
+            color: $color-black-0;
+            span {
+                color: $color-yellow-1;
+                padding-left: 10px;
+                font-style: italic;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__content {
+        border: 1px solid #dcdcdc;
+        padding: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        .search-courses__content--item {
+            max-width: 20%;
+            padding: 5px;
+            .search-courses__content--item-button {
+                padding: 10px;
+                button {
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $color-white-0;
+                    border: none;
+                    outline: none;
+                    border-radius: 4px;
+                    background-color: $color-red-0;
+                    padding: 10px 15px;
+                    transition: 0.3s ease;
+                    &:hover {
+                        background-color: $color-red-2;
+                    }
+                }
+            }
+        }
+        .no-courses {
+            h1 {
+                font-size: 20px;
+                font-weight: 700;
+                color: $color-black-0;
+            }
+        }
+    }
+}
+@include responesive("extra-large") {
+    .search-courses {
+        &__heading {
+            padding: 0 20px 20px 20px;
+        }
+        &__content {
+            .search-courses__content--item {
+                max-width: 25%;
+            }
+        }
+    }
+}
+@include responesive("medium") {
+    .search-courses {
+        &__heading {
+            padding: 0 0 20px 20px;
+        }
+        &__content {
+            .search-courses__content--item {
+                max-width: 33.33334%;
+                .search-courses__content--item-button {
+                    padding: 10px;
+                    button {
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $color-white-0;
+                        border: none;
+                        outline: none;
+                        border-radius: 4px;
+                        background-color: $color-red-0;
+                        padding: 10px 15px;
+                        transition: 0.3s ease;
+                        &:hover {
+                            background-color: $color-red-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 668px) {
+    .search-courses {
+        &__heading {
+            padding: 0 0 20px 20px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+        &__content {
+            flex-direction: row;
+            .search-courses__content--item {
+                max-width: 50%;
+                .search-courses__content--item-button {
+                    padding: 10px;
+                    button {
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $color-white-0;
+                        border: none;
+                        outline: none;
+                        border-radius: 4px;
+                        background-color: $color-red-0;
+                        padding: 10px 15px;
+                        transition: 0.3s ease;
+                        &:hover {
+                            background-color: $color-red-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .search-courses {
+        &__heading {
+            padding: 0 0 20px 20px;
+            h1 {
+                font-size: 30px;
+            }
+        }
+        &__content {
+            flex-direction: column;
+            .search-courses__content--item {
+                max-width: 100%;
+                .search-courses__content--item-button {
+                    padding: 10px;
+                    button {
+                        display: block;
+                        font-size: 14px;
+                        font-weight: 700;
+                        color: $color-white-0;
+                        border: none;
+                        outline: none;
+                        border-radius: 4px;
+                        background-color: $color-red-0;
+                        padding: 10px 15px;
+                        transition: 0.3s ease;
+                        &:hover {
+                            background-color: $color-red-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

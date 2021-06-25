@@ -15,6 +15,10 @@ const coursesApi = {
         const params = { maKhoaHoc: id };
         return axiosClient.get("/QuanLyKhoaHoc/LayThongTinKhoaHoc", { params });
     },
+    searchCourse: (name) => {
+        const params = { tenKhoaHoc: name,  MaNhom: "GP08"};
+        return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", { params });
+    },
 };
 export default coursesApi;
 /*

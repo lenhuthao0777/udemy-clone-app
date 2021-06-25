@@ -17,6 +17,12 @@
                 margin-bottom: 20px;
                 padding: 0 24px;
                 position: relative;
+                h3{
+                    font-size: 16px;
+                    color: $color-black-0;
+                    font-weight: 700;
+                    padding-bottom: 8px;
+                }
                 .signup-form__group-content {
                     border: 1px solid $color-black-2;
                     border-radius: 4px;
