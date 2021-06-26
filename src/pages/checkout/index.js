@@ -1,7 +1,10 @@
 import React from "react";
 import CartEmpty from "./CartEmpty";
 import CartAvailable from "./CartAvailable";
+import { useSelector } from "react-redux";
 function ShoppingCart() {
+    const { cart } = useSelector((state) => state.CartReducer);
+    console.log(cart);
     return (
         <div className="shopping-cart">
             <div className="shopping-cart__heading">
@@ -13,10 +16,9 @@ function ShoppingCart() {
                 <div className="shopping-cart__content">
                     <div className="shopping-cart_body">
                         <div className="shopping-cart_body-quantity">
-                            <span>(0) courses in the basket</span>
+                            <span>({cart.length}) courses in the basket</span>
                         </div>
-                        {/* <CartEmpty /> */}
-                        <CartAvailable />
+                        {cart.length > 0 ? <CartAvailable cart={cart} /> : <CartEmpty />}
                     </div>
                 </div>
             </div>

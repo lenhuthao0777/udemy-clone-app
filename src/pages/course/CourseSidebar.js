@@ -4,8 +4,14 @@ import { BsCollectionPlay, BsDownload, BsFileEarmark, BsQuestionCircle, BsPhone 
 import { VscSymbolNamespace } from "react-icons/vsc";
 import { CgInfinity } from "react-icons/cg";
 import { GiRibbonMedal } from "react-icons/gi";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "actions/Cart";
+import { ADD_TO_CART } from "constants/Cart";
 function CourseSidebar({ course }) {
+    const dispath = useDispatch();
     const [scrollSideBar, setScrollSideBar] = useState(false);
+    const { cart } = useSelector((state) => state.CartReducer);
+    console.log(cart);
     useEffect(() => {
         const scrollSide = () => {
             if (window.scrollY >= 350) {
@@ -37,7 +43,9 @@ function CourseSidebar({ course }) {
                             <span className="course-sidebar__purchase-price-sale">15% off</span>
                         </div>
                         <div className="course-sidebar__purchase-buttons">
-                            <button className="course-sidebar__purchase-buttons-add">Add to cart</button>
+                            <button className="course-sidebar__purchase-buttons-add" onClick={() => dispath(addToCart(course))}>
+                                Add to cart
+                            </button>
                             <button className="course-sidebar__purchase-buttons-buy">Buy now</button>
                             <span className="course-sidebar__purchase-buttons-text">30-Day Money-Back Guarantee</span>
                         </div>
