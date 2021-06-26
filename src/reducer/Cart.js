@@ -1,6 +1,7 @@
 import { ADD_TO_CART } from "constants/Cart";
+let cart = JSON.parse(localStorage.getItem("cart"));
 const initialState = {
-    cart: [],
+    cart: cart ? cart : [],
 };
 const CartReducer = (state = initialState, action) => {
     // console.log(action);
@@ -10,8 +11,8 @@ const CartReducer = (state = initialState, action) => {
             let newCart = [...state.cart];
             // let index = newCart.findIndex((course) => course.maKhoaHoc === action.cart.maKhoaHoc);
             newCart.push(action.payload.data);
-            state.cart = newCart;
-            return { ...state, newCart };
+            localStorage.setItem("cart", JSON.stringify(newCart));
+            return { ...state, cart: newCart };
         default:
             return state;
     }

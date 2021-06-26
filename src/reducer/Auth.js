@@ -1,5 +1,6 @@
 import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from "../constants/Auth";
-const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
+const userInfo = localStorage.getItem("userInfo") ? 
+JSON.parse(localStorage.getItem("userInfo")) : null;
 const initialState = {
     userInfo,
     isLoading: false,
