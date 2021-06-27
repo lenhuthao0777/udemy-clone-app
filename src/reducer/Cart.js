@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "constants/Cart";
+import { ADD_TO_CART, DELETE_CART } from "constants/Cart";
 let cart = JSON.parse(localStorage.getItem("cart"));
 const initialState = {
     cart: cart ? cart : [],
@@ -7,12 +7,21 @@ const CartReducer = (state = initialState, action) => {
     // console.log(action);
     switch (action.type) {
         case ADD_TO_CART:
-            console.log(action.type);
-            let newCart = [...state.cart];
-            // let index = newCart.findIndex((course) => course.maKhoaHoc === action.cart.maKhoaHoc);
-            newCart.push(action.payload.data);
-            localStorage.setItem("cart", JSON.stringify(newCart));
-            return { ...state, cart: newCart };
+            let index = state.cart.findIndex((course) => course.maKhoaHoc === action.payload.data.maKhoaHoc);
+            if (index !== -1) {
+                state.cart.splice(action.payload.data, 0);
+            } else {
+                state.cart.push(action.payload.data);
+            }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return { ...state };
+        case DELETE_CART:
+            let key = state.cart.findIndex((course) => course.maKhoaHoc === action.payload.id);
+            if (key !== -1) {
+                state.cart.splice(key, 1);
+            }
+            localStorage.setItem("cart", JSON.stringify(state.cart));
+            return { ...state };
         default:
             return state;
     }

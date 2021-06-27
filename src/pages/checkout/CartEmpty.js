@@ -1,5 +1,6 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 function CartEmpty() {
     return (
         <div className="cart-empty">
@@ -9,7 +10,7 @@ function CartEmpty() {
                         <FaShoppingCart />
                     </span>
                     <p>Your basket is empty. Continue shopping and find a course!</p>
-                    <button>Continue your purchases</button>
+                    <button><Link to="/">Continue your purchases</Link></button>
                 </div>
             </div>
             <div className="cart-empty__text">

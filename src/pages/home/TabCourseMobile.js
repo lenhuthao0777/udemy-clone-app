@@ -6,15 +6,15 @@ import { FaAngleDown } from "react-icons/fa";
 function TabCourseMobile({ courses }) {
     const [isOpen, setIsOpen] = useState(1);
     // const [toggle, setToggle] = useState(false);
-    // const BackEnd = courses.filter((e) => {
-    //     return e.danhMucKhoaHoc.maDanhMucKhoahoc === "BackEnd";
-    // });
-    // const FrontEnd = courses.filter((e) => {
-    //     return e.danhMucKhoaHoc.maDanhMucKhoahoc === "FrontEnd";
-    // });
-    // const Mobile = courses.filter((e) => {
-    //     return e.danhMucKhoaHoc.maDanhMucKhoahoc === "DiDong";
-    // });
+    const BackEnd = courses.filter((e) => {
+        return e.danhMucKhoaHoc.maDanhMucKhoahoc === "BackEnd";
+    });
+    const FrontEnd = courses.filter((e) => {
+        return e.danhMucKhoaHoc.maDanhMucKhoahoc === "FrontEnd";
+    });
+    const Mobile = courses.filter((e) => {
+        return e.danhMucKhoaHoc.maDanhMucKhoahoc === "DiDong";
+    });
     var settings = {
         dots: false,
         infinite: true,
@@ -78,7 +78,7 @@ function TabCourseMobile({ courses }) {
                     </p>
                     <div className={`courses ${isOpen === 1 ? "active" : ""}`}>
                         <Slider {...settings}>
-                            {courses.map((item, index) => {
+                            {FrontEnd.map((item, index) => {
                                 return (
                                     <CourseItem
                                         key={index}
@@ -102,7 +102,7 @@ function TabCourseMobile({ courses }) {
                     </p>
                     <div className={`courses ${isOpen === 2 ? "active" : ""}`}>
                         <Slider {...settings}>
-                            {courses.map((item, index) => {
+                            {BackEnd.map((item, index) => {
                                 return (
                                     <CourseItem
                                         key={index}
@@ -126,7 +126,7 @@ function TabCourseMobile({ courses }) {
                     </p>
                     <div className={`courses ${isOpen === 3 ? "active" : ""}`}>
                         <Slider {...settings}>
-                            {courses.map((item, index) => {
+                            {Mobile.map((item, index) => {
                                 return (
                                     <CourseItem
                                         key={index}

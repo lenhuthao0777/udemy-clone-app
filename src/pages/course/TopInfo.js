@@ -4,8 +4,11 @@ import { FaAngleRight, FaClosedCaptioning, FaPlayCircle, FaRegHeart } from "reac
 import { GiAlarmClock } from "react-icons/gi";
 import { IoMdShareAlt, IoMdStar, IoMdStarHalf } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import {addToCart} from 'actions/Cart'
 function TopInfo({course}) {
+    const dispatch = useDispatch()
     return (
         <div className="top-info">
             <div className="top-container">
@@ -70,7 +73,7 @@ function TopInfo({course}) {
                         </div>
                     </div>
                     <div className="button-add">
-                        <button>Add to cart</button>
+                        <button onClick={()=>dispatch(addToCart(course))}>Add to cart</button>
                     </div>
                     <div className="day-purchase">
                         <p>30-Day Money-Back Guarantee</p>

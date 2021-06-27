@@ -1,17 +1,15 @@
+import { addToCart } from "actions/Cart";
 import React, { useEffect, useState } from "react";
 import { AiOutlinePlayCircle } from "react-icons/ai";
-import { BsCollectionPlay, BsDownload, BsFileEarmark, BsQuestionCircle, BsPhone } from "react-icons/bs";
-import { VscSymbolNamespace } from "react-icons/vsc";
+import { BsCollectionPlay, BsDownload, BsFileEarmark, BsPhone, BsQuestionCircle } from "react-icons/bs";
 import { CgInfinity } from "react-icons/cg";
 import { GiRibbonMedal } from "react-icons/gi";
+import { VscSymbolNamespace } from "react-icons/vsc";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "actions/Cart";
-import { ADD_TO_CART } from "constants/Cart";
 function CourseSidebar({ course }) {
     const dispath = useDispatch();
     const [scrollSideBar, setScrollSideBar] = useState(false);
     const { cart } = useSelector((state) => state.CartReducer);
-    console.log(cart);
     useEffect(() => {
         const scrollSide = () => {
             if (window.scrollY >= 350) {

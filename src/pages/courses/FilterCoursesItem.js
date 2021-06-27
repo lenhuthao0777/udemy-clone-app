@@ -2,7 +2,10 @@ import React from "react";
 import { IoMdStar, IoMdStarHalf } from "react-icons/io";
 import { BsHeart, BsCheck } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "actions/Cart";
 function FilterCoursesItem({ item }) {
+    const dispatch = useDispatch();
     return (
         <div className="filter-courses-list__item">
             <Link to={`/course/${item.maKhoaHoc}`}>
@@ -47,13 +50,19 @@ function FilterCoursesItem({ item }) {
                     <div className="course-item__hover--content-willlearn">
                         <h3>What you will learn</h3>
                         <ul>
-                            <li><BsCheck/> Create a React.js app or site from A to Z.</li>
-                            <li><BsCheck/> Create a React.js app or site from A to Z.</li>
-                            <li><BsCheck/> Create a React.js app or site from A to Z.</li>
+                            <li>
+                                <BsCheck /> Create a React.js app or site from A to Z.
+                            </li>
+                            <li>
+                                <BsCheck /> Create a React.js app or site from A to Z.
+                            </li>
+                            <li>
+                                <BsCheck /> Create a React.js app or site from A to Z.
+                            </li>
                         </ul>
                     </div>
                     <div className="course-item__hover--content-buttons">
-                        <button>Add to cart</button>
+                        <button onClick={() => dispatch(addToCart(item))}>Add to cart</button>
                         <span>
                             <BsHeart />
                         </span>

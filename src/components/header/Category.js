@@ -14,14 +14,17 @@ function Category() {
                         {
                             id: 1,
                             title: "FrontEnd",
+                            key: "FrontEnd",
                         },
                         {
                             id: 2,
                             title: "BackEnd",
+                            key: "BackEnd",
                         },
                         {
                             id: 3,
-                            title: "DiDong",
+                            title: "Mobile",
+                            key: "DiDong",
                         },
                     ],
                 },
@@ -70,7 +73,7 @@ function Category() {
                                                             <ul className="drop-right__2-list">
                                                                 {item1.subCate.map((item2) => {
                                                                     return (
-                                                                        <Link to={`/courses/${item2.title}`} key={item2.id}>
+                                                                        <Link to={`/courses/${item2.key}`} key={item2.id}>
                                                                             <li className="drop-right__2-list-item">{item2.title}</li>
                                                                         </Link>
                                                                     );

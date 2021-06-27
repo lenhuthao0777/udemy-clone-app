@@ -1,7 +1,11 @@
 import React from "react";
 import { FaTag } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { deleteCart } from "actions/Cart";
+import { Link } from "react-router-dom";
 function CartAvailable({ cart }) {
+    const dispatch = useDispatch();
     return (
         <div className="cart-available">
             <div className="cart-available__content">
@@ -10,16 +14,18 @@ function CartAvailable({ cart }) {
                         {cart.map((item, index) => {
                             return (
                                 <div className="cart-available__list-item" key={index}>
-                                    <div className="cart-available__list-item--img">
-                                        <img src={item.hinhAnh} alt="" />
-                                    </div>
+                                    <Link to={`/course/${item.maKhoaHoc}`}>
+                                        <div className="cart-available__list-item--img">
+                                            <img src={item.hinhAnh} alt="" />
+                                        </div>
+                                    </Link>
                                     <div className="cart-available__list-body">
                                         <div className="cart-available__list-info">
                                             <h3>{item.tenKhoaHoc}</h3>
                                             <p>{item.moTa}</p>
                                         </div>
                                         <div className="cart-available__list-handle">
-                                            <p>Remove</p>
+                                            <p onClick={() => dispatch(deleteCart(item.maKhoaHoc))}>Remove</p>
                                             <p>Save for later</p>
                                             <p>Access the wishlist</p>
                                         </div>

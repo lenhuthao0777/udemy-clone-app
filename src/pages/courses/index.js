@@ -11,7 +11,6 @@ function Courses() {
     useEffect(() => {
         dispatch(getCoursesByCategory(category));
     }, [category]);
-    console.log(category)
     return (
         <div>
             <SubCategory />
@@ -20,7 +19,7 @@ function Courses() {
             </div>
             <div className="container">
                 <div className="ude-courses__heading">All courses in the category Web Development</div>
-                <UdeCourses coursesByCate={coursesByCate}/>
+                <UdeCourses coursesByCate={coursesByCate} />
             </div>
         </div>
     );

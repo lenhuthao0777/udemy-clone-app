@@ -4,20 +4,21 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Search } from "actions/Search";
+import { addToCart } from "actions/Cart";
+
 function SearchCourses() {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const { searchData } = useSelector((state) => state.Search);
     const { name } = useParams();
     useEffect(() => {
-        dispath(Search(name));
+        dispatch(Search(name));
     }, [name]);
     return (
         <div className="search-courses">
             <div className="container">
                 <div className="search-courses__heading">
                     <h1>
-                        SEARCH -
-                        <span className="tag">{`#${name}`}</span>
+                        SEARCH -<span className="tag">{`#${name}`}</span>
                     </h1>
                 </div>
                 <div className="search-courses__content">
@@ -36,7 +37,7 @@ function SearchCourses() {
                                         price={"129.99"}
                                     />
                                     <div className="search-courses__content--item-button">
-                                        <button>Add to cart</button>
+                                        <button onClick={() => dispatch(addToCart(item))}>Add to cart</button>
                                     </div>
                                 </div>
                             );

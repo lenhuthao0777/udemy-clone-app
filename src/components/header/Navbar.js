@@ -17,6 +17,7 @@ function Navbar() {
     const [SearchBar, setSearchBar] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const { userInfo } = useSelector((state) => state.authReducer);
+    const { cart } = useSelector((state) => state.CartReducer);
 
     const logout = () => {};
 
@@ -145,9 +146,11 @@ function Navbar() {
                         <Link to="/cart">
                             <ShoppingCartOutlinedIcon className="cart-icon__mobile" />
                         </Link>
-                        <div className="cart-mobile__quantity">
-                            <span>0</span>
-                        </div>
+                        {cart.length > 0 ? (
+                            <div className="cart-mobile__quantity">
+                                <span>{cart.length}</span>
+                            </div>
+                        ) : null}
                     </span>
                 </div>
                 <div className={`mobile-input__search ${SearchBar ? "active" : ""}`}>

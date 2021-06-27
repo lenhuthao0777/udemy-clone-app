@@ -4,7 +4,6 @@ import CartAvailable from "./CartAvailable";
 import { useSelector } from "react-redux";
 function ShoppingCart() {
     const { cart } = useSelector((state) => state.CartReducer);
-    console.log(cart);
     return (
         <div className="shopping-cart">
             <div className="shopping-cart__heading">

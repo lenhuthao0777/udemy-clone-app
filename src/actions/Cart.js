@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../constants/Cart";
+import { ADD_TO_CART, DELETE_CART } from "../constants/Cart";
 const addToCart = (course) => {
     const data = { ...course };
     return {
@@ -8,4 +8,13 @@ const addToCart = (course) => {
         },
     };
 };
-export { addToCart };
+const deleteCart = (id) => {
+    
+    return {
+        type: DELETE_CART,
+        payload: {
+            id,
+        },
+    };
+};
+export { addToCart, deleteCart };
