@@ -24,16 +24,13 @@ function App() {
                     <Route path="/admin">
                         <AdminLayout>
                             <Switch>
-                                <Redirect exact from="/admin" to="/admin/courses" />
-                                <AdminRoute path="/admin/courses">
+                                <Redirect exact from="/admin" to="/admin/dashboard" />
+                                <AdminRoute path="/admin/dashboard">
                                     <AdminCourses />
                                 </AdminRoute>
                                 <Route path="/admin/users">
                                     <AdminUser />
                                 </Route>
-                                {/* <Route path="/admin">
-                                    <Admin/>
-                                </Route> */}
                             </Switch>
                         </AdminLayout>
                     </Route>

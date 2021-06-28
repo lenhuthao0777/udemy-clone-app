@@ -1,6 +1,8 @@
-.admin{
-    display: flex;
-    .admin-sidebar{
-        width: 20%;
+.admin {
+    .admin-dashboard {
+        display: flex;
+        .admin-content {
+            flex: 1 0 auto;
+        }
     }
 }
