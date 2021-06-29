@@ -16,15 +16,9 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                 <div className="admin-sidebar__contents--body">
                     <ul className="admin-sidebar__lists">
                         <li className="admin-sidebar__lists-item">
-                            <Link to="/">
-                                <span className="admin-sidebar__lists-item--icon">
-                                    <AiFillDashboard />
-                                </span>
-                                <span className="admin-sidebar__lists-item--text">Dashboard</span>
-                            </Link>
                         </li>
                         <li className="admin-sidebar__lists-item">
-                            <Link to="/">
+                            <Link to="/admin/courses">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <VscOutput />
                                 </span>
@@ -32,7 +26,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                             </Link>
                         </li>
                         <li className="admin-sidebar__lists-item">
-                            <Link to="/">
+                            <Link to="/admin/users">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <FiUsers />
                                 </span>
@@ -47,6 +41,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                     <MdClose />
                 </span>
             </div>
+            <div className={`admin-sidebar__overlay ${showSideBar ? "" : ""}`}></div>
         </div>
     );
 }

@@ -11,7 +11,6 @@ const Courses = lazy(() => import("./pages/courses"));
 const Loginpage = lazy(() => import("./pages/loginPage/Loginpage"));
 const AdminCourses = lazy(() => import("./pages/adminCourses"));
 const ShoppingCart = lazy(() => import("./pages/checkout"));
-const Admin = lazy(() => import("./pages/admin"));
 const SignUp = lazy(() => import("./pages/signupPage"));
 const SearchCourses = lazy(() => import("./pages/SearchCourses"));
 const NotFound = lazy(() => import("./pages/pageNotFound/index"));
@@ -24,8 +23,8 @@ function App() {
                     <Route path="/admin">
                         <AdminLayout>
                             <Switch>
-                                <Redirect exact from="/admin" to="/admin/dashboard" />
-                                <AdminRoute path="/admin/dashboard">
+                                <Redirect exact from="/admin" to="/admin/courses" />
+                                <AdminRoute path="/admin/courses">
                                     <AdminCourses />
                                 </AdminRoute>
                                 <Route path="/admin/users">

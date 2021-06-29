@@ -1,12 +1,35 @@
 .admin {
-    
     .admin-dashboard {
         display: flex;
-        .admin-side{
-            // width: 224px
-        }     
+        .admin-side {
+            .admin-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: none;
+            }
+        }
         .admin-content {
-           flex: 1;
+            flex: 1;
+        }
+    }
+}
+@include responesive("medium") {
+    .admin {
+        .admin-dashboard {
+            .admin-side {
+                .admin-overlay {
+                    &.adminOverlayIsopen {
+                        display: block;
+                        animation: fadeIn 0.2s ease;
+                    }
+                }
+            }
         }
     }
 }

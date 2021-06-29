@@ -7,9 +7,9 @@ function TopBar({ showSideBar, setShowSideBar }) {
         <div className="topbar">
             <div className="topbar-content">
                 <div className="topbar-content__left">
-                    <div className="topbar-icon" onClick={() => setShowSideBar(!showSideBar)}>
+                    <div className="topbar-icon">
                         <div className="topbar-icon__content">
-                            <span>
+                            <span onClick={() => setShowSideBar(!showSideBar)}>
                                 <AiOutlineMenuUnfold />
                             </span>
                             <span>

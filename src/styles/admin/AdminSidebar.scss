@@ -1,6 +1,7 @@
 .admin-sidebar {
     width: 224px;
-    z-index: 15;
+    height: 100vh;
+    z-index: 26;
     .admin-sidebar__content {
         background-image: linear-gradient(to top, #fd9644, #fa8231);
         width: 100%;
@@ -53,7 +54,7 @@
         top: 20px;
         left: 170px;
         display: none;
-        animation: fadeIn 0.3s ease-in;
+        animation: fadeIn 0.2s ease-in;
         &.openButton {
             display: none;
         }
@@ -69,6 +70,7 @@
             color: $color-white-0;
         }
     }
+    
 }
 
 @include responesive("extra-large") {
@@ -111,9 +113,9 @@
         top: 0;
         left: 0;
         bottom: 0;
-        // height: 100vh;
+        height: 100vh;
         transform: translateX(-100%);
-        transition: 0.3s ease-in-out;
+        transition: 0.2s ease-in-out;
         &.closed {
             transform: translateX(0);
         }

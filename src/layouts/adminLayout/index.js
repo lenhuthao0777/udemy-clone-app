@@ -9,6 +9,7 @@ function AdminLayout({ children }) {
             <div className="admin-dashboard">
                 <div className="admin-side">
                     <AdminSidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+                    <div className={`admin-overlay ${showSideBar ? "adminOverlayIsopen" : ""}`} onClick={()=> setShowSideBar(!showSideBar)}></div>
                 </div>
                 <div className="admin-content">
                     <TopBar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />

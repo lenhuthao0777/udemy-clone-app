@@ -2,8 +2,8 @@ import React from "react";
 
 function AdminCourses() {
     return (
-        <div>
-            {/* <table className="table">
+        <div className="admin-courses">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -32,7 +32,7 @@ function AdminCourses() {
                         <td>@twitter</td>
                     </tr>
                 </tbody>
-            </table> */}
+            </table>
         </div>
     );
 }
