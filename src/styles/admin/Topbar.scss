@@ -1,0 +1,136 @@
+.topbar {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    .topbar-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 24px;
+        .topbar-content__left {
+            display: flex;
+            align-items: center;
+            .topbar-icon {
+                display: none;
+                .topbar-icon__content {
+                    padding-right: 10px;
+                    display: flex;
+                    align-items: center;
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 24px;
+                        color: #fd9644;
+                        padding-right: 16px;
+                    }
+                }
+            }
+            .topbar-search {
+                form {
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    background-color: #f8f9fc;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    height: 35px;
+                    input {
+                        flex: 1;
+                        border: none;
+                        outline: none;
+                        height: 35px;
+                        border-radius: 5px;
+                        padding: 0 16px;
+                        background-color: transparent;
+                    }
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 35px;
+                        padding: 0 10px;
+                        background-image: linear-gradient(to right, #fd9644, #fa8231);
+                        font-size: 20px;
+                        color: $color-white-0;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+            }
+        }
+        .topbar-content__right {
+            display: flex;
+            align-items: center;
+            .topbar-notifi {
+                padding-right: 5px;
+                border-right: 1px solid #fd9644;
+                .topbar-notifi__list {
+                    display: flex;
+                    align-items: center;
+                    .topbar-notifi__list--item {
+                        padding-right: 16px;
+                        position: relative;
+                        span {
+                            font-size: 20px;
+                            color: #fd9644;
+                        }
+                        .notifi-quantity {
+                            position: absolute;
+                            top: -2px;
+                            right: 8px;
+                            color: $color-white-0;
+                            background-color: $color-red-0;
+                            font-size: 8px;
+                            font-weight: 700;
+                            border-radius: 10px;
+                            padding: 4px;
+                        }
+                    }
+                }
+            }
+            .topbar-avatar {
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                span {
+                    font-size: 16px;
+                    color: $color-black-2;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@include responesive("medium") {
+    .topbar {
+        .topbar-content {
+            .topbar-content__left {
+                .topbar-icon {
+                    display: block;
+                }
+                .topbar-search {
+                    form {
+                        width: 400px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responesive("small") {
+    .topbar {
+        .topbar-content {
+            .topbar-content__left {
+                .topbar-icon {
+                    display: block;
+                }
+                .topbar-search {
+                    form {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

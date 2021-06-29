@@ -1,10 +1,11 @@
 .admin-sidebar {
     width: 224px;
-    height: 100vh;
+    z-index: 15;
     .admin-sidebar__content {
-        background-color: #ff793f;
+        background-image: linear-gradient(to top, #fd9644, #fa8231);
         width: 100%;
         height: 100%;
+        overflow-y: auto;
         .admin-sidebar__content--heading {
             padding: 0 24px;
             a {
@@ -57,8 +58,8 @@
             display: none;
         }
         span {
-            width: 70px;
-            height: 70px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background-color: #ff793f;
             display: flex;
@@ -110,6 +111,7 @@
         top: 0;
         left: 0;
         bottom: 0;
+        // height: 100vh;
         transform: translateX(-100%);
         transition: 0.3s ease-in-out;
         &.closed {

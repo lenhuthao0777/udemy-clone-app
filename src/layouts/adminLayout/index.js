@@ -3,13 +3,15 @@ import TopBar from "components/topBar/index";
 import React from "react";
 import { useState } from "react";
 function AdminLayout({ children }) {
-    const [showSideBar, setShowSideBar] = useState(false)
+    const [showSideBar, setShowSideBar] = useState(false);
     return (
         <div className="admin">
             <div className="admin-dashboard">
-                <AdminSidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+                <div className="admin-side">
+                    <AdminSidebar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+                </div>
                 <div className="admin-content">
-                    <TopBar />
+                    <TopBar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
                     {children}
                 </div>
             </div>
