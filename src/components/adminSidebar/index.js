@@ -1,8 +1,8 @@
 import React from "react";
-import { AiFillDashboard } from "react-icons/ai";
-import { FiUsers } from "react-icons/fi";
-import { VscOutput } from "react-icons/vsc";
+import { AiOutlineFileAdd } from "react-icons/ai";
+import { FiUserPlus, FiUsers } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { VscOutput } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 function AdminSidebar({ showSideBar, setShowSideBar }) {
     return (
@@ -26,11 +26,27 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                             </Link>
                         </li>
                         <li className="admin-sidebar__lists-item">
+                            <Link to="/admin/addcourses">
+                                <span className="admin-sidebar__lists-item--icon">
+                                    <AiOutlineFileAdd />
+                                </span>
+                                <span className="admin-sidebar__lists-item--text">Add Courses</span>
+                            </Link>
+                        </li>
+                        <li className="admin-sidebar__lists-item">
                             <Link to="/admin/users">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <FiUsers />
                                 </span>
                                 <span className="admin-sidebar__lists-item--text">User Manage</span>
+                            </Link>
+                        </li>
+                        <li className="admin-sidebar__lists-item">
+                            <Link to="/admin/addusers">
+                                <span className="admin-sidebar__lists-item--icon">
+                                    <FiUserPlus />
+                                </span>
+                                <span className="admin-sidebar__lists-item--text">Add User</span>
                             </Link>
                         </li>
                     </ul>

@@ -11,6 +11,7 @@
                 width: 100vw;
                 height: 100vh;
                 background-color: rgba(0, 0, 0, 0.5);
+                z-index: 17;
                 display: none;
             }
         }
@@ -19,7 +20,7 @@
         }
     }
 }
-@include responesive("medium") {
+@include responesive("extra-large") {
     .admin {
         .admin-dashboard {
             .admin-side {

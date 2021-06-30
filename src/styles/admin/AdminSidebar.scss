@@ -3,10 +3,10 @@
     height: 100vh;
     z-index: 26;
     .admin-sidebar__content {
-        background-image: linear-gradient(to top, #fd9644, #fa8231);
         width: 100%;
         height: 100%;
         overflow-y: auto;
+        background-image: linear-gradient(to top, #fd9644, #fa8231);
         .admin-sidebar__content--heading {
             padding: 0 24px;
             a {
@@ -52,7 +52,7 @@
     .admin-button {
         position: fixed;
         top: 20px;
-        left: 170px;
+        left: 230px;
         display: none;
         animation: fadeIn 0.2s ease-in;
         &.openButton {
@@ -70,44 +70,44 @@
             color: $color-white-0;
         }
     }
-    
 }
 
 @include responesive("extra-large") {
-    .admin-sidebar {
-        width: 155px;
-        .admin-sidebar__content {
-            .admin-sidebar__content--heading {
-                padding: 0 10px;
-                a {
-                    img {
-                        width: 90px;
-                    }
-                }
-            }
-            .admin-sidebar__contents--body {
-                .admin-sidebar__lists {
-                    .admin-sidebar__lists-item {
-                        padding: 0 16px;
-                        a {
-                            flex-direction: column;
-                            text-align: center;
-                            span {
-                                font-size: 12px;
-                                padding-bottom: 8px;
-                            }
-                            .admin-sidebar__lists-item--icon {
-                                font-size: 24px;
-                                padding-right: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-@include responesive("medium") {
+    // .admin-sidebar {
+    //     width: 155px;
+    //     height: 100vh;
+    //     .admin-sidebar__content {
+    //         width: 100%;
+    //         height: 100%;
+    //         .admin-sidebar__content--heading {
+    //             padding: 0 10px;
+    //             a {
+    //                 img {
+    //                     width: 90px;
+    //                 }
+    //             }
+    //         }
+    //         .admin-sidebar__contents--body {
+    //             .admin-sidebar__lists {
+    //                 .admin-sidebar__lists-item {
+    //                     padding: 0 16px;
+    //                     a {
+    //                         flex-direction: column;
+    //                         text-align: center;
+    //                         span {
+    //                             font-size: 12px;
+    //                             padding-bottom: 8px;
+    //                         }
+    //                         .admin-sidebar__lists-item--icon {
+    //                             font-size: 24px;
+    //                             padding-right: 10px;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
     .admin-sidebar {
         position: fixed;
         top: 0;
@@ -123,4 +123,31 @@
             display: block;
         }
     }
+}
+// @include responesive("large") {
+//     .admin-sidebar {
+//         width: 155px;
+//         height: 100vh;
+//         .admin-sidebar__content {
+//             height: 100%;
+//             width: 100%;
+//         }
+//     }
+// }
+@include responesive("medium") {
+    // .admin-sidebar {
+    //     position: fixed;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     height: 100vh;
+    //     transform: translateX(-100%);
+    //     transition: 0.2s ease-in-out;
+    //     &.closed {
+    //         transform: translateX(0);
+    //     }
+    //     .admin-button {
+    //         display: block;
+    //     }
+    // }
 }

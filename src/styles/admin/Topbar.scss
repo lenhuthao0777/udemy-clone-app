@@ -101,7 +101,23 @@
         }
     }
 }
-
+@include responesive("extra-large") {
+    .topbar {
+        .topbar-content {
+            .topbar-content__left {
+                .topbar-icon {
+                    display: block;
+                }
+                .topbar-search {
+                    display: none;
+                    form {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
 @include responesive("medium") {
     .topbar {
         .topbar-content {

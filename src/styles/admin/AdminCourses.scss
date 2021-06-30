@@ -1,0 +1,168 @@
+.admin-courses {
+    margin-top: 60px;
+        .admin-title{
+            font-size: 20px;
+            font-weight: 700;
+            padding: 24px 24px;
+        }
+    .admin-courses__content {
+        margin: 0 24px;
+        box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+        border-radius: 5px;
+        overflow: hidden;
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 16px;
+            background-color: #f8f9fc;
+            h3 {
+                font-size: 19px;
+                color: #fa8231;
+            }
+            form {
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 14px;
+                    color: #fa8231;
+                    padding-right: 10px;
+                }
+                input {
+                    height: 30px;
+                    width: 200px;
+                    border: 1px solid #fa8231;
+                    border-radius: 3px;
+                    outline: none;
+                    padding: 0 16px;
+                    background-color: transparent;
+                }
+            }
+        }
+        .table-body {
+            padding: 0 16px;
+            .admin-table {
+                width: 100%;
+                border-collapse: collapse;
+                thead{
+                    tr{
+                        td {
+                            background-color: #fa8231;
+                            color: $color-white-0;
+                            font-weight: 700;
+                        }
+                    }
+                }
+                td {
+                    padding: 12px 15px;
+                    border: 1px solid #ddd;
+                    text-align: center;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $color-black-0;
+                }
+                td {
+                    img {
+                        width: 130px;
+                    }
+                }
+                tbody {
+                    tr:nth-child(even) {
+                        background-color: #f5f5f5;
+                    }
+                }
+            }
+        }
+        .table-footer {
+            padding: 24px 16px;
+            .table-footer__content {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                .btn-pagenation {
+                    padding: 10px 15px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $color-white-0;
+                    background-color: #ffbe76;
+                    border: 1px solid #fa8231;
+                    &.active {
+                        background-color: #fa8231;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("medium") {
+    .admin-courses {
+        margin-top: 60px;
+        .admin-courses__content {
+            margin: 0 24px;
+            box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+            border-radius: 5px;
+            overflow: hidden;
+
+            .table-body {
+                .admin-table {
+                    display: block;
+                    thead {
+                        display: none;
+                    }
+                    tbody,
+                    tr,
+                    td {
+                        & .id {
+                            background-color: #fa8231;
+                            color: $color-white-0;
+                            font-weight: 700;
+                            border: 1px solid #fa8231;
+                        }
+                        display: block;
+                        img {
+                            width: 130px;
+                        }
+                    }
+                    tr {
+                        margin: 15px 0;
+                        box-shadow: 0 12px 20px 0 rgba(58, 59, 69, 0.15);
+                        overflow: hidden;
+                    }
+                    td {
+                        text-align: right;
+                        padding-left: 40%;
+                        &::before {
+                            content: attr(data-label);
+                            position: absolute;
+                            left: 40px;
+
+                            padding-left: 15px;
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include responesive("small") {
+    .admin-courses {
+        .admin-courses__content {
+            .table-header {
+                h3 {
+                    font-size: 14px;
+                }
+                form {
+                    span {
+                        display: none;
+                    }
+                    input {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
