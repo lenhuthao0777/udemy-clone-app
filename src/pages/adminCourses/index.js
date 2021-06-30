@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 function AdminCourses() {
+
     const [pagenation, setPagenation] = useState(1);
     const [modal, setModal] = useState(false);
-
+   
     const toggle = () => setModal(!modal);
     return (
-        <div className="admin-courses">
-            <h3 className="admin-title">COURSES MANAGE</h3>
-            <div className="admin-courses__content">
+        <div className="admin-data">
+            <h3 className="admin-title">USER MANAGE</h3>
+            <div className="admin-content">
                 <div className="table-header">
-                    <h3>Courses Manage</h3>
+                    <button className="admin-button__add">Add</button>
                     <form action="">
                         <span>Search:</span>
                         <input type="text" />

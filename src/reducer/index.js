@@ -6,6 +6,7 @@ import CoursesByCate from "./CoursesByCate";
 import SignUpFrom from "./SignUp";
 import Search from "./Search";
 import CartReducer from "./Cart";
+import GetUser from "./GetUser";
 export const rootReducer = combineReducers({
     courses,
     authReducer,
@@ -14,4 +15,5 @@ export const rootReducer = combineReducers({
     SignUpFrom,
     Search,
     CartReducer,
+    GetUser,
 });

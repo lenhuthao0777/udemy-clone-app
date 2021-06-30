@@ -6,20 +6,22 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Button } from "../button/Button";
 import Category from "./Category";
 import NavBarMobile from "./NavBarMobile";
 import ShopingCart from "./ShopingCart";
 
-function Navbar() {
+function Navbar({ history }) {
     const [SideBar, setSideBar] = useState(false);
     const [SearchBar, setSearchBar] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const { userInfo } = useSelector((state) => state.authReducer);
     const { cart } = useSelector((state) => state.CartReducer);
-
-    const logout = () => {};
+    const logout = () => {
+        // localStorage.removeItem("userInfo");
+        // history.push("/");
+    };
 
     const handelSearch = (e) => {
         const value = e.target.value;
@@ -109,7 +111,9 @@ function Navbar() {
                                         <li>
                                             <Link to="/profile">Profile</Link>
                                         </li>
-                                        <li onClick={logout}>Log Out</li>
+                                        <li onClick={logout}>
+                                            Log out
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

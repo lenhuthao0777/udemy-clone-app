@@ -1,12 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import Navbar from "./Navbar";
-import { Search } from "actions/Search";
 function Header() {
+    const history = useHistory();
     return (
         <nav>
-            <Navbar />
+            <Navbar history={history} />
         </nav>
     );
 }

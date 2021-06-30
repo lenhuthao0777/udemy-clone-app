@@ -1,7 +1,7 @@
 import React from "react";
-import CartEmpty from "./CartEmpty";
-import CartAvailable from "./CartAvailable";
 import { useSelector } from "react-redux";
+import CartAvailable from "./CartAvailable";
+import CartEmpty from "./CartEmpty";
 function ShoppingCart() {
     const { cart } = useSelector((state) => state.CartReducer);
     return (

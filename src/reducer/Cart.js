@@ -4,7 +4,6 @@ const initialState = {
     cart: cart ? cart : [],
 };
 const CartReducer = (state = initialState, action) => {
-    // console.log(action);
     switch (action.type) {
         case ADD_TO_CART:
             let index = state.cart.findIndex((course) => course.maKhoaHoc === action.payload.data.maKhoaHoc);

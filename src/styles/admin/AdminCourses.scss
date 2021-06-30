@@ -1,11 +1,11 @@
-.admin-courses {
+.admin-data {
     margin-top: 60px;
         .admin-title{
             font-size: 20px;
             font-weight: 700;
             padding: 24px 24px;
         }
-    .admin-courses__content {
+    .admin-content {
         margin: 0 24px;
         box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
         border-radius: 5px;
@@ -16,9 +16,14 @@
             align-items: center;
             padding: 15px 16px;
             background-color: #f8f9fc;
-            h3 {
-                font-size: 19px;
-                color: #fa8231;
+            button{
+                padding: 8px 15px;
+                border: none;
+                border-radius: 5px;
+                background-color: #fa8231;
+                font-size: 14px;
+                font-weight: 700;
+                color: $color-white-0;
             }
             form {
                 display: flex;
@@ -96,9 +101,9 @@
     }
 }
 @include responesive("medium") {
-    .admin-courses {
+    .admin-data {
         margin-top: 60px;
-        .admin-courses__content {
+        .admin-content {
             margin: 0 24px;
             box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
             border-radius: 5px;
@@ -148,8 +153,8 @@
     }
 }
 @include responesive("small") {
-    .admin-courses {
-        .admin-courses__content {
+    .admin-data {
+        .admin-content {
             .table-header {
                 h3 {
                     font-size: 14px;
