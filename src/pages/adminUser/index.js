@@ -5,10 +5,24 @@ import { useDispatch, useSelector } from "react-redux";
 function AdminUser() {
     const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
+    const [searchTerm, setSearchTerm] = useState("");
     const { users } = useSelector((state) => state.GetUser);
     useEffect(() => {
         dispatch(getUser());
     }, []);
+    const handelChange = (e) => {
+        const target = e.target.value;
+        setSearchTerm(target);
+    };
+    const searchData = users.filter((val) => {
+        if (searchTerm === "") {
+            return val;
+        } else if (
+            val.hoTen.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+        ) {
+            return val;
+        }
+    });
     return (
         <div className="admin-data">
             <h3 className="admin-title">COURSES MANAGE</h3>
@@ -16,7 +30,7 @@ function AdminUser() {
                 <div className="table-header">
                     <form action="">
                         <span>Search:</span>
-                        <input type="text" />
+                        <input type="text" onChange={handelChange} />
                     </form>
                 </div>
                 <div className="table-body">
@@ -32,19 +46,38 @@ function AdminUser() {
                             </tr>
                         </thead>
                         <tbody>
-                            {users.map((item, key) => {
+                            {searchData.map((item, key) => {
                                 return (
                                     <tr key={key}>
                                         <td data-label="Id" className="id">
                                             1
                                         </td>
-                                        <td data-label="User Name">{item.hoTen}</td>
+                                        <td data-label="User Name">
+                                            {item.hoTen}
+                                        </td>
                                         <td data-label="Email">{item.email}</td>
-                                        <td data-label="Phone Number">{item.soDt}</td>
-                                        <td data-label="User Type">{item.maLoaiNguoiDung}</td>
+                                        <td data-label="Phone Number">
+                                            {item.soDt}
+                                        </td>
+                                        <td data-label="User Type">
+                                            {item.maLoaiNguoiDung}
+                                        </td>
                                         <td data-label="Handel">
-                                            <button className="btn btn-primary">Edit</button>
-                                            <button className="btn btn-danger" onClick={()=>dispatch(DeleteUser(item.taiKhoan))}>Del</button>
+                                            <button className="btn btn-primary">
+                                                Edit
+                                            </button>
+                                            <button
+                                                className="btn btn-danger"
+                                                onClick={() =>
+                                                    dispatch(
+                                                        DeleteUser(
+                                                            item.taiKhoan
+                                                        )
+                                                    )
+                                                }
+                                            >
+                                                Del
+                                            </button>
                                         </td>
                                     </tr>
                                 );
@@ -54,16 +87,36 @@ function AdminUser() {
                 </div>
                 <div className="table-footer">
                     <div className="table-footer__content">
-                        <button className={`btn-pagenation ${pagenation === 1 ? "active" : ""}`} onClick={() => setPagenation(1)}>
+                        <button
+                            className={`btn-pagenation ${
+                                pagenation === 1 ? "active" : ""
+                            }`}
+                            onClick={() => setPagenation(1)}
+                        >
                             1
                         </button>
-                        <button className={`btn-pagenation ${pagenation === 2 ? "active" : ""}`} onClick={() => setPagenation(2)}>
+                        <button
+                            className={`btn-pagenation ${
+                                pagenation === 2 ? "active" : ""
+                            }`}
+                            onClick={() => setPagenation(2)}
+                        >
                             2
                         </button>
-                        <button className={`btn-pagenation ${pagenation === 3 ? "active" : ""}`} onClick={() => setPagenation(3)}>
+                        <button
+                            className={`btn-pagenation ${
+                                pagenation === 3 ? "active" : ""
+                            }`}
+                            onClick={() => setPagenation(3)}
+                        >
                             3
                         </button>
-                        <button className={`btn-pagenation ${pagenation === 4 ? "active" : ""}`} onClick={() => setPagenation(4)}>
+                        <button
+                            className={`btn-pagenation ${
+                                pagenation === 4 ? "active" : ""
+                            }`}
+                            onClick={() => setPagenation(4)}
+                        >
                             4
                         </button>
                     </div>

@@ -17,6 +17,9 @@ const authApi = {
     deleteUser: (values) => {
         return axiosClient.delete(`/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${values}`);
     },
+    updateUser: (values) => {
+        return axiosClient.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", values);
+    },
 };
 
 export default authApi;
