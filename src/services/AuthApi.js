@@ -11,6 +11,12 @@ const authApi = {
         const params = { MaNhom: "GP07" };
         return axiosClient.get("/QuanLyNguoiDung/LayDanhSachNguoiDung", { params });
     },
+    addUser: (values) => {
+        return axiosClient.post("/QuanLyNguoiDung/ThemNguoiDung", values);
+    },
+    deleteUser: (values) => {
+        return axiosClient.delete(`/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${values}`);
+    },
 };
 
 export default authApi;

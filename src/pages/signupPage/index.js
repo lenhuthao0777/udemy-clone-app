@@ -7,16 +7,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 function SignUp() {
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const { userInfo } = useSelector((state) => state.SignUpFrom);
     console.log(userInfo);
     const schema = yup.object().shape({
         taiKhoan: yup.string().required("UserName can't be blank"),
         email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
         matKhau: yup.string().required("Password can't be blank"),
-        hoTen: yup.string().required("Password can't be blank"),
-        soDT: yup.string().required("Password can't be blank"),
-        maNhom: yup.string().required("Password can't be blank"),
+        hoTen: yup.string().required("Full name can't be blank"),
+        soDT: yup.string().required("Phone number can't be blank"),
+        maNhom: yup.string().required("Group id can't be blank"),
     });
     const {
         register,
@@ -25,7 +25,7 @@ function SignUp() {
     } = useForm({ resolver: yupResolver(schema) });
     const handelForm = (data) => {
         console.log(data);
-        dispath(SignUpForm(data));
+        dispatch(SignUpForm(data));
     };
     return (
         <div className="signup">

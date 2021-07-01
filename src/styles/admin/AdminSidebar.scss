@@ -1,11 +1,9 @@
 .admin-sidebar {
-    width: 224px;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 26;
     .admin-sidebar__content {
-        width: 100%;
+        width: 224px;
         height: 100%;
-        overflow-y: auto;
         background-image: linear-gradient(to top, #fd9644, #fa8231);
         .admin-sidebar__content--heading {
             padding: 0 24px;
@@ -118,6 +116,9 @@
         transition: 0.2s ease-in-out;
         &.closed {
             transform: translateX(0);
+        }
+        .admin-sidebar__content {
+            overflow-y: auto;
         }
         .admin-button {
             display: block;

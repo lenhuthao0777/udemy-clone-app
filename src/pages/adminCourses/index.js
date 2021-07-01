@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 function AdminCourses() {
-
     const [pagenation, setPagenation] = useState(1);
     const [modal, setModal] = useState(false);
-   
+
     const toggle = () => setModal(!modal);
     return (
         <div className="admin-data">
             <h3 className="admin-title">USER MANAGE</h3>
             <div className="admin-content">
                 <div className="table-header">
-                    <button className="admin-button__add">Add</button>
+                    
                     <form action="">
                         <span>Search:</span>
                         <input type="text" />
@@ -99,7 +98,13 @@ function AdminCourses() {
                     </div>
                 </div>
             </div>
-            <div className="admin-modal"></div>
+            <div className="admin-modal">
+                <div className="form-modal">
+                    <form action="">
+                        
+                    </form>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,12 +1,11 @@
 import { getUser } from "actions/auth";
+import { DeleteUser } from "actions/DelUserAction";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 function AdminUser() {
     const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
     const { users } = useSelector((state) => state.GetUser);
-    console.log(users);
     useEffect(() => {
         dispatch(getUser());
     }, []);
@@ -15,7 +14,6 @@ function AdminUser() {
             <h3 className="admin-title">COURSES MANAGE</h3>
             <div className="admin-content">
                 <div className="table-header">
-                    <button className="admin-button__add">Add</button>
                     <form action="">
                         <span>Search:</span>
                         <input type="text" />
@@ -29,22 +27,24 @@ function AdminUser() {
                                 <td>User Name</td>
                                 <td>Email</td>
                                 <td>Phone Number</td>
+                                <td>User Type</td>
                                 <td>Handel</td>
                             </tr>
                         </thead>
                         <tbody>
-                            {users.map((item) => {
+                            {users.map((item, key) => {
                                 return (
-                                    <tr>
+                                    <tr key={key}>
                                         <td data-label="Id" className="id">
                                             1
                                         </td>
-                                        <td data-label="User Name">2021 Complete Python Bootcamp From Zero to Hero in Python</td>
-                                        <td data-label="Email">2021 Complete Python Bootcamp From Zero to Hero in Python</td>
-                                        <td data-label="Phone Number">2021 Complete Python Bootcamp From Zero to Hero in Python</td>
+                                        <td data-label="User Name">{item.hoTen}</td>
+                                        <td data-label="Email">{item.email}</td>
+                                        <td data-label="Phone Number">{item.soDt}</td>
+                                        <td data-label="User Type">{item.maLoaiNguoiDung}</td>
                                         <td data-label="Handel">
                                             <button className="btn btn-primary">Edit</button>
-                                            <button className="btn btn-danger">Del</button>
+                                            <button className="btn btn-danger" onClick={()=>dispatch(DeleteUser(item.taiKhoan))}>Del</button>
                                         </td>
                                     </tr>
                                 );

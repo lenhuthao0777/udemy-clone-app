@@ -6,7 +6,7 @@ function AdminRoute({ children, ...props }) {
 	if (!userInfo) {
 		return <Redirect to={`/login?redirectTo=${props.path}`} />;
 	}
-	if (userInfo.maLoaiNguoiDung !== 'HV') {
+	if (userInfo.maLoaiNguoiDung !== 'GV') {
 		return <Redirect to='/' />;
 	}
 	return <Route {...props}>{children}</Route>;
