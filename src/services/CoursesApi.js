@@ -16,8 +16,11 @@ const coursesApi = {
         return axiosClient.get("/QuanLyKhoaHoc/LayThongTinKhoaHoc", { params });
     },
     searchCourse: (name) => {
-        const params = { tenKhoaHoc: name,  MaNhom: "GP08"};
+        const params = { tenKhoaHoc: name, MaNhom: "GP08" };
         return axiosClient.get("/QuanLyKhoaHoc/LayDanhSachKhoaHoc", { params });
+    },
+    deleteCourse: (id) => {
+        return axiosClient.delete(`/QuanLyKhoaHoc/XoaKhoaHoc?MaKhoaHoc=${id}`);
     },
 };
 export default coursesApi;

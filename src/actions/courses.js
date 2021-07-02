@@ -32,4 +32,9 @@ const getCourses = () => {
         }
     };
 };
+// const courseDetail=(course)=>{
+//     const actions ={
+
+//     }
+// }
 export { getCoursesByCategory, getCourses };

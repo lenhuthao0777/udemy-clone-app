@@ -1,15 +1,20 @@
 import { getCourses } from "actions/courses";
-import React, { useState } from "react";
-import { useEffect } from "react";
+import { DeleteCourse } from "actions/DeleteCourseAction";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 function AdminCourses() {
     const [pagenation, setPagenation] = useState(1);
     const { courses } = useSelector((state) => state.courses);
     const [searchTerm, setSearchTerm] = useState("");
+    const [modal, setModal] = useState(false);
+    const handelEdit = () => {
+        setModal(!modal);
+    };
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getCourses());
     }, []);
+
     const handeChange = (e) => {
         const target = e.target.value;
         setSearchTerm(target);
@@ -25,6 +30,12 @@ function AdminCourses() {
             return val;
         }
     });
+
+    const deleteCourse = (id) => {
+        if (window.confirm("Are you sure?")) {
+            dispatch(DeleteCourse(id));
+        }
+    };
     return (
         <div className="admin-data">
             <h3 className="admin-title">COURSES MANAGE</h3>
@@ -50,22 +61,27 @@ function AdminCourses() {
                                 return (
                                     <tr key={key}>
                                         <td data-label="Id" className="id">
-                                           {key + 1}
+                                            {key + 1}
                                         </td>
                                         <td data-label="Image">
-                                            <img
-                                                src={item.hinhAnh}
-                                                alt=""
-                                            />
+                                            <img src={item.hinhAnh} alt="" />
                                         </td>
                                         <td data-label="Course Name">
                                             {item.tenKhoaHoc}
                                         </td>
                                         <td data-label="Handel">
-                                            <button className="btn btn-primary">
+                                            <button
+                                                className="btn btn-primary"
+                                                onClick={handelEdit}
+                                            >
                                                 Edit
                                             </button>
-                                            <button className="btn btn-danger">
+                                            <button
+                                                className="btn btn-danger"
+                                                onClick={() =>
+                                                    deleteCourse(item.maKhoaHoc)
+                                                }
+                                            >
                                                 Del
                                             </button>
                                         </td>
@@ -112,10 +128,46 @@ function AdminCourses() {
                     </div>
                 </div>
             </div>
-            <div className="admin-modal">
-                <div className="form-modal">
-                    <form action=""></form>
-                </div>
+            <div className={`admin-modal ${modal ? "modal-open" : ""}`}>
+                <form>
+                    <div className="form-group">
+                        <h3>Update Form</h3>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputEmail1">
+                            Email address
+                        </label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            id="exampleInputEmail1"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email"
+                        />
+                        <small id="emailHelp" className="form-text text-muted">
+                            We'll never share your email with anyone else.
+                        </small>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input
+                            type="password"
+                            className="form-control"
+                            id="exampleInputPassword1"
+                            placeholder="Password"
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-primary">
+                        Submit
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-danger"
+                        onClick={() => setModal(!modal)}
+                    >
+                        Cancel
+                    </button>
+                </form>
             </div>
         </div>
     );

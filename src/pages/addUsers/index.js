@@ -30,9 +30,9 @@ function AddUsers() {
         dispatch(AddUser(data));
     };
     return (
-        <div className="form">
+        <div className="form-adds">
             <form
-                style={{ width: "100%", paddingTop: "50px" }}
+                style={{ width: "400px", paddingTop: "50px" }}
                 onSubmit={handleSubmit(handelForm)}
             >
                 <div className="form-group">

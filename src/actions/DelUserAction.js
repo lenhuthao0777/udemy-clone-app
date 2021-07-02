@@ -1,16 +1,16 @@
-import {DELETE_REQUEST, DELETE_SUCCESS, DELETE_FAILURE} from "constants/DeleteUserContants"
-import authApi from "services/AuthApi"
-export function DeleteUser(values) {
+import {
+    DELETE_FAILURE,
+    DELETE_REQUEST,
+    DELETE_SUCCESS,
+} from "constants/DeleteUserContants";
+import authApi from "services/AuthApi";
+export function DeleteUser(value) {
     return async (dispatch) => {
-        dispatch({ type: DELETE_REQUEST });
         try {
-            const { data } = await authApi.deleteUser(values);
-            dispatch({ type: DELETE_SUCCESS, payload: { data } });
+            await authApi.deleteUser(value);
+            dispatch({ type: DELETE_SUCCESS, payload: { value } });
         } catch (error) {
-            dispatch({
-                type: DELETE_FAILURE,
-                payload: { error: error.response.data },
-            });
+            console.log(error);
         }
     };
 }

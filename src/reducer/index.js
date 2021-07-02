@@ -18,4 +18,5 @@ export const rootReducer = combineReducers({
     CartReducer,
     GetUser,
     AddUser,
+    
 });

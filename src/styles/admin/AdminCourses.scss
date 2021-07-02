@@ -1,9 +1,9 @@
 .admin-data {
-        .admin-title{
-            font-size: 20px;
-            font-weight: 700;
-            padding: 24px 24px;
-        }
+    .admin-title {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 24px 24px;
+    }
     .admin-content {
         margin: 0 24px;
         box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
@@ -15,7 +15,7 @@
             align-items: center;
             padding: 15px 16px;
             background-color: #f8f9fc;
-            button{
+            button {
                 padding: 8px 15px;
                 border: none;
                 border-radius: 5px;
@@ -48,8 +48,8 @@
             .admin-table {
                 width: 100%;
                 border-collapse: collapse;
-                thead{
-                    tr{
+                thead {
+                    tr {
                         td {
                             background-color: #fa8231;
                             color: $color-white-0;
@@ -96,6 +96,34 @@
                     }
                 }
             }
+        }
+    }
+    .admin-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(58, 59, 69, 0.5);
+        z-index: 30;
+        display: none;
+        &.modal-open {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        form {
+            width: 400px;
+            background-color: $color-white-0;
+            padding: 16px;
+            border-radius: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 31;
+            overflow-y: auto;
         }
     }
 }
@@ -165,10 +193,15 @@
                     }
                 }
             }
-            .table-body{
+            .table-body {
                 padding: 0 10px;
-                .admin-table{
+                .admin-table {
                 }
+            }
+        }
+        .admin-modal{
+            form{
+                width: 300px;
             }
         }
     }
