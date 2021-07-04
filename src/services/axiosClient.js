@@ -4,6 +4,8 @@ const axiosClient = axios.create({
     baseURL: "https://elearning0706.cybersoft.edu.vn/api",
     // tu cau hinh cach lay params mac dinh cua axios
     // bo qua gia tri null va undefined trong params
+    // headers: "Access-Control-Allow-Origin: *",
+
     paramsSerializer: (params) => qs.stringify(params, { skipNulls: true }),
 });
 axiosClient.interceptors.request.use(
