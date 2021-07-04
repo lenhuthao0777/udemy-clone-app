@@ -1,18 +1,23 @@
+import { yupResolver } from "@hookform/resolvers/yup";
 import { getUser } from "actions/auth";
 import { DeleteUser } from "actions/DelUserAction";
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { EditUser } from "actions/EditUser";
+import { detailUsers, SearchUser } from "actions/SearchUserActions";
 import { UpdateUser } from "actions/UpdateActions";
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import * as yup from "yup";
+import { Link } from "react-router-dom";
 function AdminUser() {
     const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const { users } = useSelector((state) => state.GetUser);
+    const { users, detailUser } = useSelector((state) => state.GetUser);
+    const { updateUser, status } = useSelector((state) => state.UpdateUser);
+    const { searchUserData } = useSelector((state) => state.SearchUser);
+    console.log(detailUser);
+
     useEffect(() => {
         dispatch(getUser());
     }, []);
@@ -35,8 +40,9 @@ function AdminUser() {
     };
     const handelEdit = (user) => {
         setModal(!modal);
-        dispatch(EditUser(user));
+        dispatch(detailUsers(user));
     };
+
     const schema = yup.object().shape({
         taiKhoan: yup.string().required("User name can't be blank"),
         matKhau: yup.string().required("Password can't be blank"),
@@ -46,15 +52,18 @@ function AdminUser() {
         maNhom: yup.string().required("Gruop id can't be blank"),
         email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
     });
+
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm({ resolver: yupResolver(schema) });
+
     const handleForm = (data) => {
         console.log(data);
         dispatch(UpdateUser(data));
     };
+
     return (
         <div className="admin-data">
             <h3 className="admin-title">COURSES MANAGE</h3>
@@ -91,7 +100,7 @@ function AdminUser() {
                                         <td data-label="Phone Number">{item.soDt}</td>
                                         <td data-label="User Type">{item.maLoaiNguoiDung}</td>
                                         <td data-label="Handel">
-                                            <button className="btn btn-primary" onClick={handelEdit}>
+                                            <button className="btn btn-primary" onClick={() => handelEdit(item)}>
                                                 Edit
                                             </button>
                                             <button className="btn btn-danger" onClick={() => deleteData(item.taiKhoan)}>
@@ -123,8 +132,9 @@ function AdminUser() {
             </div>
             <div className={`admin-modal ${modal ? "modal-open" : ""}`}>
                 <form onSubmit={handleSubmit(handleForm)}>
-                    <div className="form-group">
-                        <h3>Update Form</h3>
+                    <div className="form-group d-flex justify-content-between">
+                        <span style={{ fontSize: "15px", color: "black", fontWeight: " 600" }}>Update Form</span>
+                        <span>{status}</span>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">User Name</label>

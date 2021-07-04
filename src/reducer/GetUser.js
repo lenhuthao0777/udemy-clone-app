@@ -1,12 +1,21 @@
 import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from "constants/Auth";
 import { DELETE_SUCCESS } from "constants/DeleteUserContants";
-import { USER_DETAIL } from "constants/AddUserContants";
 const initialState = {
-    users: [],
+    users: [
+        {
+            taiKhoan: "",
+            matKhau: "",
+            hoTen: "",
+            soDT: "",
+            maLoaiNguoiDung: "",
+            maNhom: "",
+            email: "",
+        },
+    ],
     deleteUserData: {},
     isLoading: false,
     error: null,
-    userDetail: {},
+    detailUser: {},
 };
 function GetUser(state = initialState, action) {
     console.log(action);
@@ -27,8 +36,8 @@ function GetUser(state = initialState, action) {
             }
             return { ...state };
         }
-        case USER_DETAIL: {
-            return { ...state, userDetail: action.payload.data };
+        case "detai": {
+            return { ...state, detailUser: action.payload.values };
         }
         default:
             return state;

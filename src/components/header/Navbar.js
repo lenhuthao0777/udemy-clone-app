@@ -19,8 +19,8 @@ function Navbar({ history }) {
     const { userInfo } = useSelector((state) => state.authReducer);
     const { cart } = useSelector((state) => state.CartReducer);
     const logout = () => {
-        // localStorage.removeItem("userInfo");
-        // history.push("/");
+        localStorage.removeItem("userInfo");
+        window.location.reload();
     };
 
     const handelSearch = (e) => {
@@ -111,9 +111,7 @@ function Navbar({ history }) {
                                         <li>
                                             <Link to="/profile">Profile</Link>
                                         </li>
-                                        <li onClick={logout}>
-                                            Log out
-                                        </li>
+                                        <li onClick={logout}>Log out</li>
                                     </ul>
                                 </div>
                             </div>

@@ -20,6 +20,9 @@ const authApi = {
     updateUser: (values) => {
         return axiosClient.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", values);
     },
+    searchUser: (values) => {
+        return axiosClient.get(`/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP07&tuKhoa=${values}`);
+    },
 };
 
 export default authApi;

@@ -8,6 +8,8 @@ import Search from "./Search";
 import CartReducer from "./Cart";
 import GetUser from "./GetUser";
 import AddUser from "./AddUser";
+import UpdateUser from "./UpdateUser";
+import SearchUser from "./SearchUser";
 export const rootReducer = combineReducers({
     courses,
     authReducer,
@@ -18,5 +20,6 @@ export const rootReducer = combineReducers({
     CartReducer,
     GetUser,
     AddUser,
-    
+    UpdateUser,
+    SearchUser,
 });
