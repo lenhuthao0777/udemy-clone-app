@@ -9,7 +9,6 @@ const addToCart = (course) => {
     };
 };
 const deleteCart = (id) => {
-    
     return {
         type: DELETE_CART,
         payload: {
@@ -17,4 +16,12 @@ const deleteCart = (id) => {
         },
     };
 };
-export { addToCart, deleteCart };
+const edit = (data) => {
+    return {
+        type: "select_data_user",
+        payload: {
+            data: data,
+        },
+    };
+};
+export { addToCart, deleteCart, edit };

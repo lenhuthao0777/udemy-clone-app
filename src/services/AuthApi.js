@@ -20,8 +20,11 @@ const authApi = {
     updateUser: (values) => {
         return axiosClient.put("/QuanLyNguoiDung/CapNhatThongTinNguoiDung", values);
     },
-    searchUser: (values) => {
+    selectUser: (values) => {
         return axiosClient.get(`/QuanLyNguoiDung/TimKiemNguoiDung?MaNhom=GP07&tuKhoa=${values}`);
+    },
+    getUserByPage: (values) => {
+        return axiosClient.get(`/QuanLyNguoiDung/LayDanhSachNguoiDung_PhanTrang?MaNhom=GP07&page=${values}&pageSize=8`);
     },
 };
 

@@ -1,23 +1,29 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getUser } from "actions/auth";
 import { DeleteUser } from "actions/DelUserAction";
-import { detailUsers, SearchUser } from "actions/SearchUserActions";
+import { detailUsers, SelectUser } from "actions/SearchUserActions";
 import { UpdateUser } from "actions/UpdateActions";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
 function AdminUser() {
     const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const { users, detailUser } = useSelector((state) => state.GetUser);
+    const { users, selectUser } = useSelector((state) => state.GetUser);
     const { updateUser, status } = useSelector((state) => state.UpdateUser);
-    const { searchUserData } = useSelector((state) => state.SearchUser);
-    console.log(detailUser);
 
+    const [newSelectData, setNewSelectData] = useState({
+        taiKhoan: "",
+        hoTen: "",
+        email: "",
+        soDt: "",
+        matKhau: "",
+        maLoaiNguoiDung: "",
+        maNhom: "GP07",
+    });
     useEffect(() => {
         dispatch(getUser());
     }, []);
@@ -28,11 +34,10 @@ function AdminUser() {
     const searchData = users.filter((val) => {
         if (searchTerm === "") {
             return val;
-        } else if (val.hoTen.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+        } else if (val.taiKhoan.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
             return val;
         }
     });
-
     const deleteData = (values) => {
         if (window.confirm("Are you sure?")) {
             dispatch(DeleteUser(values));
@@ -40,28 +45,42 @@ function AdminUser() {
     };
     const handelEdit = (user) => {
         setModal(!modal);
-        dispatch(detailUsers(user));
+        const newValueEdit = {
+            taiKhoan: user.taiKhoan,
+            hoTen: user.hoTen,
+            email: user.email,
+            soDt: user.soDt,
+            matKhau: "",
+            maLoaiNguoiDung: user.maLoaiNguoiDung,
+            maNhom: "GP07",
+        };
+        setNewSelectData(newValueEdit);
+    };
+    const onChangeData = (e) => {
+        const newDatas = { ...newSelectData };
+        newDatas[e.target.name] = e.target.value;
+        setNewSelectData(newDatas);
     };
 
-    const schema = yup.object().shape({
-        taiKhoan: yup.string().required("User name can't be blank"),
-        matKhau: yup.string().required("Password can't be blank"),
-        hoTen: yup.string().required("Full name can't be blank"),
-        soDT: yup.string().required("Phone number can't be blank"),
-        maLoaiNguoiDung: yup.string().required("User type can't be blank"),
-        maNhom: yup.string().required("Gruop id can't be blank"),
-        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
-    });
+    // const schema = yup.object().shape({
+    //     taiKhoan: yup.string().required("User name can't be blank"),
+    //     matKhau: yup.string().required("Password can't be blank"),
+    //     hoTen: yup.string().required("Full name can't be blank"),
+    //     soDT: yup.string().required("Phone number can't be blank"),
+    //     maLoaiNguoiDung: yup.string().required("User type can't be blank"),
+    //     maNhom: yup.string().required("Gruop id can't be blank"),
+    //     email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
+    // });
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({ resolver: yupResolver(schema) });
+    // const {
+    //     register,
+    //     handleSubmit,
+    //     formState: { errors },
+    // } = useForm({ resolver: yupResolver(schema) });
 
-    const handleForm = (data) => {
-        console.log(data);
-        dispatch(UpdateUser(data));
+    const handleForm = (e) => {
+        e.preventDefault();
+        dispatch(UpdateUser(newSelectData));
     };
 
     return (
@@ -131,58 +150,116 @@ function AdminUser() {
                 </div>
             </div>
             <div className={`admin-modal ${modal ? "modal-open" : ""}`}>
-                <form onSubmit={handleSubmit(handleForm)}>
+                <form onSubmit={(e) => handleForm(e)}>
                     <div className="form-group d-flex justify-content-between">
                         <span style={{ fontSize: "15px", color: "black", fontWeight: " 600" }}>Update Form</span>
                         <span>{status}</span>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">User Name</label>
-                        <input type="text" className="form-control" placeholder="User Name" {...register("taiKhoan")} />
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="User Name"
+                            name="taiKhoan"
+                            value={newSelectData.taiKhoan}
+                            onChange={onChangeData}
+                            disabled
+                            // {...register("taiKhoan")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.taiKhoan?.message}
+                            {/* {errors.taiKhoan?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className="form-control" placeholder="Password" {...register("matKhau")} />
+                        <input
+                            type="password"
+                            className="form-control"
+                            placeholder="Password"
+                            name="matKhau"
+                            value={newSelectData.matKhau}
+                            onChange={onChangeData}
+                            // {...register("matKhau")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.matKhau?.message}
+                            {/* {errors.matKhau?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Full Name</label>
-                        <input type="text" className="form-control" placeholder="Full Name" {...register("hoTen")} />
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Full Name"
+                            name="hoTen"
+                            value={newSelectData.hoTen}
+                            onChange={onChangeData}
+                            // {...register("hoTen")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.hoTen?.message}
+                            {/* {errors.hoTen?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Phone Number</label>
-                        <input type="text" className="form-control" placeholder="Phone Number" {...register("soDT")} />
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Phone Number"
+                            name="soDt"
+                            value={newSelectData.soDt}
+                            onChange={onChangeData}
+                            // {...register("soDT")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.soDT?.message}
+                            {/* {errors.soDT?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">User Type</label>
-                        <input type="text" className="form-control" placeholder="User Type" {...register("maLoaiNguoiDung")} />
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="User Type"
+                            name="maLoaiNguoiDung"
+                            value={newSelectData.maLoaiNguoiDung}
+                            onChange={onChangeData}
+                            // {...register("maLoaiNguoiDung")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.maLoaiNguoiDung?.message}
+                            {/* {errors.maLoaiNguoiDung?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Group Id</label>
-                        <input type="text" className="form-control" placeholder="Group Id" {...register("maNhom")} />
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Group Id"
+                            value="GP07"
+                            name="maNhom"
+                            value={newSelectData.maNhom}
+                            onChange={onChangeData}
+                            // {...register("maNhom")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.maNhom?.message}
+                            {/* {errors.maNhom?.message} */}
                         </small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" {...register("email")} />
+                        <input
+                            type="email"
+                            className="form-control"
+                            placeholder={newSelectData.email}
+                            name="email"
+                            value={newSelectData.email}
+                            onChange={onChangeData}
+                            // {...register("email")}
+                        />
                         <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.email?.message}
+                            {/* {errors.email?.message} */}
                         </small>
                     </div>
                     <button type="submit" className="btn btn-primary">

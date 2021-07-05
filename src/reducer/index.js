@@ -11,6 +11,7 @@ import AddUser from "./AddUser";
 import UpdateUser from "./UpdateUser";
 import SearchUser from "./SearchUser";
 import AddCourse from "./AddCourse";
+import GetUserByPage from "./GetUserByPage";
 export const rootReducer = combineReducers({
     courses,
     authReducer,
@@ -24,4 +25,5 @@ export const rootReducer = combineReducers({
     UpdateUser,
     SearchUser,
     AddCourse,
+    GetUserByPage,
 });

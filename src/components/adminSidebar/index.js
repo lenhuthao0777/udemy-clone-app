@@ -42,7 +42,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                             </Link>
                         </li>
                         <li className="admin-sidebar__lists-item">
-                            <Link to="/admin/addusers">
+                            <Link to="/admin/adduser">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <FiUserPlus />
                                 </span>

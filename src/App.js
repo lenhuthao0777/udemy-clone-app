@@ -16,6 +16,7 @@ const SearchCourses = lazy(() => import("./pages/SearchCourses"));
 const NotFound = lazy(() => import("./pages/pageNotFound/index"));
 const AddCourses = lazy(() => import("./pages/addCourses"));
 const AddUsers = lazy(() => import("./pages/addUsers"));
+const EditUser = lazy(() => import("./pages/adminUser/EditUser"));
 function App() {
     return (
         <Suspense fallback={<div>Loading..................</div>}>
@@ -35,8 +36,11 @@ function App() {
                                 <Route path="/admin/addcourses">
                                     <AddCourses />
                                 </Route>
-                                <Route path="/admin/addusers">
+                                <Route path="/admin/adduser">
                                     <AddUsers />
+                                </Route>
+                                <Route path="/admin/edituser">
+                                    <EditUser />
                                 </Route>
                             </Switch>
                         </AdminLayout>

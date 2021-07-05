@@ -7,3 +7,10 @@
         width: 400px;
     }
 }
+@include responesive("small"){
+    .form-adds{
+        form{
+            width: 300px;
+        }
+    }
+}
