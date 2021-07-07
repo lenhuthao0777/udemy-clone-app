@@ -17,10 +17,10 @@ function TopInfo({course}) {
                         <h3>
                             <Link to="/">Development</Link>
                         </h3>
-                        <FaAngleRight className="topic-icon" />
+                        {/* <FaAngleRight className="topic-icon" />
                         <h3>
                             <Link to="/">Webdevelopment</Link>
-                        </h3>
+                        </h3> */}
                     </div>
                     <div className="course-img">
                         <img src={course.hinhAnh} alt="" />

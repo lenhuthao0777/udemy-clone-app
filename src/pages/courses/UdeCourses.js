@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import CoursesPaginations from "./CoursesPaginations";
+import React, { useState } from "react";
 import Filter from "./Filter";
 import FilterCoursesList from "./FilterCoursesList";
 import FilterSideBar from "./FilterSideBar";
@@ -19,7 +18,6 @@ function UdeCourses({coursesByCate}) {
             </div>
             <FilterSidebarMobile sidebar={sidebar} setSidebar={setSidebar} />
             <div className={`filter-overlay ${sidebar ? "isOpen" : ""}`} onClick={() => setSidebar(!sidebar)}></div>
-            <CoursesPaginations />
         </div>
     );
 }

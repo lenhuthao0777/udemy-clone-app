@@ -29,8 +29,8 @@ export function EditCourse(values) {
             const { data, status } = await coursesApi.updateCourse(values);
             dispatch({ type: UPDATE_COURSE_SUCCESS, payload: { data } });
             // const message = "Update course success!";
-            console.log(status);
             console.log(data);
+            console.log(status);
         } catch (error) {
             dispatch({
                 type: UPDATE_COURSE_FAILURE,

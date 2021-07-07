@@ -6,7 +6,6 @@ export function AddCourseSS(values) {
         try {
             const { data } = await coursesApi.addCourse(values);
             dispatch({ type: ADD_COURSE_SUCCESS, payload: { data } });
-            console.log(data);
         } catch (error) {
             dispatch({
                 type: ADD_COURSE_FAILURE,

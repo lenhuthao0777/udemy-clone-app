@@ -61,31 +61,32 @@ function AdminCourses() {
     };
     const onEdit = (item) => {
         setModal(!modal);
-        // const newDataUpdate = {
-        //     maKhoaHoc: item.maKhoaHoc,
-        //     biDanh: item.biDanh,
-        //     tenKhoaHoc: item.tenKhoaHoc,
-        //     moTa: item.moTa,
-        //     luotXem: 100,
-        //     danhGia: 10,
-        //     hinhAnh: updateCourse.hinhAnh,
-        //     maNhom: item.maNhom,
-        //     ngayTao: moment("").format("DD/MM/YYYY"),
-        //     maDanhMucKhoaHoc: item.danhMucKhoaHoc.maDanhMucKhoahoc,
-        //     taiKhoanNguoiTao: item.nguoiTao.taiKhoan,
-        // };
-        // setUpdateCourse(newDataUpdate);
-        console.log(item.maKhoaHoc);
+        const newDataUpdate = {
+            maKhoaHoc: item.maKhoaHoc,
+            biDanh: item.biDanh,
+            tenKhoaHoc: item.tenKhoaHoc,
+            moTa: item.moTa,
+            luotXem: 100,
+            danhGia: 10,
+            hinhAnh: updateCourse.hinhAnh,
+            maNhom: item.maNhom,
+            ngayTao: moment("").format("DD/MM/YYYY"),
+            maDanhMucKhoaHoc: item.danhMucKhoaHoc.maDanhMucKhoahoc,
+            taiKhoanNguoiTao: item.nguoiTao.taiKhoan,
+        };
+        setUpdateCourse(newDataUpdate);
+        console.log(item);
     };
     const onSubmit = (e) => {
         e.preventDefault();
         const form_data = new FormData();
         for (let key in updateCourse) {
-            console.log(key, updateCourse[key]);
             form_data.append(key, updateCourse[key]);
+            // console.log(key, updateCourse[key]);
         }
         dispatch(EditCourse(form_data));
-        console.log(updateCourse);
+        // console.log(updateCourse);
+        // console.log(form_data);
     };
     const handleClose = () => {
         setModal(!modal);
@@ -164,6 +165,7 @@ function AdminCourses() {
                             value={updateCourse.maKhoaHoc}
                             onChange={onChangeUpdate}
                             placeholder="maKhoaHoc"
+                            // disabled
                         />
                     </div>
                     <div className="form-group">

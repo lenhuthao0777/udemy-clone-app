@@ -17,7 +17,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                     <ul className="admin-sidebar__lists">
                         <li className="admin-sidebar__lists-item">
                         </li>
-                        <li className="admin-sidebar__lists-item">
+                        <li className="admin-sidebar__lists-item" onClick={()=>setShowSideBar(!showSideBar)}>
                             <Link to="/admin/courses">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <VscOutput />
@@ -25,7 +25,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                                 <span className="admin-sidebar__lists-item--text">Courses Manage</span>
                             </Link>
                         </li>
-                        <li className="admin-sidebar__lists-item">
+                        <li className="admin-sidebar__lists-item" onClick={()=>setShowSideBar(!showSideBar)}>
                             <Link to="/admin/addcourses">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <AiOutlineFileAdd />
@@ -33,7 +33,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                                 <span className="admin-sidebar__lists-item--text">Add Courses</span>
                             </Link>
                         </li>
-                        <li className="admin-sidebar__lists-item">
+                        <li className="admin-sidebar__lists-item" onClick={()=>setShowSideBar(!showSideBar)}>
                             <Link to="/admin/users">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <FiUsers />
@@ -41,7 +41,7 @@ function AdminSidebar({ showSideBar, setShowSideBar }) {
                                 <span className="admin-sidebar__lists-item--text">User Manage</span>
                             </Link>
                         </li>
-                        <li className="admin-sidebar__lists-item">
+                        <li className="admin-sidebar__lists-item" onClick={()=>setShowSideBar(!showSideBar)}>
                             <Link to="/admin/adduser">
                                 <span className="admin-sidebar__lists-item--icon">
                                     <FiUserPlus />

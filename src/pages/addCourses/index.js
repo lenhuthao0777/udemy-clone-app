@@ -37,7 +37,7 @@ function AddCourses() {
         e.preventDefault();
         const form_data = new FormData();
         for (let key in newCourse) {
-            console.log(key, newCourse[key]);
+            // console.log(key, newCourse[key]);
             form_data.append(key, newCourse[key]);
         }
         dispatch(AddCourseSS(form_data));
