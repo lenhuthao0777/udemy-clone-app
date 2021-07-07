@@ -12,7 +12,7 @@ function AdminUser() {
     const [pagenation, setPagenation] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const { users, selectUser } = useSelector((state) => state.GetUser);
+    const { users } = useSelector((state) => state.GetUser);
     const { updateUser, status } = useSelector((state) => state.UpdateUser);
 
     const [newSelectData, setNewSelectData] = useState({

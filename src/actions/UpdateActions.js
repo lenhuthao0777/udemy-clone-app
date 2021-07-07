@@ -7,6 +7,7 @@ import {
     UPDATE_COURSE_FAILURE,
 } from "constants/UpdateContants";
 import authApi from "services/AuthApi";
+import coursesApi from "services/CoursesApi";
 export function UpdateUser(values) {
     return async (dispatch) => {
         dispatch({ type: UPDATE_USER_REQUEST });
@@ -21,17 +22,20 @@ export function UpdateUser(values) {
         }
     };
 }
-// export function UpdateCourse(values) {
-//     return async (dispatch) => {
-//         dispatch({ type: UPDATE_COURSE_REQUEST });
-//         try {
-//             const { data } = await authApi.addUser(values);
-//             dispatch({ type: UPDATE_COURSE_SUCCESS, payload: { data } });
-//         } catch (error) {
-//             dispatch({
-//                 type: UPDATE_COURSE_FAILURE,
-//                 payload: { error: error.response.data },
-//             });
-//         }
-//     };
-// }
+export function EditCourse(values) {
+    return async (dispatch) => {
+        dispatch({ type: UPDATE_COURSE_REQUEST });
+        try {
+            const { data, status } = await coursesApi.updateCourse(values);
+            dispatch({ type: UPDATE_COURSE_SUCCESS, payload: { data } });
+            // const message = "Update course success!";
+            console.log(status);
+            console.log(data);
+        } catch (error) {
+            dispatch({
+                type: UPDATE_COURSE_FAILURE,
+                payload: { error: error.response.data },
+            });
+        }
+    };
+}

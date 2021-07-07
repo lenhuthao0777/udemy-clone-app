@@ -1,14 +1,11 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { AddCourseSS, ADDDTS } from "actions/AddCourseAction";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import * as yup from "yup";
+import { AddCourseSS } from "actions/AddCourseAction";
 import moment from "moment";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 function AddCourses() {
     const dispatch = useDispatch();
     const { userInfo } = useSelector((state) => state.authReducer);
-    const { addNewCourse, addDts } = useSelector((state) => state.AddCourse);
+    // const { addNewCourse, addDts } = useSelector((state) => state.AddCourse);
 
     const [newCourse, setNewCourse] = useState({
         maKhoaHoc: "",
@@ -21,20 +18,17 @@ function AddCourses() {
         maNhom: "",
         ngayTao: moment("").format("DD/MM/YYYY"),
         maDanhMucKhoaHoc: "",
-        taiKhoanNguoiTao: "",
+        taiKhoanNguoiTao: userInfo.taiKhoan,
     });
-    console.log(newCourse);
-
-    const handlChangeDate = (e) => {
-        setNewCourse({
-            ...newCourse,
-            [e.target.name]: moment(e.target.value).format("DD/MM/YYYY"),
-        });
-    };
-
+    // console.log(newCourse);
     const handleChangeAddNewCourse = (e) => {
         if (e.target.name === "hinhAnh") {
             setNewCourse({ ...newCourse, hinhAnh: e.target.files[0] });
+        } else if (e.target.name === "ngayTao") {
+            setNewCourse({
+                ...newCourse,
+                [e.target.name]: moment(e.target.value).format("DD/MM/YYYY"),
+            });
         } else {
             setNewCourse({ ...newCourse, [e.target.name]: e.target.value });
         }
@@ -47,7 +41,6 @@ function AddCourses() {
             form_data.append(key, newCourse[key]);
         }
         dispatch(AddCourseSS(form_data));
-        console.log(form_data);
     };
 
     return (
@@ -71,11 +64,11 @@ function AddCourses() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="">luotXem</label>
-                    <input type="text" className="form-control" name="luotXem" onChange={handleChangeAddNewCourse} placeholder="luotXem" />
+                    <input type="number" className="form-control" name="luotXem" onChange={handleChangeAddNewCourse} placeholder="luotXem" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">danhGia</label>
-                    <input type="text" className="form-control" name="danhGia" onChange={handleChangeAddNewCourse} placeholder="danhGia" />
+                    <input type="number" className="form-control" name="danhGia" onChange={handleChangeAddNewCourse} placeholder="danhGia" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">hinhAnh</label>
@@ -87,7 +80,7 @@ function AddCourses() {
                 </div>
                 <div className="form-group">
                     <label htmlFor="">ngayTao</label>
-                    <input type="date" className="form-control" name="ngayTao" onChange={handlChangeDate} placeholder="ngayTao" />
+                    <input type="date" className="form-control" name="ngayTao" onChange={handleChangeAddNewCourse} placeholder="ngayTao" />
                 </div>
                 <div className="form-group">
                     <label htmlFor="">maDanhMucKhoaHoc</label>
@@ -105,6 +98,8 @@ function AddCourses() {
                         type="text"
                         className="form-control"
                         name="taiKhoanNguoiTao"
+                        disabled
+                        value={newCourse.taiKhoanNguoiTao}
                         onChange={handleChangeAddNewCourse}
                         placeholder="taiKhoanNguoiTao"
                     />

@@ -1,19 +1,30 @@
 import { getCourses } from "actions/courses";
 import { DeleteCourse } from "actions/DeleteCourseAction";
+import { EditCourse } from "actions/UpdateActions";
+import moment from "moment";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
+
 function AdminCourses() {
     const [pagenation, setPagenation] = useState(1);
-    const { courses } = useSelector((state) => state.courses);
+    const { courses, updateCourseData } = useSelector((state) => state.courses);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const handelEdit = () => {
-        setModal(!modal);
-    };
     const dispatch = useDispatch();
+    const [updateCourse, setUpdateCourse] = useState({
+        maKhoaHoc: "",
+        biDanh: "",
+        tenKhoaHoc: "",
+        moTa: "",
+        luotXem: 0,
+        danhGia: 0,
+        hinhAnh: {},
+        maNhom: "",
+        ngayTao: moment("").format("DD/MM/YYYY"),
+        maDanhMucKhoaHoc: "",
+        taiKhoanNguoiTao: "",
+    });
+
     useEffect(() => {
         dispatch(getCourses());
     }, []);
@@ -35,25 +46,50 @@ function AdminCourses() {
             dispatch(DeleteCourse(id));
         }
     };
-    const schema = yup.object().shape({
-        taiKhoan: yup.string().required("User name can't be blank"),
-        matKhau: yup.string().required("Password can't be blank"),
-        hoTen: yup.string().required("Full name can't be blank"),
-        soDT: yup.string().required("Phone number can't be blank"),
-        maLoaiNguoiDung: yup.string().required("User type can't be blank"),
-        maNhom: yup.string().required("Gruop id can't be blank"),
-        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
-    });
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm({ resolver: yupResolver(schema) });
-
-    const handleForm = (data) => {
-        console.log(data);
-        // dispatch(UpdateUser(data));
+    const onChangeUpdate = (e) => {
+        if (e.target.name === "hinhAnh") {
+            setUpdateCourse({ ...updateCourse, hinhAnh: e.target.files[0] });
+        } else if (e.target.name === "ngayTao") {
+            setUpdateCourse({
+                ...updateCourse,
+                [e.target.name]: moment(e.target.value).format("DD/MM/YYYY"),
+            });
+        } else {
+            setUpdateCourse({ ...updateCourse, [e.target.name]: e.target.value });
+        }
+    };
+    const onEdit = (item) => {
+        setModal(!modal);
+        // const newDataUpdate = {
+        //     maKhoaHoc: item.maKhoaHoc,
+        //     biDanh: item.biDanh,
+        //     tenKhoaHoc: item.tenKhoaHoc,
+        //     moTa: item.moTa,
+        //     luotXem: 100,
+        //     danhGia: 10,
+        //     hinhAnh: updateCourse.hinhAnh,
+        //     maNhom: item.maNhom,
+        //     ngayTao: moment("").format("DD/MM/YYYY"),
+        //     maDanhMucKhoaHoc: item.danhMucKhoaHoc.maDanhMucKhoahoc,
+        //     taiKhoanNguoiTao: item.nguoiTao.taiKhoan,
+        // };
+        // setUpdateCourse(newDataUpdate);
+        console.log(item.maKhoaHoc);
+    };
+    const onSubmit = (e) => {
+        e.preventDefault();
+        const form_data = new FormData();
+        for (let key in updateCourse) {
+            console.log(key, updateCourse[key]);
+            form_data.append(key, updateCourse[key]);
+        }
+        dispatch(EditCourse(form_data));
+        console.log(updateCourse);
+    };
+    const handleClose = () => {
+        setModal(!modal);
+        // window.location.reload();
     };
     return (
         <div className="admin-data">
@@ -87,7 +123,7 @@ function AdminCourses() {
                                         </td>
                                         <td data-label="Course Name">{item.tenKhoaHoc}</td>
                                         <td data-label="Handel">
-                                            <button className="btn btn-primary" onClick={handelEdit}>
+                                            <button className="btn btn-primary" onClick={() => onEdit(item)}>
                                                 Edit
                                             </button>
                                             <button className="btn btn-danger" onClick={() => deleteCourse(item.maKhoaHoc)}>
@@ -118,65 +154,105 @@ function AdminCourses() {
                 </div>
             </div>
             <div className={`admin-modal ${modal ? "modal-open" : ""}`}>
-                <form onSubmit={handleSubmit(handleForm)}>
-                    <div className="form-group d-flex justify-content-between">
-                        <span style={{ fontSize: "15px", color: "black", fontWeight: " 600" }}>Update Form</span>
-                        <span></span>
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="">Ma khoa hoc</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="maKhoaHoc"
+                            value={updateCourse.maKhoaHoc}
+                            onChange={onChangeUpdate}
+                            placeholder="maKhoaHoc"
+                        />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">User Name</label>
-                        <input type="text" className="form-control" placeholder="User Name" {...register("taiKhoan")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.taiKhoan?.message}
-                        </small>
+                        <label htmlFor="">biDanh</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="biDanh"
+                            value={updateCourse.biDanh}
+                            onChange={onChangeUpdate}
+                            placeholder="biDanh"
+                        />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className="form-control" placeholder="Password" {...register("matKhau")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.matKhau?.message}
-                        </small>
+                        <label htmlFor="">tenKhoaHoc</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="tenKhoaHoc"
+                            value={updateCourse.tenKhoaHoc}
+                            onChange={onChangeUpdate}
+                            placeholder="tenKhoaHoc"
+                        />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Full Name</label>
-                        <input type="text" className="form-control" placeholder="Full Name" {...register("hoTen")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.hoTen?.message}
-                        </small>
+                        <label htmlFor="">moTa</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="moTa"
+                            value={updateCourse.moTa}
+                            onChange={onChangeUpdate}
+                            placeholder="moTa"
+                        />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Phone Number</label>
-                        <input type="text" className="form-control" placeholder="Phone Number" {...register("soDT")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.soDT?.message}
-                        </small>
+                        <label htmlFor="">luotXem</label>
+                        <input type="number" className="form-control" name="luotXem" onChange={onChangeUpdate} placeholder="luotXem" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">User Type</label>
-                        <input type="text" className="form-control" placeholder="User Type" {...register("maLoaiNguoiDung")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.maLoaiNguoiDung?.message}
-                        </small>
+                        <label htmlFor="">danhGia</label>
+                        <input type="number" className="form-control" name="danhGia" onChange={onChangeUpdate} placeholder="danhGia" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Group Id</label>
-                        <input type="text" className="form-control" placeholder="Group Id" {...register("maNhom")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.maNhom?.message}
-                        </small>
+                        <label htmlFor="">hinhAnh</label>
+                        <input type="file" className="form-control" name="hinhAnh" onChange={onChangeUpdate} placeholder="hinhAnh" />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input type="email" className="form-control" placeholder="Enter email" {...register("email")} />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {errors.email?.message}
-                        </small>
+                        <label htmlFor="">maNhom</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="maNhom"
+                            value={updateCourse.maNhom}
+                            onChange={onChangeUpdate}
+                            placeholder="maNhom"
+                        />
                     </div>
-                    <button type="submit" className="btn btn-primary">
-                        Submit
+                    <div className="form-group">
+                        <label htmlFor="">ngayTao</label>
+                        <input type="date" className="form-control" name="ngayTao" onChange={onChangeUpdate} placeholder="ngayTao" />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="">maDanhMucKhoaHoc</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="maDanhMucKhoaHoc"
+                            value={updateCourse.maDanhMucKhoaHoc}
+                            onChange={onChangeUpdate}
+                            placeholder="maDanhMucKhoaHoc"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="">taiKhoanNguoiTao</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            name="taiKhoanNguoiTao"
+                            value={updateCourse.taiKhoanNguoiTao}
+                            onChange={onChangeUpdate}
+                            placeholder="taiKhoanNguoiTao"
+                        />
+                    </div>
+                    <button type="button" className="btn btn-primary" onClick={onSubmit}>
+                        Update
                     </button>
-                    <button type="button" className="btn btn-danger" onClick={() => setModal(!modal)}>
-                        Cancel
+                    <button type="button" className="btn btn-danger" onClick={handleClose}>
+                        Close
                     </button>
                 </form>
             </div>

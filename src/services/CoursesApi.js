@@ -22,8 +22,11 @@ const coursesApi = {
     deleteCourse: (id) => {
         return axiosClient.delete(`/QuanLyKhoaHoc/XoaKhoaHoc?MaKhoaHoc=${id}`);
     },
-    addCourse: (data) => {
-        return axiosClient.post("/QuanLyKhoaHoc/ThemKhoaHocUploadHinh", data);
+    addCourse: (values) => {
+        return axiosClient.post("/QuanLyKhoaHoc/ThemKhoaHocUploadHinh", values);
+    },
+    updateCourse: (values) => {
+        return axiosClient.post("/QuanLyKhoaHoc/CapNhatKhoaHocUpload", values);
     },
 };
 export default coursesApi;

@@ -15,11 +15,3 @@ export function AddCourseSS(values) {
         }
     };
 }
-export function ADDDTS(data) {
-    return {
-        type: "add_course",
-        payload: {
-            data,
-        },
-    };
-}

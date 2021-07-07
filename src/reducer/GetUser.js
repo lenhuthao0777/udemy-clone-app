@@ -16,10 +16,9 @@ const initialState = {
     isLoading: false,
     error: null,
     selectUser: [],
-    testData: {},
 };
 function GetUser(state = initialState, action) {
-    // console.log(action);
+    console.log(action);
     switch (action.type) {
         case GET_USER_REQUEST: {
             return { ...state, isLoading: true, error: null };
@@ -50,9 +49,6 @@ function GetUser(state = initialState, action) {
         }
         case SELECT_USER_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
-        }
-        case "select_data_user": {
-            return { ...state, testData: action.payload.data };
         }
         default:
             return state;
