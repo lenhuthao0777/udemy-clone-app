@@ -72,11 +72,11 @@ function App() {
                                 <Route path="/cart">
                                     <ShoppingCart />
                                 </Route>
+                                <Route>
+                                    <NotFound />
+                                </Route>
                             </Switch>
                         </AppLayout>
-                    </Route>
-                    <Route path="*">
-                        <NotFound />
                     </Route>
                 </Switch>
             </BrowserRouter>

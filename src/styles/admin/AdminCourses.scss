@@ -127,6 +127,20 @@
         }
     }
 }
+@include responesive("extra-large") {
+    .admin-data {
+        .admin-modal {
+            form {
+                width: 400px;
+                max-height: 400px;
+                overflow-y: auto;
+                .from-group {
+                    width: calc(100% / 2);
+                }
+            }
+        }
+    }
+}
 @include responesive("medium") {
     .admin-data {
         margin-top: 60px;
@@ -178,6 +192,16 @@
                 }
             }
         }
+        .admin-modal {
+            form {
+                width: 400px;
+                max-height: 320px;
+                overflow-y: auto;
+                .from-group {
+                    width: calc(100% / 2);
+                }
+            }
+        }
     }
 }
 @include responesive("small") {
@@ -199,9 +223,17 @@
                 }
             }
         }
-        .admin-modal{
-            form{
+        .admin-modal {
+            form {
                 width: 300px;
+                // display: flex;
+                // flex-wrap: nowrap;
+                // flex-direction: column;
+                max-height: 300px;
+                overflow-y: auto;
+                .from-group {
+                    width: 100%;
+                }
             }
         }
     }

@@ -159,8 +159,8 @@ function Navbar({ history }) {
                     <div className="mobile-search-icon">
                         <SearchOutlinedIcon className="search-icon" />
                     </div>
-                    <form action="">
-                        <input type="text" placeholder="Search" />
+                    <form action={`/search/${searchTerm}`}>
+                        <input type="text" placeholder="Search" value={searchTerm} onChange={handelSearch} />
                     </form>
                     <div className="mobile-close-icon" onClick={() => setSearchBar(false)}>
                         <Close className="close-icon" />

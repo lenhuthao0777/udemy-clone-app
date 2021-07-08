@@ -1023,6 +1023,14 @@
                     }
                 }
             }
+            .side-bar__menu-list{
+                .side-bar__menu-list--item{
+                    font-size: 15px;
+                    color: $color-black-0;
+                    padding: 16px 16px;
+                    border-bottom: 1px solid #d3d3d3;
+                }
+            }
         }
     }
     .side-bar__overlay {

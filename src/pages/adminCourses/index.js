@@ -85,6 +85,7 @@ function AdminCourses() {
             // console.log(key, updateCourse[key]);
         }
         dispatch(EditCourse(form_data));
+        // dispatch(AddCourseSS(form_data));
         // console.log(updateCourse);
         // console.log(form_data);
     };
@@ -127,6 +128,7 @@ function AdminCourses() {
                                             <button className="btn btn-primary" onClick={() => onEdit(item)}>
                                                 Edit
                                             </button>
+
                                             <button className="btn btn-danger" onClick={() => deleteCourse(item.maKhoaHoc)}>
                                                 Del
                                             </button>
@@ -165,7 +167,7 @@ function AdminCourses() {
                             value={updateCourse.maKhoaHoc}
                             onChange={onChangeUpdate}
                             placeholder="maKhoaHoc"
-                            // disabled
+                            disabled
                         />
                     </div>
                     <div className="form-group">
@@ -251,7 +253,7 @@ function AdminCourses() {
                         />
                     </div>
                     <button type="button" className="btn btn-primary" onClick={onSubmit}>
-                        Update
+                        Submit
                     </button>
                     <button type="button" className="btn btn-danger" onClick={handleClose}>
                         Close
