@@ -12,7 +12,8 @@ export function UpdateUser(values) {
     return async (dispatch) => {
         dispatch({ type: UPDATE_USER_REQUEST });
         try {
-            const { data, status } = await authApi.updateUser(values);
+            const status = "Update User Success!";
+            const { data } = await authApi.updateUser(values);
             dispatch({ type: UPDATE_USER_SUCCESS, payload: { data, status } });
         } catch (error) {
             dispatch({

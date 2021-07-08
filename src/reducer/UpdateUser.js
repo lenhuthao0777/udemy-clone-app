@@ -12,7 +12,7 @@ function CoursesByCate(state = initialState, action) {
             return { ...state, isLoading: true, error: null };
         }
         case UPDATE_USER_SUCCESS: {
-            return { ...state, updateUser: action.payload.data, isLoading: false };
+            return { ...state, updateUser: action.payload.data, isLoading: false, status: action.payload.status };
         }
         case UPDATE_USER_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };

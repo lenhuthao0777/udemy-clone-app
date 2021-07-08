@@ -33,20 +33,6 @@ export default function AddCourse(state = initialState, action) {
         case ADD_COURSE_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
-        case "yeucauhuy": {
-            return { ...state, isLoading: true, error: null };
-        }
-        case "huythanhcong": {
-            return {
-                ...state,
-                isLoading: false,
-                huy: action.payload.data,
-            };
-        }
-        case "huythatbai": {
-            return { ...state, isLoading: false, error: action.payload.error };
-        }
-
         default:
             return state;
     }

@@ -8,9 +8,8 @@ function AdminUser() {
     const [pagenation, setPagenation] = useState(1);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const { users } = useSelector((state) => state.GetUser);
-    const { updateUser, status } = useSelector((state) => state.UpdateUser);
-
+    const { users } = useSelector((state) => state.Users);
+    const { status } = useSelector((state) => state.UpdateUser);
     const [newSelectData, setNewSelectData] = useState({
         taiKhoan: "",
         hoTen: "",
@@ -133,7 +132,7 @@ function AdminUser() {
                 <form onSubmit={(e) => handleForm(e)}>
                     <div className="form-group d-flex justify-content-between">
                         <span style={{ fontSize: "15px", color: "black", fontWeight: " 600" }}>Update Form</span>
-                        <span>{status}</span>
+                        <span style={{ fontSize: "12px", color: "green" }}>{status}</span>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">User Name</label>

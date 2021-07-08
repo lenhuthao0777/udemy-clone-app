@@ -1,4 +1,11 @@
-import { GET_COURSES_REQUEST, GET_COURSES_SUCCESS, GET_COURSES_FAILURE, DELETE_COURSE } from "../constants/courses";
+import {
+    GET_COURSES_REQUEST,
+    GET_COURSES_SUCCESS,
+    GET_COURSES_FAILURE,
+    DELETE_COURSE_REQUEST,
+    DELETE_COURSE_SUCCESS,
+    DELETE_COURSE_FAILURE,
+} from "../constants/courses";
 import { UPDATE_COURSE_REQUEST, UPDATE_COURSE_SUCCESS, UPDATE_COURSE_FAILURE } from "constants/UpdateContants";
 const initialState = {
     courses: [],
@@ -18,12 +25,18 @@ function coursesReducer(state = initialState, action) {
         case GET_COURSES_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
-        case DELETE_COURSE: {
+        case DELETE_COURSE_REQUEST: {
+            return { ...state, isLoading: true, error: null };
+        }
+        case DELETE_COURSE_SUCCESS: {
             const index = state.courses.findIndex((course) => course.maKhoaHoc === action.payload.id);
             if (index !== -1) {
                 state.courses.splice(index, 1);
             }
             return { ...state };
+        }
+        case DELETE_COURSE_FAILURE: {
+            return { ...state, isLoading: false, error: action.payload.error };
         }
         case UPDATE_COURSE_REQUEST: {
             return { ...state, isLoading: true, error: null };

@@ -1,17 +1,15 @@
 import { combineReducers } from "redux";
-import courses from "./Courses";
-import authReducer from "./Auth";
-import Course from "./CourseDetail";
-import CoursesByCate from "./CoursesByCate";
-import SignUpFrom from "./SignUp";
-import Search from "./Search";
-import CartReducer from "./Cart";
-import GetUser from "./GetUser";
-import AddUser from "./AddUser";
-import UpdateUser from "./UpdateUser";
-import SearchUser from "./SearchUser";
 import AddCourse from "./AddCourse";
-import GetUserByPage from "./GetUserByPage";
+import AddUser from "./AddUser";
+import authReducer from "./Auth";
+import CartReducer from "./Cart";
+import Course from "./CourseDetail";
+import courses from "./Courses";
+import CoursesByCate from "./CoursesByCate";
+import Users from "./Users";
+import Search from "./Search";
+import SignUpFrom from "./SignUp";
+import UpdateUser from "./UpdateUser";
 export const rootReducer = combineReducers({
     courses,
     authReducer,
@@ -20,10 +18,8 @@ export const rootReducer = combineReducers({
     SignUpFrom,
     Search,
     CartReducer,
-    GetUser,
+    Users,
     AddUser,
     UpdateUser,
-    SearchUser,
     AddCourse,
-    GetUserByPage,
 });

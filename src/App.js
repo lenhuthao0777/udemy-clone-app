@@ -18,7 +18,15 @@ const AddCourses = lazy(() => import("./pages/addCourses"));
 const AddUsers = lazy(() => import("./pages/addUsers"));
 function App() {
     return (
-        <Suspense fallback={<div>Loading..................</div>}>
+        <Suspense
+            fallback={
+                <div className="loading">
+                    <svg>
+                        <circle cx="70" cy="70" r="70"></circle>
+                    </svg>
+                </div>
+            }
+        >
             <BrowserRouter>
                 <Switch>
                     {/* route admin */}

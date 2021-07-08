@@ -2,11 +2,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { AddUser } from "actions/AddUserAction";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as yup from "yup";
 
 function AddUsers() {
     const dispatch = useDispatch();
+    const { status, error } = useSelector((state) => state.AddUser);
     const schema = yup.object().shape({
         taiKhoan: yup.string().required("User name can't be blank"),
         matKhau: yup.string().required("Password can't be blank"),
@@ -28,6 +29,8 @@ function AddUsers() {
     return (
         <div className="form-adds">
             <form style={{ width: "400px", paddingTop: "50px" }} onSubmit={handleSubmit(handelForm)}>
+                <h2 style={{ fontSize: "12px", color: "green", textAlign: "right" }}>{status}</h2>
+                <h2 style={{ fontSize: "12px", color: "red", textAlign: "right" }}>{error}</h2>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">User Name</label>
                     <input type="text" className="form-control" placeholder="User Name" {...register("taiKhoan")} />

@@ -1,5 +1,5 @@
-import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, SELECT_USER_FAILURE, SELECT_USER_REQUEST, SELECT_USER_SUCCESS } from "constants/Auth";
-import { DELETE_SUCCESS } from "constants/DeleteUserContants";
+import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS } from "constants/Auth";
+import { DELETE_USER_REQUEST, DELETE_USER_SUCCESS, DELETE_USER_FAILURE } from "constants/DeleteUserContants";
 const initialState = {
     users: [
         {
@@ -17,7 +17,7 @@ const initialState = {
     error: null,
     selectUser: [],
 };
-function GetUser(state = initialState, action) {
+function Users(state = initialState, action) {
     console.log(action);
     switch (action.type) {
         case GET_USER_REQUEST: {
@@ -29,29 +29,21 @@ function GetUser(state = initialState, action) {
         case GET_USER_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
-        case DELETE_SUCCESS: {
+        case DELETE_USER_REQUEST: {
+            return { ...state, isLoading: true, error: null };
+        }
+        case DELETE_USER_SUCCESS: {
             const index = state.users.findIndex((user) => user.taiKhoan === action.payload.value);
             if (index !== -1) {
                 state.users.splice(index, 1);
             }
             return { ...state };
         }
-        case SELECT_USER_REQUEST: {
-            return { ...state, isLoading: true, error: null };
-        }
-        case SELECT_USER_SUCCESS: {
-            const index = state.users.findIndex((user) => user.taiKhoan === action.payload.data[0].taiKhoan);
-            if (index !== -1) {
-                state.selectUser = action.payload.data[0];
-            }
-            console.log(index);
-            return { ...state, isLoading: false };
-        }
-        case SELECT_USER_FAILURE: {
+        case DELETE_USER_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
         default:
             return state;
     }
 }
-export default GetUser;
+export default Users;

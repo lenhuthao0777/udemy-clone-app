@@ -11,6 +11,7 @@ const initialState = {
     },
     isLoading: false,
     error: null,
+    status: "",
 };
 export default function AddUser(state = initialState, action) {
     switch (action.type) {
@@ -22,12 +23,12 @@ export default function AddUser(state = initialState, action) {
                 ...state,
                 isLoading: false,
                 addUserData: action.payload.data,
+                status: action.payload.status,
             };
         }
         case ADD_USER_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
-
         default:
             return state;
     }
