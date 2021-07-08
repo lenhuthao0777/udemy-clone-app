@@ -18,7 +18,7 @@ const initialState = {
     selectUser: [],
 };
 function Users(state = initialState, action) {
-    console.log(action);
+    // console.log(action);
     switch (action.type) {
         case GET_USER_REQUEST: {
             return { ...state, isLoading: true, error: null };
