@@ -1,4 +1,4 @@
-import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, SELECT_USER_REQUEST, SELECT_USER_SUCCESS, SELECT_USER_FAILURE } from "constants/Auth";
+import { GET_USER_FAILURE, GET_USER_REQUEST, GET_USER_SUCCESS, SELECT_USER_FAILURE, SELECT_USER_REQUEST, SELECT_USER_SUCCESS } from "constants/Auth";
 import { DELETE_SUCCESS } from "constants/DeleteUserContants";
 const initialState = {
     users: [

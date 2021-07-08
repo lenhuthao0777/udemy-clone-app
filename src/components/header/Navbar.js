@@ -6,13 +6,13 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
 import Category from "./Category";
 import NavBarMobile from "./NavBarMobile";
 import ShopingCart from "./ShopingCart";
 
-function Navbar({ history }) {
+function Navbar() {
     const [SideBar, setSideBar] = useState(false);
     const [SearchBar, setSearchBar] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");

@@ -16,12 +16,5 @@ const deleteCart = (id) => {
         },
     };
 };
-const edit = (data) => {
-    return {
-        type: "select_data_user",
-        payload: {
-            data: data,
-        },
-    };
-};
-export { addToCart, deleteCart, edit };
+
+export { addToCart, deleteCart };

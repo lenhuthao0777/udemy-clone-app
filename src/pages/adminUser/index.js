@@ -1,12 +1,8 @@
-import { yupResolver } from "@hookform/resolvers/yup";
 import { getUser } from "actions/auth";
 import { DeleteUser } from "actions/DelUserAction";
-import { detailUsers, SelectUser } from "actions/SearchUserActions";
 import { UpdateUser } from "actions/UpdateActions";
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import * as yup from "yup";
 function AdminUser() {
     const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
@@ -61,22 +57,6 @@ function AdminUser() {
         newDatas[e.target.name] = e.target.value;
         setNewSelectData(newDatas);
     };
-
-    // const schema = yup.object().shape({
-    //     taiKhoan: yup.string().required("User name can't be blank"),
-    //     matKhau: yup.string().required("Password can't be blank"),
-    //     hoTen: yup.string().required("Full name can't be blank"),
-    //     soDT: yup.string().required("Phone number can't be blank"),
-    //     maLoaiNguoiDung: yup.string().required("User type can't be blank"),
-    //     maNhom: yup.string().required("Gruop id can't be blank"),
-    //     email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
-    // });
-
-    // const {
-    //     register,
-    //     handleSubmit,
-    //     formState: { errors },
-    // } = useForm({ resolver: yupResolver(schema) });
 
     const handleForm = (e) => {
         e.preventDefault();
@@ -165,11 +145,8 @@ function AdminUser() {
                             value={newSelectData.taiKhoan}
                             onChange={onChangeData}
                             disabled
-                            // {...register("taiKhoan")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.taiKhoan?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputPassword1">Password</label>
@@ -180,11 +157,8 @@ function AdminUser() {
                             name="matKhau"
                             value={newSelectData.matKhau}
                             onChange={onChangeData}
-                            // {...register("matKhau")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.matKhau?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Full Name</label>
@@ -195,11 +169,8 @@ function AdminUser() {
                             name="hoTen"
                             value={newSelectData.hoTen}
                             onChange={onChangeData}
-                            // {...register("hoTen")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.hoTen?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Phone Number</label>
@@ -210,11 +181,8 @@ function AdminUser() {
                             name="soDt"
                             value={newSelectData.soDt}
                             onChange={onChangeData}
-                            // {...register("soDT")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.soDT?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">User Type</label>
@@ -225,11 +193,8 @@ function AdminUser() {
                             name="maLoaiNguoiDung"
                             value={newSelectData.maLoaiNguoiDung}
                             onChange={onChangeData}
-                            // {...register("maLoaiNguoiDung")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.maLoaiNguoiDung?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Group Id</label>
@@ -241,11 +206,8 @@ function AdminUser() {
                             name="maNhom"
                             value={newSelectData.maNhom}
                             onChange={onChangeData}
-                            // {...register("maNhom")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.maNhom?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
@@ -256,11 +218,8 @@ function AdminUser() {
                             name="email"
                             value={newSelectData.email}
                             onChange={onChangeData}
-                            // {...register("email")}
                         />
-                        <small id="emailHelp" className="form-text" style={{ color: "red" }}>
-                            {/* {errors.email?.message} */}
-                        </small>
+                        <small id="emailHelp" className="form-text" style={{ color: "red" }}></small>
                     </div>
                     <button type="submit" className="btn btn-primary">
                         Submit
