@@ -82,7 +82,7 @@ function AdminUser() {
                                 <td>Email</td>
                                 <td>Phone Number</td>
                                 <td>User Type</td>
-                                <td>Handel</td>
+                                <td>Handle</td>
                             </tr>
                         </thead>
                         <tbody>
