@@ -110,7 +110,7 @@ function AdminCourses() {
                                 <td>Id</td>
                                 <td>Image</td>
                                 <td>Courses Name</td>
-                                <td>Handel</td>
+                                <td>Handle</td>
                             </tr>
                         </thead>
                         <tbody>
