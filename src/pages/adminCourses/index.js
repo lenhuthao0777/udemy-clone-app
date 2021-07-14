@@ -6,11 +6,11 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 function AdminCourses() {
+    const dispatch = useDispatch();
     const [pagenation, setPagenation] = useState(1);
     const { courses, updateCourseData } = useSelector((state) => state.courses);
     const [searchTerm, setSearchTerm] = useState("");
     const [modal, setModal] = useState(false);
-    const dispatch = useDispatch();
     const [updateCourse, setUpdateCourse] = useState({
         maKhoaHoc: "",
         biDanh: "",
@@ -77,7 +77,7 @@ function AdminCourses() {
         setUpdateCourse(newDataUpdate);
         console.log(item);
     };
-    const onSubmit = (e) => {
+    const onUpdateCourse = (e) => {
         e.preventDefault();
         const form_data = new FormData();
         for (let key in updateCourse) {
@@ -110,7 +110,7 @@ function AdminCourses() {
                                 <td>Id</td>
                                 <td>Image</td>
                                 <td>Courses Name</td>
-                                <td>Handel</td>
+                                <td>Handle</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -252,7 +252,7 @@ function AdminCourses() {
                             placeholder="taiKhoanNguoiTao"
                         />
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={onSubmit}>
+                    <button type="button" className="btn btn-primary" onClick={onUpdateCourse}>
                         Submit
                     </button>
                     <button type="button" className="btn btn-danger" onClick={handleClose}>

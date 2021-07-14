@@ -2,7 +2,9 @@ import UdeAvatar from "components/avatar";
 import React from "react";
 import { AiOutlineMenuUnfold, AiOutlineSearch, AiTwotoneMail } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";
+import { useSelector } from "react-redux";
 function TopBar({ showSideBar, setShowSideBar }) {
+    const { userInfo } = useSelector((state) => state.authReducer);
     return (
         <div className="topbar">
             <div className="topbar-content">
@@ -44,8 +46,11 @@ function TopBar({ showSideBar, setShowSideBar }) {
                         </ul>
                     </div>
                     <div className="topbar-avatar">
-                        <span>Hello john</span>
-                        <UdeAvatar size="AvatarSm" AvatarSrc="https://s.udemycdn.com/topic-images/lohp-topic-banners/GettyImages-1166389425_opt.jpg" />
+                        <span>Hello {userInfo.taiKhoan}</span>
+                        <UdeAvatar
+                            size="AvatarSm"
+                            AvatarSrc="https://s.udemycdn.com/topic-images/lohp-topic-banners/GettyImages-1166389425_opt.jpg"
+                        />
                     </div>
                 </div>
             </div>

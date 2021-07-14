@@ -9,7 +9,6 @@ import * as yup from "yup";
 function SignUp() {
     const dispatch = useDispatch();
     const { userInfo } = useSelector((state) => state.SignUpFrom);
-    console.log(userInfo);
     const schema = yup.object().shape({
         taiKhoan: yup.string().required("UserName can't be blank"),
         email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
@@ -79,7 +78,7 @@ function SignUp() {
                             <h3>Group Id</h3>
                             <div className="signup-form__group-content">
                                 <FaUserAlt />
-                                <input type="text" placeholder="Group id" {...register("maNhom")} />
+                                <input type="text" placeholder="Group id" value="GP07" disabled {...register("maNhom")} />
                                 <span>{errors.maNhom?.message}</span>
                             </div>
                         </div>
