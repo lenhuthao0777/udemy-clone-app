@@ -203,6 +203,7 @@ function AdminUser() {
                             placeholder="Group Id"
                             value="GP07"
                             name="maNhom"
+                            disabled
                             value={newSelectData.maNhom}
                             onChange={onChangeData}
                         />

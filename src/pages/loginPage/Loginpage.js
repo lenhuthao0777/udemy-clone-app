@@ -29,7 +29,7 @@ function Loginpage() {
         dispatch(login(value));
     };
     const schema = yup.object().shape({
-        taiKhoan: yup.string().required("UserName can't be blank").min(5, "UserName from 5 to 20 characters").max(20, "UserName < 20 characters"),
+        taiKhoan: yup.string().required("UserName can't be blank").min(4, "UserName from 5 to 20 characters").max(20, "UserName < 20 characters"),
         matKhau: yup.string().required("Password can't be blank"),
     });
     // su dung khi component ko ho tro register

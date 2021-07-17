@@ -3,15 +3,17 @@ import { SignUpForm } from "actions/SignUp";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { FaUserAlt } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { AiTwotoneMail,AiFillPhone,AiOutlineNumber } from "react-icons/ai";
+import { BsCardChecklist } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 function SignUp() {
     const dispatch = useDispatch();
-    const { userInfo } = useSelector((state) => state.SignUpFrom);
     const schema = yup.object().shape({
         taiKhoan: yup.string().required("UserName can't be blank"),
-        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(20, "Email < 20 characters"),
+        email: yup.string().required("Email can't be blank").min(5, "Email from 5 to 20 characters").max(30, "Email < 20 characters"),
         matKhau: yup.string().required("Password can't be blank"),
         hoTen: yup.string().required("Full name can't be blank"),
         soDT: yup.string().required("Phone number can't be blank"),
@@ -25,6 +27,7 @@ function SignUp() {
     const handelForm = (data) => {
         console.log(data);
         dispatch(SignUpForm(data));
+        console.log(data);
     };
     return (
         <div className="signup">
@@ -45,7 +48,7 @@ function SignUp() {
                         <div className="signup-form__group">
                             <h3>Password</h3>
                             <div className="signup-form__group-content">
-                                <FaUserAlt />
+                                <RiLockPasswordFill />
                                 <input type="password" placeholder="Password" {...register("matKhau")} />
                                 <span>{errors.matKhau?.message}</span>
                             </div>
@@ -53,7 +56,7 @@ function SignUp() {
                         <div className="signup-form__group">
                             <h3>Email</h3>
                             <div className="signup-form__group-content">
-                                <FaUserAlt />
+                                <AiTwotoneMail />
                                 <input type="text" placeholder="E-mail" {...register("email")} />
                                 <span>{errors.email?.message}</span>
                             </div>
@@ -61,7 +64,7 @@ function SignUp() {
                         <div className="signup-form__group">
                             <h3>Full Name</h3>
                             <div className="signup-form__group-content">
-                                <FaUserAlt />
+                                <BsCardChecklist />
                                 <input type="text" placeholder="Full Name" {...register("hoTen")} />
                                 <span>{errors.hoTen?.message}</span>
                             </div>
@@ -69,7 +72,7 @@ function SignUp() {
                         <div className="signup-form__group">
                             <h3>Phone Number</h3>
                             <div className="signup-form__group-content">
-                                <FaUserAlt />
+                                <AiFillPhone />
                                 <input type="text" placeholder="Phone" {...register("soDT")} />
                                 <span>{errors.soDT?.message}</span>
                             </div>
@@ -77,13 +80,13 @@ function SignUp() {
                         <div className="signup-form__group">
                             <h3>Group Id</h3>
                             <div className="signup-form__group-content">
-                                <FaUserAlt />
-                                <input type="text" placeholder="Group id" value="GP07" disabled {...register("maNhom")} />
+                                <AiOutlineNumber />
+                                <input type="text" placeholder="GP07" {...register("maNhom")} />
                                 <span>{errors.maNhom?.message}</span>
                             </div>
                         </div>
                         <div className="button-signup">
-                            <input type="submit" placeholder="Sign Up"/>
+                            <input type="submit" placeholder="Sign Up" />
                         </div>
                     </form>
                     <div className="signup-content__bottom">

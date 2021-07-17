@@ -1,9 +1,11 @@
 import KeyboardArrowRightIcon from "@material-ui/icons/KeyboardArrowRight";
 import React from "react";
 import { GrFormClose } from "react-icons/gr";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import UdeAvatar from "../avatar/index";
 function NavBarMobile({ SideBar, setSideBar }) {
+    const { userInfo } = useSelector((state) => state.authReducer);
     return (
         <>
             <div className="header-navbar--mobile">
@@ -18,18 +20,29 @@ function NavBarMobile({ SideBar, setSideBar }) {
                     <div className="side-bar__menu">
                         <div className="side-bar__menu-profile">
                             <ul className="side-bar__menu-profile__list">
-                                <li>
-                                    <button>
-                                        <div className="profile-img">
-                                            <UdeAvatar AvatarSrc={"./img/avatar1.jpg"} size="AvatarMd" />
-                                        </div>
-                                        <div className="profile-user__name">
-                                            <p className="user-name">Hello, Funny Cat</p>
-                                            <p className="welcome">Welcome</p>
-                                        </div>
-                                        <KeyboardArrowRightIcon className="iconRightProfile" />
-                                    </button>
-                                </li>
+                                {userInfo ? (
+                                    <li>
+                                        <button>
+                                            <div className="profile-img">
+                                                <UdeAvatar AvatarSrc={"./img/avatar1.jpg"} size="AvatarMd" />
+                                            </div>
+                                            <div className="profile-user__name">
+                                                {userInfo ? <p className="user-name">Hello, {userInfo.hoTen}</p> : <p className="user-name">Hello</p>}
+                                                <p className="welcome">Welcome</p>
+                                            </div>
+                                            <KeyboardArrowRightIcon className="iconRightProfile" />
+                                        </button>
+                                    </li>
+                                ) : (
+                                    <li>
+                                        <p className="side-bar__login" onClick={() => setSideBar(!SideBar)}>
+                                            <Link to="/login">Login</Link>
+                                        </p>
+                                        <p className="side-bar__signup" onClick={() => setSideBar(!SideBar)}>
+                                            <Link to="/signup">Sign Up</Link>
+                                        </p>
+                                    </li>
+                                )}
                             </ul>
                         </div>
                         <div className="side-bar__menu-heading">
