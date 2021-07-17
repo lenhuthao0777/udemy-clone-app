@@ -38,7 +38,7 @@ function Home() {
             <NonStudent />
             <Partner />
             <ForBusiness />
-            <Video />
+            {/* <Video /> */}
         </div>
     );
 }

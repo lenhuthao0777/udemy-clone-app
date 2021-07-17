@@ -46,11 +46,8 @@ function TopBar({ showSideBar, setShowSideBar }) {
                         </ul>
                     </div>
                     <div className="topbar-avatar">
-                        {userInfo ? <span>Hello {userInfo.taiKhoan}</span>: <span>Hello ?</span>}
-                        <UdeAvatar
-                            size="AvatarSm"
-                            AvatarSrc="https://s.udemycdn.com/topic-images/lohp-topic-banners/GettyImages-1166389425_opt.jpg"
-                        />
+                        {userInfo ? <span>Hello {userInfo.taiKhoan}</span> : <span>Hello ?</span>}
+                        <UdeAvatar size="AvatarSm" AvatarSrc="./img/avatar3.jpg" />
                     </div>
                 </div>
             </div>
