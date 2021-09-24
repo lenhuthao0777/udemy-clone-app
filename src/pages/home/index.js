@@ -18,6 +18,7 @@ import Video from "./Video";
 function Home() {
     const dispatch = useDispatch();
     const { courses } = useSelector((state) => state.courses);
+    console.log(courses);
     useEffect(() => {
         dispatch(getCourses());
     }, []);

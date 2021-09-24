@@ -46,11 +46,9 @@ function Loginpage() {
         const { redirectTo } = qs.parse(location.search, {
             ignoreQueryPrefix: true,
         });
-
         if (redirectTo) {
             return <Redirect to={redirectTo} />;
         }
-
         return <Redirect to="/" />;
     }
     return (

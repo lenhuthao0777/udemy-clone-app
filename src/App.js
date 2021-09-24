@@ -37,15 +37,15 @@ function App() {
                                 <AdminRoute path="/admin/courses">
                                     <AdminCourses />
                                 </AdminRoute>
-                                <Route path="/admin/users">
+                                <AdminRoute path="/admin/users">
                                     <AdminUser />
-                                </Route>
-                                <Route path="/admin/addcourses">
+                                </AdminRoute>
+                                <AdminRoute path="/admin/addcourses">
                                     <AddCourses />
-                                </Route>
-                                <Route path="/admin/adduser">
+                                </AdminRoute>
+                                <AdminRoute path="/admin/adduser">
                                     <AddUsers />
-                                </Route>
+                                </AdminRoute>
                             </Switch>
                         </AdminLayout>
                     </Route>

@@ -20,6 +20,7 @@ function Course() {
     useEffect(() => {
         dispatch(getCoursesById(id));
     }, [id]);
+    console.log(course);
     return (
         <div className="course">
             <TopInfo course={course} />
