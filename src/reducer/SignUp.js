@@ -1,7 +1,7 @@
 import { SIGNUP_REQUEST, SIGNUP_SUCCESS, SIGNUP_FAILURE } from "../constants/SignUp";
-// const userInfo = localStorage.getItem("userInfo") ? JSON.parse(localStorage.getItem("userInfo")) : null;
+// const signUp = localStorage.getItem("signUp") ? JSON.parse(localStorage.getItem("signUp")) : null;
 const initialState = {
-    userInfo:{},
+    signUp: {},
     isLoading: false,
     error: null,
 };
@@ -14,13 +14,12 @@ export default function SignUpForm(state = initialState, action) {
             return {
                 ...state,
                 isLoading: false,
-                userInfo: action.payload.data,
+                signUp: action.payload.data,
             };
         }
         case SIGNUP_FAILURE: {
             return { ...state, isLoading: false, error: action.payload.error };
         }
-
         default:
             return state;
     }

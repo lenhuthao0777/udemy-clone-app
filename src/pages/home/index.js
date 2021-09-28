@@ -13,12 +13,9 @@ import TabCourseMobile from "./TabCourseMobile";
 import TabCourses from "./TabCourses";
 import TopicCate from "./TopicCate";
 import Unit from "./Unit";
-import Video from "./Video";
-// import { Link } from "react-router-dom";
 function Home() {
     const dispatch = useDispatch();
     const { courses } = useSelector((state) => state.courses);
-    console.log(courses);
     useEffect(() => {
         dispatch(getCourses());
     }, []);
