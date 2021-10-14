@@ -19,14 +19,6 @@ function TopBar({ showSideBar, setShowSideBar }) {
                             </span>
                         </div>
                     </div>
-                    <div className="topbar-search">
-                        <form action="">
-                            <input type="text" />
-                            <span>
-                                <AiOutlineSearch />
-                            </span>
-                        </form>
-                    </div>
                 </div>
                 <div className="topbar-content__right">
                     <div className="topbar-notifi">

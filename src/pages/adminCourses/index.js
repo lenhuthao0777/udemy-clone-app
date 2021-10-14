@@ -228,7 +228,7 @@ function AdminCourses() {
                     </div>
                     <div className="form-group">
                         <label htmlFor="">ngayTao</label>
-                        <input type="date" className="form-control" name="ngayTao" onChange={onChangeUpdate} placeholder="ngayTao" />
+                        <input type="date" className="form-control" name="ngayTao"  onChange={onChangeUpdate} placeholder="ngayTao" />
                     </div>
                     <div className="form-group">
                         <label htmlFor="">maDanhMucKhoaHoc</label>
