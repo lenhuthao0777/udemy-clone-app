@@ -1,7 +1,7 @@
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import AdminRoute from "./auth/AdminRoute";
-import AdminLayout from "./layouts/adminLayout";
+import AdminLayout from "layouts/adminLayout";
 import AppLayout from "./layouts/applayout/index";
 
 const Home = lazy(() => import("./pages/home"));
@@ -37,7 +37,7 @@ function App() {
                                 <AdminRoute path="/admin/courses">
                                     <AdminCourses />
                                 </AdminRoute>
-                                <AdminRoute path="/admin/users">
+                                {/* <AdminRoute path="/admin/users">
                                     <AdminUser />
                                 </AdminRoute>
                                 <AdminRoute path="/admin/addcourses">
@@ -45,7 +45,7 @@ function App() {
                                 </AdminRoute>
                                 <AdminRoute path="/admin/adduser">
                                     <AddUsers />
-                                </AdminRoute>
+                                </AdminRoute> */}
                             </Switch>
                         </AdminLayout>
                     </Route>
@@ -60,7 +60,7 @@ function App() {
                                     {/* /:category */}
                                     <Courses />
                                 </Route>
-                                <Route path="/search/:name">
+                                <Route path="/search/:courseName">
                                     <SearchCourses />
                                 </Route>
                                 <Route path="/course/:id">
