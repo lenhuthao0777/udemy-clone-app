@@ -4,7 +4,7 @@ const authApi = {
     login: (values) => {
         return axiosClient.post("/QuanLyNguoiDung/DangNhap", values);
     },
-    register: (values) => {
+    signUp: (values) => {
         return axiosClient.post("/QuanLyNguoiDung/DangKy", values);
     },
     getUsers: () => {
