@@ -1,4 +1,4 @@
-import Tables from 'component/Table/components/Table'
+import Tables from 'components/Table/components/Table'
 import React from 'react'
 
 function AdminUser({columns, data, loading}) {
