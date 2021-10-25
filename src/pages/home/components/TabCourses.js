@@ -1,6 +1,6 @@
-import UdeAvatar from "component/avatar/index";
-import { Button } from "component/button";
-import CourseItem from "component/courseItem/CourseItem";
+import UdeAvatar from "components/avatar/index";
+import { Button } from "components/button";
+import CourseItem from "components/courseItem/CourseItem";
 import React, { useState } from "react";
 import Slider from "react-slick";
 function TabCourses({courses}) {

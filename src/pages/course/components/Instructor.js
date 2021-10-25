@@ -1,4 +1,4 @@
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { FaStar, FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { MdRateReview, MdPeople, MdPlayCircleFilled } from "react-icons/md";

@@ -3,7 +3,7 @@ import React from "react";
 import { GrFormClose } from "react-icons/gr";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import avatar from "assets/images/avatar1.jpg"
 function NavBarMobile({ SideBar, setSideBar }) {
   const { userInfo } = useSelector((state) => state.authReducer);

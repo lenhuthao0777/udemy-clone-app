@@ -4,7 +4,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LockIcon from "@material-ui/icons/Lock";
 import { login } from "actions/auth";
-import { Button } from "component/button";
+import { Button } from "components/button";
 import qs from "qs";
 import React from "react";
 import { useForm } from "react-hook-form";

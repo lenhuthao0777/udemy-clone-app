@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import CourseItem from "component/courseItem/CourseItem";
+import CourseItem from "components/courseItem/CourseItem";
 function Unit({ courses }) {
     var settings = {
         dots: true,
