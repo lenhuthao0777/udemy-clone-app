@@ -1,7 +1,7 @@
 import { FileOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import LOGO from "assets/images/avatar1.jpg";
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../asset/AdminLayout.scss";

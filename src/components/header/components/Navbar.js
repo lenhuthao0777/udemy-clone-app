@@ -1,11 +1,11 @@
 import LanguageOutlinedIcon from "@material-ui/icons/LanguageOutlined";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button } from "component/button";
+import { Button } from "components/button";
 import Category from "./Category";
 import NavBarMobile from "./NavBarMobile";
 import ShopingCart from "./ShopingCart";

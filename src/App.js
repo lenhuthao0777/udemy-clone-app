@@ -5,7 +5,7 @@ import AdminLayout from "layouts/adminLayout";
 import AppLayout from "./layouts/applayout/index";
 
 const Home = lazy(() => import("./pages/home"));
-const AdminUser = lazy(() => import("./pages/adminUser"));
+const AdminUsers = lazy(() => import("./pages/adminUser"));
 const Course = lazy(() => import("./pages/course"));
 const Courses = lazy(() => import("./pages/courses"));
 const Loginpage = lazy(() => import("./pages/loginPage/Loginpage"));
@@ -37,10 +37,10 @@ function App() {
                                 <AdminRoute path="/admin/courses">
                                     <AdminCourses />
                                 </AdminRoute>
-                                {/* <AdminRoute path="/admin/users">
-                                    <AdminUser />
+                                <AdminRoute path="/admin/users">
+                                    <AdminUsers />
                                 </AdminRoute>
-                                <AdminRoute path="/admin/addcourses">
+                                {/* <AdminRoute path="/admin/addcourses">
                                     <AddCourses />
                                 </AdminRoute>
                                 <AdminRoute path="/admin/adduser">

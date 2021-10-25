@@ -1,4 +1,4 @@
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import React from "react";
 import CommentsItem from "./CommentsItem";
 function Comments() {

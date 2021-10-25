@@ -1,9 +1,8 @@
-import { Button } from "component/button";
+import { Button } from "components/button";
 import React from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import { IoMdStar, IoMdStarHalf, IoMdStarOutline } from "react-icons/io";
 import SubmenuMobile from "./SubmenuMobile";
-// import SubMenu from './SubMenu';
 function FilterSidebarMobile({ sidebar, setSidebar }) {
     const sideBarData = [
         {

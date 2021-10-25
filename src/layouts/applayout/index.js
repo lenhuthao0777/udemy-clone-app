@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "component/header";
-import Footer from "component/footer/Footer";
+import Header from "components/header";
+import Footer from "components/footer/Footer";
 function AppLayout({ children }) {
     return (
         <>

@@ -1,4 +1,4 @@
-import UdeAvatar from "component/avatar";
+import UdeAvatar from "components/avatar";
 import React from "react";
 import { AiOutlineMenuUnfold, AiOutlineSearch, AiTwotoneMail } from "react-icons/ai";
 import { IoMdNotifications } from "react-icons/io";

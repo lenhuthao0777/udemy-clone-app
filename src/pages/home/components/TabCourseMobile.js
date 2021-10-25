@@ -1,4 +1,4 @@
-import CourseItem from "component/courseItem/CourseItem";
+import CourseItem from "components/courseItem/CourseItem";
 import React, { useState } from "react";
 import Slider from "react-slick";
 import { FaAngleDown } from "react-icons/fa";

@@ -2,7 +2,7 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button } from "component/button";
+import { Button } from "components/button";
 function ShopingCart() {
     const { cart } = useSelector((state) => state.CartReducer);
 
