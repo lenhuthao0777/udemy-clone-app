@@ -16,7 +16,23 @@ function TabCourses() {
   };
   const getDataByCate = async (category) => {
     const { data } = await coursesApi.getCoursesByCategory(category);
-    setCourses(data);
+    const newData = data.map((item) => {
+      return {
+        biDanh: item.biDanh,
+        danhMucKhoaHoc: item.danhMucKhoaHoc,
+        hinhAnh: item.hinhAnh,
+        luotXem: item.luotXem,
+        maKhoaHoc: item.maKhoaHoc,
+        maNhom: item.maNhom,
+        moTa: item.moTa,
+        ngayTao: item.ngayTao,
+        nguoiTao: item.nguoiTao,
+        soLuongHocVien: item.soLuongHocVien,
+        tenKhoaHoc: item.tenKhoaHoc,
+        price:( Math.random() * 200).toFixed(2),
+      };
+    });
+    setCourses(newData);
   };
   useEffect(() => {
     getDataByCate(cate);
