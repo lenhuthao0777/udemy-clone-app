@@ -11,9 +11,10 @@ function CourseSidebar({ course }) {
     const [scrollSideBar, setScrollSideBar] = useState(false);
     useEffect(() => {
         const scrollSide = () => {
-            if (window.scrollY >= 350) {
+            if (window.scrollY > 100) {
                 setScrollSideBar(true);
-            } else {
+            } 
+            if(window.scrollY < 100) {
                 setScrollSideBar(false);
             }
         };
