@@ -10,7 +10,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useLocation } from "react-router";
+import { Redirect, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
 function Loginpage() {

@@ -1,6 +1,6 @@
 import React from "react";
 import Courses from "pages/courses/components";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import coursesApi from "services/CoursesApi";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -13,7 +13,7 @@ function SearchCourseContainer() {
       const { data } = await coursesApi.searchCourse(courseName);
       setSearchCourses(data);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
   useEffect(() => {

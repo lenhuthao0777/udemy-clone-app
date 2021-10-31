@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 import coursesApi from "services/CoursesApi";
 import Course from "../components";
 
@@ -13,7 +13,7 @@ function CourseContainer() {
       const { data } = await coursesApi.getCourseById(id);
       setCourse(data);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   };
   useEffect(() => {

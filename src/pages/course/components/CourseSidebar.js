@@ -22,7 +22,7 @@ function CourseSidebar({ course }) {
     }, [scrollSideBar]);
 
     return (
-        <div className={`course-sidebar ${scrollSideBar ? "srcoll" : ""}`}>
+        <div className={`course-sidebar ${scrollSideBar ? "scroll" : ""}`}>
             <div className="course-sidebar-container">
                 <div className="course-sidebar__content">
                     <div className="course-sidebar__img">

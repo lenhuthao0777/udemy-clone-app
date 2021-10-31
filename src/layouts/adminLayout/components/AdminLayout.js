@@ -1,46 +1,50 @@
 import { FileOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
-import LOGO from "assets/images/avatar1.jpg";
-import UdeAvatar from "components/avatar";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 import "../asset/AdminLayout.scss";
+import TopBar from "./topBar";
 const { Header, Content, Sider } = Layout;
 function AdminLayout({ children }) {
-  const [collapsed, setCollapsed] = useState(false);
-  const onCollapse = (collapsed) => {
-    console.log(collapsed);
-    setCollapsed(collapsed);
-  };
+  const path = useParams();
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-        <div className="logo">
-          <UdeAvatar AvatarSrc={LOGO} size="AvatarLg" />
-        </div>
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item icon={<UserOutlined />} key="3">
-            <Link to="/admin/users">User</Link>
-          </Menu.Item>
-          <Menu.Item key="9" icon={<FileOutlined />}>
-            <Link to="/admin/courses">Courses</Link>
-          </Menu.Item>
-        </Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ padding: 0 }} />
-        <Content style={{ margin: "0 16px" }}>
+    <Layout>
+      <Header className="header">
+        <TopBar />
+      </Header>
+      <Layout>
+        <Sider style={{ height: "100vh" }} className="site-layout-background">
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            defaultOpenKeys={["sub1"]}
+            style={{ height: "100%", borderRight: 0 }}
+          >
+            <Menu.Item key="1" icon={<FileOutlined />}>
+              <Link to="/admin/courses">Courses</Link>
+            </Menu.Item>
+            <Menu.Item key="2" icon={<UserOutlined />}>
+              <Link to="/admin/users">Users</Link>
+            </Menu.Item>
+          </Menu>
+        </Sider>
+        <Layout style={{ padding: "0 24px 24px" }}>
           <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>Courses</Breadcrumb.Item>
+            <Breadcrumb.Item>List</Breadcrumb.Item>
           </Breadcrumb>
-          <div
+          <Content
             className="site-layout-background"
-            style={{ padding: 24, minHeight: 360 }}
+            style={{
+              padding: 24,
+              margin: 0,
+              minHeight: 280,
+            }}
           >
             {children}
-          </div>
-        </Content>
+          </Content>
+        </Layout>
       </Layout>
     </Layout>
   );
