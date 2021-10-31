@@ -52,7 +52,7 @@ const routes = {
       },
       {
         id: uuid(),
-        path: "signup",
+        path: "/signup",
         exact: false,
         component: () => <SignUp />,
       },
