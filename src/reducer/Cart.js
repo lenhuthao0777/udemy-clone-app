@@ -9,7 +9,6 @@ const CartReducer = (state = initialState, action) => {
             let index = state.cart.findIndex(
                 (course) => course.maKhoaHoc === action.payload.data.maKhoaHoc
             );
-            // console.log(index)
             if (index !== -1) {
                 state.cart.splice(action.payload.data, 0);
             } else {

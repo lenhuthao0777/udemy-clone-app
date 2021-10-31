@@ -1,2 +1,2 @@
-import AdminCourses from "./container/AdminCoursesContainer";
+import AdminCourses from "./Modules/AdminCourses";
 export default AdminCourses;

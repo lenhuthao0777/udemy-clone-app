@@ -11,7 +11,7 @@ function SignUpContainer() {
       setSuccess(true);
     } catch (error) {
       setSuccess(false);
-      console.log(error);
+      return(error);
     }
   };
 

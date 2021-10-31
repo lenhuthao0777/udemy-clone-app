@@ -16,9 +16,7 @@ function Home({ courses }) {
     <div className="home">
       <Billboard />
       <HeadLine />
-      <div className="tabs-pc">
-        <TabCourses courses={courses} />
-      </div>
+      <TabCourses />
       <div className="tabs-mobile">
         <TabCourseMobile courses={courses} />
       </div>

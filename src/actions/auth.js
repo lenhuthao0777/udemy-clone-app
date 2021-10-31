@@ -7,7 +7,6 @@ export function login(values) {
             const { data } = await authApi.login(values);
             localStorage.setItem("userInfo", JSON.stringify(data));
             dispatch({ type: LOGIN_SUCCESS, payload: { data } });
-			console.log(data)
         } catch (error) {
             dispatch({
                 type: LOGIN_FAILURE,

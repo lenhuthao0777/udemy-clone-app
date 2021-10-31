@@ -20,7 +20,6 @@ function AddCourses() {
         maDanhMucKhoaHoc: "",
         taiKhoanNguoiTao: userInfo.taiKhoan,
     });
-    // console.log(newCourse);
     const handleChangeAddNewCourse = (e) => {
         if (e.target.name === "hinhAnh") {
             setNewCourse({ ...newCourse, hinhAnh: e.target.files[0] });
@@ -37,7 +36,6 @@ function AddCourses() {
         e.preventDefault();
         const form_data = new FormData();
         for (let key in newCourse) {
-            // console.log(key, newCourse[key]);
             form_data.append(key, newCourse[key]);
         }
         dispatch(AddCourseSS(form_data));
