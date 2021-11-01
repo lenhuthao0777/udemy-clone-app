@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
+import { BiUser } from "react-icons/bi";
 function Loginpage() {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.authReducer);
@@ -85,7 +86,7 @@ function Loginpage() {
         <div className="form__login">
           <div className="form-groups">
             <div className="input username">
-              <EmailIcon className="email-icon" />
+              <BiUser className="email-icon" />
               <input
                 type="text"
                 placeholder="E-Mail"
