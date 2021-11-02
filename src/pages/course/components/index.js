@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Comments from "./Comments";
 import CourseContent from "./CourseContent";
 import CourseSidebar from "./CourseSidebar";
@@ -9,7 +10,14 @@ import Preview from "./Preview";
 import SlideMenu from "./SlideMenu";
 import TopInfo from "./TopInfo";
 import WillLearn from "./WillLearn";
-function Course({course}) {
+function Course({ course }) {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [location]);
   return (
     <div className="course">
       <TopInfo course={course} />

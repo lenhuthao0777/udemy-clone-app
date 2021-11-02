@@ -7,6 +7,8 @@ import EditCourse from "../../EditCourse";
 import AdminCourses from "../components/AdminCourses";
 function AdminCoursesContainer() {
   const [isLoading, setIsloading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(50);
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -43,11 +45,11 @@ function AdminCoursesContainer() {
       ),
     },
   ];
-  const getAllDatas = async () => {
+  const getAllDatas = async (page, pageSize) => {
     setIsloading(true);
     try {
-      const { data } = await coursesApi.getCourses();
-      const newData = data.map((item) => ({
+      const { data } = await coursesApi.getCoursesByPage(page, pageSize);
+      const newData = data.items.map((item) => ({
         biDanh: item.biDanh,
         danhMucKhoaHoc: item.danhMucKhoaHoc,
         hinhAnh: item.hinhAnh,
@@ -68,8 +70,8 @@ function AdminCoursesContainer() {
     }
   };
   useEffect(() => {
-    getAllDatas();
-  }, []);
+    getAllDatas(page, pageSize);
+  }, [page, pageSize]);
   return <AdminCourses columns={columns} isLoading={isLoading} data={data} />;
 }
 

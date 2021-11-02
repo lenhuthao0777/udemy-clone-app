@@ -8,7 +8,7 @@ import NonStudent from "./NonStudent";
 import OnBoarding from "./OnBoarding";
 import Partner from "./Partner";
 import TabCourseMobile from "./TabCourseMobile";
-import TabCourses from "./TabCourses";
+import TabCourses from "./Tabs/components/TabCourses";
 import TopicCate from "./TopicCate";
 import Unit from "./Unit";
 function Home({ courses }) {

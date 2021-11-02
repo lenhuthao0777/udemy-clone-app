@@ -1,60 +1,60 @@
 .slides {
-    position: relative;
-    margin-top: 30px;
-    .slide {
-        display: flex;
-        flex-direction: row;
-        overflow: hidden;
+  position: relative;
+  margin-top: 30px;
+  .slide {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      font-size: 24px;
+      color: $color-green;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            font-size: 24px;
-            color: $color-green;
-            transition: all 0.3s;
-            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &:hover button {
-            color: $color-green-dark;
-        }
+    &:hover button {
+      color: $color-green-dark;
     }
-    .btn-prev {
-        position: absolute;
-        top: 20%;
-        left: -2.5%;
-    }
-    .btn-next {
-        position: absolute;
-        top: 20%;
-        right: -2.5%;
-    }
+  }
+  .btn-prev {
+    position: absolute;
+    top: 20%;
+    left: -2.5%;
+  }
+  .btn-next {
+    position: absolute;
+    top: 20%;
+    right: -2.5%;
+  }
 }
 @include responesive("extra-large") {
-    .slides {
-        .btn-next {
-            right: -2%;
-        }
-        .btn-prev {
-            left: -2%;
-        }
+  .slides {
+    .btn-next {
+      right: -2%;
     }
+    .btn-prev {
+      left: -2%;
+    }
+  }
 }
 @include responesive("medium") {
-    .slides {
-        .btn-next {
-            right: -3.5%;
-        }
-        .btn-prev {
-            left: -3.5%;
-        }
+  .slides {
+    .btn-next {
+      right: -3.5%;
     }
+    .btn-prev {
+      left: -3.5%;
+    }
+  }
 }

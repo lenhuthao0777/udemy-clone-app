@@ -70,8 +70,9 @@ function Unit({ courses }) {
                 return (
                   <div key={index}>
                     <CourseItem
-                      clsName={"course-item"}
-                      id={item.maKhoaHoc}
+                      clsName={"course-item hover"}
+                      link={item.maKhoaHoc}
+                      id={`item${index + 1}`}
                       sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                       image={item.hinhAnh}
                       courseName={item.tenKhoaHoc}

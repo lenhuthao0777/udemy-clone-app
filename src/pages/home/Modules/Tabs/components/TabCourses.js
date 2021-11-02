@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import CourseItem from "components/courseItem/CourseItem";
+import avatar from "assets/images/avatar1.jpg";
 import UdeAvatar from "components/avatar/index";
 import { Button } from "components/button";
+import CourseItem from "components/courseItem/CourseItem";
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 import coursesApi from "services/CoursesApi";
-import avatar from "assets/images/avatar1.jpg";
-
 function TabCourses() {
   const [toggleState, setToggleState] = useState(1);
   const [cate, setCate] = useState("FrontEnd");
@@ -29,7 +28,7 @@ function TabCourses() {
         nguoiTao: item.nguoiTao,
         soLuongHocVien: item.soLuongHocVien,
         tenKhoaHoc: item.tenKhoaHoc,
-        price:( Math.random() * 200).toFixed(2),
+        price: (Math.random() * 200).toFixed(2),
       };
     });
     setCourses(newData);
@@ -153,7 +152,8 @@ function TabCourses() {
                       <div key={index}>
                         <CourseItem
                           clsName={"course-item"}
-                          id={item.maKhoaHoc}
+                          link={item.maKhoaHoc}
+                          id={`item${index + 1}`}
                           sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                           image={item.hinhAnh}
                           courseName={item.tenKhoaHoc}
@@ -193,7 +193,8 @@ function TabCourses() {
                       <CourseItem
                         key={index}
                         clsName={"course-item"}
-                        id={item.maKhoaHoc}
+                        link={item.maKhoaHoc}
+                        id={`item${index + 1}`}
                         sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                         image={item.hinhAnh}
                         courseName={item.tenKhoaHoc}
@@ -232,7 +233,8 @@ function TabCourses() {
                       <CourseItem
                         key={index}
                         clsName={"course-item"}
-                        id={item.maKhoaHoc}
+                        link={item.maKhoaHoc}
+                        id={`item${index + 1}`}
                         sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                         image={item.hinhAnh}
                         courseName={item.tenKhoaHoc}

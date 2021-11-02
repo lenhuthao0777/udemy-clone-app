@@ -28,6 +28,9 @@ const coursesApi = {
   updateCourse: (values) => {
     return axiosClient.post("/QuanLyKhoaHoc/CapNhatKhoaHocUpload", values);
   },
+  getCoursesByPage: (page, pageSize)=>{
+    return axiosClient.get(`/QuanLyKhoaHoc/LayDanhSachKhoaHoc_PhanTrang?page=${page}&pageSize=${pageSize}&MaNhom=GP08`)
+  }
 };
 export default coursesApi;
 

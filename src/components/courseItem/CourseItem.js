@@ -14,12 +14,13 @@ function CourseItem({
   onClick,
   id,
   view,
+  link,
 }) {
   const checkClsName = STYLE.includes(clsName) ? clsName : STYLE[0];
   const checkSale = SALE.includes(sale) ? sale : "";
   return (
     <div className={`${checkClsName} ${checkSale}`} id={id} onClick={onClick}>
-      <Link to={`/course/${id}`}>
+      <Link to={`/course/${link}`}>
         <div className="course-item__img">
           <img src={image} alt="" />
         </div>

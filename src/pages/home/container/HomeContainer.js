@@ -2,13 +2,13 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import coursesApi from "services/CoursesApi";
-import Home from "../components";
+import Home from "../Modules";
 
 function HomeContainer() {
   const [courses, setCourses] = useState([]);
   const getAllData = async () => {
     try {
-      const { data } = await coursesApi.getCourses();
+      const { data, status } = await coursesApi.getCourses();
       const newData = data.map((item) => {
         return {
           biDanh: item.biDanh,
@@ -22,12 +22,13 @@ function HomeContainer() {
           nguoiTao: item.nguoiTao,
           soLuongHocVien: item.soLuongHocVien,
           tenKhoaHoc: item.tenKhoaHoc,
-          price:( Math.random() * 200).toFixed(2),
+          price: (Math.random() * 200).toFixed(2),
         };
       });
       setCourses(newData);
+      console.log(status);
     } catch (error) {
-      return(error);
+      return error;
     }
   };
   useEffect(() => {
