@@ -5,8 +5,10 @@ function Tables({ columns, data, loading }) {
     <Table
       columns={columns}
       dataSource={data}
-      pagination={false}
       loading={loading}
+      pagination={{
+        pageSize: 10,
+      }}
       scroll={{ x: 2000, y: 600 }}
       bordered
     />

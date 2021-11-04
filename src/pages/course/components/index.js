@@ -26,11 +26,7 @@ function Course({ course }) {
       <Instructor />
       <Feedback />
       <Preview />
-      <div className="comments-items">
-        <Comments />
-        <Comments />
-        <Comments />
-      </div>
+      <Comments />
       <CourseSidebar course={course} />
       <NavbarScroll course={course} />
       <SlideMenu />

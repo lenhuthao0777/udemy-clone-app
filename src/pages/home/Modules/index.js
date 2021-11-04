@@ -20,7 +20,7 @@ function Home({ courses }) {
       <div className="tabs-mobile">
         <TabCourseMobile courses={courses} />
       </div>
-      <Unit courses={courses} />
+      <Unit />
       <OnBoarding />
       <BestCate />
       <TopicCate />

@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import CourseItem from "components/courseItem/CourseItem";
-function Unit({ courses }) {
+function Unit({ data }) {
   var settings = {
     dots: true,
     infinite: true,
@@ -66,7 +66,7 @@ function Unit({ courses }) {
           <h1 className="unit-content__heading">Participants consult</h1>
           <div className="carousels">
             <Slider {...settings}>
-              {courses.map((item, index) => {
+              {data.map((item, index) => {
                 return (
                   <div key={index}>
                     <CourseItem
