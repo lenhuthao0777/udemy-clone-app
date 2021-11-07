@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import CourseItem from "components/courseItem/CourseItem";
-function Unit({ courses }) {
+function Unit({ data }) {
   var settings = {
     dots: true,
     infinite: true,
@@ -66,12 +66,13 @@ function Unit({ courses }) {
           <h1 className="unit-content__heading">Participants consult</h1>
           <div className="carousels">
             <Slider {...settings}>
-              {courses.map((item, index) => {
+              {data.map((item, index) => {
                 return (
                   <div key={index}>
                     <CourseItem
-                      clsName={"course-item"}
-                      id={item.maKhoaHoc}
+                      clsName={"course-item hover"}
+                      link={item.maKhoaHoc}
+                      id={`item${index + 1}`}
                       sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                       image={item.hinhAnh}
                       courseName={item.tenKhoaHoc}

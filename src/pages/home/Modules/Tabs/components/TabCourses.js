@@ -1,42 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import CourseItem from "components/courseItem/CourseItem";
+import avatar from "assets/images/avatar1.jpg";
 import UdeAvatar from "components/avatar/index";
 import { Button } from "components/button";
-import coursesApi from "services/CoursesApi";
-import avatar from "assets/images/avatar1.jpg";
-
-function TabCourses() {
+import CourseItem from "components/courseItem/CourseItem";
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+function TabCourses({ courses, getDataByCate }) {
   const [toggleState, setToggleState] = useState(1);
   const [cate, setCate] = useState("FrontEnd");
-  const [courses, setCourses] = useState([]);
   const handelTabs = (state, key) => {
     setToggleState(state);
     setCate(key);
   };
-  const getDataByCate = async (category) => {
-    const { data } = await coursesApi.getCoursesByCategory(category);
-    const newData = data.map((item) => {
-      return {
-        biDanh: item.biDanh,
-        danhMucKhoaHoc: item.danhMucKhoaHoc,
-        hinhAnh: item.hinhAnh,
-        luotXem: item.luotXem,
-        maKhoaHoc: item.maKhoaHoc,
-        maNhom: item.maNhom,
-        moTa: item.moTa,
-        ngayTao: item.ngayTao,
-        nguoiTao: item.nguoiTao,
-        soLuongHocVien: item.soLuongHocVien,
-        tenKhoaHoc: item.tenKhoaHoc,
-        price:( Math.random() * 200).toFixed(2),
-      };
-    });
-    setCourses(newData);
-  };
   useEffect(() => {
     getDataByCate(cate);
-  }, [cate]);
+  }, [cate, getDataByCate]);
   const settings = {
     dots: true,
     arrows: false,
@@ -153,7 +130,8 @@ function TabCourses() {
                       <div key={index}>
                         <CourseItem
                           clsName={"course-item"}
-                          id={item.maKhoaHoc}
+                          link={item.maKhoaHoc}
+                          id={`item${index + 1}`}
                           sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                           image={item.hinhAnh}
                           courseName={item.tenKhoaHoc}
@@ -193,7 +171,8 @@ function TabCourses() {
                       <CourseItem
                         key={index}
                         clsName={"course-item"}
-                        id={item.maKhoaHoc}
+                        link={item.maKhoaHoc}
+                        id={`item${index + 1}`}
                         sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                         image={item.hinhAnh}
                         courseName={item.tenKhoaHoc}
@@ -232,7 +211,8 @@ function TabCourses() {
                       <CourseItem
                         key={index}
                         clsName={"course-item"}
-                        id={item.maKhoaHoc}
+                        link={item.maKhoaHoc}
+                        id={`item${index + 1}`}
                         sale={`${(index + 1) % 2 === 0 ? "sale-active" : ""}`}
                         image={item.hinhAnh}
                         courseName={item.tenKhoaHoc}
