@@ -4,38 +4,16 @@ import { Button } from "components/button";
 import CourseItem from "components/courseItem/CourseItem";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-import coursesApi from "services/CoursesApi";
-function TabCourses() {
+function TabCourses({ courses, getDataByCate }) {
   const [toggleState, setToggleState] = useState(1);
   const [cate, setCate] = useState("FrontEnd");
-  const [courses, setCourses] = useState([]);
   const handelTabs = (state, key) => {
     setToggleState(state);
     setCate(key);
   };
-  const getDataByCate = async (category) => {
-    const { data } = await coursesApi.getCoursesByCategory(category);
-    const newData = data.map((item) => {
-      return {
-        biDanh: item.biDanh,
-        danhMucKhoaHoc: item.danhMucKhoaHoc,
-        hinhAnh: item.hinhAnh,
-        luotXem: item.luotXem,
-        maKhoaHoc: item.maKhoaHoc,
-        maNhom: item.maNhom,
-        moTa: item.moTa,
-        ngayTao: item.ngayTao,
-        nguoiTao: item.nguoiTao,
-        soLuongHocVien: item.soLuongHocVien,
-        tenKhoaHoc: item.tenKhoaHoc,
-        price: (Math.random() * 200).toFixed(2),
-      };
-    });
-    setCourses(newData);
-  };
   useEffect(() => {
     getDataByCate(cate);
-  }, [cate]);
+  }, [cate, getDataByCate]);
   const settings = {
     dots: true,
     arrows: false,
