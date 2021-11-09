@@ -1,0 +1,18 @@
+.search {
+  display: flex;
+  align-items: center;
+  .icon {
+    padding: 10px 15px;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in;
+    &:hover {
+      background-color: #d3d3d3;
+    }
+  }
+  input {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+  }
+}

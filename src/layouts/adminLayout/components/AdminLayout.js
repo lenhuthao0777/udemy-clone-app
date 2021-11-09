@@ -20,7 +20,7 @@ function AdminLayout({ children }) {
             defaultOpenKeys={["sub1"]}
             style={{ height: "100%", borderRight: 0 }}
           >
-            <Menu.Item key="1" icon={<FileOutlined />}>
+            <Menu.Item key="1" icon={<FileOutlined />} style={{marginTop: "0"}}>
               <Link to="/admin/courses">Courses</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>

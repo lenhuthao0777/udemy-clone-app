@@ -1,11 +1,11 @@
-import { Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import React from "react";
-import { AppstoreAddOutlined } from "@ant-design/icons";
+import "styles/ButtonOutline/ButtonOutLine.scss"
 function CreateCourse() {
   return (
-    <Button type="primary" size="large">
-      <AppstoreAddOutlined />
-    </Button>
+    <button className="button-outline"> 
+      <PlusOutlined />
+    </button>
   );
 }
 
