@@ -6,9 +6,10 @@ function Tables({ columns, data, loading }) {
       columns={columns}
       dataSource={data}
       loading={loading}
-      pagination={{
-        pageSize: 10,
-      }}
+      // pagination={{
+      //   pageSize: 10,
+      // }}
+      pagination={false}
       scroll={{ x: 2000, y: 600 }}
       bordered
     />

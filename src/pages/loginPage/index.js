@@ -53,7 +53,7 @@ function Loginpage() {
     return <Redirect to="/" />;
   }
   return (
-    <div className="form">
+    <form className="form">
       <div className="form__heading">
         <h3>Log into your Udemy account!</h3>
       </div>
@@ -118,7 +118,7 @@ function Loginpage() {
         </p>
         <p>Connect with your organization</p>
       </div>
-    </div>
+    </form>
   );
 }
 
