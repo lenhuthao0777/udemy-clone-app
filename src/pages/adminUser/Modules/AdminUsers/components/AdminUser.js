@@ -1,20 +1,21 @@
+import { Button } from "antd";
 import Pagination from "components/Pagination";
 import Row from "components/Row";
 import Tables from "components/Table/components/Table";
 import TopBar from "components/TopBar";
+import TbSearch from "pages/adminCourses/Modules/TbSearch";
 import React, { Fragment, useState } from "react";
-import "styles/ButtonOutline/ButtonOutLine.scss";
-import CreateCourse from "../../CreateCourse";
-import TbSearch from "../../TbSearch";
-function AdminCoursesTable({
-  data,
-  columns,
-  isLoading,
+
+function AdminUser({
   totalCount,
+  getAllUserData,
   totalPages,
-  getAllDatas,
+  columns,
+  data,
+  loading,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
+
   const hdChange = (data) => {
     setSearchTerm(data);
   };
@@ -22,19 +23,21 @@ function AdminCoursesTable({
     if (searchTerm === "") {
       return val;
     }
-    if (val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+    if (
+      val.taiKhoan.toLowerCase().includes(searchTerm.toLocaleLowerCase()) ||
+      val.hoTen.toLowerCase().includes(searchTerm.toLocaleLowerCase())
+    ) {
       return val;
     }
   });
-
   const getPage = (page, pageSize) => {
-    getAllDatas(page, pageSize);
+    getAllUserData(page, pageSize);
   };
   return (
     <Fragment>
       <TopBar>
         <Row>
-          <CreateCourse />
+          <Button type="primary">Add</Button>
           <TbSearch cb={hdChange} />
         </Row>
         <Pagination
@@ -43,9 +46,9 @@ function AdminCoursesTable({
           cb={getPage}
         />
       </TopBar>
-      <Tables data={searchData} columns={columns} loading={isLoading} />
+      <Tables columns={columns} data={searchData} loading={loading} />
     </Fragment>
   );
 }
 
-export default AdminCoursesTable;
+export default AdminUser;
