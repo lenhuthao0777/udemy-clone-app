@@ -1,45 +1,48 @@
-import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import Pagination from "components/Pagination";
+import Row from "components/Row";
 import Tables from "components/Table/components/Table";
+import TopBar from "components/TopBar";
 import React, { Fragment, useState } from "react";
 import "styles/ButtonOutline/ButtonOutLine.scss";
 import CreateCourse from "../../CreateCourse";
 import TbSearch from "../../TbSearch";
-function AdminCoursesTable({ data, columns, isLoading }) {
+function AdminCoursesTable({
+  data,
+  columns,
+  isLoading,
+  totalCount,
+  totalPages,
+  getAllDatas,
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const searchData = data.filter((val) => {
     if (searchTerm === "") {
       return val;
-    } else if (
-      val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())
-    ) {
+    }
+    if (val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
       return val;
     }
   });
   const hdChange = (data) => {
     setSearchTerm(data);
   };
+
+  const getPage = (page, pageSize) => {
+    getAllDatas(page, pageSize);
+  };
   return (
     <Fragment>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center" }}>
+      <TopBar>
+        <Row>
           <CreateCourse />
           <TbSearch cb={hdChange} />
-        </div>
-        <div>
-          <button className="button-outline">
-            <LeftOutlined />
-          </button>
-          <button className="button-outline">
-            <RightOutlined />
-          </button>
-        </div>
-      </div>
+        </Row>
+        <Pagination
+          totalCount={totalCount}
+          totalPages={totalPages}
+          cb={getPage}
+        />
+      </TopBar>
       <Tables data={searchData} columns={columns} loading={isLoading} />
     </Fragment>
   );

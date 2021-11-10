@@ -7,8 +7,8 @@ import EditCourse from "../../EditCourse";
 import AdminCourses from "../components/AdminCourses";
 function AdminCoursesContainer() {
   const [isLoading, setIsloading] = useState(true);
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(50);
+  const [totalCount, setTotalCount] = useState(null);
+  const [totalPages, setTotalPages] = useState(null);
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -45,7 +45,7 @@ function AdminCoursesContainer() {
       ),
     },
   ];
-  const getAllDatas = async (page, pageSize) => {
+  const getAllDatas = async (page = 1, pageSize = 10) => {
     setIsloading(true);
     try {
       const { data } = await coursesApi.getCoursesByPage(page, pageSize);
@@ -64,15 +64,26 @@ function AdminCoursesContainer() {
         key: uuid(),
       }));
       setData(newData);
+      setTotalCount(data.totalCount);
+      setTotalPages(data.totalPages);
       setIsloading(false);
     } catch (error) {
       return error;
     }
   };
   useEffect(() => {
-    getAllDatas(page, pageSize);
-  }, [page, pageSize]);
-  return <AdminCourses columns={columns} isLoading={isLoading} data={data} />;
+    getAllDatas();
+  }, []);
+  return (
+    <AdminCourses
+      columns={columns}
+      isLoading={isLoading}
+      data={data}
+      totalCount={totalCount}
+      totalPages={totalPages}
+      getAllDatas={getAllDatas}
+    />
+  );
 }
 
 export default AdminCoursesContainer;
