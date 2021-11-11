@@ -4,7 +4,7 @@ import { Button } from "components/button";
 import CourseItem from "components/courseItem/CourseItem";
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
-function TabCourses({ courses, getDataByCate }) {
+function TabCourses({ courses, cb }) {
   const [toggleState, setToggleState] = useState(1);
   const [cate, setCate] = useState("FrontEnd");
   const handelTabs = (state, key) => {
@@ -12,8 +12,9 @@ function TabCourses({ courses, getDataByCate }) {
     setCate(key);
   };
   useEffect(() => {
-    getDataByCate(cate);
-  }, [cate, getDataByCate]);
+    cb(cate);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cate]);
   const settings = {
     dots: true,
     arrows: false,

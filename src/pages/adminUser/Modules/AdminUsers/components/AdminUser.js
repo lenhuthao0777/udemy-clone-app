@@ -29,6 +29,7 @@ function AdminUser({
     ) {
       return val;
     }
+    return false;
   });
   const getPage = (page, pageSize) => {
     getAllUserData(page, pageSize);

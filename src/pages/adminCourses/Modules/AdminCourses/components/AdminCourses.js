@@ -25,6 +25,7 @@ function AdminCoursesTable({
     if (val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
       return val;
     }
+    return false;
   });
 
   const getPage = (page, pageSize) => {

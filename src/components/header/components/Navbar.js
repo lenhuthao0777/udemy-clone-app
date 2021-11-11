@@ -1,19 +1,15 @@
 import MenuIcon from "@material-ui/icons/Menu";
-
-import UdeAvatar from "components/avatar";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { Button } from "components/button";
+import Gap from "../Gap";
+import CartMobile from "./CartMobile";
 import Category from "./Category";
+import HeaderButtons from "./HeaderButtons";
+import HeaderLogo from "./HeaderLogo";
 import NavBarMobile from "./NavBarMobile";
-import ShopingCart from "./ShopingCart";
 import Search from "./Search";
 import SearchMobile from "./SearchMobile";
-import CartMobile from "./CartMobile";
-import Gap from "../Gap";
-import HeaderLogo from "./HeaderLogo";
-import HeaderButtons from "./HeaderButtons";
+import ShopingCart from "./ShopingCart";
+
 function Navbar() {
   const [SideBar, setSideBar] = useState(false);
   const [searchBar, setSearchBar] = useState(false);

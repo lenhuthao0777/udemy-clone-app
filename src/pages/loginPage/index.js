@@ -5,16 +5,17 @@ import LockIcon from "@material-ui/icons/Lock";
 import { login } from "actions/auth";
 import { Button } from "components/button";
 import qs from "qs";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { BiUser } from "react-icons/bi";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Redirect, useLocation } from "react-router-dom";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 function Loginpage() {
   const dispatch = useDispatch();
-  const { userInfo } = useSelector((state) => state.authReducer);
+  const { userInfo, error, status } = useSelector((state) => state.authReducer);
   const location = useLocation();
   // controlled compoent: conttrol tat ca moi thu tren dao dien bang state, props
   // uncontrooled component: controll dao dien ko thong qua state , props
@@ -24,9 +25,13 @@ function Loginpage() {
   // const inputMatKhau = useRef();
 
   const handelLogin = (value) => {
-    console.log(value);
     dispatch(login(value));
   };
+  useEffect(() => {
+    const noti = (noti) => toast(noti);
+    if (status === 200) noti("Login Success!");
+    if (status === 500) noti(error);
+  }, [status, error]);
   const schema = yup.object().shape({
     taiKhoan: yup
       .string()
@@ -83,7 +88,11 @@ function Loginpage() {
         <div className="form-groups">
           <div className="input username">
             <BiUser className="email-icon" />
-            <input type="text" placeholder="User Name" {...register("taiKhoan")} />
+            <input
+              type="text"
+              placeholder="User Name"
+              {...register("taiKhoan")}
+            />
             <span>{errors?.taiKhoan?.message}</span>
           </div>
         </div>

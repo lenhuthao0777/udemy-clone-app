@@ -1,17 +1,17 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Button } from "antd";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../assets/Pagination.scss";
 function Pagination({ cb, totalCount, totalPages }) {
   const [page, setPage] = useState(1);
-  const pageSize = useRef(10);
+  const pageSize = 10;
 
   const from = () => {
-    return (page - 1) * Number(pageSize.current) + 1;
+    return (page - 1) * Number(pageSize) + 1;
   };
 
   const to = () => {
-    const value = Number(pageSize.current);
+    const value = Number(pageSize);
     return (page - 1) * value + value > totalCount
       ? totalCount
       : (page - 1) * value + value;
@@ -29,8 +29,9 @@ function Pagination({ cb, totalCount, totalPages }) {
     }
   };
   useEffect(() => {
-    cb(page, pageSize.current);
-  }, [page, pageSize.current]);
+    cb(page, pageSize);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page, pageSize]);
   return (
     <div className="pagination">
       <div className="data">{`${
