@@ -2,7 +2,7 @@ import { FileOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
-import "../asset/AdminLayout.scss";
+import "../assets/AdminLayout.scss";
 import TopBar from "./topBar";
 const { Header, Content, Sider } = Layout;
 function AdminLayout({ children }) {

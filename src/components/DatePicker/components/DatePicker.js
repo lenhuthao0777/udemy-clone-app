@@ -1,9 +1,14 @@
-import React from "react";
-function DatePicker({ fieldName, cb, label }) {
+import React, { useCallback } from "react";
+import "../assets/DateFiled.scss";
+function DatePicker({ fieldName, cb, label, value }) {
+  const hdChange = useCallback((e) => {
+    const { name, value } = e.target;
+    cb({ name, value });
+  }, [cb]);
   return (
-    <div>
+    <div className="date-field">
       <label htmlFor="">{label}</label>
-      <input type="date" name={fieldName} value={value} onChange={cb} />
+      <input type="date" name={fieldName} value={value} onChange={hdChange} />
     </div>
   );
 }

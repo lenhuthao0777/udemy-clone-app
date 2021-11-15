@@ -1,0 +1,19 @@
+.login-now {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a{
+    font-size: 34px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #ff6b6b;
+    padding: 25px 40px;
+  }
+}
