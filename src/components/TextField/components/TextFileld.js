@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import "../assets/TextFIeld.scss";
-function TextFileld({ fieldName, cb, label, value, placehd }) {
+function TextFileld({ fieldName, cb, label, vl, placehd }) {
   const hdChange = useCallback(
     (e) => {
       const { name, value } = e.target;
@@ -15,7 +15,7 @@ function TextFileld({ fieldName, cb, label, value, placehd }) {
         type="text"
         name={fieldName}
         placeholder={placehd}
-        value={value}
+        value={vl}
         onChange={hdChange}
       />
     </div>

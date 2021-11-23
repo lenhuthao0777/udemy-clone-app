@@ -5,9 +5,10 @@ import TextFileld from "components/TextField";
 import moment from "moment";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-function CreateCourse() {
+function CreateCourse({ hdAddCourse }) {
   const { userInfo } = useSelector((state) => state.authReducer);
   const [data, setData] = useState({
+    maKhoaHoc: "",
     biDanh: "",
     tenKhoaHoc: "",
     moTa: "",
@@ -17,39 +18,37 @@ function CreateCourse() {
     maDanhMucKhoaHoc: "",
     taiKhoanNguoiTao: userInfo.taiKhoan,
   });
-  // const fields = [
-  //   {
-
-  //   },
-  // ];
-  const hdChange = ({ name, value }) => {
-    switch (name) {
+  const hdChange = (field) => {
+    switch (field.name) {
       case "hinhAnh": {
-        setData({ ...data, hinhAnh: value });
+        setData({ ...data, hinhAnh: field.files[0] });
         break;
       }
       case "ngayTao": {
-        setData({ ...data, ngayTao: moment("ngayTao").format("DD/MM/YYYY") });
+        setData({ ...data, ngayTao: moment(field.value).format("DD/MM/YYYY") });
         break;
       }
-
       default: {
-        setData({ ...data, [name]: value });
+        setData({ ...data, [field.name]: field.value });
         break;
       }
     }
   };
   const hdSubmit = () => {
-    // console.log("submit");
     const form_data = new FormData();
     for (let key in data) {
       form_data.append(key, data[key]);
-      console.log(key, data[key]);
     }
-    // console.log(form_data);
+    hdAddCourse(form_data);
   };
   return (
     <Modal title="Create Course" cb={hdSubmit}>
+      <TextFileld
+        fieldName="maKhoaHoc"
+        label="Mã khóa học:"
+        placehd="Nhập mã khóa học"
+        cb={hdChange}
+      />
       <TextFileld
         fieldName="tenKhoaHoc"
         label="Tên khóa học:"

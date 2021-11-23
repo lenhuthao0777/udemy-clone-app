@@ -6,7 +6,6 @@ function Modal({ children, title, cb }) {
   const [visible, setVisible] = useState(false);
 
   const showModal = () => {
-    console.log("Modal");
     setVisible(true);
   };
 
