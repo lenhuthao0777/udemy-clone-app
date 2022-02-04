@@ -25,7 +25,8 @@ function TabsContainer() {
     });
     setCourses(newData);
   };
-  return <TabCourses getDataByCate={getDataByCate} courses={courses} />;
+
+  return <TabCourses cb={getDataByCate} courses={courses} />;
 }
 
 export default TabsContainer;

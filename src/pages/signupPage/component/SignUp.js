@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiFillPhone, AiTwotoneMail } from "react-icons/ai";
 import { BsCardChecklist } from "react-icons/bs";
 import { FaUserAlt } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
+import "../assets/Login_now.scss";
 function SignUp({ handleSignUp, success }) {
   const [signUpData, setSignUpData] = useState({
     taiKhoan: "",
@@ -13,6 +15,16 @@ function SignUp({ handleSignUp, success }) {
     soDT: "",
     maNhom: "GP07",
   });
+  const setSuccess = useRef(null);
+  const history = useHistory();
+  if (success === true) {
+    setSuccess.current = setTimeout(() => {
+      history.push("/login");
+    }, 2000);
+  }
+  useEffect(() => {
+    return () => clearTimeout(setSuccess.current);
+  }, []);
   // const schema = yup.object().shape({
   //     taiKhoan: yup.string().required("UserName can't be blank"),
   //     email: yup
@@ -30,7 +42,10 @@ function SignUp({ handleSignUp, success }) {
   //     handleSubmit,
   //     formState: { errors },
   // } = useForm({ resolver: yupResolver(schema) });
-
+  useEffect(() => {
+    if (success === true) toast("Register Success Login Now!");
+    if (success === false) toast("Register Failure!");
+  });
   const handleChangeInput = (e) => {
     const inputData = { ...signUpData };
     inputData[e.target.name] = e.target.value;
@@ -46,13 +61,6 @@ function SignUp({ handleSignUp, success }) {
         <div className="signup-content">
           <div className="signup-content__heading">
             <h1>Sign up and start learning!</h1>
-            {success === true ? (
-              <p>Sign Up Success!</p>
-            ) : success === false ? (
-              <p>false</p>
-            ) : (
-              null
-            )}
           </div>
           <form className="signup-form" onSubmit={handelForm}>
             <div className="signup-form__group">
@@ -135,6 +143,10 @@ function SignUp({ handleSignUp, success }) {
           </div>
         </div>
       </div>
+
+      {/* <div className="login-now">
+        <Link to="/login">Login Now!</Link>
+      </div> */}
     </div>
   );
 }
