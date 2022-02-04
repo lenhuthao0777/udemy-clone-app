@@ -14,18 +14,18 @@ function AdminCoursesTable({
   getAllDatas,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
-  const hdChange = (data) => {
-    setSearchTerm(data);
-  };
-  const searchData = data.filter((val) => {
-    if (searchTerm === "") {
-      return val;
-    }
-    if (val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
-      return val;
-    }
-    return false;
-  });
+  // const hdChange = (data) => {
+  //   setSearchTerm(data);
+  // };
+  // const searchData = data.filter((val) => {
+  //   if (searchTerm === "") {
+  //     return val;
+  //   }
+  //   if (val.tenKhoaHoc.toLowerCase().includes(searchTerm.toLocaleLowerCase())) {
+  //     return val;
+  //   }
+  //   return false;
+  // });
 
   const getPage = (page, pageSize) => {
     getAllDatas(page, pageSize);
@@ -35,7 +35,7 @@ function AdminCoursesTable({
       <TopBar>
         <Row>
           <CreateCourse />
-          <TbSearch cb={hdChange} />
+          {/* <TbSearch cb={hdChange} /> */}
         </Row>
         <Pagination
           totalCount={totalCount}
@@ -43,7 +43,10 @@ function AdminCoursesTable({
           cb={getPage}
         />
       </TopBar>
-      <Tables data={searchData} columns={columns} loading={isLoading} />
+      {/* <Tables data={searchData} columns={columns} loading={isLoading} /> */}
+      {
+        // data.map((item,index)=> console.log(item.lenght))
+      }
     </Fragment>
   );
 }

@@ -1,74 +1,75 @@
-import { addToCart } from "actions/Cart";
-import React, { useEffect, useState } from "react";
-import { AiOutlinePlayCircle } from "react-icons/ai";
+import { addToCart } from 'actions/Cart'
+import React, { useEffect, useState } from 'react'
+import { AiOutlinePlayCircle } from 'react-icons/ai'
 import {
   BsCollectionPlay,
   BsDownload,
   BsFileEarmark,
   BsPhone,
   BsQuestionCircle,
-} from "react-icons/bs";
-import { CgInfinity } from "react-icons/cg";
-import { GiRibbonMedal } from "react-icons/gi";
-import { VscSymbolNamespace } from "react-icons/vsc";
-import { useDispatch } from "react-redux";
-import { toast } from "react-toastify";
+} from 'react-icons/bs'
+import { CgInfinity } from 'react-icons/cg'
+import { GiRibbonMedal } from 'react-icons/gi'
+import { VscSymbolNamespace } from 'react-icons/vsc'
+import { useDispatch } from 'react-redux'
+import { toast } from 'react-toastify'
 function CourseSidebar({ course }) {
-  const dispath = useDispatch();
-  const [scrollSideBar, setScrollSideBar] = useState(false);
+  const dispath = useDispatch()
+  const [scrollSideBar, setScrollSideBar] = useState(false)
   useEffect(() => {
+    window.scrollTo(0, 0)
     const scrollSide = () => {
       if (window.scrollY > 100) {
-        setScrollSideBar(true);
+        setScrollSideBar(true)
       }
       if (window.scrollY < 100) {
-        setScrollSideBar(false);
+        setScrollSideBar(false)
       }
-    };
-    window.addEventListener("scroll", scrollSide);
-    return () => window.removeEventListener("scroll", scrollSide);
-  }, [scrollSideBar]);
+    }
+    window.addEventListener('scroll', scrollSide)
+    return () => window.removeEventListener('scroll', scrollSide)
+  }, [scrollSideBar])
   const addCart = (course) => {
-    dispath(addToCart(course));
-    toast("Add Course Success!");
-  };
+    dispath(addToCart(course))
+    toast('Add Course Success!')
+  }
   return (
-    <div className={`course-sidebar ${scrollSideBar ? "scroll" : ""}`}>
-      <div className="course-sidebar-container">
-        <div className="course-sidebar__content">
-          <div className="course-sidebar__img">
-            <img src={course.hinhAnh} alt="" />
-            <div className="course-sidebar__img-overlay">
+    <div className={`course-sidebar ${scrollSideBar ? 'scroll' : ''}`}>
+      <div className='course-sidebar-container'>
+        <div className='course-sidebar__content'>
+          <div className='course-sidebar__img'>
+            <img src={course.hinhAnh} alt='' />
+            <div className='course-sidebar__img-overlay'>
               <span>
                 <AiOutlinePlayCircle />
               </span>
             </div>
           </div>
-          <div className="course-sidebar__purchase">
-            <div className="course-sidebar__purchase-price">
-              <span className="course-sidebar__purchase-price-new">$89.00</span>
-              <span className="course-sidebar__purchase-price-old">
+          <div className='course-sidebar__purchase'>
+            <div className='course-sidebar__purchase-price'>
+              <span className='course-sidebar__purchase-price-new'>$89.00</span>
+              <span className='course-sidebar__purchase-price-old'>
                 $129.99
               </span>
-              <span className="course-sidebar__purchase-price-sale">
+              <span className='course-sidebar__purchase-price-sale'>
                 15% off
               </span>
             </div>
-            <div className="course-sidebar__purchase-buttons">
+            <div className='course-sidebar__purchase-buttons'>
               <button
-                className="course-sidebar__purchase-buttons-add"
+                className='course-sidebar__purchase-buttons-add'
                 onClick={() => addCart(course)}
               >
                 Add to cart
               </button>
-              <button className="course-sidebar__purchase-buttons-buy">
+              <button className='course-sidebar__purchase-buttons-buy'>
                 Buy now
               </button>
-              <span className="course-sidebar__purchase-buttons-text">
+              <span className='course-sidebar__purchase-buttons-text'>
                 30-Day Money-Back Guarantee
               </span>
             </div>
-            <div className="course-sidebar__purchase-info">
+            <div className='course-sidebar__purchase-info'>
               <h3>This course includes</h3>
               <p>
                 <BsCollectionPlay />
@@ -103,11 +104,11 @@ function CourseSidebar({ course }) {
                 <span>Certificate of completion</span>
               </p>
             </div>
-            <div className="course-sidebar__purchase-apply">
+            <div className='course-sidebar__purchase-apply'>
               <button>Apply Coupon</button>
             </div>
           </div>
-          <div className="course-sidebar__traning">
+          <div className='course-sidebar__traning'>
             <h3>Training 5 or more people?</h3>
             <p>
               Get your team access to 5,500+ top Udemy courses anytime,
@@ -118,7 +119,7 @@ function CourseSidebar({ course }) {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default CourseSidebar;
+export default CourseSidebar

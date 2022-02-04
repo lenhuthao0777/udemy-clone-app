@@ -41,6 +41,7 @@ function CreateCourse({ hdAddCourse }) {
     }
     hdAddCourse(form_data);
   };
+  // console.log(data);
   return (
     <Modal title="Create Course" cb={hdSubmit}>
       <TextFileld
