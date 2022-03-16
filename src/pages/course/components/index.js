@@ -11,13 +11,13 @@ import SlideMenu from "./SlideMenu";
 import TopInfo from "./TopInfo";
 import WillLearn from "./WillLearn";
 function Course({ course }) {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, [location]);
+//   const location = useLocation();
+//   useEffect(() => {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   }, [location]);
   return (
     <div className="course">
       <TopInfo course={course} />
