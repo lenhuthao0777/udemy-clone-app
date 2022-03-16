@@ -7,6 +7,8 @@ import EditCourse from "../../EditCourse";
 import AdminCourses from "../components/AdminCourses";
 function AdminCoursesContainer() {
   const [isLoading, setIsloading] = useState(true);
+  const [totalCount, setTotalCount] = useState(null);
+  const [totalPages, setTotalPages] = useState(null);
   const [data, setData] = useState([]);
   const columns = [
     {
@@ -43,25 +45,27 @@ function AdminCoursesContainer() {
       ),
     },
   ];
-  const getAllDatas = async () => {
+  const getAllDatas = async (page = 1, pageSize = 5) => {
     setIsloading(true);
     try {
-      const { data } = await coursesApi.getCourses();
-      const newData = data.map((item) => ({
-        biDanh: item.biDanh,
-        danhMucKhoaHoc: item.danhMucKhoaHoc,
-        hinhAnh: item.hinhAnh,
-        luotXem: item.luotXem,
-        maKhoaHoc: item.maKhoaHoc,
-        maNhom: item.maNhom,
-        moTa: item.moTa,
-        ngayTao: item.ngayTao,
-        nguoiTao: item.nguoiTao,
-        soLuongHocVien: item.soLuongHocVien,
-        tenKhoaHoc: item.tenKhoaHoc,
-        key: uuid(),
-      }));
-      setData(newData);
+      const { data } = await coursesApi.getCoursesByPage(page, pageSize);
+      // const newData = data.items.map((item) => ({
+      //   biDanh: item.biDanh,
+      //   danhMucKhoaHoc: item.danhMucKhoaHoc,
+      //   hinhAnh: item.hinhAnh,
+      //   luotXem: item.luotXem,
+      //   maKhoaHoc: item.maKhoaHoc,
+      //   maNhom: item.maNhom,
+      //   moTa: item.moTa,
+      //   ngayTao: item.ngayTao,
+      //   nguoiTao: item.nguoiTao,
+      //   soLuongHocVien: item.soLuongHocVien,
+      //   tenKhoaHoc: item.tenKhoaHoc,
+      //   key: uuid(),
+      // }));
+      setData(data);
+      setTotalCount(data.totalCount);
+      setTotalPages(data.totalPages);
       setIsloading(false);
     } catch (error) {
       return error;
@@ -70,7 +74,18 @@ function AdminCoursesContainer() {
   useEffect(() => {
     getAllDatas();
   }, []);
-  return <AdminCourses columns={columns} isLoading={isLoading} data={data} />;
+  console.log(data.items);
+
+  return (
+    <AdminCourses
+      columns={columns}
+      isLoading={isLoading}
+      data={data}
+      totalCount={totalCount}
+      totalPages={totalPages}
+      getAllDatas={getAllDatas}
+    />
+  );
 }
 
 export default AdminCoursesContainer;

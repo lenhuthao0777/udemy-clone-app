@@ -1,12 +1,11 @@
 import { FileOutlined, UserOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu } from "antd";
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import "../asset/AdminLayout.scss";
+import { Link } from "react-router-dom";
+import "../assets/AdminLayout.scss";
 import TopBar from "./topBar";
 const { Header, Content, Sider } = Layout;
 function AdminLayout({ children }) {
-  const path = useParams();
   return (
     <Layout>
       <Header className="header">
@@ -20,7 +19,7 @@ function AdminLayout({ children }) {
             defaultOpenKeys={["sub1"]}
             style={{ height: "100%", borderRight: 0 }}
           >
-            <Menu.Item key="1" icon={<FileOutlined />}>
+            <Menu.Item key="1" icon={<FileOutlined />} style={{marginTop: "0"}}>
               <Link to="/admin/courses">Courses</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<UserOutlined />}>

@@ -1,2 +1,2 @@
-import AdminUsers from "./container/AdminUserContainer";
+import AdminUsers from "./Modules/AdminUsers/container/AdminUserContainer";
 export default AdminUsers;
