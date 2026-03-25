@@ -1,0 +1,100 @@
+services:
+  # ─── PostgreSQL Database ───────────────────────────────────────
+  db:
+    image: postgres:15-alpine
+    container_name: elearning_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-elearning}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-elearning_secret}
+      POSTGRES_DB: ${DB_NAME:-elearning_db}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - elearning_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-elearning} -d ${DB_NAME:-elearning_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── Redis (for caching / rate limiting) ──────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: elearning_redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    networks:
+      - elearning_net
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ─── NestJS Backend ───────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: elearning_backend
+    restart: unless-stopped
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USERNAME: ${DB_USERNAME:-elearning}
+      DB_PASSWORD: ${DB_PASSWORD:-elearning_secret}
+      DB_NAME: ${DB_NAME:-elearning_db}
+      JWT_SECRET: ${JWT_SECRET:-change_this_secret}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-15m}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-change_this_refresh_secret}
+      JWT_REFRESH_EXPIRES_IN: ${JWT_REFRESH_EXPIRES_IN:-7d}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - uploads_data:/app/uploads
+    ports:
+      - "3000:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - elearning_net
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/v1/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+
+  # ─── React Frontend ───────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=/api/v1
+    container_name: elearning_frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - elearning_net
+
+volumes:
+  postgres_data:
+  uploads_data:
+
+networks:
+  elearning_net:
+    driver: bridge
